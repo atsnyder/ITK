@@ -80,6 +80,7 @@ itkCompensatedSummation.cxx
 itkArrayOutputSpecialization.cxx
 itkNumberToString.cxx
 itkSmartPointerForwardReferenceProcessObject.cxx
+itkMatrix.cxx
 )
 
 if(WIN32)
