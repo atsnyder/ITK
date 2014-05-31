@@ -573,4 +573,6 @@ operator-(const ConstNeighborhoodIterator< TImage > & it,
 #include "itkConstNeighborhoodIterator.hxx"
 #endif
 
+#include "itkConstNeighborhoodIteratorExplicit.h"
+
 #endif

@@ -81,6 +81,11 @@ itkArrayOutputSpecialization.cxx
 itkNumberToString.cxx
 itkSmartPointerForwardReferenceProcessObject.cxx
 itkThreadPool.cxx
+itkConstNeighborhoodIteratorExplicit.cxx
+)
+
+set(ITK_COMMON_EXPLICIT_SOURCES
+itkConstNeighborhoodIteratorExplicit.cxx
 )
 
 if(WIN32)
