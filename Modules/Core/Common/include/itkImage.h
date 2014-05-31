@@ -298,4 +298,6 @@ private:
 #include "itkImage.hxx"
 #endif
 
+#include "itkImageExplicit.h"
+
 #endif

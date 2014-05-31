@@ -82,6 +82,7 @@ itkNumberToString.cxx
 itkSmartPointerForwardReferenceProcessObject.cxx
 itkThreadPool.cxx
 itkConstNeighborhoodIteratorExplicit.cxx
+itkImageExplicit.cxx
 )
 
 set(ITK_COMMON_EXPLICIT_SOURCES
