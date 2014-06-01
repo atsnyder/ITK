@@ -52,6 +52,7 @@
 #define ITKSTATIC
 #endif
 
+#cmakedefine ITK_COMMON_EXPLICIT_INSTANTIATION
 #cmakedefine ITKV3_COMPATIBILITY
 #cmakedefine ITK_LEGACY_REMOVE
 #cmakedefine ITK_LEGACY_SILENT
