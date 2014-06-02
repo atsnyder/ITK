@@ -1,0 +1,9 @@
+#include "itkRegionBasedLevelSetFunction.h"
+
+template class itk::RegionBasedLevelSetFunction<itk::Image<float, 2u>, itk::Image<float, 2u>, itk::UnconstrainedRegionBasedLevelSetFunctionSharedData<itk::Image<float, 2u>, itk::Image<float, 2u>, itk::ScalarChanAndVeseLevelSetFunctionData<itk::Image<float, 2u>, itk::Image<float, 2u> > > >; //Instantiated 3 times
+template class itk::RegionBasedLevelSetFunction<itk::Image<double, 3u>, itk::Image<float, 3u>, itk::UnconstrainedRegionBasedLevelSetFunctionSharedData<itk::Image<double, 3u>, itk::Image<float, 3u>, itk::ScalarChanAndVeseLevelSetFunctionData<itk::Image<double, 3u>, itk::Image<float, 3u> > > >; //Instantiated 3 times
+template class itk::RegionBasedLevelSetFunction<itk::Image<double, 3u>, itk::Image<float, 3u>, itk::ScalarChanAndVeseLevelSetFunctionSharedDataHelper<3u> >; //Instantiated 3 times
+template class itk::RegionBasedLevelSetFunction<itk::Image<float, 2u>, itk::Image<float, 2u>, itk::ConstrainedRegionBasedLevelSetFunctionSharedData<itk::Image<float, 2u>, itk::Image<float, 2u>, itk::ScalarChanAndVeseLevelSetFunctionData<itk::Image<float, 2u>, itk::Image<float, 2u> > > >; //Instantiated 6 times
+template class itk::RegionBasedLevelSetFunction<itk::Image<double, 3u>, itk::Image<float, 3u>, itk::RegionBasedLevelSetFunctionSharedDataHelper<3u> >; //Instantiated 3 times
+template class itk::RegionBasedLevelSetFunction<itk::Image<double, 3u>, itk::Image<float, 3u>, itk::ScalarRegionBasedLevelSetFunctionSharedDataHelper<3u> >; //Instantiated 3 times
+template class itk::RegionBasedLevelSetFunction<itk::Image<double, 3u>, itk::Image<float, 3u>, itk::ConstrainedRegionBasedLevelSetFunctionSharedData<itk::Image<double, 3u>, itk::Image<float, 3u>, itk::ScalarChanAndVeseLevelSetFunctionData<itk::Image<double, 3u>, itk::Image<float, 3u> > > >; //Instantiated 18 times

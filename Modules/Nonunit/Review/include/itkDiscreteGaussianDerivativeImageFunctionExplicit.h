@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkDiscreteGaussianDerivativeImageFunction_h__
+#define __ExplicitInstantiation_itkDiscreteGaussianDerivativeImageFunction_h__
+extern template class itk::DiscreteGaussianDerivativeImageFunction<itk::Image<float, 2u>, float>;
+#endif //__ExplicitInstantiation_itkDiscreteGaussianDerivativeImageFunction_h__

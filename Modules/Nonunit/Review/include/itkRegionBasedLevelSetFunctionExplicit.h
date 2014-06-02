@@ -1,0 +1,10 @@
+#ifndef __ExplicitInstantiation_itkRegionBasedLevelSetFunction_h__
+#define __ExplicitInstantiation_itkRegionBasedLevelSetFunction_h__
+extern template class itk::RegionBasedLevelSetFunction<itk::Image<float, 2u>, itk::Image<float, 2u>, itk::UnconstrainedRegionBasedLevelSetFunctionSharedData<itk::Image<float, 2u>, itk::Image<float, 2u>, itk::ScalarChanAndVeseLevelSetFunctionData<itk::Image<float, 2u>, itk::Image<float, 2u> > > >;
+extern template class itk::RegionBasedLevelSetFunction<itk::Image<double, 3u>, itk::Image<float, 3u>, itk::UnconstrainedRegionBasedLevelSetFunctionSharedData<itk::Image<double, 3u>, itk::Image<float, 3u>, itk::ScalarChanAndVeseLevelSetFunctionData<itk::Image<double, 3u>, itk::Image<float, 3u> > > >;
+extern template class itk::RegionBasedLevelSetFunction<itk::Image<double, 3u>, itk::Image<float, 3u>, itk::ScalarChanAndVeseLevelSetFunctionSharedDataHelper<3u> >;
+extern template class itk::RegionBasedLevelSetFunction<itk::Image<float, 2u>, itk::Image<float, 2u>, itk::ConstrainedRegionBasedLevelSetFunctionSharedData<itk::Image<float, 2u>, itk::Image<float, 2u>, itk::ScalarChanAndVeseLevelSetFunctionData<itk::Image<float, 2u>, itk::Image<float, 2u> > > >;
+extern template class itk::RegionBasedLevelSetFunction<itk::Image<double, 3u>, itk::Image<float, 3u>, itk::RegionBasedLevelSetFunctionSharedDataHelper<3u> >;
+extern template class itk::RegionBasedLevelSetFunction<itk::Image<double, 3u>, itk::Image<float, 3u>, itk::ScalarRegionBasedLevelSetFunctionSharedDataHelper<3u> >;
+extern template class itk::RegionBasedLevelSetFunction<itk::Image<double, 3u>, itk::Image<float, 3u>, itk::ConstrainedRegionBasedLevelSetFunctionSharedData<itk::Image<double, 3u>, itk::Image<float, 3u>, itk::ScalarChanAndVeseLevelSetFunctionData<itk::Image<double, 3u>, itk::Image<float, 3u> > > >;
+#endif //__ExplicitInstantiation_itkRegionBasedLevelSetFunction_h__

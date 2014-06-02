@@ -133,4 +133,8 @@ private:
 #include "itkStreamingImageFilter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkStreamingImageFilterExplicit.h"
+#endif
+
 #endif

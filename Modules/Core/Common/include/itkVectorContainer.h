@@ -358,4 +358,8 @@ private:
 #include "itkVectorContainer.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkVectorContainerExplicit.h"
+#endif
+
 #endif

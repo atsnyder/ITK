@@ -738,4 +738,8 @@ private:
 #include "itkImageBase.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkImageBaseExplicit.h"
+#endif
+
 #endif

@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkChainCodePath_h__
+#define __ExplicitInstantiation_itkChainCodePath_h__
+extern template class itk::ChainCodePath<2u>;
+#endif //__ExplicitInstantiation_itkChainCodePath_h__

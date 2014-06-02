@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkPowellOptimizerv4_h__
+#define __ExplicitInstantiation_itkPowellOptimizerv4_h__
+extern template class itk::PowellOptimizerv4<double>;
+#endif //__ExplicitInstantiation_itkPowellOptimizerv4_h__

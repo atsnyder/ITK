@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkFourierSeriesPath_h__
+#define __ExplicitInstantiation_itkFourierSeriesPath_h__
+extern template class itk::FourierSeriesPath<2u>;
+#endif //__ExplicitInstantiation_itkFourierSeriesPath_h__

@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkVTKPolyDataReader_h__
+#define __ExplicitInstantiation_itkVTKPolyDataReader_h__
+//exclude QuadEdgeMesh
+#endif //__ExplicitInstantiation_itkVTKPolyDataReader_h__

@@ -212,4 +212,8 @@ private:
 #include "itkImageSliceConstIteratorWithIndex.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkImageSliceConstIteratorWithIndexExplicit.h"
+#endif
+
 #endif

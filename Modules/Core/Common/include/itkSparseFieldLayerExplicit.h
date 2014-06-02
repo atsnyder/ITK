@@ -1,0 +1,6 @@
+#ifndef __ExplicitInstantiation_itkSparseFieldLayer_h__
+#define __ExplicitInstantiation_itkSparseFieldLayer_h__
+//exclude SparseFieldLevelSetNode
+//exclude NormalBandNode
+//exclude ListNode
+#endif //__ExplicitInstantiation_itkSparseFieldLayer_h__

@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkMetaSurfaceConverter_h__
+#define __ExplicitInstantiation_itkMetaSurfaceConverter_h__
+extern template class itk::MetaSurfaceConverter<2u>;
+extern template class itk::MetaSurfaceConverter<3u>;
+#endif //__ExplicitInstantiation_itkMetaSurfaceConverter_h__

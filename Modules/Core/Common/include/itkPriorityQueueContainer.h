@@ -316,4 +316,8 @@ protected:
 }
 
 #include "itkPriorityQueueContainer.hxx"
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkPriorityQueueContainerExplicit.h"
+#endif
+
 #endif

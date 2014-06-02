@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkPointBasedSpatialObject_h__
+#define __ExplicitInstantiation_itkPointBasedSpatialObject_h__
+extern template class itk::PointBasedSpatialObject<3u>;
+extern template class itk::PointBasedSpatialObject<2u>;
+#endif //__ExplicitInstantiation_itkPointBasedSpatialObject_h__

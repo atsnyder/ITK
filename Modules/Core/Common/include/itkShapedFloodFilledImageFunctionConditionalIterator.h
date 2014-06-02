@@ -107,4 +107,8 @@ public:
 };
 } // end namespace itk
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkShapedFloodFilledImageFunctionConditionalIteratorExplicit.h"
+#endif
+
 #endif

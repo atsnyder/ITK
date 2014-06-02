@@ -280,4 +280,8 @@ private:
 #include "itkImageRegionConstIterator.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkImageRegionConstIteratorExplicit.h"
+#endif
+
 #endif

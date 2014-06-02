@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkNonUniformBSpline_h__
+#define __ExplicitInstantiation_itkNonUniformBSpline_h__
+extern template class itk::NonUniformBSpline<3u>;
+#endif //__ExplicitInstantiation_itkNonUniformBSpline_h__

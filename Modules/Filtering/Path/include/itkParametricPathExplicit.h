@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkParametricPath_h__
+#define __ExplicitInstantiation_itkParametricPath_h__
+extern template class itk::ParametricPath<2u>;
+#endif //__ExplicitInstantiation_itkParametricPath_h__

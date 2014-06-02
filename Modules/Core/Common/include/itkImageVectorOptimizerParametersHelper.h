@@ -90,4 +90,8 @@ private:
 #include "itkImageVectorOptimizerParametersHelper.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkImageVectorOptimizerParametersHelperExplicit.h"
+#endif
+
 #endif

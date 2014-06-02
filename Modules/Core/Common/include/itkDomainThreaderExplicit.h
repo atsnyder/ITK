@@ -1,0 +1,11 @@
+#ifndef __ExplicitInstantiation_itkDomainThreader_h__
+#define __ExplicitInstantiation_itkDomainThreader_h__
+#include "itkThreadedImageRegionPartitioner.h"
+#include "itkThreadedIteratorRangePartitioner.h"
+#include "itkThreadedIndexedContainerPartitioner.h"
+//exclude ImageToImageMetricv4
+//exclude Optimizerv4
+//exclude __map_const_iterator
+//exclude LevelSetEquationContainer
+//exclude GradientDescentOptimizerBasev4Template
+#endif //__ExplicitInstantiation_itkDomainThreader_h__

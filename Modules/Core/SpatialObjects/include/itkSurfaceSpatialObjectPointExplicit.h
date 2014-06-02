@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkSurfaceSpatialObjectPoint_h__
+#define __ExplicitInstantiation_itkSurfaceSpatialObjectPoint_h__
+extern template class itk::SurfaceSpatialObjectPoint<3u>;
+extern template class itk::SurfaceSpatialObjectPoint<2u>;
+#endif //__ExplicitInstantiation_itkSurfaceSpatialObjectPoint_h__

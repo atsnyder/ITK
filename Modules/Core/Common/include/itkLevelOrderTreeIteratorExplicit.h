@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkLevelOrderTreeIterator_h__
+#define __ExplicitInstantiation_itkLevelOrderTreeIterator_h__
+//exclude SpatialObjectTreeContainer
+//exclude TreeContainer
+#endif //__ExplicitInstantiation_itkLevelOrderTreeIterator_h__

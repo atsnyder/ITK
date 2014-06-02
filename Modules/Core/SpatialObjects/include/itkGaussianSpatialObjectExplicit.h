@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkGaussianSpatialObject_h__
+#define __ExplicitInstantiation_itkGaussianSpatialObject_h__
+extern template class itk::GaussianSpatialObject<3u>;
+extern template class itk::GaussianSpatialObject<2u>;
+#endif //__ExplicitInstantiation_itkGaussianSpatialObject_h__

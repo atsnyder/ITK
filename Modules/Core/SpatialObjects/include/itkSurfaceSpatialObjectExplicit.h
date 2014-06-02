@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkSurfaceSpatialObject_h__
+#define __ExplicitInstantiation_itkSurfaceSpatialObject_h__
+extern template class itk::SurfaceSpatialObject<3u>;
+extern template class itk::SurfaceSpatialObject<2u>;
+#endif //__ExplicitInstantiation_itkSurfaceSpatialObject_h__

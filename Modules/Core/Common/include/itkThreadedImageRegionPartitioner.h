@@ -103,4 +103,8 @@ private:
 # include "itkThreadedImageRegionPartitioner.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkThreadedImageRegionPartitionerExplicit.h"
+#endif
+
 #endif

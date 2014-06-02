@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkConstNeighborhoodIteratorWithOnlyIndex_h__
+#define __ExplicitInstantiation_itkConstNeighborhoodIteratorWithOnlyIndex_h__
+extern template class itk::ConstNeighborhoodIteratorWithOnlyIndex<itk::ImageBase<4u> >;
+extern template class itk::ConstNeighborhoodIteratorWithOnlyIndex<itk::Image<char, 4u> >;
+#endif //__ExplicitInstantiation_itkConstNeighborhoodIteratorWithOnlyIndex_h__

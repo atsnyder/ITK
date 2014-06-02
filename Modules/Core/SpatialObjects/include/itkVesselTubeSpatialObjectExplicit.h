@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkVesselTubeSpatialObject_h__
+#define __ExplicitInstantiation_itkVesselTubeSpatialObject_h__
+extern template class itk::VesselTubeSpatialObject<3u>;
+extern template class itk::VesselTubeSpatialObject<2u>;
+#endif //__ExplicitInstantiation_itkVesselTubeSpatialObject_h__

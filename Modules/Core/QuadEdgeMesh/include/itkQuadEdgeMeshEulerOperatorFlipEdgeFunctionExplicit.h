@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkQuadEdgeMeshEulerOperatorFlipEdgeFunction_h__
+#define __ExplicitInstantiation_itkQuadEdgeMeshEulerOperatorFlipEdgeFunction_h__
+//exclude QuadEdge
+#endif //__ExplicitInstantiation_itkQuadEdgeMeshEulerOperatorFlipEdgeFunction_h__

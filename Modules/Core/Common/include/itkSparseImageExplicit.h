@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkSparseImage_h__
+#define __ExplicitInstantiation_itkSparseImage_h__
+//exclude NormalBandNode
+//exclude NodeClass
+#endif //__ExplicitInstantiation_itkSparseImage_h__

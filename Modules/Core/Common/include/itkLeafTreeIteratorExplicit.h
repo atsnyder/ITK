@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkLeafTreeIterator_h__
+#define __ExplicitInstantiation_itkLeafTreeIterator_h__
+//exclude TreeContainer
+#endif //__ExplicitInstantiation_itkLeafTreeIterator_h__

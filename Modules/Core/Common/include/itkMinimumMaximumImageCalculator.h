@@ -126,4 +126,8 @@ private:
 #include "itkMinimumMaximumImageCalculator.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkMinimumMaximumImageCalculatorExplicit.h"
+#endif
+
 #endif /* __itkMinimumMaximumImageCalculator_h */

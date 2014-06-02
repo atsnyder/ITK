@@ -120,4 +120,8 @@ protected:
 #include "itkImageRandomIteratorWithIndex.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkImageRandomIteratorWithIndexExplicit.h"
+#endif
+
 #endif

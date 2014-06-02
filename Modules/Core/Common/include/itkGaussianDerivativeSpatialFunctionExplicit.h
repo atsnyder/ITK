@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkGaussianDerivativeSpatialFunction_h__
+#define __ExplicitInstantiation_itkGaussianDerivativeSpatialFunction_h__
+extern template class itk::GaussianDerivativeSpatialFunction<double, 1u, itk::Point<double, 1u> >;
+#endif //__ExplicitInstantiation_itkGaussianDerivativeSpatialFunction_h__

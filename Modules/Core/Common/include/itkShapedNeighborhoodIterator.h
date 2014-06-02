@@ -290,4 +290,8 @@ protected:
 #include "itkShapedNeighborhoodIterator.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkShapedNeighborhoodIteratorExplicit.h"
+#endif
+
 #endif

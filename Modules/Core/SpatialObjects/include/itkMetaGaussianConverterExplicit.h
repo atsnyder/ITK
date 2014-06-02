@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkMetaGaussianConverter_h__
+#define __ExplicitInstantiation_itkMetaGaussianConverter_h__
+extern template class itk::MetaGaussianConverter<3u>;
+extern template class itk::MetaGaussianConverter<2u>;
+#endif //__ExplicitInstantiation_itkMetaGaussianConverter_h__

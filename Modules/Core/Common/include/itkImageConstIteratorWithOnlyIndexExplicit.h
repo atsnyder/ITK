@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkImageConstIteratorWithOnlyIndex_h__
+#define __ExplicitInstantiation_itkImageConstIteratorWithOnlyIndex_h__
+//exclude ImageBase
+#endif //__ExplicitInstantiation_itkImageConstIteratorWithOnlyIndex_h__

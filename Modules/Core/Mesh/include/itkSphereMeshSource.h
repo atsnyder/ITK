@@ -112,4 +112,8 @@ private:
 #ifndef ITK_MANUAL_INSTANTIATION
 #include "itkSphereMeshSource.hxx"
 #endif
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkSphereMeshSourceExplicit.h"
 #endif
+
+    #endif

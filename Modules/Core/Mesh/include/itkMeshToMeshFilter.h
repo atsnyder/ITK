@@ -98,4 +98,8 @@ private:
 #include "itkMeshToMeshFilter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkMeshToMeshFilterExplicit.h"
 #endif
+
+    #endif

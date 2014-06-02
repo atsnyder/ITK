@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkBSplineDerivativeKernelFunction_h__
+#define __ExplicitInstantiation_itkBSplineDerivativeKernelFunction_h__
+extern template class itk::BSplineDerivativeKernelFunction<3u, double>;
+#endif //__ExplicitInstantiation_itkBSplineDerivativeKernelFunction_h__

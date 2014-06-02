@@ -189,4 +189,8 @@ public:
 #include "itkImageRegionConstIteratorWithIndex.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkImageRegionConstIteratorWithIndexExplicit.h"
+#endif
+
 #endif

@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkImageRegionExclusionConstIteratorWithIndex_h__
+#define __ExplicitInstantiation_itkImageRegionExclusionConstIteratorWithIndex_h__
+extern template class itk::ImageRegionExclusionConstIteratorWithIndex<itk::Image<unsigned char, 2u> >;
+#endif //__ExplicitInstantiation_itkImageRegionExclusionConstIteratorWithIndex_h__

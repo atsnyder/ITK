@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkExhaustiveOptimizerv4_h__
+#define __ExplicitInstantiation_itkExhaustiveOptimizerv4_h__
+extern template class itk::ExhaustiveOptimizerv4<double>;
+#endif //__ExplicitInstantiation_itkExhaustiveOptimizerv4_h__

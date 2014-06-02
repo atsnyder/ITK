@@ -119,4 +119,8 @@ protected:
 #include "itkTreeContainer.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkTreeContainerExplicit.h"
+#endif
+
 #endif

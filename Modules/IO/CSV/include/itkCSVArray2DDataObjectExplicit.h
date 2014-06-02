@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkCSVArray2DDataObject_h__
+#define __ExplicitInstantiation_itkCSVArray2DDataObject_h__
+extern template class itk::CSVArray2DDataObject<double>;
+#endif //__ExplicitInstantiation_itkCSVArray2DDataObject_h__

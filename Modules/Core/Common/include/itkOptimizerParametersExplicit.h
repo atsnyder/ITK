@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkOptimizerParameters_h__
+#define __ExplicitInstantiation_itkOptimizerParameters_h__
+extern template class itk::OptimizerParameters<float>;
+extern template class itk::OptimizerParameters<double>;
+#endif //__ExplicitInstantiation_itkOptimizerParameters_h__

@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkSinRegularizedHeavisideStepFunction_h__
+#define __ExplicitInstantiation_itkSinRegularizedHeavisideStepFunction_h__
+extern template class itk::SinRegularizedHeavisideStepFunction<double, double>;
+#endif //__ExplicitInstantiation_itkSinRegularizedHeavisideStepFunction_h__

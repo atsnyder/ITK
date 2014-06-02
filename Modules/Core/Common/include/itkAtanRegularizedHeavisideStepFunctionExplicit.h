@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkAtanRegularizedHeavisideStepFunction_h__
+#define __ExplicitInstantiation_itkAtanRegularizedHeavisideStepFunction_h__
+extern template class itk::AtanRegularizedHeavisideStepFunction<double, double>;
+extern template class itk::AtanRegularizedHeavisideStepFunction<float, float>;
+#endif //__ExplicitInstantiation_itkAtanRegularizedHeavisideStepFunction_h__

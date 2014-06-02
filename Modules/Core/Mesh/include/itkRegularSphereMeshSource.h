@@ -120,4 +120,8 @@ private:
 #include "itkRegularSphereMeshSource.hxx"
 #endif
 
-#endif //_itkRegularSphereMeshSource_h
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkRegularSphereMeshSourceExplicit.h"
+#endif
+
+    #endif //_itkRegularSphereMeshSource_h

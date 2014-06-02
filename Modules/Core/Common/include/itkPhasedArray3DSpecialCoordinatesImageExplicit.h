@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkPhasedArray3DSpecialCoordinatesImage_h__
+#define __ExplicitInstantiation_itkPhasedArray3DSpecialCoordinatesImage_h__
+extern template class itk::PhasedArray3DSpecialCoordinatesImage<float>;
+#endif //__ExplicitInstantiation_itkPhasedArray3DSpecialCoordinatesImage_h__

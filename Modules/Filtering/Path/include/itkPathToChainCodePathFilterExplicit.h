@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkPathToChainCodePathFilter_h__
+#define __ExplicitInstantiation_itkPathToChainCodePathFilter_h__
+extern template class itk::PathToChainCodePathFilter<itk::PolyLineParametricPath<2u>, itk::ChainCodePath<2u> >;
+#endif //__ExplicitInstantiation_itkPathToChainCodePathFilter_h__

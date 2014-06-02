@@ -1,0 +1,4 @@
+#include "itkBinaryReconstructionLabelMapFilter.h"
+
+template class itk::BinaryReconstructionLabelMapFilter<itk::LabelMap<itk::AttributeLabelObject<unsigned long, 3u, bool> >, itk::Image<unsigned char, 3u>, itk::Functor::AttributeLabelObjectAccessor<itk::AttributeLabelObject<unsigned long, 3u, bool> > >; //Instantiated 4 times
+template class itk::BinaryReconstructionLabelMapFilter<itk::LabelMap<itk::AttributeLabelObject<unsigned long, 2u, bool> >, itk::Image<unsigned char, 2u>, itk::Functor::AttributeLabelObjectAccessor<itk::AttributeLabelObject<unsigned long, 2u, bool> > >; //Instantiated 4 times

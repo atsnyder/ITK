@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkLoggerThreadWrapper_h__
+#define __ExplicitInstantiation_itkLoggerThreadWrapper_h__
+//exclude SimpleLogger
+#endif //__ExplicitInstantiation_itkLoggerThreadWrapper_h__

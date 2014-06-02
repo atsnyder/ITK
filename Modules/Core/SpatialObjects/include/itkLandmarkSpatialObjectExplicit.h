@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkLandmarkSpatialObject_h__
+#define __ExplicitInstantiation_itkLandmarkSpatialObject_h__
+extern template class itk::LandmarkSpatialObject<3u>;
+extern template class itk::LandmarkSpatialObject<2u>;
+#endif //__ExplicitInstantiation_itkLandmarkSpatialObject_h__

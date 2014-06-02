@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkChainCodeToFourierSeriesPathFilter_h__
+#define __ExplicitInstantiation_itkChainCodeToFourierSeriesPathFilter_h__
+extern template class itk::ChainCodeToFourierSeriesPathFilter<itk::ChainCodePath<2u>, itk::FourierSeriesPath<2u> >;
+#endif //__ExplicitInstantiation_itkChainCodeToFourierSeriesPathFilter_h__

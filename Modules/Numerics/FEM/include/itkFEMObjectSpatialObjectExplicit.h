@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkFEMObjectSpatialObject_h__
+#define __ExplicitInstantiation_itkFEMObjectSpatialObject_h__
+extern template class itk::FEMObjectSpatialObject<3u>;
+extern template class itk::FEMObjectSpatialObject<2u>;
+#endif //__ExplicitInstantiation_itkFEMObjectSpatialObject_h__

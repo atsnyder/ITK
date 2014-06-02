@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkMetaContourConverter_h__
+#define __ExplicitInstantiation_itkMetaContourConverter_h__
+extern template class itk::MetaContourConverter<2u>;
+extern template class itk::MetaContourConverter<3u>;
+#endif //__ExplicitInstantiation_itkMetaContourConverter_h__

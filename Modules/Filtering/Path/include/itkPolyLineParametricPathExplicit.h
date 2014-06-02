@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkPolyLineParametricPath_h__
+#define __ExplicitInstantiation_itkPolyLineParametricPath_h__
+extern template class itk::PolyLineParametricPath<2u>;
+#endif //__ExplicitInstantiation_itkPolyLineParametricPath_h__

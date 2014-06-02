@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkUnaryFunctorImageFilter_h__
+#define __ExplicitInstantiation_itkUnaryFunctorImageFilter_h__
+//exclude ::Functor
+#endif //__ExplicitInstantiation_itkUnaryFunctorImageFilter_h__

@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkPriorityQueueContainer_h__
+#define __ExplicitInstantiation_itkPriorityQueueContainer_h__
+//exclude GeometricalQuadEdge
+#endif //__ExplicitInstantiation_itkPriorityQueueContainer_h__

@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkContourSpatialObjectPoint_h__
+#define __ExplicitInstantiation_itkContourSpatialObjectPoint_h__
+extern template class itk::ContourSpatialObjectPoint<3u>;
+extern template class itk::ContourSpatialObjectPoint<2u>;
+#endif //__ExplicitInstantiation_itkContourSpatialObjectPoint_h__

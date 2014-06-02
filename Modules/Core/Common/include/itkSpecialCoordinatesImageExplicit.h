@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkSpecialCoordinatesImage_h__
+#define __ExplicitInstantiation_itkSpecialCoordinatesImage_h__
+extern template class itk::SpecialCoordinatesImage<float, 3u>;
+#endif //__ExplicitInstantiation_itkSpecialCoordinatesImage_h__

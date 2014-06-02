@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkMetaEllipseConverter_h__
+#define __ExplicitInstantiation_itkMetaEllipseConverter_h__
+extern template class itk::MetaEllipseConverter<2u>;
+extern template class itk::MetaEllipseConverter<3u>;
+#endif //__ExplicitInstantiation_itkMetaEllipseConverter_h__

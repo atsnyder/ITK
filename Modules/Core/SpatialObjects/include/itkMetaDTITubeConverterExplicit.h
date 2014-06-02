@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkMetaDTITubeConverter_h__
+#define __ExplicitInstantiation_itkMetaDTITubeConverter_h__
+extern template class itk::MetaDTITubeConverter<3u>;
+extern template class itk::MetaDTITubeConverter<2u>;
+#endif //__ExplicitInstantiation_itkMetaDTITubeConverter_h__

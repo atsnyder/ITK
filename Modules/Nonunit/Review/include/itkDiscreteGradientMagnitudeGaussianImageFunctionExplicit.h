@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkDiscreteGradientMagnitudeGaussianImageFunction_h__
+#define __ExplicitInstantiation_itkDiscreteGradientMagnitudeGaussianImageFunction_h__
+extern template class itk::DiscreteGradientMagnitudeGaussianImageFunction<itk::Image<float, 2u>, float>;
+#endif //__ExplicitInstantiation_itkDiscreteGradientMagnitudeGaussianImageFunction_h__

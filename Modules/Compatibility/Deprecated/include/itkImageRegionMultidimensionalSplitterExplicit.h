@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkImageRegionMultidimensionalSplitter_h__
+#define __ExplicitInstantiation_itkImageRegionMultidimensionalSplitter_h__
+extern template class itk::ImageRegionMultidimensionalSplitter<2u>;
+#endif //__ExplicitInstantiation_itkImageRegionMultidimensionalSplitter_h__

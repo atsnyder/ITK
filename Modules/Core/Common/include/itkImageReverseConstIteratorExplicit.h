@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkImageReverseConstIterator_h__
+#define __ExplicitInstantiation_itkImageReverseConstIterator_h__
+extern template class itk::ImageReverseConstIterator<itk::Image<double, 2u> >;
+#endif //__ExplicitInstantiation_itkImageReverseConstIterator_h__

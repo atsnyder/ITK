@@ -14,7 +14,6 @@ itk_module(ITKCommon
     ITKDoubleConversion
   TEST_DEPENDS
     ITKTestKernel
-    ITKMesh
     ITKImageIntensity
     ITKIOImageBase
   DESCRIPTION

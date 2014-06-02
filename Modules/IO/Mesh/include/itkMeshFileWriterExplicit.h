@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkMeshFileWriter_h__
+#define __ExplicitInstantiation_itkMeshFileWriter_h__
+//exclude QuadEdgeMesh
+#endif //__ExplicitInstantiation_itkMeshFileWriter_h__

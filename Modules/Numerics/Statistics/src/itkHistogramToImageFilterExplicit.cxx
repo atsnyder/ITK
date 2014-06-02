@@ -1,0 +1,6 @@
+#include "itkHistogramToImageFilter.h"
+
+template class itk::HistogramToImageFilter<itk::Statistics::Histogram<double, itk::Statistics::DenseFrequencyContainer2>, itk::Image<float, 3u>, itk::Function::HistogramProbabilityFunction<unsigned long, float> >; //Instantiated 4 times
+template class itk::HistogramToImageFilter<itk::Statistics::Histogram<double, itk::Statistics::DenseFrequencyContainer2>, itk::Image<double, 3u>, itk::Function::HistogramEntropyFunction<unsigned long, double> >; //Instantiated 4 times
+template class itk::HistogramToImageFilter<itk::Statistics::Histogram<double, itk::Statistics::DenseFrequencyContainer2>, itk::Image<double, 3u>, itk::Function::HistogramLogProbabilityFunction<unsigned long, double> >; //Instantiated 4 times
+template class itk::HistogramToImageFilter<itk::Statistics::Histogram<double, itk::Statistics::DenseFrequencyContainer2>, itk::Image<unsigned long, 3u>, itk::Function::HistogramIntensityFunction<unsigned long, unsigned long> >; //Instantiated 4 times

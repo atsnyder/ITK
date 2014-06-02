@@ -246,4 +246,8 @@ private:
 #include "itkBinaryMask3DMeshSource.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkBinaryMask3DMeshSourceExplicit.h"
 #endif
+
+    #endif

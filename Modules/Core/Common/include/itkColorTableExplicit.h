@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkColorTable_h__
+#define __ExplicitInstantiation_itkColorTable_h__
+extern template class itk::ColorTable<float>;
+#endif //__ExplicitInstantiation_itkColorTable_h__

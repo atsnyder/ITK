@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkObjectByObjectLabelMapFilter_h__
+#define __ExplicitInstantiation_itkObjectByObjectLabelMapFilter_h__
+extern template class itk::ObjectByObjectLabelMapFilter<itk::LabelMap<itk::ShapeLabelObject<unsigned char, 2u> >, itk::LabelMap<itk::ShapeLabelObject<unsigned char, 2u> >, itk::BinaryDilateImageFilter<itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u>, itk::FlatStructuringElement<2u> >, itk::BinaryMorphologyImageFilter<itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u>, itk::FlatStructuringElement<2u> >, itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u> >;
+extern template class itk::ObjectByObjectLabelMapFilter<itk::LabelMap<itk::LabelObject<unsigned char, 2u> >, itk::LabelMap<itk::LabelObject<unsigned char, 2u> >, itk::ImageToImageFilter<itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u> >, itk::ImageSource<itk::Image<unsigned char, 2u> >, itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u> >;
+#endif //__ExplicitInstantiation_itkObjectByObjectLabelMapFilter_h__

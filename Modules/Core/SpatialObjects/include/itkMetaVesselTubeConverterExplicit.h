@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkMetaVesselTubeConverter_h__
+#define __ExplicitInstantiation_itkMetaVesselTubeConverter_h__
+extern template class itk::MetaVesselTubeConverter<3u>;
+extern template class itk::MetaVesselTubeConverter<2u>;
+#endif //__ExplicitInstantiation_itkMetaVesselTubeConverter_h__

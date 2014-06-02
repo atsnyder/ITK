@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkPolygonGroupSpatialObject_h__
+#define __ExplicitInstantiation_itkPolygonGroupSpatialObject_h__
+extern template class itk::PolygonGroupSpatialObject<3u>;
+#endif //__ExplicitInstantiation_itkPolygonGroupSpatialObject_h__

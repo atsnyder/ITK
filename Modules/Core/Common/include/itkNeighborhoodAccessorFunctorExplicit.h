@@ -1,0 +1,6 @@
+#ifndef __ExplicitInstantiation_itkNeighborhoodAccessorFunctor_h__
+#define __ExplicitInstantiation_itkNeighborhoodAccessorFunctor_h__
+//exclude Image
+//exclude NormalBandNode
+//exclude LabelObjectLine
+#endif //__ExplicitInstantiation_itkNeighborhoodAccessorFunctor_h__

@@ -10,6 +10,7 @@ itk_module(ITKMesh
     ITKTransform
   TEST_DEPENDS
     ITKTestKernel
+    ITKImageIntensity
     ITKIOSpatialObjects
     ITKIOMesh
   DESCRIPTION

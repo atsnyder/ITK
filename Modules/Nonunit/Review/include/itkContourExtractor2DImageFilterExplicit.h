@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkContourExtractor2DImageFilter_h__
+#define __ExplicitInstantiation_itkContourExtractor2DImageFilter_h__
+extern template class itk::ContourExtractor2DImageFilter<itk::Image<unsigned char, 2u> >;
+#endif //__ExplicitInstantiation_itkContourExtractor2DImageFilter_h__

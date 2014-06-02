@@ -126,4 +126,8 @@ TreeIteratorBase< TTreeType > *RootTreeIterator< TTreeType >::Clone()
 }
 } // end namespace itk
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkRootTreeIteratorExplicit.h"
+#endif
+
 #endif

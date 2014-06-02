@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkQuadEdgeMeshFrontIterator_h__
+#define __ExplicitInstantiation_itkQuadEdgeMeshFrontIterator_h__
+//exclude QuadEdgeMesh
+#endif //__ExplicitInstantiation_itkQuadEdgeMeshFrontIterator_h__

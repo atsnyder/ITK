@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkSpatialObjectProperty_h__
+#define __ExplicitInstantiation_itkSpatialObjectProperty_h__
+extern template class itk::SpatialObjectProperty<float>;
+#endif //__ExplicitInstantiation_itkSpatialObjectProperty_h__

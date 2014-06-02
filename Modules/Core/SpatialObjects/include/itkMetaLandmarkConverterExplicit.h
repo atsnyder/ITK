@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkMetaLandmarkConverter_h__
+#define __ExplicitInstantiation_itkMetaLandmarkConverter_h__
+extern template class itk::MetaLandmarkConverter<2u>;
+extern template class itk::MetaLandmarkConverter<3u>;
+#endif //__ExplicitInstantiation_itkMetaLandmarkConverter_h__

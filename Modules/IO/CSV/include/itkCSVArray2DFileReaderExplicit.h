@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkCSVArray2DFileReader_h__
+#define __ExplicitInstantiation_itkCSVArray2DFileReader_h__
+extern template class itk::CSVArray2DFileReader<double>;
+#endif //__ExplicitInstantiation_itkCSVArray2DFileReader_h__

@@ -121,4 +121,8 @@ private:
 #include "itkVTKPolyDataReader.hxx"
 #endif
 
-#endif //_itkVTKPolyDataReader_h
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkVTKPolyDataReaderExplicit.h"
+#endif
+
+    #endif //_itkVTKPolyDataReader_h

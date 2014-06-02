@@ -1,0 +1,6 @@
+#ifndef __ExplicitInstantiation_itkTreeIteratorBase_h__
+#define __ExplicitInstantiation_itkTreeIteratorBase_h__
+//exclude SpatialObjectTreeContainer
+//exclude SpatialObject
+//exclude TreeContainer
+#endif //__ExplicitInstantiation_itkTreeIteratorBase_h__

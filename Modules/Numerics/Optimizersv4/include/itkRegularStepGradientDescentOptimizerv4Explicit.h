@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkRegularStepGradientDescentOptimizerv4_h__
+#define __ExplicitInstantiation_itkRegularStepGradientDescentOptimizerv4_h__
+extern template class itk::RegularStepGradientDescentOptimizerv4<double>;
+#endif //__ExplicitInstantiation_itkRegularStepGradientDescentOptimizerv4_h__

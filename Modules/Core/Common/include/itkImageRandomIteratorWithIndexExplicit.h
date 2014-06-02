@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkImageRandomIteratorWithIndex_h__
+#define __ExplicitInstantiation_itkImageRandomIteratorWithIndex_h__
+extern template class itk::ImageRandomIteratorWithIndex<itk::Image<unsigned char, 3u> >;
+#endif //__ExplicitInstantiation_itkImageRandomIteratorWithIndex_h__

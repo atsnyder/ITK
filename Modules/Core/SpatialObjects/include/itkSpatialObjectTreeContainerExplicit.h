@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkSpatialObjectTreeContainer_h__
+#define __ExplicitInstantiation_itkSpatialObjectTreeContainer_h__
+extern template class itk::SpatialObjectTreeContainer<2u>;
+#endif //__ExplicitInstantiation_itkSpatialObjectTreeContainer_h__

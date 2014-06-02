@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkMetaImageMaskConverter_h__
+#define __ExplicitInstantiation_itkMetaImageMaskConverter_h__
+extern template class itk::MetaImageMaskConverter<2u>;
+extern template class itk::MetaImageMaskConverter<3u>;
+#endif //__ExplicitInstantiation_itkMetaImageMaskConverter_h__

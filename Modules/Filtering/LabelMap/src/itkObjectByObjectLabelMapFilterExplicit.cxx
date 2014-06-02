@@ -1,0 +1,4 @@
+#include "itkObjectByObjectLabelMapFilter.h"
+
+template class itk::ObjectByObjectLabelMapFilter<itk::LabelMap<itk::ShapeLabelObject<unsigned char, 2u> >, itk::LabelMap<itk::ShapeLabelObject<unsigned char, 2u> >, itk::BinaryDilateImageFilter<itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u>, itk::FlatStructuringElement<2u> >, itk::BinaryMorphologyImageFilter<itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u>, itk::FlatStructuringElement<2u> >, itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u> >; //Instantiated 6 times
+template class itk::ObjectByObjectLabelMapFilter<itk::LabelMap<itk::LabelObject<unsigned char, 2u> >, itk::LabelMap<itk::LabelObject<unsigned char, 2u> >, itk::ImageToImageFilter<itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u> >, itk::ImageSource<itk::Image<unsigned char, 2u> >, itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u> >; //Instantiated 12 times

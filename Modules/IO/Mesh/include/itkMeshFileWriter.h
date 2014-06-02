@@ -194,4 +194,8 @@ private:
 #include "itkMeshFileWriter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkMeshFileWriterExplicit.h"
+#endif
+
 #endif // __itkMeshFileWriter_h

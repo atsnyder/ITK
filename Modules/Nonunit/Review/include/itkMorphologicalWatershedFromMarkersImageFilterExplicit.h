@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkMorphologicalWatershedFromMarkersImageFilter_h__
+#define __ExplicitInstantiation_itkMorphologicalWatershedFromMarkersImageFilter_h__
+extern template class itk::MorphologicalWatershedFromMarkersImageFilter<itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u> >;
+#endif //__ExplicitInstantiation_itkMorphologicalWatershedFromMarkersImageFilter_h__

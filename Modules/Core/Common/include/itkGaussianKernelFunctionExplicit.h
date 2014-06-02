@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkGaussianKernelFunction_h__
+#define __ExplicitInstantiation_itkGaussianKernelFunction_h__
+extern template class itk::GaussianKernelFunction<double>;
+#endif //__ExplicitInstantiation_itkGaussianKernelFunction_h__

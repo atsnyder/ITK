@@ -136,4 +136,8 @@ private:
 #include "itkQuadrilateralCell.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkQuadrilateralCellExplicit.h"
+#endif
+
 #endif

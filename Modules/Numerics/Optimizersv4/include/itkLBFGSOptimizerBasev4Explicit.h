@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkLBFGSOptimizerBasev4_h__
+#define __ExplicitInstantiation_itkLBFGSOptimizerBasev4_h__
+extern template class itk::LBFGSOptimizerBasev4<vnl_lbfgsb>;
+extern template class itk::LBFGSOptimizerBasev4<vnl_lbfgs>;
+#endif //__ExplicitInstantiation_itkLBFGSOptimizerBasev4_h__

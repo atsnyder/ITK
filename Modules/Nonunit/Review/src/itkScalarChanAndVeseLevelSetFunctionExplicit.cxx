@@ -1,0 +1,4 @@
+#include "itkScalarChanAndVeseLevelSetFunction.h"
+
+template class itk::ScalarChanAndVeseLevelSetFunction<itk::Image<double, 3u>, itk::Image<float, 3u>, itk::ConstrainedRegionBasedLevelSetFunctionSharedData<itk::Image<double, 3u>, itk::Image<float, 3u>, itk::ScalarChanAndVeseLevelSetFunctionData<itk::Image<double, 3u>, itk::Image<float, 3u> > > >; //Instantiated 10 times
+template class itk::ScalarChanAndVeseLevelSetFunction<itk::Image<float, 2u>, itk::Image<float, 2u>, itk::ConstrainedRegionBasedLevelSetFunctionSharedData<itk::Image<float, 2u>, itk::Image<float, 2u>, itk::ScalarChanAndVeseLevelSetFunctionData<itk::Image<float, 2u>, itk::Image<float, 2u> > > >; //Instantiated 4 times

@@ -395,4 +395,8 @@ protected: //made protected so other iterators can access
 #include "itkImageReverseConstIterator.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkImageReverseConstIteratorExplicit.h"
+#endif
+
 #endif

@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkResourceProbesCollectorBase_h__
+#define __ExplicitInstantiation_itkResourceProbesCollectorBase_h__
+#include "itkMemoryProbe.h"
+extern template class itk::ResourceProbesCollectorBase<itk::MemoryProbe>;
+#endif //__ExplicitInstantiation_itkResourceProbesCollectorBase_h__

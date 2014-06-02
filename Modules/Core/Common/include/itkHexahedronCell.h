@@ -147,4 +147,8 @@ private:
 #include "itkHexahedronCell.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkHexahedronCellExplicit.h"
+#endif
+
 #endif

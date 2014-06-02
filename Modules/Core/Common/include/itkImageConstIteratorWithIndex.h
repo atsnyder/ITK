@@ -316,4 +316,8 @@ protected: //made protected so other iterators can access
 #include "itkImageConstIteratorWithIndex.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkImageConstIteratorWithIndexExplicit.h"
+#endif
+
 #endif

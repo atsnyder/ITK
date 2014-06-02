@@ -225,4 +225,8 @@ private:
 #include "itkSimplexMeshVolumeCalculator.hxx"
 #endif
 
-#endif /* __SimplexMeshVolumeCalculator_h */
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkSimplexMeshVolumeCalculatorExplicit.h"
+#endif
+
+    #endif /* __SimplexMeshVolumeCalculator_h */

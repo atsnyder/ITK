@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkPostOrderTreeIterator_h__
+#define __ExplicitInstantiation_itkPostOrderTreeIterator_h__
+//exclude TreeContainer
+#endif //__ExplicitInstantiation_itkPostOrderTreeIterator_h__

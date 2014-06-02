@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkImageMaskSpatialObject_h__
+#define __ExplicitInstantiation_itkImageMaskSpatialObject_h__
+extern template class itk::ImageMaskSpatialObject<3u>;
+extern template class itk::ImageMaskSpatialObject<2u>;
+#endif //__ExplicitInstantiation_itkImageMaskSpatialObject_h__

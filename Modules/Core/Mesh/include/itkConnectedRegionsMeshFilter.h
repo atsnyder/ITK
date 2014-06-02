@@ -257,4 +257,8 @@ private:
 #include "itkConnectedRegionsMeshFilter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkConnectedRegionsMeshFilterExplicit.h"
 #endif
+
+    #endif

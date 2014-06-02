@@ -1,0 +1,5 @@
+#ifndef __ExplicitInstantiation_itkThreadedImageRegionPartitioner_h__
+#define __ExplicitInstantiation_itkThreadedImageRegionPartitioner_h__
+extern template class itk::ThreadedImageRegionPartitioner<2u>;
+extern template class itk::ThreadedImageRegionPartitioner<3u>;
+#endif //__ExplicitInstantiation_itkThreadedImageRegionPartitioner_h__

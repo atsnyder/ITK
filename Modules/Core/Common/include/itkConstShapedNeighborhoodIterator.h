@@ -380,4 +380,8 @@ protected:
 #include "itkConstShapedNeighborhoodIterator.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkConstShapedNeighborhoodIteratorExplicit.h"
+#endif
+
 #endif
