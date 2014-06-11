@@ -28,6 +28,10 @@ itkMeshFstreamTest.cxx
 itkMeshSourceGraftOutputTest.cxx
 itkMeshSpatialObjectIOTest.cxx
 itkTriangleMeshToSimplexMeshFilter2Test.cxx
+itkCellInterfaceTest.cxx
+itkNewTest.cxx
+itkQuadrilateralCellTest.cxx
+itkTriangleCellTest.cxx
 )
 
 set(ITKMesh-Test_LIBRARIES ${ITKMesh-Test_LIBRARIES} ITKSpatialObjects)
@@ -164,6 +168,10 @@ itk_add_test(NAME itkMeshSpatialObjectIOTest2
 itk_add_test(NAME itkTriangleMeshToSimplexMeshFilter2Test
       COMMAND ITKMeshTestDriver itkTriangleMeshToSimplexMeshFilter2Test)
 
+itk_add_test(NAME itkNewTest COMMAND ITKCommon1TestDriver itkNewTest)
+itk_add_test(NAME itkCellInterfaceTest COMMAND ITKCommon1TestDriver itkCellInterfaceTest)
+itk_add_test(NAME itkTriangleCellTest COMMAND ITKCommon1TestDriver itkTriangleCellTest)
+itk_add_test(NAME itkQuadrilateralCellTest COMMAND ITKCommon1TestDriver itkQuadrilateralCellTest)
 
 
 set_tests_properties(itkVTKPolyDataReaderTest2
