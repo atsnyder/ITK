@@ -24,7 +24,74 @@ done |tee ~/Symbols.list
 
 ###for SRC_DIR in $(find  /Users/johnsonhj/Dashboard/src/ITK/Modules -name src -type d |fgrep -v ThirdParty |fgrep "/Common/"); do
 
-WHAT_TO_DO=ImageBase
+DONE /Users/johnsonhj/Dashboard/src/ITK/Modules/Core/Common
+DONE /Users/johnsonhj/Dashboard/src/ITK/Modules/IO/ImageBase
+
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/NIFTI
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Core/TestKernel
+
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Bridge/VTK
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Bridge/VtkGlue
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Compatibility/Deprecated
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Core/GPUCommon
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Core/GPUFiniteDifference
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Core/Mesh
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Core/QuadEdgeMesh
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Core/SpatialObjects
+
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Filtering/BiasCorrection
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Filtering/FFT
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Filtering/GPUAnisotropicSmoothing
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Filtering/GPUImageFilterBase
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Filtering/GPUSmoothing
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Filtering/GPUThresholding
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Filtering/LabelMap
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Filtering/Path
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/BioRad
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/BMP
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/CSV
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/DCMTK
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/GDCM
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/GE
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/GIPL
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/HDF5
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/IPL
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/JPEG
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/LSM
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/Mesh
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/Meta
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/MINC
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/MRC
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/NIFTI
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/NRRD
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/PhilipsREC
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/PNG
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/Siemens
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/SpatialObjects
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/Stimulate
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/TIFF
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/TransformBase
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/TransformHDF5
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/TransformInsightLegacy
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/TransformMatlab
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/VTK
+/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/XML
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Nonunit/Review
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Numerics/FEM
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Numerics/Optimizers
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Numerics/Optimizersv4
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Numerics/Polynomials
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Numerics/Statistics
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Registration/GPUPDEDeformable
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Segmentation/BioCell
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Segmentation/KLMRegionGrowing
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Segmentation/Watersheds
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Video/BridgeOpenCV
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Video/BridgeVXL
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Video/Core
+/Users/johnsonhj/Dashboard/src/ITK/Modules/Video/IO
+
+WHAT_TO_DO=NIFTI
 
 for SRC_DIR in $(find  /Users/johnsonhj/Dashboard/src/ITK/Modules -name src -type d |fgrep -v ThirdParty|fgrep "/${WHAT_TO_DO}/"); do
   INCLUDE_DIR=$(dirname $SRC_DIR)/include
