@@ -248,4 +248,8 @@ private:
 #include "itkImageSeriesWriter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkImageSeriesWriterExplicit.h"
+#endif
+
 #endif // __itkImageSeriesWriter_h

@@ -199,4 +199,8 @@ private:
 #include "itkImageIOFactoryRegisterManager.h"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkImageFileReaderExplicit.h"
+#endif
+
 #endif // __itkImageFileReader_h

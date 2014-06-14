@@ -1,3 +1,9 @@
+if(ITK_COMMON_EXPLICIT_INSTANTIATION)
+  file(GLOB ITK_COMMON_EXPLICIT_SOURCES "*Explicit.cxx")
+else()
+  set(ITK_COMMON_EXPLICIT_SOURCES "")
+endif()
+
 set(ITKIOImageBase_SRC
 itkArchetypeSeriesFileNames.cxx
 itkImageIOFactory.cxx
@@ -6,6 +12,8 @@ itkNumericSeriesFileNames.cxx
 itkImageIOBase.cxx
 itkRegularExpressionSeriesFileNames.cxx
 itkStreamingImageIOBase.cxx
+
+${ITK_COMMON_EXPLICIT_SOURCES}
 )
 
 add_library(ITKIOImageBase ${ITK_LIBRARY_BUILD_TYPE} ${ITKIOImageBase_SRC})
