@@ -20,11 +20,11 @@ for test_dir in ~/src/NEP-11/ITKv4-build; do
   for i in $(find ${test_dir} -name "*.o") ; do
     nm $i | c++filt |fgrep -v " U "|grep " S " |fgrep -v "(.eh)" | grep "itk::" |grep "::~";
   done ;
-done |tee /tmp/Symbols.list
+done |tee ~/Symbols.list
 
 ###for SRC_DIR in $(find  /Users/johnsonhj/Dashboard/src/ITK/Modules -name src -type d |fgrep -v ThirdParty |fgrep "/Common/"); do
 
-WHAT_TO_DO=QuadEdgeMesh
+WHAT_TO_DO=ImageBase
 
 for SRC_DIR in $(find  /Users/johnsonhj/Dashboard/src/ITK/Modules -name src -type d |fgrep -v ThirdParty|fgrep "/${WHAT_TO_DO}/"); do
   INCLUDE_DIR=$(dirname $SRC_DIR)/include
@@ -32,7 +32,7 @@ for SRC_DIR in $(find  /Users/johnsonhj/Dashboard/src/ITK/Modules -name src -typ
   echo ${INCLUDE_DIR}
 
   for i in $(ls *.h|fgrep -v "Explicit.h") ; do
-    python /Users/johnsonhj/PycharmProjects/ParseReports/ParseForExplicitInstantiation.py --classFile $i --minRepeats=3 ;
+    python /Users/johnsonhj/Dashboard/src/ITK/Utilities/Maintenance/ParseForExplicitInstantiation.py --classFile $i --minRepeats=3 ;
   done
 done
 
@@ -47,7 +47,7 @@ import re
 
 
 class ProcessClassFromFile:
-    def __init__(self, inputHeader, minimumRepeatNumber,inputSymbolsFile='/tmp/Symbols.list' ):
+    def __init__(self, inputHeader, minimumRepeatNumber,inputSymbolsFile='/Users/johnsonhj/Symbols.list' ):
 
         self.minimumRepeatNumber = minimumRepeatNumber
 
