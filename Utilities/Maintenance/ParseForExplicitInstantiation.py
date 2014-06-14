@@ -91,7 +91,7 @@ DONE /Users/johnsonhj/Dashboard/src/ITK/Modules/IO/ImageBase
 /Users/johnsonhj/Dashboard/src/ITK/Modules/Video/Core
 /Users/johnsonhj/Dashboard/src/ITK/Modules/Video/IO
 
-WHAT_TO_DO=NIFTI
+WHAT_TO_DO=TestKernel
 
 for SRC_DIR in $(find  /Users/johnsonhj/Dashboard/src/ITK/Modules -name src -type d |fgrep -v ThirdParty|fgrep "/${WHAT_TO_DO}/"); do
   INCLUDE_DIR=$(dirname $SRC_DIR)/include

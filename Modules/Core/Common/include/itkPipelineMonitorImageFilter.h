@@ -204,4 +204,8 @@ namespace itk
 #include "itkPipelineMonitorImageFilter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkPipelineMonitorImageFilterExplicit.h"
+#endif
+
 #endif //__itkPipelineMonitorImageFilter_hxx
