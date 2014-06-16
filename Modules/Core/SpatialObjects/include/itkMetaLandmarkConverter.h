@@ -82,4 +82,8 @@ private:
   #include "itkMetaLandmarkConverter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkMetaLandmarkConverterExplicit.h"
+#endif
+
 #endif

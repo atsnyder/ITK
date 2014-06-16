@@ -74,4 +74,8 @@ protected:
 #include "itkGroupSpatialObject.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkGroupSpatialObjectExplicit.h"
+#endif
+
 #endif // __itkGroupSpatialObject_h

@@ -82,4 +82,8 @@ private:
   #include "itkMetaArrowConverter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkMetaArrowConverterExplicit.h"
+#endif
+
 #endif

@@ -1,6 +1,6 @@
 #ifndef __ExplicitInstantiation_itkTubeSpatialObject_h__
 #define __ExplicitInstantiation_itkTubeSpatialObject_h__
-#include "itkVesselTubeSpatialObject.h"
+#include "itkVesselTubeSpatialObjectPoint.h"
 #include "itkDTITubeSpatialObjectPoint.h"
 extern template class itk::TubeSpatialObject<3u, itk::TubeSpatialObjectPoint<3u> >;
 extern template class itk::TubeSpatialObject<3u, itk::VesselTubeSpatialObjectPoint<3u> >;

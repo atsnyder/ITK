@@ -133,4 +133,8 @@ protected:
 #include "itkSceneSpatialObject.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkSceneSpatialObjectExplicit.h"
+#endif
+
 #endif // __SceneSpatialObject_h

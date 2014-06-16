@@ -85,4 +85,8 @@ private:
 #include "itkVesselTubeSpatialObject.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkVesselTubeSpatialObjectExplicit.h"
+#endif
+
 #endif // __itkVesselTubeSpatialObject_h

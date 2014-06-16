@@ -90,4 +90,8 @@ protected:
 #include "itkContourSpatialObjectPoint.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkContourSpatialObjectPointExplicit.h"
+#endif
+
 #endif // __itkContourSpatialObjectPoint_h

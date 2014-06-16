@@ -117,4 +117,8 @@ protected:
 #include "itkEllipseSpatialObject.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkEllipseSpatialObjectExplicit.h"
+#endif
+
 #endif // __itkEllipseSpatialObject_h

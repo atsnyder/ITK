@@ -123,4 +123,8 @@ protected:
 #include "itkLandmarkSpatialObject.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkLandmarkSpatialObjectExplicit.h"
+#endif
+
 #endif // __itkLandmarkSpatialObject_h

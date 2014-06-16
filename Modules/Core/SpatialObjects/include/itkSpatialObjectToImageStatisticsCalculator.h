@@ -141,4 +141,8 @@ private:
 #include "itkSpatialObjectToImageStatisticsCalculator.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkSpatialObjectToImageStatisticsCalculatorExplicit.h"
+#endif
+
 #endif /* __itkSpatialObjectToImageStatisticsCalculator_h */

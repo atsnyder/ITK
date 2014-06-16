@@ -81,4 +81,8 @@ private:
   #include "itkMetaDTITubeConverter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkMetaDTITubeConverterExplicit.h"
+#endif
+
 #endif

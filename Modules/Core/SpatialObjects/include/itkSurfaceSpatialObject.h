@@ -126,4 +126,8 @@ protected:
 #include "itkSurfaceSpatialObject.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkSurfaceSpatialObjectExplicit.h"
+#endif
+
 #endif // __itkSurfaceSpatialObject_h

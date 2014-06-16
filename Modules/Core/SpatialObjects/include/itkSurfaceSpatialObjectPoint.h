@@ -78,4 +78,8 @@ protected:
 #include "itkSurfaceSpatialObjectPoint.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkSurfaceSpatialObjectPointExplicit.h"
+#endif
+
 #endif // __itkSurfaceSpatialObjectPoint_h

@@ -129,4 +129,8 @@ protected:
 #include "itkVesselTubeSpatialObjectPoint.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkVesselTubeSpatialObjectPointExplicit.h"
+#endif
+
 #endif // __itkVesselTubeSpatialObjectPoint_h

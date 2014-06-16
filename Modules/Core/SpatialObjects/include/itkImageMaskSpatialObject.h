@@ -104,4 +104,8 @@ protected:
 #include "itkImageMaskSpatialObject.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkImageMaskSpatialObjectExplicit.h"
+#endif
+
 #endif //__itkImageMaskSpatialObject_h

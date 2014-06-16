@@ -181,4 +181,8 @@ private:
 #include "itkTubeSpatialObject.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkTubeSpatialObjectExplicit.h"
+#endif
+
 #endif // __itkTubeSpatialObject_h

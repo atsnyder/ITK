@@ -99,4 +99,8 @@ private:
 #include "itkSpatialObjectProperty.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkSpatialObjectPropertyExplicit.h"
+#endif
+
 #endif // __SpatialObjectProperty_h

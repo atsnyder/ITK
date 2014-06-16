@@ -129,4 +129,8 @@ private:
 #include "itkPolygonSpatialObject.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkPolygonSpatialObjectExplicit.h"
+#endif
+
 #endif  // __itkPolygonSpatialObject_h

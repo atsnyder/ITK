@@ -84,4 +84,8 @@ protected:
 #include "itkSpatialObjectTreeContainer.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkSpatialObjectTreeContainerExplicit.h"
+#endif
+
 #endif

@@ -89,4 +89,8 @@ private:
   #include "itkMetaImageConverter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkMetaImageConverterExplicit.h"
+#endif
+
 #endif

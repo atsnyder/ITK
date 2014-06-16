@@ -165,4 +165,8 @@ protected:
 #include "itkImageSpatialObject.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkImageSpatialObjectExplicit.h"
+#endif
+
 #endif //__itkImageSpatialObject_h

@@ -618,4 +618,8 @@ private:
 #endif
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkSpatialObjectExplicit.h"
+#endif
+
 #endif // __itkSpatialObject_h

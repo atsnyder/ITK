@@ -102,4 +102,8 @@ protected:
 #include "itkBoxSpatialObject.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkBoxSpatialObjectExplicit.h"
+#endif
+
 #endif // __itkBoxSpatialObject_h

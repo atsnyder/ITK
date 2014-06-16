@@ -124,4 +124,8 @@ private:
 #include "itkAffineGeometryFrame.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkAffineGeometryFrameExplicit.h"
+#endif
+
 #endif /* __itkAffineGeometryFrame_h */

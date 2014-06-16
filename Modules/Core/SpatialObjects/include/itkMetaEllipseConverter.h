@@ -82,4 +82,8 @@ private:
   #include "itkMetaEllipseConverter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkMetaEllipseConverterExplicit.h"
+#endif
+
 #endif
