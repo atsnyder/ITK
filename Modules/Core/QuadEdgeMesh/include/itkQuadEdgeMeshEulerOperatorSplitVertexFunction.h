@@ -89,4 +89,8 @@ private:
 
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkQuadEdgeMeshEulerOperatorSplitVertexFunctionExplicit.h"
+#endif
+
 // eof - itkQuadEdgeMeshEulerOperatorSplitVertexFunction.h

@@ -289,4 +289,8 @@ public:
 
 #include "itkQuadEdgeMeshFrontIterator.hxx"
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkQuadEdgeMeshFrontIteratorExplicit.h"
+#endif
+
 #endif

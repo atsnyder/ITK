@@ -521,4 +521,8 @@ protected:
 #include "itkQuadEdgeMesh.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkQuadEdgeMeshExplicit.h"
+#endif
+
 #endif

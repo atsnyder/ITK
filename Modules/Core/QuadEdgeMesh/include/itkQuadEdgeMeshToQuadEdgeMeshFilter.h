@@ -317,4 +317,8 @@ void CopyMeshToMeshPoints(const TInputMesh *in, TOutputMesh *out)
 #include "itkQuadEdgeMeshToQuadEdgeMeshFilter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkQuadEdgeMeshToQuadEdgeMeshFilterExplicit.h"
+#endif
+
 #endif

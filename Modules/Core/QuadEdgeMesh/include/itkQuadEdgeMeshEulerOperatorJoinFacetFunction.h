@@ -69,4 +69,8 @@ private:
 
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkQuadEdgeMeshEulerOperatorJoinFacetFunctionExplicit.h"
+#endif
+
 // eof - itkQuadEdgeMeshEulerOperatorJoinFacetFunction.h

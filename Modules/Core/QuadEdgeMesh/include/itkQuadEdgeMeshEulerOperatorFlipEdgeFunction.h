@@ -96,4 +96,8 @@ private:
 
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkQuadEdgeMeshEulerOperatorFlipEdgeFunctionExplicit.h"
+#endif
+
 // eof - itkQuadEdgeMeshEulerOperatorFlipEdgeFunction.h

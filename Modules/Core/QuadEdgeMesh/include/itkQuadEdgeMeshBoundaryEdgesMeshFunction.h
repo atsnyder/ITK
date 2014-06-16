@@ -75,4 +75,8 @@ private:
 #include "itkQuadEdgeMeshBoundaryEdgesMeshFunction.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkQuadEdgeMeshBoundaryEdgesMeshFunctionExplicit.h"
+#endif
+
 #endif

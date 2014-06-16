@@ -72,4 +72,8 @@ private:
 
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkQuadEdgeMeshZipMeshFunctionExplicit.h"
+#endif
+
 // eof - itkQuadEdgeMeshZipMeshFunction.h
