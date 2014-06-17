@@ -10,6 +10,7 @@ itk_module(ITKDisplacementField
     ITKTransform
     ITKImageGrid
     ITKImageIntensity
+    ITKImageFunction
   TEST_DEPENDS
     ITKTestKernel
   DESCRIPTION

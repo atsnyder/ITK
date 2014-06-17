@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkSumOfSquaresImageFunction_h__
+#define __ExplicitInstantiation_itkSumOfSquaresImageFunction_h__
+extern template class itk::SumOfSquaresImageFunction<itk::Image<float, 2u>, double>;
+#endif //__ExplicitInstantiation_itkSumOfSquaresImageFunction_h__

@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkNeighborhoodBinaryThresholdImageFunction_h__
+#define __ExplicitInstantiation_itkNeighborhoodBinaryThresholdImageFunction_h__
+extern template class itk::NeighborhoodBinaryThresholdImageFunction<itk::Image<float, 2u>, float>;
+#endif //__ExplicitInstantiation_itkNeighborhoodBinaryThresholdImageFunction_h__

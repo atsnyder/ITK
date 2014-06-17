@@ -99,4 +99,8 @@ private:
 };
 } // end namespace itk
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkNearestNeighborInterpolateImageFunctionExplicit.h"
+#endif
+
 #endif

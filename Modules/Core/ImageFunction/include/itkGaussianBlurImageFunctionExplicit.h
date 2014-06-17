@@ -1,0 +1,4 @@
+#ifndef __ExplicitInstantiation_itkGaussianBlurImageFunction_h__
+#define __ExplicitInstantiation_itkGaussianBlurImageFunction_h__
+extern template class itk::GaussianBlurImageFunction<itk::Image<float, 2u>, double>;
+#endif //__ExplicitInstantiation_itkGaussianBlurImageFunction_h__

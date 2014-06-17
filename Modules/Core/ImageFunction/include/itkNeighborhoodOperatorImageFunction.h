@@ -135,4 +135,8 @@ private:
 #endif
 */
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkNeighborhoodOperatorImageFunctionExplicit.h"
+#endif
+
 #endif

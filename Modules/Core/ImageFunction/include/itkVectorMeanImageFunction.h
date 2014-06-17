@@ -128,4 +128,8 @@ private:
 #include "itkVectorMeanImageFunction.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkVectorMeanImageFunctionExplicit.h"
+#endif
+
 #endif

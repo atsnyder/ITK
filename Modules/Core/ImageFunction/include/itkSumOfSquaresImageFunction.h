@@ -140,4 +140,8 @@ private:
 #include "itkSumOfSquaresImageFunction.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkSumOfSquaresImageFunctionExplicit.h"
+#endif
+
 #endif

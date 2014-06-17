@@ -350,4 +350,8 @@ private:
 #include "itkWindowedSincInterpolateImageFunction.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkWindowedSincInterpolateImageFunctionExplicit.h"
+#endif
+
 #endif // _itkWindowedSincInterpolateImageFunction_h
