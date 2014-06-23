@@ -150,4 +150,8 @@ private:
 #include "itkDOMWriter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkDOMWriterExplicit.h"
+#endif
+
 #endif // __itkDOMWriter_h

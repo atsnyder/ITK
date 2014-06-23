@@ -155,4 +155,8 @@ private:
 #include "itkDOMReader.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkDOMReaderExplicit.h"
+#endif
+
 #endif // __itkDOMReader_h

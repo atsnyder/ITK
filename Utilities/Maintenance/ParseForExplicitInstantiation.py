@@ -116,23 +116,6 @@ import docopt
 class ProcessClassFromFile:
     def __init__(self, inputHeader, minimumRepeatNumber,inputSymbolsFile='/scratch/kent/itktest/NoExplicit-build/Symbols.list' ):
 
-        self.minimumRepeatNumber = minimumRepeatNumber
-
-        self.inputHeaderFullPath=os.path.realpath(inputHeader)
-        self.FileClassToMakeExplicit=os.path.basename(self.inputHeaderFullPath)
-        self.BaseClassName=self.FileClassToMakeExplicit.replace('itk','').replace('.h','')
-        self.basePath=os.path.dirname(os.path.dirname(self.inputHeaderFullPath))
-        print self.basePath
-        print self.BaseClassName
-
-        self.ExplicitHeaderFileName = os.path.join(self.basePath,"include","itk{0}Explicit.h".format(self.BaseClassName))
-        self.CodeFileName = os.path.join(self.basePath,"src","itk{0}Explicit.cxx".format(self.BaseClassName))
-        self._ParseForExtraDirectives()
-        self.HeaderString = ""
-        self.CodeString = ""
-        self._ParseSymbolFile(inputSymbolsFile)
-        self._MakeHeaderAndCodeStrings()
-        self._GenerateFiles()
         self.ITKCopyright = """/*=========================================================================
  *
  *  Copyright Insight Software Consortium
@@ -151,6 +134,24 @@ class ProcessClassFromFile:
  *
  *=========================================================================*/
 """
+        self.minimumRepeatNumber = minimumRepeatNumber
+
+        self.inputHeaderFullPath=os.path.realpath(inputHeader)
+        self.FileClassToMakeExplicit=os.path.basename(self.inputHeaderFullPath)
+        self.BaseClassName=self.FileClassToMakeExplicit.replace('itk','').replace('.h','')
+        self.basePath=os.path.dirname(os.path.dirname(self.inputHeaderFullPath))
+        print self.basePath
+        print self.BaseClassName
+
+        self.ExplicitHeaderFileName = os.path.join(self.basePath,"include","itk{0}Explicit.h".format(self.BaseClassName))
+        self.CodeFileName = os.path.join(self.basePath,"src","itk{0}Explicit.cxx".format(self.BaseClassName))
+        self._ParseForExtraDirectives()
+        self.HeaderString = ""
+        self.CodeString = ""
+        self._ParseSymbolFile(inputSymbolsFile)
+        self._MakeHeaderAndCodeStrings()
+        self._GenerateFiles()
+
     def _ParseSymbolFile(self,inputSymbolsFile):
         self.SymbolsMapping = collections.defaultdict(int)
 
@@ -242,7 +243,7 @@ so that build times are minimized."""
             HeaderString += "extern template class {0};\n".format(key)
         HeaderString += "#endif //__itk{0}Explicit_h\n".format(self.BaseClassName)
 
-        CodeString= self.ITKCopyright
+        CodeString = self.ITKCopyright
         if len(self.SymbolsMapping.keys()) >= 1:
             CodeString="""#include "itk{0}.h"\n""".format(self.BaseClassName)
             for key in self.SymbolsMapping.keys():

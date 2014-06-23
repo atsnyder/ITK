@@ -1,3 +1,6 @@
+if(ITK_COMMON_EXPLICIT_INSTANTIATION)
+  file(GLOB ITK_ITKIOXML_EXPLICIT_SOURCES "*Explicit.cxx")
+endif()
 set(ITKIOXML_SRC
   itkXMLFile.cxx
   itkDOMNode.cxx
@@ -5,6 +8,7 @@ set(ITKIOXML_SRC
   itkDOMNodeXMLWriter.cxx
   itkStringTools.cxx
   itkFancyString.cxx
+  ${ITK_ITKIOXML_EXPLICIT_SOURCES}
 )
 
 add_library(ITKIOXML ${ITKIOXML_SRC})
