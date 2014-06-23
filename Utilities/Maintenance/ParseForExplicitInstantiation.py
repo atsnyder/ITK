@@ -22,84 +22,84 @@ for test_dir in ~/src/NEP-11/ITKv4-build; do
   done ;
 done |tee ~/Symbols.list
 
-###for SRC_DIR in $(find  /Users/johnsonhj/Dashboard/src/ITK/Modules -name src -type d |fgrep -v ThirdParty |fgrep "/Common/"); do
+###for SRC_DIR in $(find  ITK/Modules -name src -type d |fgrep -v ThirdParty |fgrep "/Common/"); do
 
-DONE /Users/johnsonhj/Dashboard/src/ITK/Modules/Core/Common
-DONE /Users/johnsonhj/Dashboard/src/ITK/Modules/IO/ImageBase
+DONE ITK/Modules/Core/Common
+DONE ITK/Modules/IO/ImageBase
+DONE ITK/Modlules/Core/FiniteDifference
 
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/NIFTI
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Core/TestKernel
+ITK/Modules/IO/NIFTI
+ITK/Modules/Core/TestKernel
+ITK/Modules/Bridge/VTK
+ITK/Modules/Bridge/VtkGlue
+ITK/Modules/Compatibility/Deprecated
+ITK/Modules/Core/GPUCommon
+ITK/Modules/Core/GPUFiniteDifference
+ITK/Modules/Core/Mesh
+ITK/Modules/Core/QuadEdgeMesh
+ITK/Modules/Core/SpatialObjects
 
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Bridge/VTK
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Bridge/VtkGlue
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Compatibility/Deprecated
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Core/GPUCommon
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Core/GPUFiniteDifference
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Core/Mesh
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Core/QuadEdgeMesh
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Core/SpatialObjects
-
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Filtering/BiasCorrection
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Filtering/FFT
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Filtering/GPUAnisotropicSmoothing
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Filtering/GPUImageFilterBase
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Filtering/GPUSmoothing
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Filtering/GPUThresholding
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Filtering/LabelMap
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Filtering/Path
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/BioRad
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/BMP
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/CSV
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/DCMTK
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/GDCM
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/GE
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/GIPL
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/HDF5
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/IPL
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/JPEG
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/LSM
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/Mesh
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/Meta
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/MINC
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/MRC
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/NIFTI
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/NRRD
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/PhilipsREC
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/PNG
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/Siemens
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/SpatialObjects
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/Stimulate
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/TIFF
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/TransformBase
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/TransformHDF5
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/TransformInsightLegacy
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/TransformMatlab
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/VTK
-/Users/johnsonhj/Dashboard/src/ITK/Modules/IO/XML
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Nonunit/Review
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Numerics/FEM
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Numerics/Optimizers
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Numerics/Optimizersv4
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Numerics/Polynomials
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Numerics/Statistics
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Registration/GPUPDEDeformable
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Segmentation/BioCell
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Segmentation/KLMRegionGrowing
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Segmentation/Watersheds
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Video/BridgeOpenCV
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Video/BridgeVXL
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Video/Core
-/Users/johnsonhj/Dashboard/src/ITK/Modules/Video/IO
+ITK/Modules/Filtering/BiasCorrection
+ITK/Modules/Filtering/FFT
+ITK/Modules/Filtering/GPUAnisotropicSmoothing
+ITK/Modules/Filtering/GPUImageFilterBase
+ITK/Modules/Filtering/GPUSmoothing
+ITK/Modules/Filtering/GPUThresholding
+ITK/Modules/Filtering/LabelMap
+ITK/Modules/Filtering/Path
+ITK/Modules/IO/BioRad
+ITK/Modules/IO/BMP
+ITK/Modules/IO/CSV
+ITK/Modules/IO/DCMTK
+ITK/Modules/IO/GDCM
+ITK/Modules/IO/GE
+ITK/Modules/IO/GIPL
+ITK/Modules/IO/HDF5
+ITK/Modules/IO/IPL
+ITK/Modules/IO/JPEG
+ITK/Modules/IO/LSM
+ITK/Modules/IO/Mesh
+ITK/Modules/IO/Meta
+ITK/Modules/IO/MINC
+ITK/Modules/IO/MRC
+ITK/Modules/IO/NIFTI
+ITK/Modules/IO/NRRD
+ITK/Modules/IO/PhilipsREC
+ITK/Modules/IO/PNG
+ITK/Modules/IO/Siemens
+ITK/Modules/IO/SpatialObjects
+ITK/Modules/IO/Stimulate
+ITK/Modules/IO/TIFF
+ITK/Modules/IO/TransformBase
+ITK/Modules/IO/TransformHDF5
+ITK/Modules/IO/TransformInsightLegacy
+ITK/Modules/IO/TransformMatlab
+ITK/Modules/IO/VTK
+ITK/Modules/IO/XML
+ITK/Modules/Nonunit/Review
+ITK/Modules/Numerics/FEM
+ITK/Modules/Numerics/Optimizers
+ITK/Modules/Numerics/Optimizersv4
+ITK/Modules/Numerics/Polynomials
+ITK/Modules/Numerics/Statistics
+ITK/Modules/Registration/GPUPDEDeformable
+ITK/Modules/Segmentation/BioCell
+ITK/Modules/Segmentation/KLMRegionGrowing
+ITK/Modules/Segmentation/Watersheds
+ITK/Modules/Video/BridgeOpenCV
+ITK/Modules/Video/BridgeVXL
+ITK/Modules/Video/Core
+ITK/Modules/Video/IO
 
 WHAT_TO_DO=TestKernel
 
-for SRC_DIR in $(find  /Users/johnsonhj/Dashboard/src/ITK/Modules -name src -type d |fgrep -v ThirdParty|fgrep "/${WHAT_TO_DO}/"); do
+for SRC_DIR in $(find  ITK/Modules -name src -type d |fgrep -v ThirdParty|fgrep "/${WHAT_TO_DO}/"); do
   INCLUDE_DIR=$(dirname $SRC_DIR)/include
   cd ${INCLUDE_DIR}
   echo ${INCLUDE_DIR}
 
   for i in $(ls *.h|fgrep -v "Explicit.h") ; do
-    python /Users/johnsonhj/Dashboard/src/ITK/Utilities/Maintenance/ParseForExplicitInstantiation.py --classFile $i --minRepeats=3 ;
+    python ITK/Utilities/Maintenance/ParseForExplicitInstantiation.py --classFile $i --minRepeats=3 ;
   done
 done
 
@@ -111,10 +111,10 @@ import sys
 
 import collections
 import re
-
+import docopt
 
 class ProcessClassFromFile:
-    def __init__(self, inputHeader, minimumRepeatNumber,inputSymbolsFile='/Users/johnsonhj/Symbols.list' ):
+    def __init__(self, inputHeader, minimumRepeatNumber,inputSymbolsFile='/scratch/kent/itktest/NoExplicit-build/Symbols.list' ):
 
         self.minimumRepeatNumber = minimumRepeatNumber
 
@@ -133,7 +133,24 @@ class ProcessClassFromFile:
         self._ParseSymbolFile(inputSymbolsFile)
         self._MakeHeaderAndCodeStrings()
         self._GenerateFiles()
-
+        self.ITKCopyright = """/*=========================================================================
+ *
+ *  Copyright Insight Software Consortium
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0.txt
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ *=========================================================================*/
+"""
     def _ParseSymbolFile(self,inputSymbolsFile):
         self.SymbolsMapping = collections.defaultdict(int)
 
@@ -210,8 +227,9 @@ so that build times are minimized."""
         if self._NoWorkToDo():
             print("No matching expansions!")
             return
-        HeaderString="""#ifndef __ExplicitInstantiation_itk{0}_h__
-#define __ExplicitInstantiation_itk{0}_h__
+        HeaderString = self.ITKCopyright
+        HeaderString+="""#ifndef __itk{0}Explicit_h
+#define __itk{0}Explicit_h
 """.format(self.BaseClassName)
 
         for extraInclude in self.extraIncludes:
@@ -222,13 +240,14 @@ so that build times are minimized."""
             HeaderString += "//subs {0} {1}\n".format(subsPat[0],subsPat[1])
         for key in self.SymbolsMapping.keys():
             HeaderString += "extern template class {0};\n".format(key)
-        HeaderString += "#endif //__ExplicitInstantiation_itk{0}_h__".format(self.BaseClassName)
+        HeaderString += "#endif //__itk{0}Explicit_h\n".format(self.BaseClassName)
 
-        CodeString=""
+        CodeString= self.ITKCopyright
         if len(self.SymbolsMapping.keys()) >= 1:
             CodeString="""#include "itk{0}.h"\n""".format(self.BaseClassName)
             for key in self.SymbolsMapping.keys():
                 CodeString += "\ntemplate class {0}; //Instantiated {1} times".format(key,self.SymbolsMapping[key])
+            CodeString += "\n"
 
         self.CodeString = CodeString
         self.HeaderString = HeaderString

@@ -8,6 +8,10 @@ set(ITKImageFunction_SRC
 ${ITK_IMAGEFUNCTION_EXPLICIT_SOURCES}
 )
 
-add_library(ITKImageFunction ${ITKImageFunction_SRC})
-target_link_libraries(ITKImageFunction  ${ITKTransform_LIBRARIES})
-itk_module_target(ITKImageFunction)
+# only add library if it will have object files;
+# otherwise it causes a build error.
+if(ITKImageFunction_SRC)
+  add_library(ITKImageFunction ${ITKImageFunction_SRC})
+  target_link_libraries(ITKImageFunction  ${ITKTransform_LIBRARIES})
+  itk_module_target(ITKImageFunction)
+endif()
