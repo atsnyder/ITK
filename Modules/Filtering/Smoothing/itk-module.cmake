@@ -8,6 +8,7 @@ itk_module(ITKSmoothing
     ITKImageFunction
   TEST_DEPENDS
     ITKTestKernel
+    ITKImageAdaptors
   DESCRIPTION
     "${DOCUMENTATION}"
 )

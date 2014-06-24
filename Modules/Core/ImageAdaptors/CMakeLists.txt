@@ -1,2 +1,5 @@
 project(ITKImageAdaptors)
+if(ITK_COMMON_EXPLICIT_INSTANTIATION)
+  set(ITKImageAdaptors_LIBRARIES ITKImageAdaptors)
+endif()
 itk_module_impl()

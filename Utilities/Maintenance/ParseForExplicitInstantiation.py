@@ -25,71 +25,78 @@ done |tee ~/Symbols.list
 ###for SRC_DIR in $(find  ITK/Modules -name src -type d |fgrep -v ThirdParty |fgrep "/Common/"); do
 
 DONE ITK/Modules/Core/Common
-DONE ITK/Modules/IO/ImageBase
+DONE ITK/Modules/IO/*
 DONE ITK/Modlules/Core/FiniteDifference
-
-ITK/Modules/IO/NIFTI
-ITK/Modules/Core/TestKernel
-ITK/Modules/Bridge/VTK
-ITK/Modules/Bridge/VtkGlue
-ITK/Modules/Compatibility/Deprecated
-ITK/Modules/Core/GPUCommon
-ITK/Modules/Core/GPUFiniteDifference
-ITK/Modules/Core/Mesh
-ITK/Modules/Core/QuadEdgeMesh
-ITK/Modules/Core/SpatialObjects
-
-ITK/Modules/Filtering/BiasCorrection
-ITK/Modules/Filtering/FFT
-ITK/Modules/Filtering/GPUAnisotropicSmoothing
-ITK/Modules/Filtering/GPUImageFilterBase
-ITK/Modules/Filtering/GPUSmoothing
-ITK/Modules/Filtering/GPUThresholding
-ITK/Modules/Filtering/LabelMap
-ITK/Modules/Filtering/Path
-ITK/Modules/IO/BioRad
-ITK/Modules/IO/BMP
-ITK/Modules/IO/CSV
-ITK/Modules/IO/DCMTK
-ITK/Modules/IO/GDCM
-ITK/Modules/IO/GE
-ITK/Modules/IO/GIPL
-ITK/Modules/IO/HDF5
-ITK/Modules/IO/IPL
-ITK/Modules/IO/JPEG
-ITK/Modules/IO/LSM
-ITK/Modules/IO/Mesh
-ITK/Modules/IO/Meta
-ITK/Modules/IO/MINC
-ITK/Modules/IO/MRC
-ITK/Modules/IO/NIFTI
-ITK/Modules/IO/NRRD
-ITK/Modules/IO/PhilipsREC
-ITK/Modules/IO/PNG
-ITK/Modules/IO/Siemens
-ITK/Modules/IO/SpatialObjects
-ITK/Modules/IO/Stimulate
-ITK/Modules/IO/TIFF
-ITK/Modules/IO/TransformBase
-ITK/Modules/IO/TransformHDF5
-ITK/Modules/IO/TransformInsightLegacy
-ITK/Modules/IO/TransformMatlab
-ITK/Modules/IO/VTK
-ITK/Modules/IO/XML
-ITK/Modules/Nonunit/Review
-ITK/Modules/Numerics/FEM
-ITK/Modules/Numerics/Optimizers
-ITK/Modules/Numerics/Optimizersv4
-ITK/Modules/Numerics/Polynomials
-ITK/Modules/Numerics/Statistics
-ITK/Modules/Registration/GPUPDEDeformable
-ITK/Modules/Segmentation/BioCell
-ITK/Modules/Segmentation/KLMRegionGrowing
-ITK/Modules/Segmentation/Watersheds
-ITK/Modules/Video/BridgeOpenCV
-ITK/Modules/Video/BridgeVXL
-ITK/Modules/Video/Core
-ITK/Modules/Video/IO
+DONE ITK/Modules/Core/ImageAdapter
+TODO
+ITK/ModulesBridge/VTK/include
+ITK/ModulesBridge/VtkGlue/include
+ITK/ModulesCompatibility/V3Compatibility/include
+ITK/ModulesCore/GPUCommon/include
+ITK/ModulesCore/GPUFiniteDifference/include
+ITK/ModulesCore/TestKernel/include
+ITK/ModulesCore/Transform/include
+ITK/ModulesFiltering/AnisotropicSmoothing/include
+ITK/ModulesFiltering/AntiAlias/include
+ITK/ModulesFiltering/BinaryMathematicalMorphology/include
+ITK/ModulesFiltering/Colormap/include
+ITK/ModulesFiltering/Convolution/include
+ITK/ModulesFiltering/CurvatureFlow/include
+ITK/ModulesFiltering/Deconvolution/include
+ITK/ModulesFiltering/Denoising/include
+ITK/ModulesFiltering/DiffusionTensorImage/include
+ITK/ModulesFiltering/DisplacementField/include
+ITK/ModulesFiltering/DistanceMap/include
+ITK/ModulesFiltering/FastMarching/include
+ITK/ModulesFiltering/GPUAnisotropicSmoothing/include
+ITK/ModulesFiltering/GPUImageFilterBase/include
+ITK/ModulesFiltering/GPUSmoothing/include
+ITK/ModulesFiltering/GPUThresholding/include
+ITK/ModulesFiltering/ImageCompare/include
+ITK/ModulesFiltering/ImageCompose/include
+ITK/ModulesFiltering/ImageFeature/include
+ITK/ModulesFiltering/ImageFilterBase/include
+ITK/ModulesFiltering/ImageFusion/include
+ITK/ModulesFiltering/ImageGradient/include
+ITK/ModulesFiltering/ImageGrid/include
+ITK/ModulesFiltering/ImageIntensity/include
+ITK/ModulesFiltering/ImageLabel/include
+ITK/ModulesFiltering/ImageNoise/include
+ITK/ModulesFiltering/ImageSources/include
+ITK/ModulesFiltering/ImageStatistics/include
+ITK/ModulesFiltering/MathematicalMorphology/include
+ITK/ModulesFiltering/QuadEdgeMeshFiltering/include
+ITK/ModulesFiltering/Smoothing/include
+ITK/ModulesFiltering/SpatialFunction/include
+ITK/ModulesFiltering/Thresholding/include
+ITK/ModulesNumerics/Eigen/include
+ITK/ModulesNumerics/NarrowBand/include
+ITK/ModulesNumerics/NeuralNetworks/include
+ITK/ModulesNumerics/Optimizers/include
+ITK/ModulesNumerics/Polynomials/include
+ITK/ModulesRegistration/Common/include
+ITK/ModulesRegistration/FEM/include
+ITK/ModulesRegistration/GPUCommon/include
+ITK/ModulesRegistration/GPUPDEDeformable/include
+ITK/ModulesRegistration/Metricsv4/include
+ITK/ModulesRegistration/PDEDeformable/include
+ITK/ModulesRegistration/RegistrationMethodsv4/include
+ITK/ModulesSegmentation/BioCell/include
+ITK/ModulesSegmentation/Classifiers/include
+ITK/ModulesSegmentation/ConnectedComponents/include
+ITK/ModulesSegmentation/DeformableMesh/include
+ITK/ModulesSegmentation/LabelVoting/include
+ITK/ModulesSegmentation/LevelSets/include
+ITK/ModulesSegmentation/LevelSetsv4/include
+ITK/ModulesSegmentation/LevelSetsv4Visualization/include
+ITK/ModulesSegmentation/MarkovRandomFieldsClassifiers/include
+ITK/ModulesSegmentation/RegionGrowing/include
+ITK/ModulesSegmentation/SignedDistanceFunction/include
+ITK/ModulesSegmentation/Voronoi/include
+ITK/ModulesThirdParty/VNLInstantiation/include
+ITK/ModulesVideo/BridgeOpenCV/include
+ITK/ModulesVideo/BridgeVXL/include
+ITK/ModulesVideo/Filtering/include
 
 WHAT_TO_DO=TestKernel
 
@@ -260,6 +267,9 @@ so that build times are minimized."""
     def _GenerateFiles(self):
         if not self._NoWorkToDo():
             if len(self.CodeString) > 1:
+                srcdir = os.path.join(self.basePath,"src")
+                if not os.path.exists(srcdir):
+                    os.makedirs(srcdir)
                 with open(self.CodeFileName,'w') as cf:
                     cf.write(self.CodeString)
             else:
