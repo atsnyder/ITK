@@ -102,4 +102,8 @@ private:
 #include "itkThinPlateSplineKernelTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkThinPlateSplineKernelTransformExplicit.h"
+#endif
+
 #endif // __itkThinPlateSplineKernelTransform_h

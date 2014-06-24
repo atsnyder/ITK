@@ -158,4 +158,8 @@ private:
 #include "itkSimilarity3DTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkSimilarity3DTransformExplicit.h"
+#endif
+
 #endif /* __itkSimilarity3DTransform_h */

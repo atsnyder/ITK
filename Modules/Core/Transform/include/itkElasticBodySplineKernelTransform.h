@@ -119,4 +119,8 @@ private:
 #include "itkElasticBodySplineKernelTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkElasticBodySplineKernelTransformExplicit.h"
+#endif
+
 #endif // __itkElasticBodySplineKernelTransform_h

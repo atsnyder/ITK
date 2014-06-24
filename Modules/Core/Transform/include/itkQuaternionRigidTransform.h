@@ -158,4 +158,8 @@ private:
 #include "itkQuaternionRigidTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkQuaternionRigidTransformExplicit.h"
+#endif
+
 #endif /* __itkQuaternionRigidTransform_h */

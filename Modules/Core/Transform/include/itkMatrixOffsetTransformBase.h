@@ -533,4 +533,8 @@ private:
 #include "itkMatrixOffsetTransformBase.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkMatrixOffsetTransformBaseExplicit.h"
+#endif
+
 #endif /* __itkMatrixOffsetTransformBase_h */

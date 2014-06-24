@@ -121,4 +121,8 @@ private:
 #include "itkBSplineTransformInitializer.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkBSplineTransformInitializerExplicit.h"
+#endif
+
 #endif /* __itkBSplineTransformInitializer_h */

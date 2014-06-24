@@ -274,4 +274,8 @@ TranslationTransform<TScalar, NDimensions>::BackTransform(const OutputCovariantV
 #include "itkTranslationTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkTranslationTransformExplicit.h"
+#endif
+
 #endif /* __itkTranslationTransform_h */

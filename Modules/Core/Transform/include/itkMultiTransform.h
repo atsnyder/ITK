@@ -325,4 +325,8 @@ private:
 #include "itkMultiTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkMultiTransformExplicit.h"
+#endif
+
 #endif // __itkMultiTransform_h

@@ -132,4 +132,8 @@ private:
 #include "itkEuler2DTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkEuler2DTransformExplicit.h"
+#endif
+
 #endif /* __itkEuler2DTransform_h */

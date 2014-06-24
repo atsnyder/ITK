@@ -311,4 +311,8 @@ private:
 #include "itkBSplineTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkBSplineTransformExplicit.h"
+#endif
+
 #endif /* __itkBSplineTransform_h */

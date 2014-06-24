@@ -168,4 +168,8 @@ private:
 #include "itkScalableAffineTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkScalableAffineTransformExplicit.h"
+#endif
+
 #endif /* __itkScalableAffineTransform_h */

@@ -586,4 +586,8 @@ private:
 #include "itkTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkTransformExplicit.h"
+#endif
+
 #endif

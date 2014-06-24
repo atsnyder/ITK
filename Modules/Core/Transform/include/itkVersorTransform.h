@@ -171,4 +171,8 @@ private:
 #include "itkVersorTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkVersorTransformExplicit.h"
+#endif
+
 #endif /* __itkVersorTransform_h */

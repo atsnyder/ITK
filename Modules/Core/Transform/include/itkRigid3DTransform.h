@@ -223,4 +223,8 @@ private:
 #include "itkRigid3DTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkRigid3DTransformExplicit.h"
+#endif
+
 #endif /* __itkRigid3DTransform_h */

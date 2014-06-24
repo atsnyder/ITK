@@ -184,4 +184,8 @@ private:
 #include "itkCenteredSimilarity2DTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkCenteredSimilarity2DTransformExplicit.h"
+#endif
+
 #endif /* __itkCenteredSimilarity2DTransform_h */

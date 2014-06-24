@@ -118,4 +118,8 @@ private:
 #include "itkFixedCenterOfRotationAffineTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkFixedCenterOfRotationAffineTransformExplicit.h"
+#endif
+
 #endif /* __itkFixedCenterOfRotationAffineTransform_h */

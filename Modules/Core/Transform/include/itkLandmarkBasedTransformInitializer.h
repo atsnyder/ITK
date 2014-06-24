@@ -188,4 +188,8 @@ private:
 #include "itkLandmarkBasedTransformInitializer.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkLandmarkBasedTransformInitializerExplicit.h"
+#endif
+
 #endif /* __itkLandmarkBasedTransformInitializer_h */

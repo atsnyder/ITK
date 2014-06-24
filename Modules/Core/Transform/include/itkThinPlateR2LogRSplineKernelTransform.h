@@ -103,4 +103,8 @@ private:
 #include "itkThinPlateR2LogRSplineKernelTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkThinPlateR2LogRSplineKernelTransformExplicit.h"
+#endif
+
 #endif // __itkThinPlateR2LogRSplineKernelTransform_h

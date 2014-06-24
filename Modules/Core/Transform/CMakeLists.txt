@@ -1,2 +1,5 @@
 project(ITKTransform)
+if(ITK_COMMON_EXPLICIT_INSTANTIATION)
+  set(ITKTransform_LIBRARIES ITKTransform)
+endif()
 itk_module_impl()

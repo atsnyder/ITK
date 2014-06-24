@@ -134,4 +134,8 @@ private:
 #include "itkCenteredEuler3DTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkCenteredEuler3DTransformExplicit.h"
+#endif
+
 #endif /* __itkCenteredEuler3DTransform_h */
