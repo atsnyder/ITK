@@ -31,6 +31,7 @@ DONE ITK/Modules/Core/ImageAdapter
 DONE ITK/Modules/Core/Transform/include
 DONE ITK/Modules/Filtering/AnisotropicSmoothing/include
 DONE ITK/Modules/Filtering/AntiAlias/include
+DONE ITK/Modules/Filtering/BinaryMathematicalMorphology/include
 
 TODO
 ITK/Modules/Bridge/VTK/include
@@ -39,7 +40,6 @@ ITK/Modules/Compatibility/V3Compatibility/include
 ITK/Modules/Core/GPUCommon/include
 ITK/Modules/Core/GPUFiniteDifference/include
 ITK/Modules/Core/TestKernel/include
-ITK/Modules/Filtering/BinaryMathematicalMorphology/include
 ITK/Modules/Filtering/Colormap/include
 ITK/Modules/Filtering/Convolution/include
 ITK/Modules/Filtering/CurvatureFlow/include
