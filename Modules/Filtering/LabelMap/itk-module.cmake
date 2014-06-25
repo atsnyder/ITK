@@ -11,6 +11,7 @@ itk_module(ITKLabelMap
     ITKImageLabel
     ITKMathematicalMorphology
     ITKStatistics
+    ITKTransform
   TEST_DEPENDS
     ITKTestKernel
     ITKBinaryMathematicalMorphology

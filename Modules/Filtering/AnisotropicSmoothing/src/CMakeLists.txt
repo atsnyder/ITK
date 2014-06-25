@@ -12,6 +12,10 @@ ${ITK_ANISOTROPICSMOOTHING_EXPLICIT_SOURCES}
 # otherwise it causes a build error.
 if(ITKAnisotropicSmoothing_SRC)
   add_library(ITKAnisotropicSmoothing ${ITKAnisotropicSmoothing_SRC})
-  target_link_libraries(ITKAnisotropicSmoothing  ${ITKTransform_LIBRARIES})
+  target_link_libraries(ITKAnisotropicSmoothing
+    ${ITKImageGrid_LIBRARIES}
+    ${ITKCurvatureFlow_LIBRARIES}
+    ${ITKFiniteDifference_LIBRARIES}
+    )
   itk_module_target(ITKAnisotropicSmoothing)
 endif()
