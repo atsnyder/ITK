@@ -1,0 +1,21 @@
+if(ITK_COMMON_EXPLICIT_INSTANTIATION)
+  file(GLOB ITK_BINARYMATHEMATICALMORPHOLOGY_EXPLICIT_SOURCES "*Explicit.cxx")
+else()
+  set(ITK_BINARYMATHEMATICALMORPHOLOGY_EXPLICIT_SOURCES "")
+endif()
+
+set(ITKBinaryMathematicalMorphology_SRC
+${ITK_BINARYMATHEMATICALMORPHOLOGY_EXPLICIT_SOURCES}
+)
+
+# only add library if it will have object files;
+# otherwise it causes a build error.
+if(ITKBinaryMathematicalMorphology_SRC)
+  add_library(ITKBinaryMathematicalMorphology ${ITKBinaryMathematicalMorphology_SRC})
+  target_link_libraries(ITKBinaryMathematicalMorphology
+    ${ITKImageGrid_LIBRARIES}
+    ${ITKCurvatureFlow_LIBRARIES}
+    ${ITKFiniteDifference_LIBRARIES}
+    )
+  itk_module_target(ITKBinaryMathematicalMorphology)
+endif()

@@ -16,6 +16,7 @@ itk_module(ITKImageIntensity
     ITKTestKernel
     ITKSpatialObjects
     ITKDistanceMap
+    ITKBinaryMathematicalMorphology
   DESCRIPTION
     "${DOCUMENTATION}"
 )
