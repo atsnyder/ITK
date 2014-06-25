@@ -17,8 +17,8 @@ Options:
 
 
 for test_dir in ~/src/NEP-11/ITKv4-build; do
-  for i in $(find ${test_dir} -name "*.o") ; do
-    nm $i | c++filt |fgrep -v " U "|grep " S " |fgrep -v "(.eh)" | grep "itk::" |grep "::~";
+  for obj in $(find ${test_dir} -name "*.o") ; do
+    nm ${obj} | c++filt | fgrep -v " U "| fgrep -v "(.eh)" | grep ' S itk::.*::~';
   done ;
 done |tee ~/Symbols.list
 
@@ -29,6 +29,7 @@ DONE ITK/Modules/IO/*
 DONE ITK/Modlules/Core/FiniteDifference
 DONE ITK/Modules/Core/ImageAdapter
 DONE ITK/Modules/Core/Transform/include
+DONE ITK/Modules/Filtering/AnisotropicSmoothing/include
 
 TODO
 ITK/Modules/Bridge/VTK/include
@@ -37,7 +38,6 @@ ITK/Modules/Compatibility/V3Compatibility/include
 ITK/Modules/Core/GPUCommon/include
 ITK/Modules/Core/GPUFiniteDifference/include
 ITK/Modules/Core/TestKernel/include
-ITK/Modules/Filtering/AnisotropicSmoothing/include
 ITK/Modules/Filtering/AntiAlias/include
 ITK/Modules/Filtering/BinaryMathematicalMorphology/include
 ITK/Modules/Filtering/Colormap/include

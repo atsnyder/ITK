@@ -16,6 +16,7 @@ itk_module(ITKCommon
     ITKTestKernel
     ITKImageIntensity
     ITKIOImageBase
+    ITKTransform
   DESCRIPTION
     "${DOCUMENTATION}"
 )
