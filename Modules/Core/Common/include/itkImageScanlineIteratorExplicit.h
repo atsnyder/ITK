@@ -18,7 +18,6 @@
 #ifndef __itkImageScanlineIteratorExplicit_h
 #define __itkImageScanlineIteratorExplicit_h
 //exclude VectorImage
-//subs std::__1 std::
 extern template class itk::ImageScanlineIterator<itk::Image<short, 4u> >;
 extern template class itk::ImageScanlineIterator<itk::Image<itk::Vector<float, 1u>, 3u> >;
 extern template class itk::ImageScanlineIterator<itk::Image<unsigned char, 4u> >;

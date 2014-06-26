@@ -17,7 +17,7 @@
  *=========================================================================*/
 #ifndef __itkProjectedIterativeDeconvolutionImageFilterExplicit_h
 #define __itkProjectedIterativeDeconvolutionImageFilterExplicit_h
-#include "itkLandWeberDeconvolutionImageFilter.h"
+#include "itkLandweberDeconvolutionImageFilter.h"
 extern template class itk::ProjectedIterativeDeconvolutionImageFilter<itk::LandweberDeconvolutionImageFilter<itk::Image<short, 3u>, itk::Image<short, 3u>, itk::Image<short, 3u>, double> >;
 extern template class itk::ProjectedIterativeDeconvolutionImageFilter<itk::LandweberDeconvolutionImageFilter<itk::Image<int, 3u>, itk::Image<int, 3u>, itk::Image<int, 3u>, double> >;
 extern template class itk::ProjectedIterativeDeconvolutionImageFilter<itk::LandweberDeconvolutionImageFilter<itk::Image<unsigned int, 2u>, itk::Image<unsigned int, 2u>, itk::Image<unsigned int, 2u>, double> >;
