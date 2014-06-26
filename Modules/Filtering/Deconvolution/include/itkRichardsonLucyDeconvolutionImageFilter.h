@@ -136,4 +136,8 @@ private:
 #include "itkRichardsonLucyDeconvolutionImageFilter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkRichardsonLucyDeconvolutionImageFilterExplicit.h"
+#endif
+
 #endif

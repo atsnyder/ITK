@@ -160,4 +160,8 @@ private:
 #include "itkIterativeDeconvolutionImageFilter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkIterativeDeconvolutionImageFilterExplicit.h"
+#endif
+
 #endif

@@ -229,5 +229,4 @@ private:
 #include "itkParametricBlindLeastSquaresDeconvolutionImageFilter.hxx"
 #endif
 
-
 #endif

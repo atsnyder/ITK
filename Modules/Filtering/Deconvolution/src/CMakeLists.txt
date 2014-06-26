@@ -1,0 +1,18 @@
+if(ITK_COMMON_EXPLICIT_INSTANTIATION)
+  file(GLOB ITK_DECONVOLUTION_EXPLICIT_SOURCES "*Explicit.cxx")
+else()
+  set(ITK_DECONVOLUTION_EXPLICIT_SOURCES "")
+endif()
+
+set(ITKDeconvolution_SRC
+${ITK_DECONVOLUTION_EXPLICIT_SOURCES}
+)
+
+# only add library if it will have object files;
+# otherwise it causes a build error.
+if(ITKDeconvolution_SRC)
+  add_library(ITKDeconvolution ${ITKDeconvolution_SRC})
+  target_link_libraries(ITKDeconvolution  ${ITKTransform_LIBRARIES} ${ITKConvolution_LIBRARIES}
+    ${ITKImageAdaptors_LIBRARIES})
+  itk_module_target(ITKDeconvolution)
+endif()

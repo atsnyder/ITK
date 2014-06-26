@@ -91,4 +91,8 @@ private:
 #endif
 
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkProjectedLandweberDeconvolutionImageFilterExplicit.h"
+#endif
+
 #endif

@@ -95,4 +95,8 @@ private:
 #include "itkProjectedIterativeDeconvolutionImageFilter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkProjectedIterativeDeconvolutionImageFilterExplicit.h"
+#endif
+
 #endif

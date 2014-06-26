@@ -5,6 +5,7 @@ itk_module(ITKDeconvolution
   DEPENDS
     ITKConvolution
     ITKImageSources
+    ITKImageAdaptors
   TEST_DEPENDS
     ITKTestKernel
   DESCRIPTION

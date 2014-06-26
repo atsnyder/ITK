@@ -10,6 +10,7 @@ itk_module(ITKConvolution
     ITKThresholding
   TEST_DEPENDS
     ITKTestKernel
+    ITKImageFunction
   DESCRIPTION
     "${DOCUMENTATION}"
 )
