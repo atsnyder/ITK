@@ -191,4 +191,8 @@ private:
 # include "itkTimeVaryingBSplineVelocityFieldTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkTimeVaryingBSplineVelocityFieldTransformExplicit.h"
+#endif
+
 #endif // __itkTimeVaryingBSplineVelocityFieldTransform_h

@@ -221,4 +221,8 @@ private:
 #include "itkVelocityFieldTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkVelocityFieldTransformExplicit.h"
+#endif
+
 #endif // __itkVelocityFieldTransform_h

@@ -12,6 +12,6 @@ ${ITK_TRANSFORM_EXPLICIT_SOURCES}
 # otherwise it causes a build error.
 if(ITKTransform_SRC)
   add_library(ITKTransform ${ITKTransform_SRC})
-  target_link_libraries(ITKTransform ITKStatistics)
+  target_link_libraries(ITKTransform ITKStatistics ITKDisplacementField)
   itk_module_target(ITKTransform)
 endif()

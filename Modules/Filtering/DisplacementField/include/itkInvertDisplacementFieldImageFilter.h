@@ -183,4 +183,8 @@ private:
 #include "itkInvertDisplacementFieldImageFilter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkInvertDisplacementFieldImageFilterExplicit.h"
+#endif
+
 #endif

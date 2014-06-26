@@ -1,0 +1,22 @@
+if(ITK_COMMON_EXPLICIT_INSTANTIATION)
+  file(GLOB ITK_DISPLACEMENTFIELD_EXPLICIT_SOURCES "*Explicit.cxx")
+else()
+  set(ITK_DISPLACEMENTFIELD_EXPLICIT_SOURCES "")
+endif()
+
+set(ITKDisplacementField_SRC
+${ITK_DISPLACEMENTFIELD_EXPLICIT_SOURCES}
+)
+
+# only add library if it will have object files;
+# otherwise it causes a build error.
+if(ITKDisplacementField_SRC)
+  add_library(ITKDisplacementField ${ITKDisplacementField_SRC})
+  target_link_libraries(ITKDisplacementField
+    ${ITKTransform_LIBRARIES}
+    ${ITKImageGrid_LIBRARIES}
+    ${ITKImageIntensity_LIBRARIES}
+    ${ITKImageFunction_LIBRARIES}
+    )
+  itk_module_target(ITKDisplacementField)
+endif()

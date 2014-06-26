@@ -190,4 +190,8 @@ private:
 #include "itkExponentialDisplacementFieldImageFilter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkExponentialDisplacementFieldImageFilterExplicit.h"
+#endif
+
 #endif

@@ -142,4 +142,8 @@ private:
 # include "itkGaussianExponentialDiffeomorphicTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkGaussianExponentialDiffeomorphicTransformExplicit.h"
+#endif
+
 #endif // __itkGaussianExponentialDiffeomorphicTransform_h

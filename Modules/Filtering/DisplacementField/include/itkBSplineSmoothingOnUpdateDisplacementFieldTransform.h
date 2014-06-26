@@ -203,4 +203,8 @@ private:
 # include "itkBSplineSmoothingOnUpdateDisplacementFieldTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkBSplineSmoothingOnUpdateDisplacementFieldTransformExplicit.h"
+#endif
+
 #endif // __itkBSplineSmoothingOnUpdateDisplacementFieldTransform_h

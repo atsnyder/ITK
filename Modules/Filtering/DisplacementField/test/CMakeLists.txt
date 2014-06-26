@@ -21,6 +21,7 @@ itkDisplacementFieldTransformCloneTest.cxx
 itkExponentialDisplacementFieldImageFilterTest.cxx
 )
 
+message("ITKDisplacementField-Test_LIBRARIES:${ITKDisplacementField-Test_LIBRARIES}")
 CreateTestDriver(ITKDisplacementField  "${ITKDisplacementField-Test_LIBRARIES}" "${ITKDisplacementFieldTests}")
 
 itk_add_test(NAME itkComposeDisplacementFieldsImageFilterTest

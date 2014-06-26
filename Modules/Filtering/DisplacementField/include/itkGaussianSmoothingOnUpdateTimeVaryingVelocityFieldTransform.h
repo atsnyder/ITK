@@ -144,4 +144,8 @@ private:
 # include "itkGaussianSmoothingOnUpdateTimeVaryingVelocityFieldTransform.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkGaussianSmoothingOnUpdateTimeVaryingVelocityFieldTransformExplicit.h"
+#endif
+
 #endif // __itkGaussianSmoothingOnUpdateTimeVaryingVelocityFieldTransform_h

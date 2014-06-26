@@ -152,4 +152,8 @@ private:
 #include "itkComposeDisplacementFieldsImageFilter.hxx"
 #endif
 
+#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#include "itkComposeDisplacementFieldsImageFilterExplicit.h"
+#endif
+
 #endif

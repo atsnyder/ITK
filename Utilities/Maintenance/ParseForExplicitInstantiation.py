@@ -36,6 +36,7 @@ DONE ITK/Modules/Filtering/Colormap/include
 DONE ITK/Modules/Filtering/Convolution/include
 DONE ITK/Modules/Filtering/Deconvolution/include
 DONE ITK/Modules/Filtering/CurvatureFlow/include
+DONE ITK/Modules/Filtering/DisplacementField/include
 
 TODO
 ITK/Modules/Bridge/VTK/include
@@ -44,9 +45,8 @@ ITK/Modules/Compatibility/V3Compatibility/include
 ITK/Modules/Core/GPUCommon/include
 ITK/Modules/Core/GPUFiniteDifference/include
 ITK/Modules/Core/TestKernel/include
-ITK/Modules/Filtering/Denoising/include
-ITK/Modules/Filtering/DiffusionTensorImage/include
-ITK/Modules/Filtering/DisplacementField/include
+ITK/Modules/Filtering/Denoising/include -- CANT CONVERT, COMPILE ERROR
+ITK/Modules/Filtering/DiffusionTensorImage/include -- few instantiations
 ITK/Modules/Filtering/DistanceMap/include
 ITK/Modules/Filtering/FastMarching/include
 ITK/Modules/Filtering/GPUAnisotropicSmoothing/include
