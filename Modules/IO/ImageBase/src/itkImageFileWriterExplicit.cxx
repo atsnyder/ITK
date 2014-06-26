@@ -19,7 +19,7 @@ template class itk::ImageFileWriter<itk::Image<unsigned char, 5u> >; //Instantia
 template class itk::ImageFileWriter<itk::VectorImage<unsigned char, 2u> >; //Instantiated 15 times
 template class itk::ImageFileWriter<itk::Image<itk::SymmetricSecondRankTensor<float, 3u>, 4u> >; //Instantiated 3 times
 template class itk::ImageFileWriter<itk::Image<itk::Vector<double, 2u>, 2u> >; //Instantiated 24 times
-template class itk::ImageFileWriter<itk::Image<std::__1::complex<float>, 3u> >; //Instantiated 3 times
+template class itk::ImageFileWriter<itk::Image<std::complex<float>, 3u> >; //Instantiated 3 times
 template class itk::ImageFileWriter<itk::Image<itk::DiffusionTensor3D<float>, 1u> >; //Instantiated 3 times
 template class itk::ImageFileWriter<itk::Image<itk::Vector<float, 1u>, 2u> >; //Instantiated 6 times
 template class itk::ImageFileWriter<itk::Image<itk::SymmetricSecondRankTensor<float, 3u>, 1u> >; //Instantiated 3 times
@@ -51,7 +51,7 @@ template class itk::ImageFileWriter<itk::Image<itk::CovariantVector<float, 3u>, 
 template class itk::ImageFileWriter<itk::Image<char, 2u> >; //Instantiated 39 times
 template class itk::ImageFileWriter<itk::Image<itk::RGBPixel<unsigned char>, 3u> >; //Instantiated 30 times
 template class itk::ImageFileWriter<itk::Image<itk::SymmetricSecondRankTensor<float, 3u>, 3u> >; //Instantiated 3 times
-template class itk::ImageFileWriter<itk::Image<std::__1::complex<float>, 2u> >; //Instantiated 18 times
+template class itk::ImageFileWriter<itk::Image<std::complex<float>, 2u> >; //Instantiated 18 times
 template class itk::ImageFileWriter<itk::VectorImage<float, 3u> >; //Instantiated 3 times
 template class itk::ImageFileWriter<itk::Image<float, 2u> >; //Instantiated 150 times
 template class itk::ImageFileWriter<itk::Image<itk::RGBPixel<unsigned char>, 2u> >; //Instantiated 99 times

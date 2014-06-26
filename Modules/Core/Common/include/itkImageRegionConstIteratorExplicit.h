@@ -67,7 +67,7 @@ extern template class itk::ImageRegionConstIterator<itk::Image<unsigned char, 2u
 extern template class itk::ImageRegionConstIterator<itk::Image<double, 3u> >;
 extern template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<unsigned char, 2u>, 2u> >;
 extern template class itk::ImageRegionConstIterator<itk::Image<signed char, 3u> >;
-extern template class itk::ImageRegionConstIterator<itk::Image<std::__1::complex<float>, 2u> >;
+extern template class itk::ImageRegionConstIterator<itk::Image<std::complex<float>, 2u> >;
 extern template class itk::ImageRegionConstIterator<itk::Image<itk::FixedArray<double, 3u>, 3u> >;
 extern template class itk::ImageRegionConstIterator<itk::Image<itk::DiffusionTensor3D<float>, 3u> >;
 extern template class itk::ImageRegionConstIterator<itk::Image<itk::CovariantVector<double, 2u>, 2u> >;

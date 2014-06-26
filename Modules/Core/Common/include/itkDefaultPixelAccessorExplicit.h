@@ -26,7 +26,7 @@
 #include <complex>
 //exclude watershed
 //exclude fem
-//subs std::__1:: std::
+//subs std:: std::
 extern template class itk::DefaultPixelAccessor<unsigned short>;
 extern template class itk::DefaultPixelAccessor<unsigned long>;
 extern template class itk::DefaultPixelAccessor<itk::Vector<float, 1u> >;

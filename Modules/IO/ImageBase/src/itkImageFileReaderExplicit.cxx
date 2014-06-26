@@ -71,14 +71,14 @@ template class itk::ImageFileReader<itk::VectorImage<short, 6u>, itk::DefaultCon
 template class itk::ImageFileReader<itk::Image<itk::CovariantVector<float, 4u>, 3u>, itk::DefaultConvertPixelTraits<itk::CovariantVector<float, 4u> > >; //Instantiated 6 times
 template class itk::ImageFileReader<itk::Image<itk::Vector<double, 3u>, 2u>, itk::DefaultConvertPixelTraits<itk::Vector<double, 3u> > >; //Instantiated 3 times
 template class itk::ImageFileReader<itk::Image<itk::Vector<float, 4u>, 3u>, itk::DefaultConvertPixelTraits<itk::Vector<float, 4u> > >; //Instantiated 9 times
-template class itk::ImageFileReader<itk::Image<std::__1::complex<float>, 3u>, itk::DefaultConvertPixelTraits<std::__1::complex<float> > >; //Instantiated 3 times
+template class itk::ImageFileReader<itk::Image<std::complex<float>, 3u>, itk::DefaultConvertPixelTraits<std::complex<float> > >; //Instantiated 3 times
 template class itk::ImageFileReader<itk::Image<itk::RGBAPixel<float>, 2u>, itk::DefaultConvertPixelTraits<itk::RGBAPixel<float> > >; //Instantiated 6 times
 template class itk::ImageFileReader<itk::VectorImage<double, 3u>, itk::DefaultConvertPixelTraits<double> >; //Instantiated 3 times
 template class itk::ImageFileReader<itk::Image<itk::SymmetricSecondRankTensor<float, 5u>, 3u>, itk::DefaultConvertPixelTraits<itk::SymmetricSecondRankTensor<float, 5u> > >; //Instantiated 3 times
 template class itk::ImageFileReader<itk::Image<unsigned char, 2u>, itk::DefaultConvertPixelTraits<unsigned char> >; //Instantiated 681 times
 template class itk::ImageFileReader<itk::Image<itk::RGBAPixel<unsigned short>, 2u>, itk::DefaultConvertPixelTraits<itk::RGBAPixel<unsigned short> > >; //Instantiated 3 times
 template class itk::ImageFileReader<itk::Image<itk::RGBAPixel<unsigned char>, 3u>, itk::DefaultConvertPixelTraits<itk::RGBAPixel<unsigned char> > >; //Instantiated 6 times
-template class itk::ImageFileReader<itk::Image<std::__1::complex<float>, 2u>, itk::DefaultConvertPixelTraits<std::__1::complex<float> > >; //Instantiated 12 times
+template class itk::ImageFileReader<itk::Image<std::complex<float>, 2u>, itk::DefaultConvertPixelTraits<std::complex<float> > >; //Instantiated 12 times
 template class itk::ImageFileReader<itk::Image<itk::Vector<float, 1u>, 3u>, itk::DefaultConvertPixelTraits<itk::Vector<float, 1u> > >; //Instantiated 3 times
 template class itk::ImageFileReader<itk::Image<short, 5u>, itk::DefaultConvertPixelTraits<short> >; //Instantiated 3 times
 template class itk::ImageFileReader<itk::Image<itk::RGBPixel<unsigned char>, 2u>, itk::DefaultConvertPixelTraits<itk::RGBPixel<unsigned char> > >; //Instantiated 75 times

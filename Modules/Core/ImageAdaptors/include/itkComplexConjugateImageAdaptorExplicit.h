@@ -17,6 +17,6 @@
  *=========================================================================*/
 #ifndef __itkComplexConjugateImageAdaptorExplicit_h
 #define __itkComplexConjugateImageAdaptorExplicit_h
-extern template class itk::ComplexConjugateImageAdaptor<itk::Image<std::__1::complex<float>, 2u> >;
-extern template class itk::ComplexConjugateImageAdaptor<itk::Image<std::__1::complex<double>, 2u> >;
+extern template class itk::ComplexConjugateImageAdaptor<itk::Image<std::complex<float>, 2u> >;
+extern template class itk::ComplexConjugateImageAdaptor<itk::Image<std::complex<double>, 2u> >;
 #endif //__itkComplexConjugateImageAdaptorExplicit_h

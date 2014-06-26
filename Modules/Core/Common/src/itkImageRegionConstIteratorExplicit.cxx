@@ -66,7 +66,7 @@ template class itk::ImageRegionConstIterator<itk::Image<unsigned char, 2u> >; //
 template class itk::ImageRegionConstIterator<itk::Image<double, 3u> >; //Instantiated 80 times
 template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<unsigned char, 2u>, 2u> >; //Instantiated 10 times
 template class itk::ImageRegionConstIterator<itk::Image<signed char, 3u> >; //Instantiated 16 times
-template class itk::ImageRegionConstIterator<itk::Image<std::__1::complex<float>, 2u> >; //Instantiated 16 times
+template class itk::ImageRegionConstIterator<itk::Image<std::complex<float>, 2u> >; //Instantiated 16 times
 template class itk::ImageRegionConstIterator<itk::Image<itk::FixedArray<double, 3u>, 3u> >; //Instantiated 4 times
 template class itk::ImageRegionConstIterator<itk::Image<itk::DiffusionTensor3D<float>, 3u> >; //Instantiated 6 times
 template class itk::ImageRegionConstIterator<itk::Image<itk::CovariantVector<double, 2u>, 2u> >; //Instantiated 4 times

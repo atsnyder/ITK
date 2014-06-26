@@ -34,7 +34,7 @@ template class itk::ImageConstIterator<itk::Image<itk::Vector<double, 2u>, 2u> >
 template class itk::ImageConstIterator<itk::Image<itk::DiffusionTensor3D<float>, 2u> >; //Instantiated 4 times
 template class itk::ImageConstIterator<itk::Image<unsigned char, 4u> >; //Instantiated 12 times
 template class itk::ImageConstIterator<itk::Image<itk::Vector<double, 3u>, 3u> >; //Instantiated 52 times
-template class itk::ImageConstIterator<itk::Image<std::__1::complex<float>, 3u> >; //Instantiated 10 times
+template class itk::ImageConstIterator<itk::Image<std::complex<float>, 3u> >; //Instantiated 10 times
 template class itk::ImageConstIterator<itk::Image<itk::CovariantVector<double, 2u>, 2u> >; //Instantiated 196 times
 template class itk::ImageConstIterator<itk::Image<bool, 3u> >; //Instantiated 6 times
 template class itk::ImageConstIterator<itk::Image<short, 4u> >; //Instantiated 8 times
@@ -49,7 +49,7 @@ template class itk::ImageConstIterator<itk::Image<itk::CovariantVector<float, 3u
 template class itk::ImageConstIterator<itk::Image<itk::Vector<double, 3u>, 4u> >; //Instantiated 10 times
 template class itk::ImageConstIterator<itk::Image<short, 2u> >; //Instantiated 158 times
 template class itk::ImageConstIterator<itk::Image<itk::Vector<int, 3u>, 3u> >; //Instantiated 4 times
-template class itk::ImageConstIterator<itk::Image<std::__1::complex<float>, 2u> >; //Instantiated 34 times
+template class itk::ImageConstIterator<itk::Image<std::complex<float>, 2u> >; //Instantiated 34 times
 template class itk::ImageConstIterator<itk::Image<itk::Vector<int, 2u>, 2u> >; //Instantiated 4 times
 template class itk::ImageConstIterator<itk::Image<unsigned short, 2u> >; //Instantiated 158 times
 template class itk::ImageConstIterator<itk::Image<double, 1u> >; //Instantiated 12 times
@@ -63,7 +63,7 @@ template class itk::ImageConstIterator<itk::Image<itk::Vector<unsigned short, 1u
 template class itk::ImageConstIterator<itk::Image<float, 4u> >; //Instantiated 20 times
 template class itk::ImageConstIterator<itk::Image<char, 2u> >; //Instantiated 36 times
 template class itk::ImageConstIterator<itk::Image<unsigned long, 2u> >; //Instantiated 38 times
-template class itk::ImageConstIterator<itk::Image<std::__1::complex<double>, 2u> >; //Instantiated 26 times
+template class itk::ImageConstIterator<itk::Image<std::complex<double>, 2u> >; //Instantiated 26 times
 template class itk::ImageConstIterator<itk::Image<signed char, 2u> >; //Instantiated 46 times
 template class itk::ImageConstIterator<itk::Image<double, 2u> >; //Instantiated 486 times
 template class itk::ImageConstIterator<itk::Image<itk::RGBPixel<unsigned char>, 3u> >; //Instantiated 36 times

@@ -25,7 +25,7 @@
 //exclude SimplexMeshGeometry
 //exclude Mesh
 //exclude std::pair
-//subs std::__1:: std::
+//subs std:: std::
 extern template class itk::MapContainer<unsigned long, itk::Point<float, 2u> >;
 extern template class itk::MapContainer<unsigned long, float>;
 extern template class itk::MapContainer<unsigned long, itk::CellInterface<double, itk::CellTraitsInfo<3, float, float, unsigned long, unsigned long, unsigned long, itk::Point<float, 3u>, itk::MapContainer<unsigned long, itk::Point<float, 3u> >, std::set<unsigned long, std::less<unsigned long>, std::allocator<unsigned long> > > >*>;

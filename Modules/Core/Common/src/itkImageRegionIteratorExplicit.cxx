@@ -90,7 +90,7 @@ template class itk::ImageRegionIterator<itk::Image<itk::CovariantVector<float, 2
 template class itk::ImageRegionIterator<itk::Image<itk::Vector<double, 1u>, 1u> >; //Instantiated 80 times
 template class itk::ImageRegionIterator<itk::Image<unsigned short, 3u> >; //Instantiated 78 times
 template class itk::ImageRegionIterator<itk::Image<unsigned char, 3u> >; //Instantiated 250 times
-template class itk::ImageRegionIterator<itk::Image<std::__1::complex<float>, 2u> >; //Instantiated 20 times
+template class itk::ImageRegionIterator<itk::Image<std::complex<float>, 2u> >; //Instantiated 20 times
 template class itk::ImageRegionIterator<itk::Image<itk::RGBPixel<short>, 2u> >; //Instantiated 4 times
 template class itk::ImageRegionIterator<itk::Image<double, 6u> >; //Instantiated 208 times
 template class itk::ImageRegionIterator<itk::Image<short, 3u> >; //Instantiated 78 times

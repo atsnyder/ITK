@@ -27,7 +27,7 @@
 //exclude fem
 //exclude LabelObjectLine
 //exclude watershed
-//subs std::__1:: std::
+//subs std:: std::
 extern template class itk::Image<itk::Vector<float, 2u>, 3u>;
 extern template class itk::Image<double, 3u>;
 extern template class itk::Image<itk::RGBAPixel<unsigned char>, 2u>;

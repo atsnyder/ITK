@@ -18,6 +18,8 @@
 #ifndef __itkImageFileWriterExplicit_h
 #define __itkImageFileWriterExplicit_h
 //exclude RGBToVectorImageAdaptor
+#include "itkImage.h"
+#include "itkVectorImage.h"
 extern template class itk::ImageFileWriter<itk::Image<itk::RGBAPixel<unsigned char>, 2u> >;
 extern template class itk::ImageFileWriter<itk::Image<unsigned short, 1u> >;
 extern template class itk::ImageFileWriter<itk::Image<itk::RGBPixel<short>, 2u> >;
@@ -37,7 +39,7 @@ extern template class itk::ImageFileWriter<itk::Image<unsigned char, 5u> >;
 extern template class itk::ImageFileWriter<itk::VectorImage<unsigned char, 2u> >;
 extern template class itk::ImageFileWriter<itk::Image<itk::SymmetricSecondRankTensor<float, 3u>, 4u> >;
 extern template class itk::ImageFileWriter<itk::Image<itk::Vector<double, 2u>, 2u> >;
-extern template class itk::ImageFileWriter<itk::Image<std::__1::complex<float>, 3u> >;
+extern template class itk::ImageFileWriter<itk::Image<std::complex<float>, 3u> >;
 extern template class itk::ImageFileWriter<itk::Image<itk::DiffusionTensor3D<float>, 1u> >;
 extern template class itk::ImageFileWriter<itk::Image<itk::Vector<float, 1u>, 2u> >;
 extern template class itk::ImageFileWriter<itk::Image<itk::SymmetricSecondRankTensor<float, 3u>, 1u> >;
@@ -69,7 +71,7 @@ extern template class itk::ImageFileWriter<itk::Image<itk::CovariantVector<float
 extern template class itk::ImageFileWriter<itk::Image<char, 2u> >;
 extern template class itk::ImageFileWriter<itk::Image<itk::RGBPixel<unsigned char>, 3u> >;
 extern template class itk::ImageFileWriter<itk::Image<itk::SymmetricSecondRankTensor<float, 3u>, 3u> >;
-extern template class itk::ImageFileWriter<itk::Image<std::__1::complex<float>, 2u> >;
+extern template class itk::ImageFileWriter<itk::Image<std::complex<float>, 2u> >;
 extern template class itk::ImageFileWriter<itk::VectorImage<float, 3u> >;
 extern template class itk::ImageFileWriter<itk::Image<float, 2u> >;
 extern template class itk::ImageFileWriter<itk::Image<itk::RGBPixel<unsigned char>, 2u> >;

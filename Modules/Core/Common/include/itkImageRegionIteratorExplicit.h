@@ -93,7 +93,7 @@ extern template class itk::ImageRegionIterator<itk::Image<itk::CovariantVector<f
 extern template class itk::ImageRegionIterator<itk::Image<itk::Vector<double, 1u>, 1u> >;
 extern template class itk::ImageRegionIterator<itk::Image<unsigned short, 3u> >;
 extern template class itk::ImageRegionIterator<itk::Image<unsigned char, 3u> >;
-extern template class itk::ImageRegionIterator<itk::Image<std::__1::complex<float>, 2u> >;
+extern template class itk::ImageRegionIterator<itk::Image<std::complex<float>, 2u> >;
 extern template class itk::ImageRegionIterator<itk::Image<itk::RGBPixel<short>, 2u> >;
 extern template class itk::ImageRegionIterator<itk::Image<double, 6u> >;
 extern template class itk::ImageRegionIterator<itk::Image<short, 3u> >;

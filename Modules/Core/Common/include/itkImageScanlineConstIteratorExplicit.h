@@ -39,14 +39,14 @@ extern template class itk::ImageScanlineConstIterator<itk::Image<unsigned long l
 extern template class itk::ImageScanlineConstIterator<itk::Image<int, 3u> >;
 extern template class itk::ImageScanlineConstIterator<itk::Image<unsigned char, 4u> >;
 extern template class itk::ImageScanlineConstIterator<itk::Image<long, 3u> >;
-extern template class itk::ImageScanlineConstIterator<itk::Image<std::__1::complex<float>, 2u> >;
+extern template class itk::ImageScanlineConstIterator<itk::Image<std::complex<float>, 2u> >;
 extern template class itk::ImageScanlineConstIterator<itk::Image<char, 2u> >;
 extern template class itk::ImageScanlineConstIterator<itk::Image<itk::SymmetricSecondRankTensor<float, 3u>, 3u> >;
 extern template class itk::ImageScanlineConstIterator<itk::Image<itk::RGBPixel<float>, 3u> >;
 extern template class itk::ImageScanlineConstIterator<itk::Image<itk::RGBAPixel<short>, 2u> >;
 extern template class itk::ImageScanlineConstIterator<itk::Image<itk::Vector<float, 6u>, 3u> >;
 extern template class itk::ImageScanlineConstIterator<itk::Image<float, 2u> >;
-extern template class itk::ImageScanlineConstIterator<itk::Image<std::__1::complex<float>, 3u> >;
+extern template class itk::ImageScanlineConstIterator<itk::Image<std::complex<float>, 3u> >;
 extern template class itk::ImageScanlineConstIterator<itk::Image<unsigned char, 3u> >;
 extern template class itk::ImageScanlineConstIterator<itk::Image<unsigned short, 2u> >;
 extern template class itk::ImageScanlineConstIterator<itk::Image<itk::Vector<float, 4u>, 3u> >;
@@ -62,7 +62,7 @@ extern template class itk::ImageScanlineConstIterator<itk::Image<itk::DiffusionT
 extern template class itk::ImageScanlineConstIterator<itk::VectorImage<float, 2u> >;
 extern template class itk::ImageScanlineConstIterator<itk::Image<itk::Offset<2u>, 2u> >;
 extern template class itk::ImageScanlineConstIterator<itk::Image<int, 2u> >;
-extern template class itk::ImageScanlineConstIterator<itk::Image<std::__1::complex<double>, 2u> >;
+extern template class itk::ImageScanlineConstIterator<itk::Image<std::complex<double>, 2u> >;
 extern template class itk::ImageScanlineConstIterator<itk::Image<unsigned int, 3u> >;
 extern template class itk::ImageScanlineConstIterator<itk::Image<itk::CovariantVector<double, 2u>, 2u> >;
 extern template class itk::ImageScanlineConstIterator<itk::Image<float, 4u> >;

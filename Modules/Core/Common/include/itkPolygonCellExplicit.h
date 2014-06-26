@@ -19,7 +19,7 @@
 #define __itkPolygonCellExplicit_h
 #include "itkVariableLengthVector.h"
 //exclude QuadEdge
-//subs std::__1:: std::
+//subs std:: std::
 extern template class itk::PolygonCell<itk::CellInterface<unsigned short, itk::CellTraitsInfo<3, float, float, unsigned long, unsigned long, unsigned long, itk::Point<float, 3u>, itk::VectorContainer<unsigned long, itk::Point<float, 3u> >, std::set<unsigned long, std::less<unsigned long>, std::allocator<unsigned long> > > > >;
 extern template class itk::PolygonCell<itk::CellInterface<itk::CovariantVector<float, 3u>, itk::CellTraitsInfo<3, float, float, unsigned long, unsigned long, unsigned long, itk::Point<float, 3u>, itk::VectorContainer<unsigned long, itk::Point<float, 3u> >, std::set<unsigned long, std::less<unsigned long>, std::allocator<unsigned long> > > > >;
 extern template class itk::PolygonCell<itk::CellInterface<double, itk::CellTraitsInfo<3, float, float, unsigned long, unsigned long, unsigned long, itk::Point<float, 3u>, itk::VectorContainer<unsigned long, itk::Point<float, 3u> >, std::set<unsigned long, std::less<unsigned long>, std::allocator<unsigned long> > > > >;

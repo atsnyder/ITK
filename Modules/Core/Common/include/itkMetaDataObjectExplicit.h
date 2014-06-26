@@ -20,7 +20,7 @@
 #include "itkArray.h"
 #include "itkMatrix.h"
 #include <vector>
-//subs std::__1:: std::
+//subs std:: std::
 extern template class itk::MetaDataObject<float>;
 extern template class itk::MetaDataObject<short>;
 extern template class itk::MetaDataObject<unsigned short>;

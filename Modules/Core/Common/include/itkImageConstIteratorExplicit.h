@@ -38,7 +38,7 @@ extern template class itk::ImageConstIterator<itk::Image<itk::Vector<double, 2u>
 extern template class itk::ImageConstIterator<itk::Image<itk::DiffusionTensor3D<float>, 2u> >;
 extern template class itk::ImageConstIterator<itk::Image<unsigned char, 4u> >;
 extern template class itk::ImageConstIterator<itk::Image<itk::Vector<double, 3u>, 3u> >;
-extern template class itk::ImageConstIterator<itk::Image<std::__1::complex<float>, 3u> >;
+extern template class itk::ImageConstIterator<itk::Image<std::complex<float>, 3u> >;
 extern template class itk::ImageConstIterator<itk::Image<itk::CovariantVector<double, 2u>, 2u> >;
 extern template class itk::ImageConstIterator<itk::Image<bool, 3u> >;
 extern template class itk::ImageConstIterator<itk::Image<short, 4u> >;
@@ -53,7 +53,7 @@ extern template class itk::ImageConstIterator<itk::Image<itk::CovariantVector<fl
 extern template class itk::ImageConstIterator<itk::Image<itk::Vector<double, 3u>, 4u> >;
 extern template class itk::ImageConstIterator<itk::Image<short, 2u> >;
 extern template class itk::ImageConstIterator<itk::Image<itk::Vector<int, 3u>, 3u> >;
-extern template class itk::ImageConstIterator<itk::Image<std::__1::complex<float>, 2u> >;
+extern template class itk::ImageConstIterator<itk::Image<std::complex<float>, 2u> >;
 extern template class itk::ImageConstIterator<itk::Image<itk::Vector<int, 2u>, 2u> >;
 extern template class itk::ImageConstIterator<itk::Image<unsigned short, 2u> >;
 extern template class itk::ImageConstIterator<itk::Image<double, 1u> >;
@@ -67,7 +67,7 @@ extern template class itk::ImageConstIterator<itk::Image<itk::Vector<unsigned sh
 extern template class itk::ImageConstIterator<itk::Image<float, 4u> >;
 extern template class itk::ImageConstIterator<itk::Image<char, 2u> >;
 extern template class itk::ImageConstIterator<itk::Image<unsigned long, 2u> >;
-extern template class itk::ImageConstIterator<itk::Image<std::__1::complex<double>, 2u> >;
+extern template class itk::ImageConstIterator<itk::Image<std::complex<double>, 2u> >;
 extern template class itk::ImageConstIterator<itk::Image<signed char, 2u> >;
 extern template class itk::ImageConstIterator<itk::Image<double, 2u> >;
 extern template class itk::ImageConstIterator<itk::Image<itk::RGBPixel<unsigned char>, 3u> >;

@@ -20,5 +20,5 @@
 #include "itkIndex.h"
 //exclude LevelSetDomainMapImageFilter
 //exclude __map_const_iterator
-//subs std::__1:: std::
+//subs std:: std::
 #endif //__itkThreadedIteratorRangePartitionerExplicit_h

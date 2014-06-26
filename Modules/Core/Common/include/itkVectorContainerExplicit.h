@@ -28,7 +28,7 @@
 //exclude NodePair
 //exclude fem
 //exclude ::Statistics
-//subs std::__1:: std::
+//subs std:: std::
 extern template class itk::VectorContainer<unsigned long, float>;
 extern template class itk::VectorContainer<unsigned long, itk::Vector<double, 3u> >;
 extern template class itk::VectorContainer<unsigned long, itk::Point<double, 3u> >;

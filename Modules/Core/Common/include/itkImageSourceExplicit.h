@@ -27,7 +27,7 @@
 //exclude LabelMap
 //exclude StatisticsLabelObject
 //exclude NormalBandNode
-//subs std::__1:: std::
+//subs std:: std::
 extern template class itk::ImageSource<itk::Image<itk::RGBAPixel<float>, 2u> >;
 extern template class itk::ImageSource<itk::VectorImage<float, 2u> >;
 extern template class itk::ImageSource<itk::VectorImage<unsigned short, 6u> >;

@@ -25,7 +25,7 @@
 #include <complex>
 //exclude ImageAdaptor
 //exclude VectorImage
-//subs std::__1:: std::
+//subs std:: std::
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<float, 2u>, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<float, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<float, 6u>, 2u> >;

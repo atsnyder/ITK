@@ -1,4 +1,4 @@
 #ifndef __ExplicitInstantiation_itkComplexBSplineInterpolateImageFunction_h__
 #define __ExplicitInstantiation_itkComplexBSplineInterpolateImageFunction_h__
-extern template class itk::ComplexBSplineInterpolateImageFunction<itk::Image<std::__1::complex<double>, 1u>, double, double>;
+extern template class itk::ComplexBSplineInterpolateImageFunction<itk::Image<std::complex<double>, 1u>, double, double>;
 #endif //__ExplicitInstantiation_itkComplexBSplineInterpolateImageFunction_h__

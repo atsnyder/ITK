@@ -142,6 +142,8 @@ private:
   double     m_Length;
 };
 
+//A partial template specialization for 3D UpdateTransform member function
+template<> void ArrowSpatialObject< 3 > ::UpdateTransform();
 
 } // end namespace itk
 
@@ -149,8 +151,6 @@ private:
 #include "itkArrowSpatialObject.hxx"
 #endif
 
-//A partial template specialization for 3D UpdateTransform member function
-template<> void itk::ArrowSpatialObject< 3 > ::UpdateTransform();  
 
 #ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
 #include "itkArrowSpatialObjectExplicit.h"

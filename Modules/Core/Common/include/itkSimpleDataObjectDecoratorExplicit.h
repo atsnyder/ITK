@@ -25,7 +25,7 @@
 #include "itkVariableLengthVector.h"
 #include <complex>
 //exclude Statistics::
-//subs std::__1:: std::
+//subs std:: std::
 extern template class itk::SimpleDataObjectDecorator<bool>;
 extern template class itk::SimpleDataObjectDecorator<std::vector<unsigned long, std::allocator<unsigned long> > >;
 extern template class itk::SimpleDataObjectDecorator<std::complex<float> >;

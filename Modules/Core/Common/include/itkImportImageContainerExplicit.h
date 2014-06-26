@@ -29,7 +29,7 @@
 //exclude NormalBandNode
 //exclude watershed
 //exclude fem
-//subs std::__1:: std::
+//subs std:: std::
 extern template class itk::ImportImageContainer<unsigned long, itk::DiffusionTensor3D<float> >;
 extern template class itk::ImportImageContainer<unsigned long, itk::RGBPixel<unsigned short> >;
 extern template class itk::ImportImageContainer<unsigned long, unsigned int>;

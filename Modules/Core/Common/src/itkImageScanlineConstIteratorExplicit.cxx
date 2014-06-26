@@ -37,14 +37,14 @@ template class itk::ImageScanlineConstIterator<itk::Image<unsigned long long, 3u
 template class itk::ImageScanlineConstIterator<itk::Image<int, 3u> >; //Instantiated 26 times
 template class itk::ImageScanlineConstIterator<itk::Image<unsigned char, 4u> >; //Instantiated 12 times
 template class itk::ImageScanlineConstIterator<itk::Image<long, 3u> >; //Instantiated 10 times
-template class itk::ImageScanlineConstIterator<itk::Image<std::__1::complex<float>, 2u> >; //Instantiated 30 times
+template class itk::ImageScanlineConstIterator<itk::Image<std::complex<float>, 2u> >; //Instantiated 30 times
 template class itk::ImageScanlineConstIterator<itk::Image<char, 2u> >; //Instantiated 34 times
 template class itk::ImageScanlineConstIterator<itk::Image<itk::SymmetricSecondRankTensor<float, 3u>, 3u> >; //Instantiated 4 times
 template class itk::ImageScanlineConstIterator<itk::Image<itk::RGBPixel<float>, 3u> >; //Instantiated 4 times
 template class itk::ImageScanlineConstIterator<itk::Image<itk::RGBAPixel<short>, 2u> >; //Instantiated 4 times
 template class itk::ImageScanlineConstIterator<itk::Image<itk::Vector<float, 6u>, 3u> >; //Instantiated 4 times
 template class itk::ImageScanlineConstIterator<itk::Image<float, 2u> >; //Instantiated 340 times
-template class itk::ImageScanlineConstIterator<itk::Image<std::__1::complex<float>, 3u> >; //Instantiated 10 times
+template class itk::ImageScanlineConstIterator<itk::Image<std::complex<float>, 3u> >; //Instantiated 10 times
 template class itk::ImageScanlineConstIterator<itk::Image<unsigned char, 3u> >; //Instantiated 224 times
 template class itk::ImageScanlineConstIterator<itk::Image<unsigned short, 2u> >; //Instantiated 140 times
 template class itk::ImageScanlineConstIterator<itk::Image<itk::Vector<float, 4u>, 3u> >; //Instantiated 4 times
@@ -60,7 +60,7 @@ template class itk::ImageScanlineConstIterator<itk::Image<itk::DiffusionTensor3D
 template class itk::ImageScanlineConstIterator<itk::VectorImage<float, 2u> >; //Instantiated 12 times
 template class itk::ImageScanlineConstIterator<itk::Image<itk::Offset<2u>, 2u> >; //Instantiated 4 times
 template class itk::ImageScanlineConstIterator<itk::Image<int, 2u> >; //Instantiated 18 times
-template class itk::ImageScanlineConstIterator<itk::Image<std::__1::complex<double>, 2u> >; //Instantiated 26 times
+template class itk::ImageScanlineConstIterator<itk::Image<std::complex<double>, 2u> >; //Instantiated 26 times
 template class itk::ImageScanlineConstIterator<itk::Image<unsigned int, 3u> >; //Instantiated 26 times
 template class itk::ImageScanlineConstIterator<itk::Image<itk::CovariantVector<double, 2u>, 2u> >; //Instantiated 6 times
 template class itk::ImageScanlineConstIterator<itk::Image<float, 4u> >; //Instantiated 8 times
