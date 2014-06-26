@@ -286,7 +286,7 @@ private:
 #include "itkSimplexMesh.hxx"
 #endif
 
-#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
 #include "itkSimplexMeshExplicit.h"
 #endif
 

@@ -279,7 +279,7 @@ extern template class ITKCommon_EXPORT_EXPLICIT MetaDataObject< Matrix<double> >
 #include "itkMetaDataObject.hxx"
 #endif
 
-#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
 #include "itkMetaDataObjectExplicit.h"
 #endif
 

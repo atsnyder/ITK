@@ -279,7 +279,7 @@ std::ostream & operator<<(std::ostream & os, const FixedArray< TValue, VLength >
 
 #include "itkNumericTraitsFixedArrayPixel.h"
 
-#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
 #include "itkFixedArrayExplicit.h"
 #endif
 

@@ -152,7 +152,7 @@ private:
 //A partial template specialization for 3D UpdateTransform member function
 template<> void itk::ArrowSpatialObject< 3 > ::UpdateTransform();  
 
-#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
 #include "itkArrowSpatialObjectExplicit.h"
 #endif
 

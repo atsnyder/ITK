@@ -118,7 +118,7 @@ protected: //made protected so other iterators can access
 #include "itkFloodFilledSpatialFunctionConditionalConstIterator.hxx"
 #endif
 
-#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
 #include "itkFloodFilledSpatialFunctionConditionalConstIteratorExplicit.h"
 #endif
 

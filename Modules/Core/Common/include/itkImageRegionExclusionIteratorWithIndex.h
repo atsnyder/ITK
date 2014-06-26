@@ -120,7 +120,7 @@ protected:
 #include "itkImageRegionExclusionIteratorWithIndex.hxx"
 #endif
 
-#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
 #include "itkImageRegionExclusionIteratorWithIndexExplicit.h"
 #endif
 

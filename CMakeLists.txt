@@ -209,8 +209,8 @@ set(ITK_MODULES_DIR "${ITK_BINARY_DIR}/${ITK_INSTALL_PACKAGE_DIR}/Modules")
 
 
 #-----------------------------------------------------------------------------
-option(ITK_COMMON_EXPLICIT_INSTANTIATION "Enable explicit instantiation of common template instances." ON)
-mark_as_advanced(ITK_COMMON_EXPLICIT_INSTANTIATION)
+option(ITK_TEMPLATE_EXPLICIT_INSTANTIATION "Enable explicit instantiation of common template instances." ON)
+mark_as_advanced(ITK_TEMPLATE_EXPLICIT_INSTANTIATION)
 
 #-----------------------------------------------------------------------------
 # Provide compatibility options.

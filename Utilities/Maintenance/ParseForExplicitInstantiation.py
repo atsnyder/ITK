@@ -286,7 +286,7 @@ so that build times are minimized."""
 
 
     def _FixupHeader(self):
-        payloadToAdd="""#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+        payloadToAdd="""#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
 #include "{0}"
 #endif
 
@@ -295,7 +295,7 @@ so that build times are minimized."""
             all_lines = readFile.readlines()
         PayloadHeaderCount = 0
         for thisline in all_lines:
-            if thisline.find('#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION') == 0:
+            if thisline.find('#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION') == 0:
                 PayloadHeaderCount += 1
         if PayloadHeaderCount == 0:
             all_lines.insert(-1,payloadToAdd) #Add payload one line before end of file

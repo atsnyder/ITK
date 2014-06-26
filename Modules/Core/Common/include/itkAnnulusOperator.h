@@ -234,7 +234,7 @@ private:
 #ifndef ITK_MANUAL_INSTANTIATION
 #include "itkAnnulusOperator.hxx"
 #endif
-#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
 #include "itkAnnulusOperatorExplicit.h"
 #endif
 

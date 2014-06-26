@@ -1,5 +1,5 @@
 project(ITKCurvatureFlow)
-if(ITK_COMMON_EXPLICIT_INSTANTIATION)
+if(ITK_TEMPLATE_EXPLICIT_INSTANTIATION)
   set(ITKCurvatureFlow_LIBRARIES ITKCurvatureFlow)
 endif()
 itk_module_impl()

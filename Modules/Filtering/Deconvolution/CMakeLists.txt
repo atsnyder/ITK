@@ -1,6 +1,6 @@
 project(ITK-Deconvolution)
 
-if(ITK_COMMON_EXPLICIT_INSTANTIATION)
+if(ITK_TEMPLATE_EXPLICIT_INSTANTIATION)
   set(ITKDeconvolution_LIBRARIES ITKDeconvolution)
 endif()
 

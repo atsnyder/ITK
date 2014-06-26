@@ -258,7 +258,7 @@ private:
 #include "itkRigid3DPerspectiveTransform.hxx"
 #endif
 
-#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
 #include "itkRigid3DPerspectiveTransformExplicit.h"
 #endif
 

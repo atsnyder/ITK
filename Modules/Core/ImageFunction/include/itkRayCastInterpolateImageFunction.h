@@ -197,7 +197,7 @@ private:
 #include "itkRayCastInterpolateImageFunction.hxx"
 #endif
 
-#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
 #include "itkRayCastInterpolateImageFunctionExplicit.h"
 #endif
 

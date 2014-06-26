@@ -341,7 +341,7 @@ private:
 #include "itkMaskedFFTNormalizedCorrelationImageFilter.hxx"
 #endif
 
-#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
 #include "itkMaskedFFTNormalizedCorrelationImageFilterExplicit.h"
 #endif
 

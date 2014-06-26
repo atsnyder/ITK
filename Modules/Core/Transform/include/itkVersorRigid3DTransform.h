@@ -141,7 +141,7 @@ private:
 #include "itkVersorRigid3DTransform.hxx"
 #endif
 
-#ifdef ITK_COMMON_EXPLICIT_INSTANTIATION
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
 #include "itkVersorRigid3DTransformExplicit.h"
 #endif
 

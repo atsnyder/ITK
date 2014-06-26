@@ -1,5 +1,5 @@
 project(ITKFiniteDifference)
-if(ITK_COMMON_EXPLICIT_INSTANTIATION)
+if(ITK_TEMPLATE_EXPLICIT_INSTANTIATION)
   set(ITKFiniteDifference_LIBRARIES ITKFiniteDifference)
 endif()
 itk_module_impl()
