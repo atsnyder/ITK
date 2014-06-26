@@ -35,6 +35,7 @@ DONE ITK/Modules/Filtering/BinaryMathematicalMorphology/include
 DONE ITK/Modules/Filtering/Colormap/include
 DONE ITK/Modules/Filtering/Convolution/include
 DONE ITK/Modules/Filtering/Deconvolution/include
+DONE ITK/Modules/Filtering/CurvatureFlow/include
 
 TODO
 ITK/Modules/Bridge/VTK/include
@@ -43,7 +44,6 @@ ITK/Modules/Compatibility/V3Compatibility/include
 ITK/Modules/Core/GPUCommon/include
 ITK/Modules/Core/GPUFiniteDifference/include
 ITK/Modules/Core/TestKernel/include
-ITK/Modules/Filtering/CurvatureFlow/include
 ITK/Modules/Filtering/Denoising/include
 ITK/Modules/Filtering/DiffusionTensorImage/include
 ITK/Modules/Filtering/DisplacementField/include
@@ -122,7 +122,7 @@ import re
 import docopt
 
 class ProcessClassFromFile:
-    def __init__(self, inputHeader, minimumRepeatNumber,inputSymbolsFile='/scratch/kent/itktest/NoExplicit-build/Symbols.list' ):
+    def __init__(self, inputHeader, minimumRepeatNumber,inputSymbolsFile='/scratch/kent/itktest/Symbol.list' ):
 
         self.ITKCopyright = """/*=========================================================================
  *
