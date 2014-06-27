@@ -24,22 +24,24 @@ done |tee ~/Symbols.list
 
 ###for SRC_DIR in $(find  ITK/Modules -name src -type d |fgrep -v ThirdParty |fgrep "/Common/"); do
 
-DONE ITK/Modules/Core/Common
-DONE ITK/Modules/IO/*
-DONE ITK/Modlules/Core/FiniteDifference
-DONE ITK/Modules/Core/ImageAdapter
-DONE ITK/Modules/Core/Transform/include
-DONE ITK/Modules/Filtering/AnisotropicSmoothing/include
-DONE ITK/Modules/Filtering/AntiAlias/include
-DONE ITK/Modules/Filtering/BinaryMathematicalMorphology/include
-DONE ITK/Modules/Filtering/Colormap/include
-DONE ITK/Modules/Filtering/Convolution/include
-DONE ITK/Modules/Filtering/Deconvolution/include
-DONE ITK/Modules/Filtering/CurvatureFlow/include
-DONE ITK/Modules/Filtering/DisplacementField/include
-DONE ITK/Modules/Filtering/DistanceMap/include
-DONE ITK/Modules/Filtering/FastMarching/include
-DONE ITK/Modules/Filtering/ImageCompare/include
+ITK/Modules/Core/Common
+ITK/Modules/IO/*
+ITK/Modlules/Core/FiniteDifference
+ITK/Modules/Core/ImageAdapter
+ITK/Modules/Core/Transform/include
+ITK/Modules/Filtering/AnisotropicSmoothing/include
+ITK/Modules/Filtering/AntiAlias/include
+ITK/Modules/Filtering/BinaryMathematicalMorphology/include
+ITK/Modules/Filtering/Colormap/include
+ITK/Modules/Filtering/Convolution/include
+ITK/Modules/Filtering/Deconvolution/include
+ITK/Modules/Filtering/CurvatureFlow/include
+ITK/Modules/Filtering/DisplacementField/include
+ITK/Modules/Filtering/DistanceMap/include
+ITK/Modules/Filtering/FastMarching/include
+ITK/Modules/Filtering/ImageCompare/include
+ITK/Modules/Filtering/ImageCompose/include
+ITK/Modules/Filtering/ImageFeature/include
 
 TODO
 ITK/Modules/Bridge/VTK/include
@@ -54,8 +56,6 @@ ITK/Modules/Filtering/GPUAnisotropicSmoothing/include
 ITK/Modules/Filtering/GPUImageFilterBase/include
 ITK/Modules/Filtering/GPUSmoothing/include
 ITK/Modules/Filtering/GPUThresholding/include
-ITK/Modules/Filtering/ImageCompose/include
-ITK/Modules/Filtering/ImageFeature/include
 ITK/Modules/Filtering/ImageFilterBase/include
 ITK/Modules/Filtering/ImageFusion/include
 ITK/Modules/Filtering/ImageGradient/include

@@ -12,6 +12,12 @@ ${ITK_CONVOLUTION_EXPLICIT_SOURCES}
 # otherwise it causes a build error.
 if(ITKConvolution_SRC)
   add_library(ITKConvolution ${ITKConvolution_SRC})
-  target_link_libraries(ITKConvolution  ${ITKImageIntensity_LIBRARIES} )
+  target_link_libraries(ITKConvolution
+    ${ITKImageIntensity_LIBRARIES}
+    ${ITKSmoothing_LIBRARIES}
+    ${ITKImageGradient_LIBRARIES}
+    ${ITKSpatialObjects_LIBRARIES}
+    ${ITKImageSources_LIBRARIES}
+    )
   itk_module_target(ITKConvolution)
 endif()
