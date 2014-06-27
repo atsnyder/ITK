@@ -39,6 +39,7 @@ DONE ITK/Modules/Filtering/CurvatureFlow/include
 DONE ITK/Modules/Filtering/DisplacementField/include
 DONE ITK/Modules/Filtering/DistanceMap/include
 DONE ITK/Modules/Filtering/FastMarching/include
+DONE ITK/Modules/Filtering/ImageCompare/include
 
 TODO
 ITK/Modules/Bridge/VTK/include
@@ -53,7 +54,6 @@ ITK/Modules/Filtering/GPUAnisotropicSmoothing/include
 ITK/Modules/Filtering/GPUImageFilterBase/include
 ITK/Modules/Filtering/GPUSmoothing/include
 ITK/Modules/Filtering/GPUThresholding/include
-ITK/Modules/Filtering/ImageCompare/include
 ITK/Modules/Filtering/ImageCompose/include
 ITK/Modules/Filtering/ImageFeature/include
 ITK/Modules/Filtering/ImageFilterBase/include
