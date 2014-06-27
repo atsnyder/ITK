@@ -9,6 +9,7 @@ itk_module(ITKDeformableMesh
     ITKImageFeature
     ITKAnisotropicSmoothing
   TEST_DEPENDS
+    ITKImageGradient
     ITKTestKernel
   DESCRIPTION
     "${DOCUMENTATION}"

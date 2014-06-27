@@ -17,6 +17,7 @@ itk_module(ITKLevelSets
     ITKImageCompare
     ITKFastMarching
     ITKNarrowBand
+    ITKImageGradient
   TEST_DEPENDS
     ITKTestKernel
   DESCRIPTION

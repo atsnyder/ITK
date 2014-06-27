@@ -13,6 +13,7 @@ itk_module(ITKImageFeature
   TEST_DEPENDS
     ITKTestKernel
     ITKThresholding
+    ITKImageGradient
   DESCRIPTION
     "${DOCUMENTATION}"
   )
