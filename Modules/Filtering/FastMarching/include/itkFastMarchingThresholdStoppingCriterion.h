@@ -84,4 +84,8 @@ private:
 };
 
 }
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkFastMarchingThresholdStoppingCriterionExplicit.h"
+#endif
+
 #endif // __itkFastMarchingThresholdStoppingCriterion_h

@@ -172,4 +172,8 @@ private:
 }
 
 #include "itkFastMarchingQuadEdgeMeshFilterBase.hxx"
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkFastMarchingQuadEdgeMeshFilterBaseExplicit.h"
+#endif
+
 #endif // __itkFastMarchingQuadEdgeMeshFilterBase_h
