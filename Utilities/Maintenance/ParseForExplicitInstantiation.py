@@ -122,7 +122,7 @@ import re
 import docopt
 
 class ProcessClassFromFile:
-    def __init__(self, inputHeader, minimumRepeatNumber,inputSymbolsFile='/scratch/kent/itktest/Symbol.list' ):
+    def __init__(self, inputHeader, minimumRepeatNumber,inputSymbolsFile='/scratch/kent/itkexplicit/Symbol.list' ):
 
         self.ITKCopyright = """/*=========================================================================
  *
@@ -180,6 +180,7 @@ class ProcessClassFromFile:
             nm_search_match = nm_link_objects.search(thisline)
             if nm_search_match:
                 TemplatePayLoad = nm_search_match.groups()[0]
+                TemplatePayLoad = TemplatePayLoad.replace("std::__1::","std::")
                 TemplateInstance = "itk::{0}<{1}>".format(self.BaseClassName,TemplatePayLoad)
                 self.SymbolsMapping[TemplateInstance] += 1
             else:

@@ -50,7 +50,7 @@ ReflectiveImageRegionConstIterator< TImage >
 
 template< typename TImage >
 ReflectiveImageRegionConstIterator< TImage >
-::ReflectiveImageRegionConstIterator(const Self & it)
+::ReflectiveImageRegionConstIterator(const Self & it) : Superclass(it)
 {
   this->operator= ( it );
   this->GoToBegin();
