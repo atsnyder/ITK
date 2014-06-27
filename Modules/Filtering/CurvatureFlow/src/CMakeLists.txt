@@ -12,6 +12,9 @@ ${ITK_CURVATUREFLOW_EXPLICIT_SOURCES}
 # otherwise it causes a build error.
 if(ITKCurvatureFlow_SRC)
   add_library(ITKCurvatureFlow ${ITKCurvatureFlow_SRC})
-  target_link_libraries(ITKCurvatureFlow ${ITKFiniteDifference_LIBRARIES} ${ITKCommon_LIBRARIES})
+  target_link_libraries(ITKCurvatureFlow
+    ${ITKImageFilterBase_LIBRARIES}
+    ${ITKFiniteDifference_LIBRARIES}
+    ${ITKCommon_LIBRARIES})
   itk_module_target(ITKCurvatureFlow)
 endif()

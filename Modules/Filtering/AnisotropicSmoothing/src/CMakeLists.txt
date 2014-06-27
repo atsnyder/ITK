@@ -16,6 +16,7 @@ if(ITKAnisotropicSmoothing_SRC)
     ${ITKImageGrid_LIBRARIES}
     ${ITKCurvatureFlow_LIBRARIES}
     ${ITKFiniteDifference_LIBRARIES}
+    ${ITKImageFilterBase_LIBRARIES}
     )
   itk_module_target(ITKAnisotropicSmoothing)
 endif()

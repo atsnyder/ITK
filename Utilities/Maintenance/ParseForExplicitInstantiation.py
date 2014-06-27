@@ -42,6 +42,8 @@ ITK/Modules/Filtering/FastMarching/include
 ITK/Modules/Filtering/ImageCompare/include
 ITK/Modules/Filtering/ImageCompose/include
 ITK/Modules/Filtering/ImageFeature/include
+ITK/Modules/Filtering/ImageFilterBase/include
+ITK/Modules/Segmentation/Voronoi/include
 
 TODO
 ITK/Modules/Bridge/VTK/include
@@ -56,7 +58,6 @@ ITK/Modules/Filtering/GPUAnisotropicSmoothing/include
 ITK/Modules/Filtering/GPUImageFilterBase/include
 ITK/Modules/Filtering/GPUSmoothing/include
 ITK/Modules/Filtering/GPUThresholding/include
-ITK/Modules/Filtering/ImageFilterBase/include
 ITK/Modules/Filtering/ImageFusion/include
 ITK/Modules/Filtering/ImageGradient/include
 ITK/Modules/Filtering/ImageGrid/include
@@ -93,7 +94,6 @@ ITK/Modules/Segmentation/LevelSetsv4Visualization/include
 ITK/Modules/Segmentation/MarkovRandomFieldsClassifiers/include
 ITK/Modules/Segmentation/RegionGrowing/include
 ITK/Modules/Segmentation/SignedDistanceFunction/include
-ITK/Modules/Segmentation/Voronoi/include
 ITK/Modules/ThirdParty/VNLInstantiation/include
 ITK/Modules/Video/BridgeOpenCV/include
 ITK/Modules/Video/BridgeVXL/include

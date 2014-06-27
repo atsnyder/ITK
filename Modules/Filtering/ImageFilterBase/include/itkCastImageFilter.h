@@ -148,4 +148,8 @@ private:
 
 #ifndef ITK_MANUAL_INSTANTIATION
 #include "itkCastImageFilter.hxx"
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkCastImageFilterExplicit.h"
+#endif
+
 #endif

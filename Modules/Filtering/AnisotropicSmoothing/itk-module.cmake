@@ -10,6 +10,7 @@ itk_module(ITKAnisotropicSmoothing
     ITKImageGrid
     ITKCurvatureFlow
     ITKFiniteDifference
+    ITKImageFilterBase
   TEST_DEPENDS
     ITKTestKernel
   DESCRIPTION

@@ -5,7 +5,6 @@ itkVoronoiSegmentationRGBImageFilterTest.cxx
 itkVoronoiDiagram2DTest.cxx
 itkVoronoiPartitioningImageFilterTest.cxx
 )
-
 CreateTestDriver(ITKVoronoi  "${ITKVoronoi-Test_LIBRARIES}" "${ITKVoronoiTests}")
 
 itk_add_test(NAME itkVoronoiSegmentationImageFilterTest
