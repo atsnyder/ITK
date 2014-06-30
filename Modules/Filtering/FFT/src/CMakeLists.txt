@@ -5,7 +5,7 @@ itkFFTWGlobalConfiguration.cxx
 # this library is only needed if FFTW is used
 if( ITK_USE_FFTWF OR ITK_USE_FFTWD )
   add_library(ITKFFT ${ITKFFT_SRC})
-  target_link_libraries(ITKFFT  ${ITKCommon_LIBRARIES})
+  target_link_libraries(ITKFFT  ${ITKCommon_LIBRARIES} ${ITKImageGrid_LIBRARIES})
 
   if(ITK_USE_FFTWD)
     if(ITK_USE_SYSTEM_FFTW)

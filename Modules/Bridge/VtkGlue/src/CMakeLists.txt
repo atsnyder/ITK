@@ -11,6 +11,9 @@ endif()
 add_library( ITKVtkGlue ${ITKVtkGlue_SRCS})
 target_link_libraries(ITKVtkGlue
     ${ITKCommon_LIBRARIES}
+    ${ITKImageGrid_LIBRARIES}
+    ${ITKImageIntensity_LIBRARIES}
+    ${ITKImageAdaptors_LIBRARIES}
     ${ITKVTK_LIBRARIES}
     ${VTK_LIBRARIES}
     ${VTK_LIBRARIES_EXPLICIT}

@@ -7,6 +7,7 @@ itk_module(ITKImageGrid
   DEPENDS
     ITKImageFunction
     ITKImageFilterBase
+    ITKImageAdaptors
   TEST_DEPENDS
     ITKTestKernel
     ITKSmoothing

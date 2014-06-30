@@ -293,4 +293,8 @@ private:
 #include "itkWarpImageFilter.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkWarpImageFilterExplicit.h"
+#endif
+
 #endif

@@ -428,4 +428,8 @@ private:
 #include "itkBSplineScatteredDataPointSetToImageFilter.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkBSplineScatteredDataPointSetToImageFilterExplicit.h"
+#endif
+
 #endif
