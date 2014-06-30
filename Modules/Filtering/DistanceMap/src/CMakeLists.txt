@@ -17,6 +17,7 @@ if(ITKDistanceMap_SRC)
     ${ITKBinaryMathematicalMorphology_LIBRARIES}
     ${ITKNarrowBand_LIBRARIES}
     ${ITKImageLabel_LIBRARIES}
+    ${ITKThresholding_LIBRARIES}
     )
   itk_module_target(ITKDistanceMap)
 endif()

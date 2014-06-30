@@ -8,6 +8,7 @@ itk_module(ITKDistanceMap
     ITKBinaryMathematicalMorphology
     ITKNarrowBand
     ITKImageLabel
+    ITKThresholding
   TEST_DEPENDS
     ITKTestKernel
   DESCRIPTION

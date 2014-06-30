@@ -13,11 +13,10 @@ ${ITK_CONVOLUTION_EXPLICIT_SOURCES}
 if(ITKConvolution_SRC)
   add_library(ITKConvolution ${ITKConvolution_SRC})
   target_link_libraries(ITKConvolution
+    ${ITKFFT_LIBRARIES}
+    ${ITKImageGrid_LIBRARIES}
     ${ITKImageIntensity_LIBRARIES}
-    ${ITKSmoothing_LIBRARIES}
-    ${ITKImageGradient_LIBRARIES}
-    ${ITKSpatialObjects_LIBRARIES}
-    ${ITKImageSources_LIBRARIES}
+    ${ITKThresholding_LIBRARIES}
     )
   itk_module_target(ITKConvolution)
 endif()

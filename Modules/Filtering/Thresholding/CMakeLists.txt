@@ -1,2 +1,7 @@
-project(ITKThresholding)
+project(ITK-Thresholding)
+
+if(ITK_TEMPLATE_EXPLICIT_INSTANTIATION)
+  set(ITKThresholding_LIBRARIES ITKThresholding)
+endif()
+
 itk_module_impl()

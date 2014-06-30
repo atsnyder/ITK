@@ -52,6 +52,8 @@ ITK/Modules/Filtering/ImageLabel/include
 ITK/Modules/Filtering/ImageSources/include
 ITK/Modules/Filtering/ImageStatistics/include
 ITK/Modules/Filtering/QuadEdgeMeshFiltering/include
+ITK/Modules/Filtering/Smoothing/include
+ITK/Modules/Filtering/Thresholding/include
 
 TODO
 ITK/Modules/Bridge/VTK/include
@@ -68,9 +70,7 @@ ITK/Modules/Filtering/GPUSmoothing/include
 ITK/Modules/Filtering/GPUThresholding/include
 ITK/Modules/Filtering/ImageNoise/include -- few instantiations
 ITK/Modules/Filtering/MathematicalMorphology/include -- too complicated
-ITK/Modules/Filtering/Smoothing/include
-ITK/Modules/Filtering/SpatialFunction/include
-ITK/Modules/Filtering/Thresholding/include
+ITK/Modules/Filtering/SpatialFunction/include -- no classes over the threshold
 ITK/Modules/Numerics/Eigen/include
 ITK/Modules/Numerics/NarrowBand/include
 ITK/Modules/Numerics/NeuralNetworks/include
