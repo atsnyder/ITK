@@ -12,7 +12,10 @@ ${ITK_DECONVOLUTION_EXPLICIT_SOURCES}
 # otherwise it causes a build error.
 if(ITKDeconvolution_SRC)
   add_library(ITKDeconvolution ${ITKDeconvolution_SRC})
-  target_link_libraries(ITKDeconvolution  ${ITKTransform_LIBRARIES} ${ITKConvolution_LIBRARIES}
-    ${ITKImageAdaptors_LIBRARIES})
+  target_link_libraries(ITKDeconvolution
+    ${ITKConvolution_LIBRARIES}
+    ${ITKImageSources_LIBRARIES}
+    ${ITKImageAdaptors_LIBRARIES}
+    )
   itk_module_target(ITKDeconvolution)
 endif()

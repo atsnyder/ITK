@@ -1,2 +1,7 @@
 project(ITKImageSources)
+
+if(ITK_TEMPLATE_EXPLICIT_INSTANTIATION)
+  set(ITKImageSources_LIBRARIES ITKImageSources)
+endif()
+
 itk_module_impl()

@@ -63,7 +63,7 @@ ITK/Modules/Filtering/GPUAnisotropicSmoothing/include
 ITK/Modules/Filtering/GPUImageFilterBase/include
 ITK/Modules/Filtering/GPUSmoothing/include
 ITK/Modules/Filtering/GPUThresholding/include
-ITK/Modules/Filtering/ImageNoise/include
+ITK/Modules/Filtering/ImageNoise/include -- few instantiations
 ITK/Modules/Filtering/ImageSources/include
 ITK/Modules/Filtering/ImageStatistics/include
 ITK/Modules/Filtering/MathematicalMorphology/include

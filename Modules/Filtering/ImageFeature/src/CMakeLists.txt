@@ -12,6 +12,12 @@ ${ITK_IMAGFEATURE_EXPLICIT_SOURCES}
 # otherwise it causes a build error.
 if(ITKImageFeature_SRC)
   add_library(ITKImageFeature ${ITKImageFeature_SRC})
-  target_link_libraries(ITKImageFeature  ${ITKImageIntensity_LIBRARIES} )
+  target_link_libraries(ITKImageFeature
+    ${ITKImageIntensity_LIBRARIES}
+    ${ITKSmoothing_LIBRARIES}
+    ${ITKImageGradient_LIBRARIES}
+    ${ITKSpatialObjects_LIBRARIES}
+    ${ITKImageSources_LIBRARIES}
+    )
   itk_module_target(ITKImageFeature)
 endif()

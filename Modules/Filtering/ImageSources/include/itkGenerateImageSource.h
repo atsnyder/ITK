@@ -119,4 +119,8 @@ private:
 #endif
 
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkGenerateImageSourceExplicit.h"
+#endif
+
 #endif //__itkGenerateImageSource_h
