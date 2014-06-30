@@ -51,6 +51,7 @@ ITK/Modules/Filtering/ImageIntensity/include
 ITK/Modules/Filtering/ImageLabel/include
 ITK/Modules/Filtering/ImageSources/include
 ITK/Modules/Filtering/ImageStatistics/include
+ITK/Modules/Filtering/QuadEdgeMeshFiltering/include
 
 TODO
 ITK/Modules/Bridge/VTK/include
@@ -66,8 +67,7 @@ ITK/Modules/Filtering/GPUImageFilterBase/include
 ITK/Modules/Filtering/GPUSmoothing/include
 ITK/Modules/Filtering/GPUThresholding/include
 ITK/Modules/Filtering/ImageNoise/include -- few instantiations
-ITK/Modules/Filtering/MathematicalMorphology/include
-ITK/Modules/Filtering/QuadEdgeMeshFiltering/include
+ITK/Modules/Filtering/MathematicalMorphology/include -- too complicated
 ITK/Modules/Filtering/Smoothing/include
 ITK/Modules/Filtering/SpatialFunction/include
 ITK/Modules/Filtering/Thresholding/include
