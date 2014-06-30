@@ -206,4 +206,8 @@ private:
 #include "itkRescaleIntensityImageFilter.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkRescaleIntensityImageFilterExplicit.h"
+#endif
+
 #endif
