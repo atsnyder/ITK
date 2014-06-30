@@ -48,6 +48,7 @@ ITK/Modules/Filtering/ImageFusion/include
 ITK/Modules/Filtering/ImageGradient/include
 ITK/Modules/Filtering/ImageGrid/include
 ITK/Modules/Filtering/ImageIntensity/include
+ITK/Modules/Filtering/ImageLabel/include
 
 TODO
 ITK/Modules/Bridge/VTK/include
@@ -62,7 +63,6 @@ ITK/Modules/Filtering/GPUAnisotropicSmoothing/include
 ITK/Modules/Filtering/GPUImageFilterBase/include
 ITK/Modules/Filtering/GPUSmoothing/include
 ITK/Modules/Filtering/GPUThresholding/include
-ITK/Modules/Filtering/ImageLabel/include
 ITK/Modules/Filtering/ImageNoise/include
 ITK/Modules/Filtering/ImageSources/include
 ITK/Modules/Filtering/ImageStatistics/include
