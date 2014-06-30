@@ -191,4 +191,8 @@ private:
 #include "itkSmoothingRecursiveGaussianImageFilter.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkSmoothingRecursiveGaussianImageFilterExplicit.h"
+#endif
+
 #endif
