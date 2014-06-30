@@ -150,4 +150,8 @@ private:
 #include "itkAdaptiveHistogramEqualizationImageFilter.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkAdaptiveHistogramEqualizationImageFilterExplicit.h"
+#endif
+
 #endif
