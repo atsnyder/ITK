@@ -213,4 +213,8 @@ private:
 #include "itkTimeVaryingBSplineVelocityFieldTransformParametersAdaptor.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkTimeVaryingBSplineVelocityFieldTransformParametersAdaptorExplicit.h"
+#endif
+
 #endif /* __itkTimeVaryingBSplineVelocityFieldTransformParametersAdaptor_h */

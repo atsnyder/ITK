@@ -136,4 +136,8 @@ private:
 #include "itkBSplineSmoothingOnUpdateDisplacementFieldTransformParametersAdaptor.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkBSplineSmoothingOnUpdateDisplacementFieldTransformParametersAdaptorExplicit.h"
+#endif
+
 #endif /* __itkBSplineSmoothingOnUpdateDisplacementFieldTransformParametersAdaptor_h */

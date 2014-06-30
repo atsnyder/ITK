@@ -136,4 +136,8 @@ private:
 #include "itkBSplineExponentialDiffeomorphicTransformParametersAdaptor.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkBSplineExponentialDiffeomorphicTransformParametersAdaptorExplicit.h"
+#endif
+
 #endif /* __itkBSplineExponentialDiffeomorphicTransformParametersAdaptor_h */

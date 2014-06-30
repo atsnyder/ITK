@@ -155,4 +155,8 @@ private:
 #include "itkBSplineTransformParametersAdaptor.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkBSplineTransformParametersAdaptorExplicit.h"
+#endif
+
 #endif /* __itkBSplineTransformParametersAdaptor_h */

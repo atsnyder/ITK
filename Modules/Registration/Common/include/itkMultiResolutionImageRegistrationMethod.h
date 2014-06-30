@@ -293,4 +293,8 @@ private:
 #include "itkMultiResolutionImageRegistrationMethod.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkMultiResolutionImageRegistrationMethodExplicit.h"
+#endif
+
 #endif

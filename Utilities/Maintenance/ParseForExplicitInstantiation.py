@@ -54,6 +54,7 @@ ITK/Modules/Filtering/ImageStatistics/include
 ITK/Modules/Filtering/QuadEdgeMeshFiltering/include
 ITK/Modules/Filtering/Smoothing/include
 ITK/Modules/Filtering/Thresholding/include
+ITK/Modules/Registration/Common/include
 
 TODO
 ITK/Modules/Bridge/VTK/include
@@ -71,12 +72,11 @@ ITK/Modules/Filtering/GPUThresholding/include
 ITK/Modules/Filtering/ImageNoise/include -- few instantiations
 ITK/Modules/Filtering/MathematicalMorphology/include -- too complicated
 ITK/Modules/Filtering/SpatialFunction/include -- no classes over the threshold
-ITK/Modules/Numerics/Eigen/include
-ITK/Modules/Numerics/NarrowBand/include
-ITK/Modules/Numerics/NeuralNetworks/include
-ITK/Modules/Numerics/Optimizers/include
-ITK/Modules/Numerics/Polynomials/include
-ITK/Modules/Registration/Common/include
+ITK/Modules/Numerics/Eigen/include -- no classes over threshold
+ITK/Modules/Numerics/NarrowBand/include -- no classes over threshold
+ITK/Modules/Numerics/NeuralNetworks/include -- no classes over threshold
+ITK/Modules/Numerics/Optimizers/include -- no classes over threshold
+ITK/Modules/Numerics/Polynomials/include  -- no classes over threshold
 ITK/Modules/Registration/FEM/include
 ITK/Modules/Registration/GPUCommon/include
 ITK/Modules/Registration/GPUPDEDeformable/include
