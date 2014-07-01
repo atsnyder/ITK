@@ -162,8 +162,8 @@ class ProcessClassFromFile:
 
     def _ParseSymbolFile(self,inputSymbolsFile):
         self.SymbolsMapping = collections.defaultdict(int)
-
-        nm_link_objects = re.compile("[0-9a-f]* S itk::"+self.BaseClassName+"<(.*)>::~"+self.BaseClassName+"\(\)")
+        # note -- nm output differs btw OS X and Linux
+        nm_link_objects = re.compile("[0-9a-f]* [SW] itk::"+self.BaseClassName+"<(.*)>::~"+self.BaseClassName+"\(\)")
 
         with open(inputSymbolsFile,'r') as isf:
             all_lines = isf.readlines()
