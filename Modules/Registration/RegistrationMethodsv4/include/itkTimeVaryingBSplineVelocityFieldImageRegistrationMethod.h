@@ -198,4 +198,8 @@ private:
 #include "itkTimeVaryingBSplineVelocityFieldImageRegistrationMethod.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkTimeVaryingBSplineVelocityFieldImageRegistrationMethodExplicit.h"
+#endif
+
 #endif

@@ -57,6 +57,7 @@ ITK/Modules/Filtering/Thresholding/include
 ITK/Modules/Registration/Common/include
 ITK/Modules/Registration/FEM/include
 ITK/Modules/Registration/PDEDeformable/include
+ITK/Modules/Registration/RegistrationMethodsv4/include
 
 TODO
 ITK/Modules/Bridge/VTK/include
@@ -82,7 +83,6 @@ ITK/Modules/Numerics/Polynomials/include  -- no classes over threshold
 ITK/Modules/Registration/GPUCommon/include
 ITK/Modules/Registration/GPUPDEDeformable/include
 ITK/Modules/Registration/Metricsv4/include -- too gnarly
-ITK/Modules/Registration/RegistrationMethodsv4/include
 ITK/Modules/Segmentation/BioCell/include
 ITK/Modules/Segmentation/Classifiers/include
 ITK/Modules/Segmentation/ConnectedComponents/include
