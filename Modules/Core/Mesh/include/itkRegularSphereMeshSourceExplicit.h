@@ -1,8 +1,25 @@
-#ifndef __ExplicitInstantiation_itkRegularSphereMeshSource_h__
-#define __ExplicitInstantiation_itkRegularSphereMeshSource_h__
+/*=========================================================================
+ *
+ *  Copyright Insight Software Consortium
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0.txt
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ *=========================================================================*/
+#ifndef __itkRegularSphereMeshSourceExplicit_h
+#define __itkRegularSphereMeshSourceExplicit_h
 //exclude QuadEdgeMesh
 extern template class itk::RegularSphereMeshSource<itk::Mesh<float, 3u, itk::DefaultStaticMeshTraits<float, 3u, 3u, float, float, float> > >;
-extern template class itk::RegularSphereMeshSource<itk::Mesh<double, 3u, itk::DefaultDynamicMeshTraits<double, 3u, 3u, double, double, double> > >;
-extern template class itk::RegularSphereMeshSource<itk::Mesh<double, 3u, itk::DefaultDynamicMeshTraits<double, 3u, 3u, float, float, double> > >;
 extern template class itk::RegularSphereMeshSource<itk::Mesh<double, 3u, itk::DefaultStaticMeshTraits<double, 3u, 3u, double, double, double> > >;
-#endif //__ExplicitInstantiation_itkRegularSphereMeshSource_h__
+extern template class itk::RegularSphereMeshSource<itk::Mesh<double, 3u, itk::DefaultDynamicMeshTraits<double, 3u, 3u, float, float, double> > >;
+extern template class itk::RegularSphereMeshSource<itk::Mesh<double, 3u, itk::DefaultDynamicMeshTraits<double, 3u, 3u, double, double, double> > >;
+#endif //__itkRegularSphereMeshSourceExplicit_h
