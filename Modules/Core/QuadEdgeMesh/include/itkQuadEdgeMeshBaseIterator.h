@@ -372,4 +372,8 @@ public:
 };
 }
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkQuadEdgeMeshBaseIteratorExplicit.h"
+#endif
+
 #endif

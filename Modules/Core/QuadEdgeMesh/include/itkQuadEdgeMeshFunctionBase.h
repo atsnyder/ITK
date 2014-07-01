@@ -103,4 +103,8 @@ protected:
 
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkQuadEdgeMeshFunctionBaseExplicit.h"
+#endif
+
 // eof - itkQuadEdgeMeshFunctionBase.h

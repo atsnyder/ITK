@@ -15,7 +15,9 @@
  *  limitations under the License.
  *
  *=========================================================================*/
-#ifndef __itkQuadEdgeMeshLineCellExplicit_h
-#define __itkQuadEdgeMeshLineCellExplicit_h
-//exclude QuadEdgeMeshCellTraitsInfo
-#endif //__itkQuadEdgeMeshLineCellExplicit_h
+#ifndef __itkQuadEdgeMeshFunctionBaseExplicit_h
+#define __itkQuadEdgeMeshFunctionBaseExplicit_h
+#include "itkQuadEdgeMesh.h"
+extern template class itk::QuadEdgeMeshFunctionBase<itk::QuadEdgeMesh<double, 3u, itk::QuadEdgeMeshTraits<double, 3u, bool, bool, float, float> >, itk::GeometricalQuadEdge<unsigned long, unsigned long, bool, bool, true>*>;
+extern template class itk::QuadEdgeMeshFunctionBase<itk::QuadEdgeMesh<double, 3u, itk::QuadEdgeMeshTraits<double, 3u, bool, bool, float, float> >, unsigned long>;
+#endif //__itkQuadEdgeMeshFunctionBaseExplicit_h

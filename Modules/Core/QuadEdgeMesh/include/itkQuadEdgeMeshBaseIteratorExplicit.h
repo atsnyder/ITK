@@ -15,7 +15,7 @@
  *  limitations under the License.
  *
  *=========================================================================*/
-#ifndef __itkQuadEdgeMeshLineCellExplicit_h
-#define __itkQuadEdgeMeshLineCellExplicit_h
-//exclude QuadEdgeMeshCellTraitsInfo
-#endif //__itkQuadEdgeMeshLineCellExplicit_h
+#ifndef __itkQuadEdgeMeshBaseIteratorExplicit_h
+#define __itkQuadEdgeMeshBaseIteratorExplicit_h
+//exclude QuadEdgeMeshBaseIterator
+#endif //__itkQuadEdgeMeshBaseIteratorExplicit_h
