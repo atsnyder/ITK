@@ -81,6 +81,7 @@ itk_module(ITKIntegratedTest
     ITKVTK
     ITKWatersheds
     ITKTestKernel
+    ITKTransform
   DESCRIPTION
     "${DOCUMENTATION}"
 )

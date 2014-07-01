@@ -15,9 +15,7 @@
  *  limitations under the License.
  *
  *=========================================================================*/
-#ifndef __itkScaleLogarithmicTransformExplicit_h
-#define __itkScaleLogarithmicTransformExplicit_h
-extern template class itk::ScaleLogarithmicTransform<float, 3u>;
-extern template class itk::ScaleLogarithmicTransform<double, 2u>;
-extern template class itk::ScaleLogarithmicTransform<double, 3u>;
-#endif //__itkScaleLogarithmicTransformExplicit_h
+#ifndef __itkAzimuthElevationToCartesianTransformExplicit_h
+#define __itkAzimuthElevationToCartesianTransformExplicit_h
+extern template class itk::AzimuthElevationToCartesianTransform<double, 3u>;
+#endif //__itkAzimuthElevationToCartesianTransformExplicit_h

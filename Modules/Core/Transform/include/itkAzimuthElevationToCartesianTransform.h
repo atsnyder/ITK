@@ -232,4 +232,8 @@ private:
 #include "itkAzimuthElevationToCartesianTransform.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkAzimuthElevationToCartesianTransformExplicit.h"
+#endif
+
 #endif /* __itkAzimuthElevationToCartesianTransform_h */

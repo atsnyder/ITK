@@ -15,9 +15,7 @@
  *  limitations under the License.
  *
  *=========================================================================*/
-#ifndef __itkScaleLogarithmicTransformExplicit_h
-#define __itkScaleLogarithmicTransformExplicit_h
-extern template class itk::ScaleLogarithmicTransform<float, 3u>;
-extern template class itk::ScaleLogarithmicTransform<double, 2u>;
-extern template class itk::ScaleLogarithmicTransform<double, 3u>;
-#endif //__itkScaleLogarithmicTransformExplicit_h
+#ifndef __itkElasticBodyReciprocalSplineKernelTransformExplicit_h
+#define __itkElasticBodyReciprocalSplineKernelTransformExplicit_h
+extern template class itk::ElasticBodyReciprocalSplineKernelTransform<double, 3u>;
+#endif //__itkElasticBodyReciprocalSplineKernelTransformExplicit_h

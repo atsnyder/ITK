@@ -19,11 +19,11 @@
 #define __itkAffineTransformExplicit_h
 extern template class itk::AffineTransform<double, 8u>;
 extern template class itk::AffineTransform<double, 3u>;
+extern template class itk::AffineTransform<double, 10u>;
 extern template class itk::AffineTransform<double, 6u>;
 extern template class itk::AffineTransform<float, 2u>;
 extern template class itk::AffineTransform<double, 5u>;
 extern template class itk::AffineTransform<double, 4u>;
-extern template class itk::AffineTransform<double, 10u>;
 extern template class itk::AffineTransform<float, 9u>;
 extern template class itk::AffineTransform<float, 4u>;
 extern template class itk::AffineTransform<float, 3u>;
