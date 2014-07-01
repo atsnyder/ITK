@@ -1,2 +1,7 @@
 project(ITKClassifiers)
+
+if(ITK_TEMPLATE_EXPLICIT_INSTANTIATION)
+  set(ITKClassifiers_LIBRARIES ITKClassifiers)
+endif()
+
 itk_module_impl()
