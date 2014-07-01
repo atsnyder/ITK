@@ -15,7 +15,7 @@
  *  limitations under the License.
  *
  *=========================================================================*/
-#ifndef __itkFiniteDifferenceSparseImageFilterExplicit_h
-#define __itkFiniteDifferenceSparseImageFilterExplicit_h
+#ifndef __itkFiniteDifferenceSparseImageFunctionExplicit_h
+#define __itkFiniteDifferenceSparseImageFunctionExplicit_h
 //exclude NormalBandNode
-#endif //__itkFiniteDifferenceSparseImageFilterExplicit_h
+#endif //__itkFiniteDifferenceSparseImageFunctionExplicit_h

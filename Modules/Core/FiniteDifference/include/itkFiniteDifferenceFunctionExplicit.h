@@ -15,15 +15,18 @@
  *  limitations under the License.
  *
  *=========================================================================*/
-#ifndef __ExplicitInstantiation_itkFiniteDifferenceFunction_h__
-#define __ExplicitInstantiation_itkFiniteDifferenceFunction_h__
+#ifndef __itkFiniteDifferenceFunctionExplicit_h
+#define __itkFiniteDifferenceFunctionExplicit_h
 //exclude NormalBandNode
 extern template class itk::FiniteDifferenceFunction<itk::Image<itk::Vector<float, 2u>, 2u> >;
+extern template class itk::FiniteDifferenceFunction<itk::Image<itk::Vector<double, 3u>, 3u> >;
 extern template class itk::FiniteDifferenceFunction<itk::Image<itk::RGBPixel<float>, 2u> >;
 extern template class itk::FiniteDifferenceFunction<itk::Image<itk::CovariantVector<float, 2u>, 2u> >;
 extern template class itk::FiniteDifferenceFunction<itk::Image<itk::Vector<float, 3u>, 3u> >;
+extern template class itk::FiniteDifferenceFunction<itk::Image<double, 2u> >;
 extern template class itk::FiniteDifferenceFunction<itk::Image<float, 3u> >;
 extern template class itk::FiniteDifferenceFunction<itk::Image<itk::Vector<float, 3u>, 2u> >;
 extern template class itk::FiniteDifferenceFunction<itk::Image<double, 3u> >;
 extern template class itk::FiniteDifferenceFunction<itk::Image<float, 2u> >;
-#endif //__ExplicitInstantiation_itkFiniteDifferenceFunction_h__
+extern template class itk::FiniteDifferenceFunction<itk::Image<itk::Vector<double, 2u>, 2u> >;
+#endif //__itkFiniteDifferenceFunctionExplicit_h

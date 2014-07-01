@@ -15,14 +15,39 @@
  *  limitations under the License.
  *
  *=========================================================================*/
-#ifndef __ExplicitInstantiation_itkFiniteDifferenceImageFilter_h__
-#define __ExplicitInstantiation_itkFiniteDifferenceImageFilter_h__
+#ifndef __itkFiniteDifferenceImageFilterExplicit_h
+#define __itkFiniteDifferenceImageFilterExplicit_h
 //exclude NormalBandNode
-extern template class itk::FiniteDifferenceImageFilter<itk::Image<itk::Vector<float, 2u>, 2u>, itk::Image<itk::Vector<float, 2u>, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<unsigned int, 2u>, itk::Image<double, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<double, 3u>, itk::Image<float, 3u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<itk::Vector<double, 3u>, 3u>, itk::Image<itk::Vector<double, 3u>, 3u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<unsigned long, 2u>, itk::Image<double, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<itk::Vector<double, 2u>, 2u>, itk::Image<itk::Vector<double, 2u>, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<short, 2u>, itk::Image<double, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<signed char, 3u>, itk::Image<double, 3u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<unsigned char, 3u>, itk::Image<double, 3u> >;
 extern template class itk::FiniteDifferenceImageFilter<itk::Image<itk::RGBPixel<float>, 2u>, itk::Image<itk::RGBPixel<float>, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<float, 2u>, itk::Image<double, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<float, 3u>, itk::Image<double, 3u> >;
 extern template class itk::FiniteDifferenceImageFilter<itk::Image<float, 3u>, itk::Image<float, 3u> >;
 extern template class itk::FiniteDifferenceImageFilter<itk::Image<float, 2u>, itk::Image<float, 2u> >;
-extern template class itk::FiniteDifferenceImageFilter<itk::Image<itk::CovariantVector<float, 2u>, 2u>, itk::Image<itk::CovariantVector<float, 2u>, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<unsigned char, 2u>, itk::Image<double, 2u> >;
 extern template class itk::FiniteDifferenceImageFilter<itk::Image<itk::Vector<float, 3u>, 2u>, itk::Image<itk::Vector<float, 3u>, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<short, 3u>, itk::Image<double, 3u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<double, 3u>, itk::Image<double, 3u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<int, 3u>, itk::Image<double, 3u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<double, 2u>, itk::Image<double, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<itk::Vector<float, 2u>, 2u>, itk::Image<itk::Vector<float, 2u>, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<int, 2u>, itk::Image<double, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<long, 2u>, itk::Image<double, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<unsigned int, 3u>, itk::Image<double, 3u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<itk::CovariantVector<float, 2u>, 2u>, itk::Image<itk::CovariantVector<float, 2u>, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<unsigned short, 3u>, itk::Image<double, 3u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<itk::Vector<float, 3u>, 3u>, itk::Image<itk::Vector<float, 3u>, 3u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<double, 2u>, itk::Image<float, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<long, 3u>, itk::Image<double, 3u> >;
 extern template class itk::FiniteDifferenceImageFilter<itk::Image<char, 3u>, itk::Image<float, 3u> >;
-#endif //__ExplicitInstantiation_itkFiniteDifferenceImageFilter_h__
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<signed char, 2u>, itk::Image<double, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<unsigned short, 2u>, itk::Image<double, 2u> >;
+extern template class itk::FiniteDifferenceImageFilter<itk::Image<unsigned long, 3u>, itk::Image<double, 3u> >;
+#endif //__itkFiniteDifferenceImageFilterExplicit_h
