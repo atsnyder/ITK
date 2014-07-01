@@ -15,8 +15,8 @@
  *  limitations under the License.
  *
  *=========================================================================*/
-#ifndef __itkSpatialObjectToImageStatisticsCalculatorExplicit_h
-#define __itkSpatialObjectToImageStatisticsCalculatorExplicit_h
-#include "itkEllipseSpatialObject.h"
-extern template class itk::SpatialObjectToImageStatisticsCalculator<itk::Image<unsigned char, 2u>, itk::EllipseSpatialObject<2u>, 1u>;
-#endif //__itkSpatialObjectToImageStatisticsCalculatorExplicit_h
+#ifndef __itkMetaConverterBaseExplicit_h
+#define __itkMetaConverterBaseExplicit_h
+extern template class itk::MetaConverterBase<3u>;
+extern template class itk::MetaConverterBase<2u>;
+#endif //__itkMetaConverterBaseExplicit_h

@@ -1,3 +1,3 @@
 #include "itkSpatialObjectProperty.h"
 
-template class itk::SpatialObjectProperty<float>; //Instantiated 186 times
+template class itk::SpatialObjectProperty<float>; //Instantiated 369 times

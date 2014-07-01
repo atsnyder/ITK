@@ -1,3 +1,3 @@
 #include "itkSpatialObjectTreeContainer.h"
 
-template class itk::SpatialObjectTreeContainer<2u>; //Instantiated 4 times
+template class itk::SpatialObjectTreeContainer<2u>; //Instantiated 6 times

@@ -88,4 +88,8 @@ private:
   #include "itkMetaConverterBase.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkMetaConverterBaseExplicit.h"
+#endif
+
 #endif // __itkMetaConverterBase_h
