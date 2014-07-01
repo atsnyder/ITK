@@ -55,6 +55,8 @@ ITK/Modules/Filtering/QuadEdgeMeshFiltering/include
 ITK/Modules/Filtering/Smoothing/include
 ITK/Modules/Filtering/Thresholding/include
 ITK/Modules/Registration/Common/include
+ITK/Modules/Registration/FEM/include
+ITK/Modules/Registration/PDEDeformable/include
 
 TODO
 ITK/Modules/Bridge/VTK/include
@@ -77,11 +79,9 @@ ITK/Modules/Numerics/NarrowBand/include -- no classes over threshold
 ITK/Modules/Numerics/NeuralNetworks/include -- no classes over threshold
 ITK/Modules/Numerics/Optimizers/include -- no classes over threshold
 ITK/Modules/Numerics/Polynomials/include  -- no classes over threshold
-ITK/Modules/Registration/FEM/include
 ITK/Modules/Registration/GPUCommon/include
 ITK/Modules/Registration/GPUPDEDeformable/include
-ITK/Modules/Registration/Metricsv4/include
-ITK/Modules/Registration/PDEDeformable/include
+ITK/Modules/Registration/Metricsv4/include -- too gnarly
 ITK/Modules/Registration/RegistrationMethodsv4/include
 ITK/Modules/Segmentation/BioCell/include
 ITK/Modules/Segmentation/Classifiers/include

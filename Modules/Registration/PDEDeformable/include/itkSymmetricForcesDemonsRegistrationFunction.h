@@ -233,4 +233,8 @@ private:
 #include "itkSymmetricForcesDemonsRegistrationFunction.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkSymmetricForcesDemonsRegistrationFunctionExplicit.h"
+#endif
+
 #endif

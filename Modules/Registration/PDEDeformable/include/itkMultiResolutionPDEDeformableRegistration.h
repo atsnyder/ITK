@@ -297,4 +297,8 @@ private:
 #include "itkMultiResolutionPDEDeformableRegistration.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkMultiResolutionPDEDeformableRegistrationExplicit.h"
+#endif
+
 #endif

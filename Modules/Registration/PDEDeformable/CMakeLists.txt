@@ -1,2 +1,7 @@
 project(ITKPDEDeformableRegistration)
+
+if(ITK_TEMPLATE_EXPLICIT_INSTANTIATION)
+  set(ITKPDEDeformableRegistration_LIBRARIES ITKPDEDeformableRegistration)
+endif()
+
 itk_module_impl()
