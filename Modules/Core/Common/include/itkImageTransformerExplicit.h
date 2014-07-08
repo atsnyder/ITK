@@ -17,7 +17,26 @@
  *=========================================================================*/
 #ifndef __itkImageTransformerExplicit_h
 #define __itkImageTransformerExplicit_h
+extern template class itk::ImageTransformer<itk::Image<signed char, 2u> >;
+extern template class itk::ImageTransformer<itk::Image<unsigned short, 2u> >;
+extern template class itk::ImageTransformer<itk::Image<double, 3u> >;
+extern template class itk::ImageTransformer<itk::Image<unsigned long, 2u> >;
+extern template class itk::ImageTransformer<itk::Image<unsigned long, 3u> >;
+extern template class itk::ImageTransformer<itk::Image<int, 2u> >;
+extern template class itk::ImageTransformer<itk::Image<int, 3u> >;
+extern template class itk::ImageTransformer<itk::Image<long, 3u> >;
+extern template class itk::ImageTransformer<itk::Image<unsigned int, 2u> >;
 extern template class itk::ImageTransformer<itk::Image<itk::Vector<unsigned char, 2u>, 2u> >;
+extern template class itk::ImageTransformer<itk::Image<float, 3u> >;
+extern template class itk::ImageTransformer<itk::Image<signed char, 3u> >;
+extern template class itk::ImageTransformer<itk::Image<unsigned char, 2u> >;
+extern template class itk::ImageTransformer<itk::Image<short, 3u> >;
+extern template class itk::ImageTransformer<itk::Image<double, 2u> >;
+extern template class itk::ImageTransformer<itk::Image<float, 2u> >;
 extern template class itk::ImageTransformer<itk::Image<short, 2u> >;
+extern template class itk::ImageTransformer<itk::Image<unsigned int, 3u> >;
+extern template class itk::ImageTransformer<itk::Image<long, 2u> >;
+extern template class itk::ImageTransformer<itk::Image<unsigned short, 3u> >;
+extern template class itk::ImageTransformer<itk::Image<unsigned char, 3u> >;
 extern template class itk::ImageTransformer<itk::Image<itk::RGBPixel<unsigned char>, 2u> >;
 #endif //__itkImageTransformerExplicit_h

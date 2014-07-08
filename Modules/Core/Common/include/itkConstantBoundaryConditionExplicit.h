@@ -18,19 +18,50 @@
 #ifndef __itkConstantBoundaryConditionExplicit_h
 #define __itkConstantBoundaryConditionExplicit_h
 #include "itkImage.h"
+extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned long, 3u>, itk::Image<double, 3u> >;
 extern template class itk::ConstantBoundaryCondition<itk::Image<double, 2u>, itk::Image<double, 2u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<float, 4u>, itk::Image<float, 4u> >;
 extern template class itk::ConstantBoundaryCondition<itk::Image<double, 2u>, itk::Image<float, 2u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<signed char, 2u>, itk::Image<double, 2u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<double, 3u>, itk::Image<double, 3u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned int, 2u>, itk::Image<double, 2u> >;
 extern template class itk::ConstantBoundaryCondition<itk::Image<bool, 2u>, itk::Image<bool, 2u> >;
 extern template class itk::ConstantBoundaryCondition<itk::Image<bool, 1u>, itk::Image<bool, 1u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<int, 3u>, itk::Image<double, 3u> >;
 extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u> >;
 extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned char, 1u>, itk::Image<unsigned char, 1u> >;
 extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned char, 2u>, itk::Image<double, 2u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<bool, 3u>, itk::Image<bool, 3u> >;
 extern template class itk::ConstantBoundaryCondition<itk::Image<short, 2u>, itk::Image<short, 2u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<signed char, 3u>, itk::Image<double, 3u> >;
 extern template class itk::ConstantBoundaryCondition<itk::Image<int, 2u>, itk::Image<int, 2u> >;
-extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned short, 2u>, itk::Image<unsigned short, 2u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned short, 3u>, itk::Image<unsigned short, 3u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<signed char, 2u>, itk::Image<signed char, 2u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<long, 3u>, itk::Image<double, 3u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned int, 2u>, itk::Image<unsigned int, 2u> >;
 extern template class itk::ConstantBoundaryCondition<itk::Image<float, 2u>, itk::Image<double, 2u> >;
 extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned short, 2u>, itk::Image<double, 2u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<short, 3u>, itk::Image<short, 3u> >;
 extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned char, 3u>, itk::Image<unsigned char, 3u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<signed char, 3u>, itk::Image<signed char, 3u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<short, 3u>, itk::Image<double, 3u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned int, 3u>, itk::Image<unsigned int, 3u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned short, 2u>, itk::Image<unsigned short, 2u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned long, 3u>, itk::Image<unsigned long, 3u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<long, 3u>, itk::Image<long, 3u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned char, 3u>, itk::Image<double, 3u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<int, 2u>, itk::Image<double, 2u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<float, 3u>, itk::Image<float, 3u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned int, 3u>, itk::Image<double, 3u> >;
 extern template class itk::ConstantBoundaryCondition<itk::Image<float, 2u>, itk::Image<float, 2u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned long, 2u>, itk::Image<double, 2u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<long, 2u>, itk::Image<long, 2u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned short, 3u>, itk::Image<double, 3u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<long, 2u>, itk::Image<double, 2u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<itk::Vector<double, 2u>, 3u>, itk::Image<itk::Vector<double, 2u>, 3u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<float, 3u>, itk::Image<double, 3u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<short, 2u>, itk::Image<double, 2u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<int, 3u>, itk::Image<int, 3u> >;
 extern template class itk::ConstantBoundaryCondition<itk::Image<unsigned long, 2u>, itk::Image<unsigned long, 2u> >;
+extern template class itk::ConstantBoundaryCondition<itk::Image<itk::Vector<double, 2u>, 2u>, itk::Image<itk::Vector<double, 2u>, 2u> >;
 #endif //__itkConstantBoundaryConditionExplicit_h

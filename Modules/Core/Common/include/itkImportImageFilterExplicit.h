@@ -17,10 +17,17 @@
  *=========================================================================*/
 #ifndef __itkImportImageFilterExplicit_h
 #define __itkImportImageFilterExplicit_h
+extern template class itk::ImportImageFilter<float, 4u>;
 extern template class itk::ImportImageFilter<itk::Vector<double, 3u>, 3u>;
 extern template class itk::ImportImageFilter<itk::Vector<double, 2u>, 3u>;
+extern template class itk::ImportImageFilter<unsigned int, 2u>;
+extern template class itk::ImportImageFilter<itk::Vector<float, 3u>, 4u>;
+extern template class itk::ImportImageFilter<float, 3u>;
 extern template class itk::ImportImageFilter<itk::Vector<double, 3u>, 4u>;
 extern template class itk::ImportImageFilter<itk::Vector<double, 2u>, 2u>;
+extern template class itk::ImportImageFilter<itk::Vector<float, 2u>, 3u>;
 extern template class itk::ImportImageFilter<itk::Vector<float, 2u>, 2u>;
 extern template class itk::ImportImageFilter<itk::Vector<float, 3u>, 3u>;
+extern template class itk::ImportImageFilter<float, 2u>;
+extern template class itk::ImportImageFilter<unsigned int, 3u>;
 #endif //__itkImportImageFilterExplicit_h

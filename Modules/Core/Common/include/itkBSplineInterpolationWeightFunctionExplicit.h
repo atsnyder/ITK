@@ -19,8 +19,6 @@
 #define __itkBSplineInterpolationWeightFunctionExplicit_h
 extern template class itk::BSplineInterpolationWeightFunction<float, 3u, 3u>;
 extern template class itk::BSplineInterpolationWeightFunction<double, 2u, 2u>;
-extern template class itk::BSplineInterpolationWeightFunction<double, 2u, 1u>;
-extern template class itk::BSplineInterpolationWeightFunction<double, 3u, 2u>;
 extern template class itk::BSplineInterpolationWeightFunction<double, 2u, 3u>;
 extern template class itk::BSplineInterpolationWeightFunction<double, 3u, 3u>;
 #endif //__itkBSplineInterpolationWeightFunctionExplicit_h

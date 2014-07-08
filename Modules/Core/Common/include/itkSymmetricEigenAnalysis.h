@@ -317,4 +317,8 @@ std::ostream & operator<<(std::ostream & os,
 #include "itkSymmetricEigenAnalysis.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkSymmetricEigenAnalysisExplicit.h"
+#endif
+
 #endif

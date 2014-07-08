@@ -19,5 +19,8 @@
 #define __itkImageBaseExplicit_h
 extern template class itk::ImageBase<5u>;
 extern template class itk::ImageBase<3u>;
+extern template class itk::ImageBase<2u>;
+extern template class itk::ImageBase<1u>;
 extern template class itk::ImageBase<6u>;
+extern template class itk::ImageBase<4u>;
 #endif //__itkImageBaseExplicit_h

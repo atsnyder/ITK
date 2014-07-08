@@ -1,35 +1,31 @@
-/*=========================================================================
- *
- *  Copyright Insight Software Consortium
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *         http://www.apache.org/licenses/LICENSE-2.0.txt
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
- *
- *=========================================================================*/
 #include "itkVectorImage.h"
 
-template class itk::VectorImage<short, 6u>; //Instantiated 208 times
-template class itk::VectorImage<unsigned int, 6u>; //Instantiated 208 times
-template class itk::VectorImage<float, 3u>; //Instantiated 24 times
-template class itk::VectorImage<int, 6u>; //Instantiated 208 times
-template class itk::VectorImage<unsigned short, 3u>; //Instantiated 4 times
-template class itk::VectorImage<double, 3u>; //Instantiated 4 times
-template class itk::VectorImage<unsigned short, 6u>; //Instantiated 208 times
-template class itk::VectorImage<float, 2u>; //Instantiated 26 times
-template class itk::VectorImage<unsigned char, 2u>; //Instantiated 16 times
-template class itk::VectorImage<unsigned char, 3u>; //Instantiated 6 times
-template class itk::VectorImage<int, 2u>; //Instantiated 6 times
-template class itk::VectorImage<double, 2u>; //Instantiated 4 times
-template class itk::VectorImage<long, 6u>; //Instantiated 208 times
-template class itk::VectorImage<char, 6u>; //Instantiated 208 times
-template class itk::VectorImage<unsigned long, 6u>; //Instantiated 208 times
-template class itk::VectorImage<unsigned char, 6u>; //Instantiated 208 times
+template class itk::VectorImage<short, 2u>; //Instantiated 392 times
+template class itk::VectorImage<unsigned short, 6u>; //Instantiated 255 times
+template class itk::VectorImage<long, 6u>; //Instantiated 255 times
+template class itk::VectorImage<unsigned long, 6u>; //Instantiated 255 times
+template class itk::VectorImage<char, 6u>; //Instantiated 255 times
+template class itk::VectorImage<short, 6u>; //Instantiated 255 times
+template class itk::VectorImage<unsigned long, 3u>; //Instantiated 201 times
+template class itk::VectorImage<unsigned short, 3u>; //Instantiated 394 times
+template class itk::VectorImage<unsigned short, 2u>; //Instantiated 386 times
+template class itk::VectorImage<unsigned int, 3u>; //Instantiated 387 times
+template class itk::VectorImage<long, 3u>; //Instantiated 201 times
+template class itk::VectorImage<unsigned char, 6u>; //Instantiated 255 times
+template class itk::VectorImage<unsigned int, 6u>; //Instantiated 255 times
+template class itk::VectorImage<long, 2u>; //Instantiated 198 times
+template class itk::VectorImage<double, 3u>; //Instantiated 448 times
+template class itk::VectorImage<double, 2u>; //Instantiated 448 times
+template class itk::VectorImage<unsigned char, 2u>; //Instantiated 418 times
+template class itk::VectorImage<unsigned int, 2u>; //Instantiated 384 times
+template class itk::VectorImage<unsigned char, 3u>; //Instantiated 411 times
+template class itk::VectorImage<float, 4u>; //Instantiated 14 times
+template class itk::VectorImage<int, 6u>; //Instantiated 255 times
+template class itk::VectorImage<short, 3u>; //Instantiated 420 times
+template class itk::VectorImage<signed char, 3u>; //Instantiated 390 times
+template class itk::VectorImage<float, 3u>; //Instantiated 513 times
+template class itk::VectorImage<signed char, 2u>; //Instantiated 390 times
+template class itk::VectorImage<int, 2u>; //Instantiated 396 times
+template class itk::VectorImage<unsigned long, 2u>; //Instantiated 198 times
+template class itk::VectorImage<int, 3u>; //Instantiated 393 times
+template class itk::VectorImage<float, 2u>; //Instantiated 473 times

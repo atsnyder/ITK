@@ -185,4 +185,8 @@ private:
 #include "itkNeighborhoodOperator.hxx"
 #endif
 */
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkNeighborhoodOperatorExplicit.h"
+#endif
+
 #endif

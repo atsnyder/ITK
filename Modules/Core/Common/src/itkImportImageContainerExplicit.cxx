@@ -1,90 +1,73 @@
-/*=========================================================================
- *
- *  Copyright Insight Software Consortium
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *         http://www.apache.org/licenses/LICENSE-2.0.txt
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
- *
- *=========================================================================*/
 #include "itkImportImageContainer.h"
 
-template class itk::ImportImageContainer<unsigned long, itk::DiffusionTensor3D<float> >; //Instantiated 12 times
+template class itk::ImportImageContainer<unsigned long, itk::DiffusionTensor3D<float> >; //Instantiated 15 times
 template class itk::ImportImageContainer<unsigned long, itk::RGBPixel<unsigned short> >; //Instantiated 12 times
-template class itk::ImportImageContainer<unsigned long, unsigned int>; //Instantiated 282 times
-template class itk::ImportImageContainer<unsigned long, unsigned char>; //Instantiated 1498 times
-template class itk::ImportImageContainer<unsigned long, char>; //Instantiated 378 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<double, 2u> >; //Instantiated 80 times
-template class itk::ImportImageContainer<unsigned long, itk::FixedArray<float, 2u> >; //Instantiated 40 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<float, 6u> >; //Instantiated 12 times
-template class itk::ImportImageContainer<unsigned long, itk::RGBPixel<char> >; //Instantiated 4 times
-template class itk::ImportImageContainer<unsigned long, itk::RGBAPixel<unsigned char> >; //Instantiated 12 times
-template class itk::ImportImageContainer<unsigned long, itk::Point<float, 2u> >; //Instantiated 4 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<float, 1u> >; //Instantiated 16 times
-template class itk::ImportImageContainer<unsigned long, itk::RGBPixel<unsigned char> >; //Instantiated 142 times
-template class itk::ImportImageContainer<unsigned long, itk::Index<4u> >; //Instantiated 4 times
-template class itk::ImportImageContainer<unsigned long, itk::Matrix<float, 3u, 3u> >; //Instantiated 4 times
-template class itk::ImportImageContainer<unsigned long, long>; //Instantiated 334 times
-template class itk::ImportImageContainer<unsigned long, double>; //Instantiated 658 times
-template class itk::ImportImageContainer<unsigned long, itk::Offset<3u> >; //Instantiated 6 times
-template class itk::ImportImageContainer<unsigned long, itk::CovariantVector<float, 3u> >; //Instantiated 14 times
-template class itk::ImportImageContainer<unsigned long, itk::CovariantVector<double, 3u> >; //Instantiated 86 times
+template class itk::ImportImageContainer<unsigned long, unsigned int>; //Instantiated 1568 times
+template class itk::ImportImageContainer<unsigned long, unsigned char>; //Instantiated 3066 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<unsigned int, 3u>, itk::Image<unsigned int, 3u> >::TileInfo>; //Instantiated 6 times
+template class itk::ImportImageContainer<unsigned long, char>; //Instantiated 479 times
+template class itk::ImportImageContainer<unsigned long, itk::Vector<double, 2u> >; //Instantiated 144 times
+template class itk::ImportImageContainer<unsigned long, itk::FixedArray<float, 2u> >; //Instantiated 64 times
+template class itk::ImportImageContainer<unsigned long, itk::Vector<float, 6u> >; //Instantiated 36 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<float, 2u>, itk::Image<float, 2u> >::TileInfo>; //Instantiated 12 times
+template class itk::ImportImageContainer<unsigned long, itk::RGBAPixel<unsigned char> >; //Instantiated 18 times
+template class itk::ImportImageContainer<unsigned long, itk::Vector<float, 1u> >; //Instantiated 49 times
+template class itk::ImportImageContainer<unsigned long, itk::RGBPixel<unsigned char> >; //Instantiated 148 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<short, 3u>, itk::Image<short, 3u> >::TileInfo>; //Instantiated 6 times
+template class itk::ImportImageContainer<unsigned long, long>; //Instantiated 1145 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<unsigned char, 3u>, itk::Image<unsigned char, 3u> >::TileInfo>; //Instantiated 6 times
+template class itk::ImportImageContainer<unsigned long, double>; //Instantiated 2005 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<double, 3u>, itk::Image<double, 3u> >::TileInfo>; //Instantiated 6 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<int, 2u>, itk::Image<int, 2u> >::TileInfo>; //Instantiated 6 times
+template class itk::ImportImageContainer<unsigned long, itk::Offset<3u> >; //Instantiated 27 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<float, 3u>, itk::Image<float, 3u> >::TileInfo>; //Instantiated 9 times
+template class itk::ImportImageContainer<unsigned long, itk::CovariantVector<float, 3u> >; //Instantiated 36 times
+template class itk::ImportImageContainer<unsigned long, itk::CovariantVector<double, 3u> >; //Instantiated 125 times
 template class itk::ImportImageContainer<unsigned long, itk::FixedArray<double, 3u> >; //Instantiated 6 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<unsigned short, 4u> >; //Instantiated 4 times
-template class itk::ImportImageContainer<unsigned long, signed char>; //Instantiated 86 times
-template class itk::ImportImageContainer<unsigned long, std::complex<float> >; //Instantiated 54 times
-template class itk::ImportImageContainer<unsigned long, itk::VariableLengthVector<float> >; //Instantiated 6 times
-template class itk::ImportImageContainer<unsigned long, unsigned long long>; //Instantiated 4 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<unsigned int, 2u>, itk::Image<unsigned int, 2u> >::TileInfo>; //Instantiated 6 times
+template class itk::ImportImageContainer<unsigned long, signed char>; //Instantiated 1244 times
+template class itk::ImportImageContainer<unsigned long, std::complex<float> >; //Instantiated 283 times
+template class itk::ImportImageContainer<unsigned long, itk::VariableLengthVector<float> >; //Instantiated 12 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u> >::TileInfo>; //Instantiated 6 times
 template class itk::ImportImageContainer<unsigned long, itk::Index<3u> >; //Instantiated 14 times
-template class itk::ImportImageContainer<unsigned long, itk::CovariantVector<double, 2u> >; //Instantiated 196 times
-template class itk::ImportImageContainer<unsigned long, std::list<unsigned long, std::allocator<unsigned long> > >; //Instantiated 63 times
-template class itk::ImportImageContainer<unsigned long, itk::FixedArray<float, 1u> >; //Instantiated 4 times
-template class itk::ImportImageContainer<unsigned long, std::vector<float, std::allocator<float> > >; //Instantiated 3 times
+template class itk::ImportImageContainer<unsigned long, itk::CovariantVector<double, 2u> >; //Instantiated 212 times
+template class itk::ImportImageContainer<unsigned long, std::list<unsigned long, std::allocator<unsigned long> > >; //Instantiated 42 times
 template class itk::ImportImageContainer<unsigned long, itk::RGBPixel<float> >; //Instantiated 28 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<double, 1u> >; //Instantiated 80 times
+template class itk::ImportImageContainer<unsigned long, itk::Vector<double, 1u> >; //Instantiated 116 times
 template class itk::ImportImageContainer<unsigned long, itk::FixedArray<unsigned long, 8u> >; //Instantiated 6 times
-template class itk::ImportImageContainer<unsigned long, int>; //Instantiated 302 times
+template class itk::ImportImageContainer<unsigned long, int>; //Instantiated 1578 times
 template class itk::ImportImageContainer<unsigned long, itk::Vector<int, 3u> >; //Instantiated 6 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<float, 5u> >; //Instantiated 4 times
-template class itk::ImportImageContainer<unsigned long, long long>; //Instantiated 4 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<double, 4u> >; //Instantiated 8 times
-template class itk::ImportImageContainer<unsigned long, itk::SymmetricSecondRankTensor<double, 2u> >; //Instantiated 8 times
-template class itk::ImportImageContainer<unsigned long, itk::Offset<2u> >; //Instantiated 30 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<double, 3u> >; //Instantiated 70 times
-template class itk::ImportImageContainer<unsigned long, short>; //Instantiated 498 times
-template class itk::ImportImageContainer<unsigned long, itk::RGBAPixel<float> >; //Instantiated 4 times
-template class itk::ImportImageContainer<unsigned long, std::complex<double> >; //Instantiated 34 times
-template class itk::ImportImageContainer<unsigned long, itk::RGBPixel<short> >; //Instantiated 4 times
-template class itk::ImportImageContainer<unsigned long, float>; //Instantiated 1072 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<unsigned char, 4u> >; //Instantiated 4 times
-template class itk::ImportImageContainer<unsigned long, itk::CovariantVector<float, 2u> >; //Instantiated 54 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<int, 2u> >; //Instantiated 4 times
-template class itk::ImportImageContainer<unsigned long, itk::SymmetricSecondRankTensor<double, 3u> >; //Instantiated 14 times
-template class itk::ImportImageContainer<unsigned long, unsigned long>; //Instantiated 278 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<double, 6u> >; //Instantiated 4 times
-template class itk::ImportImageContainer<unsigned long, itk::SymmetricSecondRankTensor<float, 3u> >; //Instantiated 8 times
-template class itk::ImportImageContainer<unsigned long, itk::RGBAPixel<short> >; //Instantiated 4 times
-template class itk::ImportImageContainer<unsigned long, bool>; //Instantiated 120 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<float, 9u> >; //Instantiated 4 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<float, 2u> >; //Instantiated 118 times
-template class itk::ImportImageContainer<unsigned long, std::list<int, std::allocator<int> > >; //Instantiated 3 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<float, 3u> >; //Instantiated 98 times
-template class itk::ImportImageContainer<unsigned long, std::list<unsigned int, std::allocator<unsigned int> > >; //Instantiated 18 times
-template class itk::ImportImageContainer<unsigned long, itk::CovariantVector<float, 4u> >; //Instantiated 4 times
+template class itk::ImportImageContainer<unsigned long, itk::Vector<float, 5u> >; //Instantiated 7 times
+template class itk::ImportImageContainer<unsigned long, itk::Vector<double, 4u> >; //Instantiated 17 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<signed char, 2u>, itk::Image<signed char, 2u> >::TileInfo>; //Instantiated 6 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<unsigned short, 3u>, itk::Image<unsigned short, 3u> >::TileInfo>; //Instantiated 6 times
+template class itk::ImportImageContainer<unsigned long, itk::SymmetricSecondRankTensor<double, 2u> >; //Instantiated 7 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<double, 2u>, itk::Image<double, 2u> >::TileInfo>; //Instantiated 6 times
+template class itk::ImportImageContainer<unsigned long, itk::Vector<float, 7u> >; //Instantiated 14 times
+template class itk::ImportImageContainer<unsigned long, itk::Offset<2u> >; //Instantiated 48 times
+template class itk::ImportImageContainer<unsigned long, itk::Vector<double, 3u> >; //Instantiated 146 times
+template class itk::ImportImageContainer<unsigned long, short>; //Instantiated 1890 times
+template class itk::ImportImageContainer<unsigned long, std::complex<double> >; //Instantiated 314 times
+template class itk::ImportImageContainer<unsigned long, float>; //Instantiated 2613 times
+template class itk::ImportImageContainer<unsigned long, itk::SymmetricSecondRankTensor<float, 2u> >; //Instantiated 8 times
+template class itk::ImportImageContainer<unsigned long, itk::CovariantVector<float, 2u> >; //Instantiated 66 times
+template class itk::ImportImageContainer<unsigned long, itk::SymmetricSecondRankTensor<double, 3u> >; //Instantiated 17 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<int, 3u>, itk::Image<int, 3u> >::TileInfo>; //Instantiated 6 times
+template class itk::ImportImageContainer<unsigned long, unsigned long>; //Instantiated 964 times
+template class itk::ImportImageContainer<unsigned long, itk::SymmetricSecondRankTensor<float, 3u> >; //Instantiated 23 times
+template class itk::ImportImageContainer<unsigned long, bool>; //Instantiated 346 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<signed char, 3u>, itk::Image<signed char, 3u> >::TileInfo>; //Instantiated 6 times
+template class itk::ImportImageContainer<unsigned long, itk::Vector<float, 2u> >; //Instantiated 169 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<unsigned short, 2u>, itk::Image<unsigned short, 2u> >::TileInfo>; //Instantiated 6 times
+template class itk::ImportImageContainer<unsigned long, itk::Vector<float, 3u> >; //Instantiated 223 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<short, 2u>, itk::Image<short, 2u> >::TileInfo>; //Instantiated 6 times
+template class itk::ImportImageContainer<unsigned long, itk::TileImageFilter<itk::Image<itk::RGBPixel<unsigned char>, 2u>, itk::Image<itk::RGBPixel<unsigned char>, 2u> >::TileInfo>; //Instantiated 8 times
+template class itk::ImportImageContainer<unsigned long, std::list<unsigned int, std::allocator<unsigned int> > >; //Instantiated 6 times
+template class itk::ImportImageContainer<unsigned long, itk::CovariantVector<float, 4u> >; //Instantiated 7 times
 template class itk::ImportImageContainer<unsigned long, itk::Vector<unsigned short, 5u> >; //Instantiated 10 times
-template class itk::ImportImageContainer<unsigned long, unsigned short>; //Instantiated 536 times
+template class itk::ImportImageContainer<unsigned long, unsigned short>; //Instantiated 1823 times
 template class itk::ImportImageContainer<unsigned long, itk::Vector<unsigned char, 2u> >; //Instantiated 10 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<unsigned short, 1u> >; //Instantiated 4 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<float, 4u> >; //Instantiated 16 times
+template class itk::ImportImageContainer<unsigned long, itk::Vector<float, 4u> >; //Instantiated 46 times
 template class itk::ImportImageContainer<unsigned long, itk::FixedArray<unsigned char, 4u> >; //Instantiated 6 times
-template class itk::ImportImageContainer<unsigned long, itk::DiffusionTensor3D<double> >; //Instantiated 12 times
-template class itk::ImportImageContainer<unsigned long, itk::FixedArray<float, 3u> >; //Instantiated 14 times
-template class itk::ImportImageContainer<unsigned long, itk::Vector<unsigned short, 3u> >; //Instantiated 4 times
+template class itk::ImportImageContainer<unsigned long, itk::DiffusionTensor3D<double> >; //Instantiated 30 times
+template class itk::ImportImageContainer<unsigned long, itk::FixedArray<float, 3u> >; //Instantiated 41 times

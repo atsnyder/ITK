@@ -15,10 +15,11 @@
  *  limitations under the License.
  *
  *=========================================================================*/
-#ifndef __ExplicitInstantiation_itkBSplineKernelFunction_h__
-#define __ExplicitInstantiation_itkBSplineKernelFunction_h__
+#ifndef __itkBSplineKernelFunctionExplicit_h
+#define __itkBSplineKernelFunctionExplicit_h
 extern template class itk::BSplineKernelFunction<3u, double>;
 extern template class itk::BSplineKernelFunction<2u, double>;
+extern template class itk::BSplineKernelFunction<3u, float>;
 extern template class itk::BSplineKernelFunction<1u, double>;
 extern template class itk::BSplineKernelFunction<0u, double>;
-#endif //__ExplicitInstantiation_itkBSplineKernelFunction_h__
+#endif //__itkBSplineKernelFunctionExplicit_h

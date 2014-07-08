@@ -1,27 +1,38 @@
-/*=========================================================================
- *
- *  Copyright Insight Software Consortium
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *         http://www.apache.org/licenses/LICENSE-2.0.txt
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
- *
- *=========================================================================*/
 #include "itkConditionalConstIterator.h"
 
-template class itk::ConditionalConstIterator<itk::Image<bool, 1u> >; //Instantiated 6 times
-template class itk::ConditionalConstIterator<itk::Image<bool, 3u> >; //Instantiated 4 times
-template class itk::ConditionalConstIterator<itk::Image<unsigned char, 2u> >; //Instantiated 22 times
-template class itk::ConditionalConstIterator<itk::Image<float, 2u> >; //Instantiated 12 times
-template class itk::ConditionalConstIterator<itk::Image<bool, 2u> >; //Instantiated 76 times
-template class itk::ConditionalConstIterator<itk::Image<unsigned char, 3u> >; //Instantiated 6 times
-template class itk::ConditionalConstIterator<itk::Image<bool, 4u> >; //Instantiated 4 times
-template class itk::ConditionalConstIterator<itk::Image<itk::RGBPixel<unsigned char>, 2u> >; //Instantiated 4 times
+template class itk::ConditionalConstIterator<itk::Image<bool, 1u> >; //Instantiated 12 times
+template class itk::ConditionalConstIterator<itk::VectorImage<short, 2u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::VectorImage<unsigned int, 3u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::VectorImage<unsigned short, 3u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::Image<unsigned int, 2u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::Image<unsigned short, 3u> >; //Instantiated 75 times
+template class itk::ConditionalConstIterator<itk::VectorImage<unsigned char, 2u> >; //Instantiated 8 times
+template class itk::ConditionalConstIterator<itk::VectorImage<double, 3u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::Image<signed char, 2u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::VectorImage<unsigned int, 2u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::Image<bool, 3u> >; //Instantiated 214 times
+template class itk::ConditionalConstIterator<itk::Image<double, 3u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::Image<float, 2u> >; //Instantiated 18 times
+template class itk::ConditionalConstIterator<itk::VectorImage<unsigned short, 2u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::VectorImage<int, 2u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::Image<unsigned char, 3u> >; //Instantiated 34 times
+template class itk::ConditionalConstIterator<itk::VectorImage<signed char, 2u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::Image<double, 2u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::VectorImage<unsigned char, 3u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::VectorImage<float, 3u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::Image<unsigned short, 2u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::Image<unsigned int, 3u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::Image<short, 2u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::VectorImage<signed char, 3u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::Image<unsigned char, 2u> >; //Instantiated 48 times
+template class itk::ConditionalConstIterator<itk::VectorImage<int, 3u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::Image<bool, 2u> >; //Instantiated 199 times
+template class itk::ConditionalConstIterator<itk::Image<int, 3u> >; //Instantiated 8 times
+template class itk::ConditionalConstIterator<itk::Image<bool, 4u> >; //Instantiated 7 times
+template class itk::ConditionalConstIterator<itk::VectorImage<double, 2u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::VectorImage<float, 2u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::Image<int, 2u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::Image<signed char, 3u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::Image<float, 3u> >; //Instantiated 8 times
+template class itk::ConditionalConstIterator<itk::VectorImage<short, 3u> >; //Instantiated 6 times
+template class itk::ConditionalConstIterator<itk::Image<short, 3u> >; //Instantiated 6 times

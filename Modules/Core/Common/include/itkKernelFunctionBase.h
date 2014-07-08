@@ -72,4 +72,8 @@ protected:
 };
 } // end namespace itk
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkKernelFunctionBaseExplicit.h"
+#endif
+
 #endif // __itkKernelFunctionBase_h

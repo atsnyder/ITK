@@ -19,11 +19,39 @@
 #define __itkConditionalConstIteratorExplicit_h
 #include "itkImage.h"
 extern template class itk::ConditionalConstIterator<itk::Image<bool, 1u> >;
+extern template class itk::ConditionalConstIterator<itk::VectorImage<short, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::VectorImage<unsigned int, 3u> >;
+extern template class itk::ConditionalConstIterator<itk::VectorImage<unsigned short, 3u> >;
+extern template class itk::ConditionalConstIterator<itk::Image<unsigned int, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::Image<unsigned short, 3u> >;
+extern template class itk::ConditionalConstIterator<itk::VectorImage<unsigned char, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::VectorImage<double, 3u> >;
+extern template class itk::ConditionalConstIterator<itk::Image<signed char, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::VectorImage<unsigned int, 2u> >;
 extern template class itk::ConditionalConstIterator<itk::Image<bool, 3u> >;
-extern template class itk::ConditionalConstIterator<itk::Image<unsigned char, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::Image<double, 3u> >;
 extern template class itk::ConditionalConstIterator<itk::Image<float, 2u> >;
-extern template class itk::ConditionalConstIterator<itk::Image<bool, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::VectorImage<unsigned short, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::VectorImage<int, 2u> >;
 extern template class itk::ConditionalConstIterator<itk::Image<unsigned char, 3u> >;
+extern template class itk::ConditionalConstIterator<itk::VectorImage<signed char, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::Image<double, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::VectorImage<unsigned char, 3u> >;
+extern template class itk::ConditionalConstIterator<itk::VectorImage<float, 3u> >;
+extern template class itk::ConditionalConstIterator<itk::Image<unsigned short, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::Image<unsigned int, 3u> >;
+extern template class itk::ConditionalConstIterator<itk::Image<short, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::VectorImage<signed char, 3u> >;
+extern template class itk::ConditionalConstIterator<itk::Image<unsigned char, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::VectorImage<int, 3u> >;
+extern template class itk::ConditionalConstIterator<itk::Image<bool, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::Image<int, 3u> >;
 extern template class itk::ConditionalConstIterator<itk::Image<bool, 4u> >;
-extern template class itk::ConditionalConstIterator<itk::Image<itk::RGBPixel<unsigned char>, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::VectorImage<double, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::VectorImage<float, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::Image<int, 2u> >;
+extern template class itk::ConditionalConstIterator<itk::Image<signed char, 3u> >;
+extern template class itk::ConditionalConstIterator<itk::Image<float, 3u> >;
+extern template class itk::ConditionalConstIterator<itk::VectorImage<short, 3u> >;
+extern template class itk::ConditionalConstIterator<itk::Image<short, 3u> >;
 #endif //__itkConditionalConstIteratorExplicit_h

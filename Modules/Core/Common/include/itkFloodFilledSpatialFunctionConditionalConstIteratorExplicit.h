@@ -18,4 +18,7 @@
 #ifndef __itkFloodFilledSpatialFunctionConditionalConstIteratorExplicit_h
 #define __itkFloodFilledSpatialFunctionConditionalConstIteratorExplicit_h
 //exclude EllipseSpatialObject
+extern template class itk::FloodFilledSpatialFunctionConditionalConstIterator<itk::Image<bool, 3u>, itk::EllipsoidInteriorExteriorSpatialFunction<3u, itk::Point<double, 3u> > >;
+extern template class itk::FloodFilledSpatialFunctionConditionalConstIterator<itk::Image<bool, 1u>, itk::EllipsoidInteriorExteriorSpatialFunction<1u, itk::Point<double, 1u> > >;
+extern template class itk::FloodFilledSpatialFunctionConditionalConstIterator<itk::Image<bool, 2u>, itk::EllipsoidInteriorExteriorSpatialFunction<2u, itk::Point<double, 2u> > >;
 #endif //__itkFloodFilledSpatialFunctionConditionalConstIteratorExplicit_h

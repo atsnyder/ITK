@@ -18,13 +18,27 @@
 #ifndef __itkMinimumMaximumImageCalculatorExplicit_h
 #define __itkMinimumMaximumImageCalculatorExplicit_h
 #include "itkImage.h"
-extern template class itk::MinimumMaximumImageCalculator<itk::Image<double, 2u> >;
-extern template class itk::MinimumMaximumImageCalculator<itk::Image<float, 2u> >;
-extern template class itk::MinimumMaximumImageCalculator<itk::Image<short, 3u> >;
-extern template class itk::MinimumMaximumImageCalculator<itk::Image<float, 3u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<unsigned int, 2u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<int, 2u> >;
 extern template class itk::MinimumMaximumImageCalculator<itk::Image<unsigned char, 2u> >;
 extern template class itk::MinimumMaximumImageCalculator<itk::Image<unsigned short, 2u> >;
-extern template class itk::MinimumMaximumImageCalculator<itk::Image<short, 2u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<double, 6u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<long, 2u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<short, 3u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<unsigned int, 3u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<unsigned long, 3u> >;
 extern template class itk::MinimumMaximumImageCalculator<itk::Image<double, 3u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<signed char, 2u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<int, 3u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<signed char, 3u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<double, 4u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<short, 2u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<float, 4u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<unsigned long, 2u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<double, 2u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<float, 2u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<float, 3u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<long, 3u> >;
+extern template class itk::MinimumMaximumImageCalculator<itk::Image<unsigned short, 3u> >;
 extern template class itk::MinimumMaximumImageCalculator<itk::Image<unsigned char, 3u> >;
 #endif //__itkMinimumMaximumImageCalculatorExplicit_h

@@ -17,9 +17,14 @@
  *=========================================================================*/
 #ifndef __itkDefaultVectorPixelAccessorExplicit_h
 #define __itkDefaultVectorPixelAccessorExplicit_h
-extern template class itk::DefaultVectorPixelAccessor<unsigned short>;
+extern template class itk::DefaultVectorPixelAccessor<int>;
+extern template class itk::DefaultVectorPixelAccessor<signed char>;
 extern template class itk::DefaultVectorPixelAccessor<unsigned char>;
+extern template class itk::DefaultVectorPixelAccessor<unsigned long>;
+extern template class itk::DefaultVectorPixelAccessor<unsigned short>;
+extern template class itk::DefaultVectorPixelAccessor<unsigned int>;
 extern template class itk::DefaultVectorPixelAccessor<short>;
-extern template class itk::DefaultVectorPixelAccessor<double>;
 extern template class itk::DefaultVectorPixelAccessor<float>;
+extern template class itk::DefaultVectorPixelAccessor<long>;
+extern template class itk::DefaultVectorPixelAccessor<double>;
 #endif //__itkDefaultVectorPixelAccessorExplicit_h

@@ -1,99 +1,124 @@
-/*=========================================================================
- *
- *  Copyright Insight Software Consortium
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *         http://www.apache.org/licenses/LICENSE-2.0.txt
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
- *
- *=========================================================================*/
 #include "itkImageRegionConstIterator.h"
 
-template class itk::ImageRegionConstIterator<itk::Image<unsigned char, 4u> >; //Instantiated 12 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::DiffusionTensor3D<float>, 2u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::RGBPixel<unsigned short>, 2u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 3u>, 3u> >; //Instantiated 42 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::DiffusionTensor3D<double>, 3u> >; //Instantiated 6 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 6u>, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::VectorImage<unsigned short, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<float, 3u> >; //Instantiated 164 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<unsigned short, 1u>, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<long, 3u> >; //Instantiated 10 times
+template class itk::ImageRegionConstIterator<itk::Image<unsigned char, 4u> >; //Instantiated 21 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 3u>, 3u> >; //Instantiated 156 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<unsigned int, 2u>, itk::Image<unsigned int, 2u> >::TileInfo, 2u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::DiffusionTensor3D<double>, 3u> >; //Instantiated 18 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 6u>, 3u> >; //Instantiated 25 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<unsigned short, 3u> >; //Instantiated 292 times
+template class itk::ImageRegionConstIterator<itk::Image<std::complex<float>, 3u> >; //Instantiated 95 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<float, 2u>, itk::Image<float, 2u> >::TileInfo, 2u> >; //Instantiated 12 times
+template class itk::ImageRegionConstIterator<itk::Image<float, 3u> >; //Instantiated 1380 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<long, 2u> >; //Instantiated 150 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u> >::TileInfo, 2u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<double, 2u> >; //Instantiated 326 times
+template class itk::ImageRegionConstIterator<itk::Image<long, 3u> >; //Instantiated 447 times
 template class itk::ImageRegionConstIterator<itk::Image<itk::RGBPixel<float>, 2u> >; //Instantiated 8 times
-template class itk::ImageRegionConstIterator<itk::Image<long, 2u> >; //Instantiated 6 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::CovariantVector<float, 3u>, 3u> >; //Instantiated 6 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<double, 3u>, 3u> >; //Instantiated 46 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::FixedArray<unsigned long, 8u>, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::VectorImage<float, 3u> >; //Instantiated 10 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::RGBAPixel<unsigned char>, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<double, 4u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::RGBPixel<unsigned char>, 3u> >; //Instantiated 30 times
+template class itk::ImageRegionConstIterator<itk::Image<long, 2u> >; //Instantiated 438 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::CovariantVector<float, 3u>, 3u> >; //Instantiated 30 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<double, 3u>, 3u> >; //Instantiated 90 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::watershed::Boundary<double, 3u>::face_pixel_t, 3u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 1u>, 1u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<int, 3u> >; //Instantiated 294 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<float, 3u> >; //Instantiated 373 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<double, 1u>, 1u> >; //Instantiated 36 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 1u>, 4u> >; //Instantiated 15 times
+template class itk::ImageRegionConstIterator<itk::Image<int, 4u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<double, 4u> >; //Instantiated 34 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::RGBAPixel<unsigned char>, 3u> >; //Instantiated 7 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::RGBPixel<unsigned char>, 3u> >; //Instantiated 43 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<int, 2u> >; //Instantiated 294 times
 template class itk::ImageRegionConstIterator<itk::Image<itk::RGBAPixel<unsigned char>, 2u> >; //Instantiated 8 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::CovariantVector<double, 3u>, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 3u>, 2u> >; //Instantiated 12 times
-template class itk::ImageRegionConstIterator<itk::Image<unsigned short, 3u> >; //Instantiated 82 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<int, 3u>, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<unsigned char, 6u> >; //Instantiated 208 times
-template class itk::ImageRegionConstIterator<itk::Image<unsigned char, 3u> >; //Instantiated 280 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::SymmetricSecondRankTensor<double, 3u>, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::RGBPixel<unsigned char>, 2u> >; //Instantiated 88 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::RGBPixel<short>, 2u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<bool, 2u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::VectorImage<unsigned char, 2u> >; //Instantiated 12 times
-template class itk::ImageRegionConstIterator<itk::Image<short, 3u> >; //Instantiated 84 times
-template class itk::ImageRegionConstIterator<itk::Image<unsigned short, 4u> >; //Instantiated 6 times
-template class itk::ImageRegionConstIterator<itk::VectorImage<float, 2u> >; //Instantiated 14 times
-template class itk::ImageRegionConstIterator<itk::Image<unsigned long, 3u> >; //Instantiated 18 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Matrix<float, 3u, 3u>, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 1u>, 2u> >; //Instantiated 6 times
-template class itk::ImageRegionConstIterator<itk::VectorImage<unsigned char, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<short, 2u> >; //Instantiated 140 times
-template class itk::ImageRegionConstIterator<itk::Image<unsigned short, 2u> >; //Instantiated 140 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 4u>, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<double, 2u>, 2u> >; //Instantiated 46 times
-template class itk::ImageRegionConstIterator<itk::Image<int, 2u> >; //Instantiated 16 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 1u>, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<short, 4u> >; //Instantiated 8 times
-template class itk::ImageRegionConstIterator<itk::Image<unsigned char, 2u> >; //Instantiated 968 times
-template class itk::ImageRegionConstIterator<itk::Image<double, 3u> >; //Instantiated 80 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<signed char, 3u> >; //Instantiated 294 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<unsigned long, 2u> >; //Instantiated 150 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<double, 2u>, itk::Image<double, 2u> >::TileInfo, 2u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<short, 2u> >; //Instantiated 296 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<itk::RGBPixel<unsigned char>, 2u>, itk::Image<itk::RGBPixel<unsigned char>, 2u> >::TileInfo, 2u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::CovariantVector<double, 3u>, 3u> >; //Instantiated 47 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<unsigned long, 3u> >; //Instantiated 150 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<int, 3u>, itk::Image<int, 3u> >::TileInfo, 3u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<bool, 1u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 3u>, 2u> >; //Instantiated 21 times
+template class itk::ImageRegionConstIterator<itk::Image<unsigned short, 3u> >; //Instantiated 1035 times
+template class itk::ImageRegionConstIterator<itk::Image<unsigned char, 6u> >; //Instantiated 261 times
+template class itk::ImageRegionConstIterator<itk::Image<unsigned char, 3u> >; //Instantiated 1350 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::SymmetricSecondRankTensor<double, 3u>, 3u> >; //Instantiated 7 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<int, 2u>, itk::Image<int, 2u> >::TileInfo, 2u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::RGBPixel<unsigned char>, 2u> >; //Instantiated 93 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 7u>, 4u> >; //Instantiated 9 times
+template class itk::ImageRegionConstIterator<itk::Image<bool, 2u> >; //Instantiated 125 times
+template class itk::ImageRegionConstIterator<itk::Image<unsigned int, 4u> >; //Instantiated 14 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<unsigned char, 2u> >; //Instantiated 306 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<unsigned int, 3u> >; //Instantiated 288 times
+template class itk::ImageRegionConstIterator<itk::Image<short, 3u> >; //Instantiated 1119 times
+template class itk::ImageRegionConstIterator<itk::Image<unsigned short, 4u> >; //Instantiated 10 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<float, 2u> >; //Instantiated 342 times
+template class itk::ImageRegionConstIterator<itk::Image<unsigned long, 3u> >; //Instantiated 468 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 1u>, 2u> >; //Instantiated 33 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<unsigned char, 3u> >; //Instantiated 298 times
+template class itk::ImageRegionConstIterator<itk::Image<short, 2u> >; //Instantiated 992 times
+template class itk::ImageRegionConstIterator<itk::Image<unsigned short, 2u> >; //Instantiated 990 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 4u>, 3u> >; //Instantiated 7 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<double, 2u>, 2u> >; //Instantiated 89 times
+template class itk::ImageRegionConstIterator<itk::Image<std::complex<double>, 3u> >; //Instantiated 90 times
+template class itk::ImageRegionConstIterator<itk::Image<bool, 3u> >; //Instantiated 210 times
+template class itk::ImageRegionConstIterator<itk::Image<int, 2u> >; //Instantiated 888 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 1u>, 3u> >; //Instantiated 34 times
+template class itk::ImageRegionConstIterator<itk::Image<short, 4u> >; //Instantiated 29 times
+template class itk::ImageRegionConstIterator<itk::Image<unsigned char, 2u> >; //Instantiated 1911 times
+template class itk::ImageRegionConstIterator<itk::Image<double, 3u> >; //Instantiated 1095 times
 template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<unsigned char, 2u>, 2u> >; //Instantiated 10 times
-template class itk::ImageRegionConstIterator<itk::Image<signed char, 3u> >; //Instantiated 16 times
-template class itk::ImageRegionConstIterator<itk::Image<std::complex<float>, 2u> >; //Instantiated 16 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::FixedArray<double, 3u>, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::DiffusionTensor3D<float>, 3u> >; //Instantiated 6 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::CovariantVector<double, 2u>, 2u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<float, 2u> >; //Instantiated 324 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<double, 2u>, 3u> >; //Instantiated 12 times
-template class itk::ImageRegionConstIterator<itk::Image<unsigned int, 2u> >; //Instantiated 34 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::RGBAPixel<float>, 2u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::CovariantVector<float, 2u>, 2u> >; //Instantiated 12 times
-template class itk::ImageRegionConstIterator<itk::Image<double, 2u> >; //Instantiated 350 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::FixedArray<float, 3u>, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 2u>, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<char, 2u> >; //Instantiated 34 times
-template class itk::ImageRegionConstIterator<itk::Image<float, 4u> >; //Instantiated 12 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 2u>, 2u> >; //Instantiated 88 times
-template class itk::ImageRegionConstIterator<itk::Image<unsigned int, 3u> >; //Instantiated 36 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::SymmetricSecondRankTensor<float, 3u>, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::SymmetricSecondRankTensor<double, 2u>, 2u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<char, 3u> >; //Instantiated 38 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<double, 3u>, 4u> >; //Instantiated 10 times
-template class itk::ImageRegionConstIterator<itk::Image<double, 6u> >; //Instantiated 208 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<int, 2u>, 2u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<long long, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<int, 3u> >; //Instantiated 20 times
-template class itk::ImageRegionConstIterator<itk::Image<unsigned long long, 3u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<double, 1u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<signed char, 2u> >; //Instantiated 46 times
-template class itk::ImageRegionConstIterator<itk::Image<unsigned long, 2u> >; //Instantiated 32 times
-template class itk::ImageRegionConstIterator<itk::Image<float, 1u> >; //Instantiated 4 times
-template class itk::ImageRegionConstIterator<itk::Image<unsigned char, 1u> >; //Instantiated 6 times
-template class itk::ImageRegionConstIterator<itk::Image<itk::Offset<2u>, 2u> >; //Instantiated 4 times
+template class itk::ImageRegionConstIterator<itk::Image<signed char, 3u> >; //Instantiated 888 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::SymmetricSecondRankTensor<float, 3u>, 2u> >; //Instantiated 8 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<unsigned short, 2u>, itk::Image<unsigned short, 2u> >::TileInfo, 2u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 7u>, 3u> >; //Instantiated 12 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<short, 2u>, itk::Image<short, 2u> >::TileInfo, 2u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 2u>, 4u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::DiffusionTensor3D<float>, 3u> >; //Instantiated 9 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::CovariantVector<double, 2u>, 2u> >; //Instantiated 28 times
+template class itk::ImageRegionConstIterator<itk::Image<float, 2u> >; //Instantiated 1317 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<double, 2u>, 3u> >; //Instantiated 24 times
+template class itk::ImageRegionConstIterator<itk::Image<unsigned int, 2u> >; //Instantiated 941 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 4u>, 4u> >; //Instantiated 29 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<short, 3u>, itk::Image<short, 3u> >::TileInfo, 3u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::CovariantVector<float, 2u>, 2u> >; //Instantiated 24 times
+template class itk::ImageRegionConstIterator<itk::Image<double, 2u> >; //Instantiated 1315 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::FixedArray<float, 3u>, 3u> >; //Instantiated 13 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 2u>, 3u> >; //Instantiated 22 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::FixedArray<float, 2u>, 2u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<unsigned char, 3u>, itk::Image<unsigned char, 3u> >::TileInfo, 3u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<char, 2u> >; //Instantiated 39 times
+template class itk::ImageRegionConstIterator<itk::Image<float, 4u> >; //Instantiated 84 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<signed char, 2u> >; //Instantiated 294 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<short, 3u> >; //Instantiated 312 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<float, 3u>, itk::Image<float, 3u> >::TileInfo, 3u> >; //Instantiated 9 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 2u>, 2u> >; //Instantiated 121 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::watershed::Boundary<double, 2u>::face_pixel_t, 2u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<std::complex<double>, 2u> >; //Instantiated 92 times
+template class itk::ImageRegionConstIterator<itk::Image<unsigned int, 3u> >; //Instantiated 973 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<unsigned int, 2u> >; //Instantiated 288 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::SymmetricSecondRankTensor<float, 3u>, 3u> >; //Instantiated 19 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<signed char, 2u>, itk::Image<signed char, 2u> >::TileInfo, 2u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<double, 4u>, 4u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<unsigned short, 2u> >; //Instantiated 288 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<long, 3u> >; //Instantiated 150 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<unsigned int, 3u>, itk::Image<unsigned int, 3u> >::TileInfo, 3u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::SymmetricSecondRankTensor<float, 2u>, 2u> >; //Instantiated 8 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<double, 3u> >; //Instantiated 326 times
+template class itk::ImageRegionConstIterator<itk::Image<char, 3u> >; //Instantiated 41 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<double, 3u>, 4u> >; //Instantiated 19 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<double, 3u>, itk::Image<double, 3u> >::TileInfo, 3u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<double, 6u> >; //Instantiated 261 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 6u>, 4u> >; //Instantiated 12 times
+template class itk::ImageRegionConstIterator<itk::VectorImage<float, 4u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<int, 3u> >; //Instantiated 949 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<signed char, 3u>, itk::Image<signed char, 3u> >::TileInfo, 3u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::TileImageFilter<itk::Image<unsigned short, 3u>, itk::Image<unsigned short, 3u> >::TileInfo, 3u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 3u>, 4u> >; //Instantiated 23 times
+template class itk::ImageRegionConstIterator<itk::Image<double, 1u> >; //Instantiated 14 times
+template class itk::ImageRegionConstIterator<itk::Image<signed char, 2u> >; //Instantiated 917 times
+template class itk::ImageRegionConstIterator<itk::Image<unsigned long, 2u> >; //Instantiated 503 times
+template class itk::ImageRegionConstIterator<itk::Image<float, 1u> >; //Instantiated 55 times
+template class itk::ImageRegionConstIterator<itk::Image<std::complex<float>, 2u> >; //Instantiated 109 times
+template class itk::ImageRegionConstIterator<itk::Image<itk::Vector<float, 6u>, 2u> >; //Instantiated 6 times
+template class itk::ImageRegionConstIterator<itk::Image<unsigned char, 1u> >; //Instantiated 15 times

@@ -1,34 +1,48 @@
-/*=========================================================================
- *
- *  Copyright Insight Software Consortium
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *         http://www.apache.org/licenses/LICENSE-2.0.txt
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
- *
- *=========================================================================*/
 #include "itkConstantBoundaryCondition.h"
 
-template class itk::ConstantBoundaryCondition<itk::Image<double, 2u>, itk::Image<double, 2u> >; //Instantiated 34 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned long, 3u>, itk::Image<double, 3u> >; //Instantiated 27 times
+template class itk::ConstantBoundaryCondition<itk::Image<double, 2u>, itk::Image<double, 2u> >; //Instantiated 275 times
+template class itk::ConstantBoundaryCondition<itk::Image<float, 4u>, itk::Image<float, 4u> >; //Instantiated 9 times
 template class itk::ConstantBoundaryCondition<itk::Image<double, 2u>, itk::Image<float, 2u> >; //Instantiated 12 times
-template class itk::ConstantBoundaryCondition<itk::Image<bool, 2u>, itk::Image<bool, 2u> >; //Instantiated 48 times
-template class itk::ConstantBoundaryCondition<itk::Image<bool, 1u>, itk::Image<bool, 1u> >; //Instantiated 6 times
-template class itk::ConstantBoundaryCondition<itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u> >; //Instantiated 132 times
-template class itk::ConstantBoundaryCondition<itk::Image<unsigned char, 1u>, itk::Image<unsigned char, 1u> >; //Instantiated 6 times
-template class itk::ConstantBoundaryCondition<itk::Image<unsigned char, 2u>, itk::Image<double, 2u> >; //Instantiated 6 times
-template class itk::ConstantBoundaryCondition<itk::Image<short, 2u>, itk::Image<short, 2u> >; //Instantiated 6 times
-template class itk::ConstantBoundaryCondition<itk::Image<int, 2u>, itk::Image<int, 2u> >; //Instantiated 4 times
-template class itk::ConstantBoundaryCondition<itk::Image<unsigned short, 2u>, itk::Image<unsigned short, 2u> >; //Instantiated 30 times
-template class itk::ConstantBoundaryCondition<itk::Image<float, 2u>, itk::Image<double, 2u> >; //Instantiated 18 times
-template class itk::ConstantBoundaryCondition<itk::Image<unsigned short, 2u>, itk::Image<double, 2u> >; //Instantiated 4 times
-template class itk::ConstantBoundaryCondition<itk::Image<unsigned char, 3u>, itk::Image<unsigned char, 3u> >; //Instantiated 32 times
-template class itk::ConstantBoundaryCondition<itk::Image<float, 2u>, itk::Image<float, 2u> >; //Instantiated 24 times
-template class itk::ConstantBoundaryCondition<itk::Image<unsigned long, 2u>, itk::Image<unsigned long, 2u> >; //Instantiated 12 times
+template class itk::ConstantBoundaryCondition<itk::Image<signed char, 2u>, itk::Image<double, 2u> >; //Instantiated 54 times
+template class itk::ConstantBoundaryCondition<itk::Image<double, 3u>, itk::Image<double, 3u> >; //Instantiated 243 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned int, 2u>, itk::Image<double, 2u> >; //Instantiated 54 times
+template class itk::ConstantBoundaryCondition<itk::Image<bool, 2u>, itk::Image<bool, 2u> >; //Instantiated 113 times
+template class itk::ConstantBoundaryCondition<itk::Image<bool, 1u>, itk::Image<bool, 1u> >; //Instantiated 12 times
+template class itk::ConstantBoundaryCondition<itk::Image<int, 3u>, itk::Image<double, 3u> >; //Instantiated 54 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u> >; //Instantiated 411 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned char, 1u>, itk::Image<unsigned char, 1u> >; //Instantiated 12 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned char, 2u>, itk::Image<double, 2u> >; //Instantiated 60 times
+template class itk::ConstantBoundaryCondition<itk::Image<bool, 3u>, itk::Image<bool, 3u> >; //Instantiated 152 times
+template class itk::ConstantBoundaryCondition<itk::Image<short, 2u>, itk::Image<short, 2u> >; //Instantiated 276 times
+template class itk::ConstantBoundaryCondition<itk::Image<signed char, 3u>, itk::Image<double, 3u> >; //Instantiated 54 times
+template class itk::ConstantBoundaryCondition<itk::Image<int, 2u>, itk::Image<int, 2u> >; //Instantiated 274 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned short, 3u>, itk::Image<unsigned short, 3u> >; //Instantiated 339 times
+template class itk::ConstantBoundaryCondition<itk::Image<signed char, 2u>, itk::Image<signed char, 2u> >; //Instantiated 270 times
+template class itk::ConstantBoundaryCondition<itk::Image<long, 3u>, itk::Image<double, 3u> >; //Instantiated 27 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned int, 2u>, itk::Image<unsigned int, 2u> >; //Instantiated 282 times
+template class itk::ConstantBoundaryCondition<itk::Image<float, 2u>, itk::Image<double, 2u> >; //Instantiated 72 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned short, 2u>, itk::Image<double, 2u> >; //Instantiated 58 times
+template class itk::ConstantBoundaryCondition<itk::Image<short, 3u>, itk::Image<short, 3u> >; //Instantiated 288 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned char, 3u>, itk::Image<unsigned char, 3u> >; //Instantiated 400 times
+template class itk::ConstantBoundaryCondition<itk::Image<signed char, 3u>, itk::Image<signed char, 3u> >; //Instantiated 270 times
+template class itk::ConstantBoundaryCondition<itk::Image<short, 3u>, itk::Image<double, 3u> >; //Instantiated 54 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned int, 3u>, itk::Image<unsigned int, 3u> >; //Instantiated 282 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned short, 2u>, itk::Image<unsigned short, 2u> >; //Instantiated 300 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned long, 3u>, itk::Image<unsigned long, 3u> >; //Instantiated 150 times
+template class itk::ConstantBoundaryCondition<itk::Image<long, 3u>, itk::Image<long, 3u> >; //Instantiated 135 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned char, 3u>, itk::Image<double, 3u> >; //Instantiated 54 times
+template class itk::ConstantBoundaryCondition<itk::Image<int, 2u>, itk::Image<double, 2u> >; //Instantiated 54 times
+template class itk::ConstantBoundaryCondition<itk::Image<float, 3u>, itk::Image<float, 3u> >; //Instantiated 305 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned int, 3u>, itk::Image<double, 3u> >; //Instantiated 54 times
+template class itk::ConstantBoundaryCondition<itk::Image<float, 2u>, itk::Image<float, 2u> >; //Instantiated 258 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned long, 2u>, itk::Image<double, 2u> >; //Instantiated 27 times
+template class itk::ConstantBoundaryCondition<itk::Image<long, 2u>, itk::Image<long, 2u> >; //Instantiated 135 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned short, 3u>, itk::Image<double, 3u> >; //Instantiated 54 times
+template class itk::ConstantBoundaryCondition<itk::Image<long, 2u>, itk::Image<double, 2u> >; //Instantiated 27 times
+template class itk::ConstantBoundaryCondition<itk::Image<itk::Vector<double, 2u>, 3u>, itk::Image<itk::Vector<double, 2u>, 3u> >; //Instantiated 6 times
+template class itk::ConstantBoundaryCondition<itk::Image<float, 3u>, itk::Image<double, 3u> >; //Instantiated 54 times
+template class itk::ConstantBoundaryCondition<itk::Image<short, 2u>, itk::Image<double, 2u> >; //Instantiated 54 times
+template class itk::ConstantBoundaryCondition<itk::Image<int, 3u>, itk::Image<int, 3u> >; //Instantiated 270 times
+template class itk::ConstantBoundaryCondition<itk::Image<unsigned long, 2u>, itk::Image<unsigned long, 2u> >; //Instantiated 159 times
+template class itk::ConstantBoundaryCondition<itk::Image<itk::Vector<double, 2u>, 2u>, itk::Image<itk::Vector<double, 2u>, 2u> >; //Instantiated 6 times

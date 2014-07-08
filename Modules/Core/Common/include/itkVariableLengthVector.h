@@ -523,4 +523,8 @@ std::ostream & operator<<(std::ostream & os, const VariableLengthVector< TValue 
 #include "itkVariableLengthVector.hxx"
 #endif
 
+#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
+#include "itkVariableLengthVectorExplicit.h"
+#endif
+
 #endif

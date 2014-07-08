@@ -17,8 +17,11 @@
  *=========================================================================*/
 #ifndef __itkImageVectorOptimizerParametersHelperExplicit_h
 #define __itkImageVectorOptimizerParametersHelperExplicit_h
+extern template class itk::ImageVectorOptimizerParametersHelper<float, 3u, 4u>;
 extern template class itk::ImageVectorOptimizerParametersHelper<double, 2u, 3u>;
 extern template class itk::ImageVectorOptimizerParametersHelper<double, 3u, 4u>;
+extern template class itk::ImageVectorOptimizerParametersHelper<double, 4u, 4u>;
+extern template class itk::ImageVectorOptimizerParametersHelper<float, 2u, 3u>;
 extern template class itk::ImageVectorOptimizerParametersHelper<float, 3u, 3u>;
 extern template class itk::ImageVectorOptimizerParametersHelper<double, 3u, 3u>;
 extern template class itk::ImageVectorOptimizerParametersHelper<double, 2u, 2u>;

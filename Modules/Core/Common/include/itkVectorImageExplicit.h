@@ -17,20 +17,33 @@
  *=========================================================================*/
 #ifndef __itkVectorImageExplicit_h
 #define __itkVectorImageExplicit_h
-extern template class itk::VectorImage<short, 6u>;
-extern template class itk::VectorImage<unsigned int, 6u>;
-extern template class itk::VectorImage<float, 3u>;
-extern template class itk::VectorImage<int, 6u>;
-extern template class itk::VectorImage<unsigned short, 3u>;
-extern template class itk::VectorImage<double, 3u>;
+extern template class itk::VectorImage<short, 2u>;
 extern template class itk::VectorImage<unsigned short, 6u>;
-extern template class itk::VectorImage<float, 2u>;
-extern template class itk::VectorImage<unsigned char, 2u>;
-extern template class itk::VectorImage<unsigned char, 3u>;
-extern template class itk::VectorImage<int, 2u>;
-extern template class itk::VectorImage<double, 2u>;
 extern template class itk::VectorImage<long, 6u>;
-extern template class itk::VectorImage<char, 6u>;
 extern template class itk::VectorImage<unsigned long, 6u>;
+extern template class itk::VectorImage<char, 6u>;
+extern template class itk::VectorImage<short, 6u>;
+extern template class itk::VectorImage<unsigned long, 3u>;
+extern template class itk::VectorImage<unsigned short, 3u>;
+extern template class itk::VectorImage<unsigned short, 2u>;
+extern template class itk::VectorImage<unsigned int, 3u>;
+extern template class itk::VectorImage<long, 3u>;
 extern template class itk::VectorImage<unsigned char, 6u>;
+extern template class itk::VectorImage<unsigned int, 6u>;
+extern template class itk::VectorImage<long, 2u>;
+extern template class itk::VectorImage<double, 3u>;
+extern template class itk::VectorImage<double, 2u>;
+extern template class itk::VectorImage<unsigned char, 2u>;
+extern template class itk::VectorImage<unsigned int, 2u>;
+extern template class itk::VectorImage<unsigned char, 3u>;
+extern template class itk::VectorImage<float, 4u>;
+extern template class itk::VectorImage<int, 6u>;
+extern template class itk::VectorImage<short, 3u>;
+extern template class itk::VectorImage<signed char, 3u>;
+extern template class itk::VectorImage<float, 3u>;
+extern template class itk::VectorImage<signed char, 2u>;
+extern template class itk::VectorImage<int, 2u>;
+extern template class itk::VectorImage<unsigned long, 2u>;
+extern template class itk::VectorImage<int, 3u>;
+extern template class itk::VectorImage<float, 2u>;
 #endif //__itkVectorImageExplicit_h

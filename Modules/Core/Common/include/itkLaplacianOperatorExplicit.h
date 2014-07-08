@@ -20,5 +20,6 @@
 extern template class itk::LaplacianOperator<float, 2u, itk::NeighborhoodAllocator<float> >;
 extern template class itk::LaplacianOperator<double, 3u, itk::NeighborhoodAllocator<double> >;
 extern template class itk::LaplacianOperator<double, 2u, itk::NeighborhoodAllocator<double> >;
+extern template class itk::LaplacianOperator<double, 4u, itk::NeighborhoodAllocator<double> >;
 extern template class itk::LaplacianOperator<float, 3u, itk::NeighborhoodAllocator<float> >;
 #endif //__itkLaplacianOperatorExplicit_h

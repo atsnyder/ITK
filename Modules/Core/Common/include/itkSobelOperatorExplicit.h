@@ -18,6 +18,7 @@
 #ifndef __itkSobelOperatorExplicit_h
 #define __itkSobelOperatorExplicit_h
 extern template class itk::SobelOperator<float, 2u, itk::NeighborhoodAllocator<float> >;
+extern template class itk::SobelOperator<double, 3u, itk::NeighborhoodAllocator<double> >;
 extern template class itk::SobelOperator<double, 2u, itk::NeighborhoodAllocator<double> >;
 extern template class itk::SobelOperator<float, 3u, itk::NeighborhoodAllocator<float> >;
 #endif //__itkSobelOperatorExplicit_h
