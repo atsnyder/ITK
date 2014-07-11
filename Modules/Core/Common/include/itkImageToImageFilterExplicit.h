@@ -17,6 +17,7 @@
  *=========================================================================*/
 #ifndef __itkImageToImageFilterExplicit_h
 #define __itkImageToImageFilterExplicit_h
+//exclude VectorImageToImageAdaptor
 //exclude NormalBandNode
 //exclude LabelMap
 extern template class itk::ImageToImageFilter<itk::Image<double, 3u>, itk::Image<itk::CovariantVector<float, 3u>, 3u> >;
@@ -40,7 +41,6 @@ extern template class itk::ImageToImageFilter<itk::Image<itk::Vector<float, 1u>,
 extern template class itk::ImageToImageFilter<itk::VectorImage<unsigned int, 2u>, itk::Image<short, 2u> >;
 extern template class itk::ImageToImageFilter<itk::Image<std::complex<float>, 3u>, itk::Image<std::complex<double>, 3u> >;
 extern template class itk::ImageToImageFilter<itk::VectorImage<unsigned short, 2u>, itk::Image<int, 2u> >;
-extern template class itk::ImageToImageFilter<itk::VectorImageToImageAdaptor<float, 3u>, itk::Image<float, 3u> >;
 extern template class itk::ImageToImageFilter<itk::Image<unsigned char, 4u>, itk::Image<unsigned char, 4u> >;
 extern template class itk::ImageToImageFilter<itk::Image<unsigned char, 2u>, itk::Image<float, 2u> >;
 extern template class itk::ImageToImageFilter<itk::VectorImage<signed char, 3u>, itk::Image<int, 3u> >;

@@ -17,6 +17,5 @@
  *=========================================================================*/
 #ifndef __itkMutexLockHolderExplicit_h
 #define __itkMutexLockHolderExplicit_h
-extern template class itk::MutexLockHolder<itk::SimpleFastMutexLock>;
-extern template class itk::MutexLockHolder<itk::FastMutexLock>;
+//exclude MutexLockHolder
 #endif //__itkMutexLockHolderExplicit_h

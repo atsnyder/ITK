@@ -298,8 +298,4 @@ private:
 #include "itkSpecialCoordinatesImage.hxx"
 #endif
 
-#ifdef ITK_TEMPLATE_EXPLICIT_INSTANTIATION
-#include "itkSpecialCoordinatesImageExplicit.h"
-#endif
-
 #endif

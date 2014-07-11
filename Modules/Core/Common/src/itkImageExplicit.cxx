@@ -12,11 +12,9 @@ template class itk::Image<itk::RGBPixel<unsigned char>, 3u>; //Instantiated 59 t
 template class itk::Image<char, 3u>; //Instantiated 126 times
 template class itk::Image<itk::Vector<float, 6u>, 3u>; //Instantiated 28 times
 template class itk::Image<itk::Vector<float, 4u>, 3u>; //Instantiated 13 times
-template class itk::Image<itk::TileImageFilter<itk::Image<signed char, 2u>, itk::Image<signed char, 2u> >::TileInfo, 2u>; //Instantiated 6 times
 template class itk::Image<unsigned char, 3u>; //Instantiated 1856 times
 template class itk::Image<itk::DiffusionTensor3D<double>, 3u>; //Instantiated 30 times
 template class itk::Image<itk::VariableLengthVector<float>, 3u>; //Instantiated 12 times
-template class itk::Image<itk::TileImageFilter<itk::Image<unsigned char, 3u>, itk::Image<unsigned char, 3u> >::TileInfo, 3u>; //Instantiated 6 times
 template class itk::Image<unsigned short, 3u>; //Instantiated 1308 times
 template class itk::Image<itk::Vector<double, 2u>, 3u>; //Instantiated 28 times
 template class itk::Image<char, 4u>; //Instantiated 12 times
@@ -24,7 +22,6 @@ template class itk::Image<itk::CovariantVector<double, 2u>, 2u>; //Instantiated 
 template class itk::Image<short, 2u>; //Instantiated 1284 times
 template class itk::Image<itk::Vector<float, 4u>, 4u>; //Instantiated 31 times
 template class itk::Image<signed char, 2u>; //Instantiated 1169 times
-template class itk::Image<itk::TileImageFilter<itk::Image<unsigned short, 3u>, itk::Image<unsigned short, 3u> >::TileInfo, 3u>; //Instantiated 6 times
 template class itk::Image<itk::FixedArray<unsigned long, 8u>, 3u>; //Instantiated 6 times
 template class itk::Image<itk::SymmetricSecondRankTensor<float, 2u>, 2u>; //Instantiated 8 times
 template class itk::Image<itk::Vector<float, 6u>, 2u>; //Instantiated 14 times
@@ -33,11 +30,9 @@ template class itk::Image<float, 2u>; //Instantiated 1887 times
 template class itk::Image<int, 2u>; //Instantiated 1158 times
 template class itk::Image<itk::Vector<float, 7u>, 3u>; //Instantiated 12 times
 template class itk::Image<std::complex<double>, 2u>; //Instantiated 302 times
-template class itk::Image<itk::TileImageFilter<itk::Image<unsigned int, 2u>, itk::Image<unsigned int, 2u> >::TileInfo, 2u>; //Instantiated 6 times
 template class itk::Image<float, 1u>; //Instantiated 162 times
 template class itk::Image<itk::Vector<double, 3u>, 3u>; //Instantiated 138 times
 template class itk::Image<itk::Vector<float, 1u>, 2u>; //Instantiated 37 times
-template class itk::Image<itk::TileImageFilter<itk::Image<double, 3u>, itk::Image<double, 3u> >::TileInfo, 3u>; //Instantiated 6 times
 template class itk::Image<itk::SymmetricSecondRankTensor<float, 3u>, 2u>; //Instantiated 8 times
 template class itk::Image<unsigned char, 1u>; //Instantiated 19 times
 template class itk::Image<unsigned char, 2u>; //Instantiated 2491 times
@@ -49,14 +44,11 @@ template class itk::Image<std::complex<float>, 3u>; //Instantiated 233 times
 template class itk::Image<itk::Vector<float, 7u>, 4u>; //Instantiated 9 times
 template class itk::Image<signed char, 3u>; //Instantiated 1116 times
 template class itk::Image<int, 3u>; //Instantiated 1201 times
-template class itk::Image<itk::TileImageFilter<itk::Image<unsigned short, 2u>, itk::Image<unsigned short, 2u> >::TileInfo, 2u>; //Instantiated 6 times
 template class itk::Image<itk::Vector<float, 1u>, 3u>; //Instantiated 36 times
 template class itk::Image<itk::Vector<float, 3u>, 3u>; //Instantiated 195 times
 template class itk::Image<bool, 4u>; //Instantiated 7 times
-template class itk::Image<itk::TileImageFilter<itk::Image<int, 3u>, itk::Image<int, 3u> >::TileInfo, 3u>; //Instantiated 6 times
 template class itk::Image<itk::FixedArray<float, 3u>, 3u>; //Instantiated 41 times
 template class itk::Image<unsigned int, 3u>; //Instantiated 1209 times
-template class itk::Image<itk::TileImageFilter<itk::Image<short, 2u>, itk::Image<short, 2u> >::TileInfo, 2u>; //Instantiated 6 times
 template class itk::Image<bool, 1u>; //Instantiated 12 times
 template class itk::Image<std::list<unsigned long, std::allocator<unsigned long> >, 2u>; //Instantiated 42 times
 template class itk::Image<itk::Vector<double, 4u>, 4u>; //Instantiated 9 times
@@ -74,24 +66,20 @@ template class itk::Image<std::list<unsigned int, std::allocator<unsigned int> >
 template class itk::Image<itk::Vector<float, 3u>, 2u>; //Instantiated 39 times
 template class itk::Image<itk::Vector<double, 1u>, 1u>; //Instantiated 116 times
 template class itk::Image<itk::RGBPixel<unsigned char>, 2u>; //Instantiated 107 times
-template class itk::Image<itk::TileImageFilter<itk::Image<float, 3u>, itk::Image<float, 3u> >::TileInfo, 3u>; //Instantiated 9 times
 template class itk::Image<itk::Offset<2u>, 2u>; //Instantiated 48 times
 template class itk::Image<double, 1u>; //Instantiated 139 times
 template class itk::Image<itk::RGBPixel<float>, 3u>; //Instantiated 10 times
 template class itk::Image<itk::Vector<float, 1u>, 4u>; //Instantiated 17 times
 template class itk::Image<unsigned int, 2u>; //Instantiated 1177 times
 template class itk::Image<itk::CovariantVector<double, 3u>, 3u>; //Instantiated 125 times
-template class itk::Image<itk::TileImageFilter<itk::Image<double, 2u>, itk::Image<double, 2u> >::TileInfo, 2u>; //Instantiated 6 times
 template class itk::Image<short, 4u>; //Instantiated 32 times
 template class itk::Image<unsigned long, 3u>; //Instantiated 605 times
 template class itk::Image<unsigned char, 4u>; //Instantiated 27 times
 template class itk::Image<itk::Vector<double, 3u>, 1u>; //Instantiated 6 times
 template class itk::Image<float, 3u>; //Instantiated 1921 times
 template class itk::Image<itk::Offset<3u>, 3u>; //Instantiated 27 times
-template class itk::Image<itk::TileImageFilter<itk::Image<signed char, 3u>, itk::Image<signed char, 3u> >::TileInfo, 3u>; //Instantiated 6 times
 template class itk::Image<itk::Vector<float, 4u>, 2u>; //Instantiated 11 times
 template class itk::Image<long, 2u>; //Instantiated 768 times
-template class itk::Image<itk::TileImageFilter<itk::Image<unsigned int, 3u>, itk::Image<unsigned int, 3u> >::TileInfo, 3u>; //Instantiated 6 times
 template class itk::Image<unsigned long, 2u>; //Instantiated 649 times
 template class itk::Image<double, 2u>; //Instantiated 1714 times
 template class itk::Image<itk::FixedArray<double, 3u>, 3u>; //Instantiated 6 times
@@ -101,17 +89,12 @@ template class itk::Image<itk::Vector<float, 6u>, 4u>; //Instantiated 12 times
 template class itk::Image<itk::Vector<float, 2u>, 2u>; //Instantiated 161 times
 template class itk::Image<unsigned short, 4u>; //Instantiated 10 times
 template class itk::Image<itk::Vector<float, 5u>, 2u>; //Instantiated 7 times
-template class itk::Image<itk::TileImageFilter<itk::Image<itk::RGBPixel<unsigned char>, 2u>, itk::Image<itk::RGBPixel<unsigned char>, 2u> >::TileInfo, 2u>; //Instantiated 8 times
 template class itk::Image<unsigned short, 2u>; //Instantiated 1315 times
-template class itk::Image<itk::TileImageFilter<itk::Image<short, 3u>, itk::Image<short, 3u> >::TileInfo, 3u>; //Instantiated 6 times
 template class itk::Image<std::complex<double>, 3u>; //Instantiated 274 times
 template class itk::Image<itk::FixedArray<float, 2u>, 2u>; //Instantiated 64 times
 template class itk::Image<itk::RGBPixel<unsigned short>, 2u>; //Instantiated 8 times
 template class itk::Image<itk::CovariantVector<float, 2u>, 2u>; //Instantiated 64 times
-template class itk::Image<itk::TileImageFilter<itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u> >::TileInfo, 2u>; //Instantiated 6 times
-template class itk::Image<itk::TileImageFilter<itk::Image<float, 2u>, itk::Image<float, 2u> >::TileInfo, 2u>; //Instantiated 12 times
 template class itk::Image<bool, 2u>; //Instantiated 257 times
-template class itk::Image<itk::TileImageFilter<itk::Image<int, 2u>, itk::Image<int, 2u> >::TileInfo, 2u>; //Instantiated 6 times
 template class itk::Image<itk::Vector<unsigned char, 2u>, 2u>; //Instantiated 10 times
 template class itk::Image<short, 3u>; //Instantiated 1389 times
 template class itk::Image<itk::RGBAPixel<unsigned char>, 3u>; //Instantiated 10 times

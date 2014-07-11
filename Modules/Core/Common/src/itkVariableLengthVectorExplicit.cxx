@@ -9,5 +9,4 @@ template class itk::VariableLengthVector<short>; //Instantiated 198 times
 template class itk::VariableLengthVector<signed char>; //Instantiated 172 times
 template class itk::VariableLengthVector<unsigned int>; //Instantiated 178 times
 template class itk::VariableLengthVector<unsigned short>; //Instantiated 180 times
-template class itk::VariableLengthVector<itk::Array<double> >; //Instantiated 6 times
 template class itk::VariableLengthVector<int>; //Instantiated 184 times

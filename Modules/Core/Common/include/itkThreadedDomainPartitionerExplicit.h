@@ -17,6 +17,7 @@
  *=========================================================================*/
 #ifndef __itkThreadedDomainPartitionerExplicit_h
 #define __itkThreadedDomainPartitionerExplicit_h
+#include "itkImageRegion.h"
 extern template class itk::ThreadedDomainPartitioner<itk::ImageRegion<2u> >;
 extern template class itk::ThreadedDomainPartitioner<itk::ImageRegion<3u> >;
 #endif //__itkThreadedDomainPartitionerExplicit_h

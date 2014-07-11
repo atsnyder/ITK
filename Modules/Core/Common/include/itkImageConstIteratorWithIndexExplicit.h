@@ -25,25 +25,21 @@
 #include <complex>
 //exclude ImageAdaptor
 //exclude VectorImage
+//exclude TileImageFilter
 //subs std:: std::
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<float, 2u>, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<float, 3u> >;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<float, 2u>, itk::Image<float, 2u> >::TileInfo, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<float, 6u>, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<int, 3u> const>;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<signed char, 3u>, itk::Image<signed char, 3u> >::TileInfo, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<bool, 1u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<unsigned short, 3u> const>;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<unsigned int, 2u>, itk::Image<unsigned int, 2u> >::TileInfo, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<double, 2u>, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<unsigned int, 4u> >;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<unsigned short, 3u>, itk::Image<unsigned short, 3u> >::TileInfo, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<unsigned long, 3u> const>;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Offset<2u>, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<unsigned long, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<double, 2u>, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<unsigned long, 2u> const>;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<long, 2u> const>;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<unsigned short, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::CovariantVector<double, 2u>, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<int, 3u> >;
@@ -58,7 +54,6 @@ extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::VariableL
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<signed char, 2u> const>;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::RGBPixel<float>, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<char, 3u> >;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<signed char, 2u>, itk::Image<signed char, 2u> >::TileInfo, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<double, 1u>, 1u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<unsigned int, 2u> const>;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<long, 2u> >;
@@ -67,36 +62,29 @@ extern template class itk::ImageConstIteratorWithIndex<itk::Image<float, 4u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<float, 1u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::VariableLengthVector<float>, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<float, 3u>, 2u> >;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<unsigned short, 2u>, itk::Image<unsigned short, 2u> >::TileInfo, 2u> >;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<double, 3u>, itk::Image<double, 3u> >::TileInfo, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<float, 2u>, 4u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::RGBPixel<float>, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<float, 3u>, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<long, 3u> const>;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<short, 2u>, itk::Image<short, 2u> >::TileInfo, 2u> >;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<float, 3u>, itk::Image<float, 3u> >::TileInfo, 3u> >;
+extern template class itk::ImageConstIteratorWithIndex<itk::Image<long, 2u> const>;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::RGBPixel<unsigned char>, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<float, 1u>, 4u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<char, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<unsigned char, 4u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<unsigned long, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<std::complex<double>, 3u> >;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<double, 2u>, itk::Image<double, 2u> >::TileInfo, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::FixedArray<float, 3u>, 3u> >;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<unsigned char, 2u>, itk::Image<unsigned char, 2u> >::TileInfo, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<double, 6u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<long, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<unsigned char, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<float, 3u>, 4u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<std::complex<double>, 2u> >;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<unsigned int, 3u>, itk::Image<unsigned int, 3u> >::TileInfo, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::CovariantVector<double, 3u>, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<bool, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<double, 1u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::CovariantVector<float, 3u>, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<unsigned char, 3u> const>;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<unsigned short, 3u> >;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<int, 3u>, itk::Image<int, 3u> >::TileInfo, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<double, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::FixedArray<unsigned long, 8u>, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::RGBPixel<unsigned char>, 3u> >;
@@ -108,7 +96,6 @@ extern template class itk::ImageConstIteratorWithIndex<itk::Image<signed char, 3
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<double, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<float, 2u> const>;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<signed char, 2u> >;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<unsigned char, 3u>, itk::Image<unsigned char, 3u> >::TileInfo, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<float, 4u>, 4u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<float, 2u>, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<unsigned char, 1u> >;
@@ -123,10 +110,8 @@ extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Covariant
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<signed char, 3u> const>;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<unsigned int, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<unsigned char, 3u> >;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<itk::RGBPixel<unsigned char>, 2u>, itk::Image<itk::RGBPixel<unsigned char>, 2u> >::TileInfo, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<std::list<unsigned long, std::allocator<unsigned long> >, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<unsigned char, 2u> const>;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<short, 3u>, itk::Image<short, 3u> >::TileInfo, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Index<3u>, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<float, 1u>, 1u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<std::list<unsigned int, std::allocator<unsigned int> >, 2u> >;
@@ -139,6 +124,5 @@ extern template class itk::ImageConstIteratorWithIndex<itk::Image<short, 2u> con
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<double, 3u>, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::DiffusionTensor3D<double>, 3u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<short, 2u> >;
-extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::TileImageFilter<itk::Image<int, 2u>, itk::Image<int, 2u> >::TileInfo, 2u> >;
 extern template class itk::ImageConstIteratorWithIndex<itk::Image<itk::Vector<float, 1u>, 2u> >;
 #endif //__itkImageConstIteratorWithIndexExplicit_h

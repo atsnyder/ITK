@@ -9,6 +9,7 @@ itk_module(ITKConvolution
     ITKImageIntensity
     ITKThresholding
   TEST_DEPENDS
+    ITKCommon
     ITKTestKernel
     ITKImageFunction
   DESCRIPTION

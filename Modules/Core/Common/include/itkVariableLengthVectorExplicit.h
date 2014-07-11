@@ -17,6 +17,7 @@
  *=========================================================================*/
 #ifndef __itkVariableLengthVectorExplicit_h
 #define __itkVariableLengthVectorExplicit_h
+//exclude Array
 extern template class itk::VariableLengthVector<double>;
 extern template class itk::VariableLengthVector<unsigned long>;
 extern template class itk::VariableLengthVector<unsigned char>;
@@ -26,6 +27,5 @@ extern template class itk::VariableLengthVector<short>;
 extern template class itk::VariableLengthVector<signed char>;
 extern template class itk::VariableLengthVector<unsigned int>;
 extern template class itk::VariableLengthVector<unsigned short>;
-extern template class itk::VariableLengthVector<itk::Array<double> >;
 extern template class itk::VariableLengthVector<int>;
 #endif //__itkVariableLengthVectorExplicit_h

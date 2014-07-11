@@ -2,7 +2,6 @@
 
 template class itk::NeighborhoodIterator<itk::Image<double, 3u>, itk::ZeroFluxNeumannBoundaryCondition<itk::Image<double, 3u>, itk::Image<double, 3u> > >; //Instantiated 160 times
 template class itk::NeighborhoodIterator<itk::Image<unsigned int, 3u>, itk::ZeroFluxNeumannBoundaryCondition<itk::Image<unsigned int, 3u>, itk::Image<unsigned int, 3u> > >; //Instantiated 208 times
-template class itk::NeighborhoodIterator<itk::Image<std::deque<itk::LabelObjectLine<3u>, std::allocator<itk::LabelObjectLine<3u> > >, 2u>, itk::ZeroFluxNeumannBoundaryCondition<itk::Image<std::deque<itk::LabelObjectLine<3u>, std::allocator<itk::LabelObjectLine<3u> > >, 2u>, itk::Image<std::deque<itk::LabelObjectLine<3u>, std::allocator<itk::LabelObjectLine<3u> > >, 2u> > >; //Instantiated 21 times
 template class itk::NeighborhoodIterator<itk::Image<unsigned char, 1u>, itk::ZeroFluxNeumannBoundaryCondition<itk::Image<unsigned char, 1u>, itk::Image<unsigned char, 1u> > >; //Instantiated 12 times
 template class itk::NeighborhoodIterator<itk::Image<long, 1u>, itk::ZeroFluxNeumannBoundaryCondition<itk::Image<long, 1u>, itk::Image<long, 1u> > >; //Instantiated 138 times
 template class itk::NeighborhoodIterator<itk::Image<unsigned int, 2u>, itk::ZeroFluxNeumannBoundaryCondition<itk::Image<unsigned int, 2u>, itk::Image<unsigned int, 2u> > >; //Instantiated 218 times
@@ -15,7 +14,6 @@ template class itk::NeighborhoodIterator<itk::VectorImage<double, 2u>, itk::Zero
 template class itk::NeighborhoodIterator<itk::Image<bool, 2u>, itk::ZeroFluxNeumannBoundaryCondition<itk::Image<bool, 2u>, itk::Image<bool, 2u> > >; //Instantiated 113 times
 template class itk::NeighborhoodIterator<itk::VectorImage<float, 2u>, itk::ZeroFluxNeumannBoundaryCondition<itk::VectorImage<float, 2u>, itk::VectorImage<float, 2u> > >; //Instantiated 6 times
 template class itk::NeighborhoodIterator<itk::Image<float, 2u>, itk::ZeroFluxNeumannBoundaryCondition<itk::Image<float, 2u>, itk::Image<float, 2u> > >; //Instantiated 253 times
-template class itk::NeighborhoodIterator<itk::Image<std::deque<itk::LabelObjectLine<2u>, std::allocator<itk::LabelObjectLine<2u> > >, 1u>, itk::ZeroFluxNeumannBoundaryCondition<itk::Image<std::deque<itk::LabelObjectLine<2u>, std::allocator<itk::LabelObjectLine<2u> > >, 1u>, itk::Image<std::deque<itk::LabelObjectLine<2u>, std::allocator<itk::LabelObjectLine<2u> > >, 1u> > >; //Instantiated 18 times
 template class itk::NeighborhoodIterator<itk::Image<unsigned short, 2u>, itk::ZeroFluxNeumannBoundaryCondition<itk::Image<unsigned short, 2u>, itk::Image<unsigned short, 2u> > >; //Instantiated 198 times
 template class itk::NeighborhoodIterator<itk::Image<itk::Vector<double, 2u>, 2u>, itk::ZeroFluxNeumannBoundaryCondition<itk::Image<itk::Vector<double, 2u>, 2u>, itk::Image<itk::Vector<double, 2u>, 2u> > >; //Instantiated 6 times
 template class itk::NeighborhoodIterator<itk::Image<unsigned long, 2u>, itk::ZeroFluxNeumannBoundaryCondition<itk::Image<unsigned long, 2u>, itk::Image<unsigned long, 2u> > >; //Instantiated 107 times

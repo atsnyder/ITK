@@ -18,8 +18,8 @@
 #ifndef __itkImageBoundaryCondition_h
 #define __itkImageBoundaryCondition_h
 
-#include "itkIndex.h"
 #include "itkNeighborhood.h"
+#include "itkIndex.h"
 #include "itkImageRegion.h"
 
 namespace itk

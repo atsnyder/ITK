@@ -18,5 +18,5 @@
 #ifndef __itkCreateObjectFunctionExplicit_h
 #define __itkCreateObjectFunctionExplicit_h
 //exclude MatrixOffsetTransformBase
-extern template class itk::CreateObjectFunction<itk::ANTSAffine3DTransform<double> >;
+//exclude ANTSAffine3DTransform
 #endif //__itkCreateObjectFunctionExplicit_h

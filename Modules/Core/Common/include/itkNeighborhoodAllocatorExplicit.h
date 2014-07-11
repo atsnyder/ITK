@@ -17,39 +17,5 @@
  *=========================================================================*/
 #ifndef __itkNeighborhoodAllocatorExplicit_h
 #define __itkNeighborhoodAllocatorExplicit_h
-#include "itkVector.h"
-#include "itkImage.h"
-#include <deque>
-//exclude LabelObjectLine
-//exclude ANTSAffine3DTransform
-extern template class itk::NeighborhoodAllocator<itk::Vector<float, 2u>*>;
-extern template class itk::NeighborhoodAllocator<itk::Vector<float, 3u>*>;
-extern template class itk::NeighborhoodAllocator<unsigned long>;
-extern template class itk::NeighborhoodAllocator<short*>;
-extern template class itk::NeighborhoodAllocator<float>;
-extern template class itk::NeighborhoodAllocator<itk::Vector<double, 3u> >;
-extern template class itk::NeighborhoodAllocator<unsigned char*>;
-extern template class itk::NeighborhoodAllocator<unsigned char>;
-extern template class itk::NeighborhoodAllocator<itk::Vector<double, 3u>*>;
-extern template class itk::NeighborhoodAllocator<signed char>;
-extern template class itk::NeighborhoodAllocator<double>;
-extern template class itk::NeighborhoodAllocator<itk::Vector<float, 3u> >;
-extern template class itk::NeighborhoodAllocator<short>;
-extern template class itk::NeighborhoodAllocator<double*>;
-extern template class itk::NeighborhoodAllocator<unsigned int>;
-extern template class itk::NeighborhoodAllocator<int>;
-extern template class itk::NeighborhoodAllocator<bool*>;
-extern template class itk::NeighborhoodAllocator<long>;
-extern template class itk::NeighborhoodAllocator<bool>;
-extern template class itk::NeighborhoodAllocator<long*>;
-extern template class itk::NeighborhoodAllocator<itk::Vector<double, 2u>*>;
-extern template class itk::NeighborhoodAllocator<signed char*>;
-extern template class itk::NeighborhoodAllocator<itk::Vector<double, 2u> >;
-extern template class itk::NeighborhoodAllocator<unsigned long*>;
-extern template class itk::NeighborhoodAllocator<unsigned short*>;
-extern template class itk::NeighborhoodAllocator<unsigned short>;
-extern template class itk::NeighborhoodAllocator<float*>;
-extern template class itk::NeighborhoodAllocator<itk::Vector<float, 2u> >;
-extern template class itk::NeighborhoodAllocator<unsigned int*>;
-extern template class itk::NeighborhoodAllocator<int*>;
+//exclude NeighborhoodAllocator
 #endif //__itkNeighborhoodAllocatorExplicit_h

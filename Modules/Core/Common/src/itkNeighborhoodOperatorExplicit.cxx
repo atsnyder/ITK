@@ -1,24 +1,17 @@
-#include "itkNeighborhoodOperator.h"
-
-template class itk::NeighborhoodOperator<unsigned short, 2u, itk::NeighborhoodAllocator<unsigned short> >; //Instantiated 24 times
-template class itk::NeighborhoodOperator<unsigned int, 3u, itk::NeighborhoodAllocator<unsigned int> >; //Instantiated 24 times
-template class itk::NeighborhoodOperator<long, 2u, itk::NeighborhoodAllocator<long> >; //Instantiated 12 times
-template class itk::NeighborhoodOperator<signed char, 3u, itk::NeighborhoodAllocator<signed char> >; //Instantiated 24 times
-template class itk::NeighborhoodOperator<int, 2u, itk::NeighborhoodAllocator<int> >; //Instantiated 24 times
-template class itk::NeighborhoodOperator<float, 2u, itk::NeighborhoodAllocator<float> >; //Instantiated 135 times
-template class itk::NeighborhoodOperator<unsigned int, 2u, itk::NeighborhoodAllocator<unsigned int> >; //Instantiated 24 times
-template class itk::NeighborhoodOperator<double, 4u, itk::NeighborhoodAllocator<double> >; //Instantiated 24 times
-template class itk::NeighborhoodOperator<unsigned long, 3u, itk::NeighborhoodAllocator<unsigned long> >; //Instantiated 12 times
-template class itk::NeighborhoodOperator<unsigned short, 3u, itk::NeighborhoodAllocator<unsigned short> >; //Instantiated 24 times
-template class itk::NeighborhoodOperator<double, 3u, itk::NeighborhoodAllocator<double> >; //Instantiated 237 times
-template class itk::NeighborhoodOperator<unsigned long, 2u, itk::NeighborhoodAllocator<unsigned long> >; //Instantiated 12 times
-template class itk::NeighborhoodOperator<unsigned char, 2u, itk::NeighborhoodAllocator<unsigned char> >; //Instantiated 24 times
-template class itk::NeighborhoodOperator<long, 3u, itk::NeighborhoodAllocator<long> >; //Instantiated 12 times
-template class itk::NeighborhoodOperator<unsigned char, 3u, itk::NeighborhoodAllocator<unsigned char> >; //Instantiated 24 times
-template class itk::NeighborhoodOperator<signed char, 2u, itk::NeighborhoodAllocator<signed char> >; //Instantiated 24 times
-template class itk::NeighborhoodOperator<int, 3u, itk::NeighborhoodAllocator<int> >; //Instantiated 24 times
-template class itk::NeighborhoodOperator<float, 3u, itk::NeighborhoodAllocator<float> >; //Instantiated 192 times
-template class itk::NeighborhoodOperator<short, 3u, itk::NeighborhoodAllocator<short> >; //Instantiated 27 times
-template class itk::NeighborhoodOperator<short, 2u, itk::NeighborhoodAllocator<short> >; //Instantiated 24 times
-template class itk::NeighborhoodOperator<double, 2u, itk::NeighborhoodAllocator<double> >; //Instantiated 177 times
-template class itk::NeighborhoodOperator<float, 4u, itk::NeighborhoodAllocator<float> >; //Instantiated 18 times
+/*=========================================================================
+ *
+ *  Copyright Insight Software Consortium
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0.txt
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ *=========================================================================*/

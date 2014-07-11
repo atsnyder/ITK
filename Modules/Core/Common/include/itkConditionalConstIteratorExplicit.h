@@ -18,6 +18,7 @@
 #ifndef __itkConditionalConstIteratorExplicit_h
 #define __itkConditionalConstIteratorExplicit_h
 #include "itkImage.h"
+#include "itkVectorImage.h"
 extern template class itk::ConditionalConstIterator<itk::Image<bool, 1u> >;
 extern template class itk::ConditionalConstIterator<itk::VectorImage<short, 2u> >;
 extern template class itk::ConditionalConstIterator<itk::VectorImage<unsigned int, 3u> >;

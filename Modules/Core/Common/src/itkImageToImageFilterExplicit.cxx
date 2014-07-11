@@ -21,7 +21,6 @@ template class itk::ImageToImageFilter<itk::Image<itk::Vector<float, 1u>, 4u>, i
 template class itk::ImageToImageFilter<itk::VectorImage<unsigned int, 2u>, itk::Image<short, 2u> >; //Instantiated 6 times
 template class itk::ImageToImageFilter<itk::Image<std::complex<float>, 3u>, itk::Image<std::complex<double>, 3u> >; //Instantiated 6 times
 template class itk::ImageToImageFilter<itk::VectorImage<unsigned short, 2u>, itk::Image<int, 2u> >; //Instantiated 6 times
-template class itk::ImageToImageFilter<itk::VectorImageToImageAdaptor<float, 3u>, itk::Image<float, 3u> >; //Instantiated 24 times
 template class itk::ImageToImageFilter<itk::Image<unsigned char, 4u>, itk::Image<unsigned char, 4u> >; //Instantiated 9 times
 template class itk::ImageToImageFilter<itk::Image<unsigned char, 2u>, itk::Image<float, 2u> >; //Instantiated 194 times
 template class itk::ImageToImageFilter<itk::VectorImage<signed char, 3u>, itk::Image<int, 3u> >; //Instantiated 6 times

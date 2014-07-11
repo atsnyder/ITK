@@ -173,9 +173,9 @@ itkMetaDataObjectTest.cxx
 # itkVectorMultiplyTest.cxx
 itkThreadPoolTest.cxx
 )
-set(ITKCommonTest_LIBS ${ITKCommon_LIBRARIES} ${ITKTransform_LIBRARIES})
-CreateTestDriver(ITKCommon1 "${ITKCommonTest_LIBS}" "${ITKCommon1Tests}" itkFloatingPointExceptionsExtern.cxx)
-CreateTestDriver(ITKCommon2 "${ITKCommonTest_LIBS}" "${ITKCommon2Tests}")
+message("ITKCommon-Test_LIBRARIES:${ITKCommon-Test_LIBRARIES}")
+CreateTestDriver(ITKCommon1 "${ITKCommon-Test_LIBRARIES}" "${ITKCommon1Tests}" itkFloatingPointExceptionsExtern.cxx)
+CreateTestDriver(ITKCommon2 "${ITKCommon-Test_LIBRARIES}" "${ITKCommon2Tests}")
 
 set(BASELINE "${ITK_DATA_ROOT}/Baseline/Common")
 set(TEMP ${ITK_TEST_OUTPUT_DIR})

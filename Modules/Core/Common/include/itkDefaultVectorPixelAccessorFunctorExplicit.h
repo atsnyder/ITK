@@ -17,21 +17,5 @@
  *=========================================================================*/
 #ifndef __itkDefaultVectorPixelAccessorFunctorExplicit_h
 #define __itkDefaultVectorPixelAccessorFunctorExplicit_h
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<signed char, 2u> >;
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<unsigned short, 3u> >;
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<float, 3u> >;
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<double, 3u> >;
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<unsigned char, 3u> >;
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<short, 3u> >;
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<double, 2u> >;
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<int, 3u> >;
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<unsigned int, 2u> >;
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<float, 4u> >;
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<int, 2u> >;
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<unsigned char, 2u> >;
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<unsigned short, 2u> >;
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<signed char, 3u> >;
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<float, 2u> >;
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<unsigned int, 3u> >;
-extern template class itk::DefaultVectorPixelAccessorFunctor<itk::VectorImage<short, 2u> >;
+//exclude DefaultVectorPixelAccessorFunctor
 #endif //__itkDefaultVectorPixelAccessorFunctorExplicit_h

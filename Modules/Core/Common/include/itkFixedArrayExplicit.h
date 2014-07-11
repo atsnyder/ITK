@@ -17,9 +17,6 @@
  *=========================================================================*/
 #ifndef __itkFixedArrayExplicit_h
 #define __itkFixedArrayExplicit_h
-#include "itkNeighborhood.h"
-extern template class itk::FixedArray<itk::Neighborhood<double, 3u, itk::NeighborhoodAllocator<double> >, 6u>;
-extern template class itk::FixedArray<itk::SmartPointer<itk::Image<float, 3u> >, 3u>;
-extern template class itk::FixedArray<itk::SmartPointer<itk::Image<double, 2u> >, 2u>;
-extern template class itk::FixedArray<itk::SmartPointer<itk::Image<double, 3u> >, 3u>;
+//exclude Neighborhood
+//exclude Image
 #endif //__itkFixedArrayExplicit_h

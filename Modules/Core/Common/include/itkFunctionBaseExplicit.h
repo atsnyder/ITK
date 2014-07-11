@@ -17,6 +17,12 @@
  *=========================================================================*/
 #ifndef __itkFunctionBaseExplicit_h
 #define __itkFunctionBaseExplicit_h
+#include "itkPoint.h"
+#include "itkContinuousIndex.h"
+#include "itkArray.h"
+#include "itkVariableLengthVector.h"
+#include "itkCovariantVector.h"
+#include "itkSymmetricSecondRankTensor.h"
 extern template class itk::FunctionBase<itk::Point<double, 2u>, double>;
 extern template class itk::FunctionBase<itk::ContinuousIndex<float, 2u>, itk::Array<double> >;
 extern template class itk::FunctionBase<itk::Array<double>, double>;

@@ -17,6 +17,5 @@
  *=========================================================================*/
 #ifndef __itkConstNeighborhoodIteratorWithOnlyIndexExplicit_h
 #define __itkConstNeighborhoodIteratorWithOnlyIndexExplicit_h
-extern template class itk::ConstNeighborhoodIteratorWithOnlyIndex<itk::ImageBase<4u> >;
-extern template class itk::ConstNeighborhoodIteratorWithOnlyIndex<itk::Image<char, 4u> >;
+//exclude ConstNeighborhoodIteratorWithOnlyIndex
 #endif //__itkConstNeighborhoodIteratorWithOnlyIndexExplicit_h
