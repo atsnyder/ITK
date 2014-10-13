@@ -17,6 +17,8 @@ set(ITKMetricsv4Tests
   itkANTSNeighborhoodCorrelationImageToImageRegistrationTest.cxx
   itkMattesMutualInformationImageToImageMetricv4Test.cxx
   itkMattesMutualInformationImageToImageMetricv4RegistrationTest.cxx
+  itkMattesMutualInformationSingleThreadedImageToImageMetricv4Test.cxx
+  itkMattesMutualInformationSingleThreadedImageToImageMetricv4RegistrationTest.cxx
   itkMultiStartImageToImageMetricv4RegistrationTest.cxx
   itkMultiGradientImageToImageMetricv4RegistrationTest.cxx
   itkMetricImageGradientTest.cxx
@@ -125,6 +127,18 @@ itk_add_test(NAME itkMattesMutualInformationImageToImageMetricv4RegistrationTest
               DATA{Baseline/face_avg.jpg}
               DATA{Input/face_b.jpg}
               ${TEMP}/itkMattesMutualInformationImageToImageMetricv4RegistrationTest.nii.gz
+              5 0 )
+
+itk_add_test(NAME itkMattesMutualInformationSingleThreadedImageToImageMetricv4Test
+      COMMAND ITKMetricsv4TestDriver
+      itkMattesMutualInformationSingleThreadedImageToImageMetricv4Test)
+
+itk_add_test(NAME itkMattesMutualInformationSingleThreadedImageToImageMetricv4RegistrationTest
+      COMMAND ITKMetricsv4TestDriver
+              itkMattesMutualInformationSingleThreadedImageToImageMetricv4RegistrationTest
+              DATA{Baseline/face_avg.jpg}
+              DATA{Input/face_b.jpg}
+              ${TEMP}/itkMattesMutualInformationSingleThreadedImageToImageMetricv4RegistrationTest.nii.gz
               5 0 )
 
 itk_add_test(NAME itkMultiStartImageToImageMetricv4RegistrationTest
