@@ -55,37 +55,28 @@ ImageToImageMetricv4GetValueAndDerivativeThreader< ThreadedIndexedContainerParti
   //Initialize per thread buffers and variables.
   this->m_Associate->InitializeThread( threadId );
 
+  typename TImageToImageMetricv4::VirtualPointSetType::ConstPointer virtualSampledPointSet = this->m_Associate->GetVirtualSampledPointSet();
   typedef typename TImageToImageMetricv4::VirtualPointSetType::MeshTraits::PointIdentifier ElementIdentifierType;
   const ElementIdentifierType begin = indexSubRange[0];
   const ElementIdentifierType end   = indexSubRange[1];
-  std::ostringstream buf;
-  buf << "$$$$$$$$$$$$$$$$$$$$$TEST$$$$$$$$$$$$$$$$$$$$$$" << std::endl;
-  buf << "ThreadIDB: " << threadId << " Begin: " << begin  << std::endl;
-  buf << "ThreadIDE: " << threadId << " End: " << end << std::endl;
-  buf << "ThreadIDS: " << threadId << " Should: " << end-begin+1 << std::endl;
-  unsigned long counter = 0;
-  tbb::parallel_for(tbb::blocked_range<ElementIdentifierType>(begin,end+1), [this, threadId, &counter](const tbb::blocked_range<ElementIdentifierType>& r)
+  typename VirtualImageType::ConstPointer virtualImage = this->m_Associate->GetVirtualImage();
+
+  typedef tbb::queuing_mutex Mutex;
+  Mutex mutex;
+
+  tbb::parallel_for(tbb::blocked_range<ElementIdentifierType>(begin,end+1), [this, threadId, virtualImage, virtualSampledPointSet, &mutex](const tbb::blocked_range<ElementIdentifierType>& r)
     {
+    VirtualIndexType virtualIndex;
     for( ElementIdentifierType i = r.begin(); i != r.end(); ++i )
       {
-      typename TImageToImageMetricv4::VirtualPointSetType::ConstPointer virtualSampledPointSet = this->m_Associate->GetVirtualSampledPointSet();
-      typename VirtualImageType::ConstPointer virtualImage = this->m_Associate->GetVirtualImage();
-      counter++;
-      VirtualIndexType virtualIndex;
       const VirtualPointType & virtualPoint = virtualSampledPointSet->GetPoint( i );
       virtualImage->TransformPhysicalPointToIndex( virtualPoint, virtualIndex );
+      Mutex::scoped_lock lock(mutex);
       this->ProcessVirtualPoint( virtualIndex, virtualPoint, threadId );
+      lock.release();
       }
     });
-  buf << "ThreadIDC: " << threadId << " Counter: " << counter << std::endl;
-  std::cout << buf.str();
-  /*  for( ElementIdentifierType i = begin; i <= end; ++i )
-   *    {
-   *    std::cout << "I: " << i << std::endl;
-   *    const VirtualPointType & virtualPoint = virtualSampledPointSet->GetPoint( i );
-   *    virtualImage->TransformPhysicalPointToIndex( virtualPoint, virtualIndex );
-   *    this->ProcessVirtualPoint( virtualIndex, virtualPoint, threadId );
-   *    }*/
+
   //Finalize per thread actions
   this->m_Associate->FinalizeThread( threadId );
 }
