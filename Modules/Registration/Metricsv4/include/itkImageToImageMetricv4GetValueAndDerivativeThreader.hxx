@@ -20,6 +20,7 @@
 
 #include "itkImageRegionConstIteratorWithIndex.h"
 #include "itkImageToImageMetricv4GetValueAndDerivativeThreader.h"
+#include "tbb/tbb.h"
 
 namespace itk
 {
