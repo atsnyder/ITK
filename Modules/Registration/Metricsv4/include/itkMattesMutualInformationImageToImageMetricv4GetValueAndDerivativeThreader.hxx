@@ -269,7 +269,7 @@ MattesMutualInformationImageToImageMetricv4GetValueAndDerivativeThreader< TDomai
   // the fixed image marginal pdf, we need only increment the
   // fixedImageParzenWindowIndex by value of 1.0.
   this->m_MattesAssociate->m_ThreaderFixedImageMarginalPDF[threadId][fixedImageParzenWindowIndex] += 1;
-
+ // lock.release();
   /**
     * The region of support of the parzen window determines which bins
     * of the joint PDF are effected by the pair of image values.

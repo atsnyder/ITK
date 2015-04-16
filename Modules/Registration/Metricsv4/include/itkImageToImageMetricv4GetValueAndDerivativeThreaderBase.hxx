@@ -239,6 +239,8 @@ ImageToImageMetricv4GetValueAndDerivativeThreaderBase< TDomainPartitioner, TImag
 
   /* Call the user method in derived classes to do the specific
    * calculations for value and derivative. */
+  tbb::queuing_mutex::scoped_lock lock;
+  lock.acquire(this->m_GetValueAndDerivativePerThreadVariables[threadId].mutex);
   try
     {
     pointIsValid = this->ProcessPoint(
@@ -269,6 +271,7 @@ ImageToImageMetricv4GetValueAndDerivativeThreaderBase< TDomainPartitioner, TImag
       this->StorePointDerivativeResult( virtualIndex, threadId );
       }
     }
+  lock.release();
 
   return pointIsValid;
 }
@@ -290,6 +293,7 @@ ImageToImageMetricv4GetValueAndDerivativeThreaderBase< TDomainPartitioner, TImag
         this->m_GetValueAndDerivativePerThreadVariables[threadId].LocalDerivatives[p] = static_cast<DerivativeValueType>( test / correctionResolution );
         }
       }
+
     for (NumberOfParametersType p = 0; p < this->m_CachedNumberOfParameters; p++ )
       {
       this->m_GetValueAndDerivativePerThreadVariables[threadId].CompensatedDerivatives[p] += this->m_GetValueAndDerivativePerThreadVariables[threadId].LocalDerivatives[p];

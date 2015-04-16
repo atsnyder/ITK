@@ -20,6 +20,7 @@
 
 #include "itkDomainThreader.h"
 #include "itkCompensatedSummation.h"
+#include "tbb/tbb.h"
 
 namespace itk
 {
@@ -174,6 +175,8 @@ protected:
     DerivativeType               LocalDerivatives;
     /** Intermediary threaded metric value storage. */
     SizeValueType                NumberOfValidPoints;
+    /** TBB Mutex */
+    tbb::queuing_mutex mutex;
     /** Pre-allocated transform jacobian objects, for use as needed by dervied
      * classes for efficiency. */
     JacobianType                 MovingTransformJacobian;

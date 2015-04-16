@@ -62,21 +62,22 @@ ImageToImageMetricv4GetValueAndDerivativeThreader< ThreadedIndexedContainerParti
   const ElementIdentifierType end   = indexSubRange[1];
   typename VirtualImageType::ConstPointer virtualImage = this->m_Associate->GetVirtualImage();
 
-  typedef tbb::queuing_mutex Mutex;
-  Mutex mutex;
+//  typedef tbb::queuing_mutex Mutex;
+//  Mutex mutex;
 
-  tbb::parallel_for(tbb::blocked_range<ElementIdentifierType>(begin,end+1), [this, threadId, virtualImage, virtualSampledPointSet, &mutex](const tbb::blocked_range<ElementIdentifierType>& r)
+  static tbb::affinity_partitioner ap;
+  tbb::parallel_for(tbb::blocked_range<ElementIdentifierType>(begin,end+1,10000), [this, threadId, virtualImage, virtualSampledPointSet](const tbb::blocked_range<ElementIdentifierType>& r)
     {
     VirtualIndexType virtualIndex;
     for( ElementIdentifierType i = r.begin(); i != r.end(); ++i )
       {
       const VirtualPointType & virtualPoint = virtualSampledPointSet->GetPoint( i );
       virtualImage->TransformPhysicalPointToIndex( virtualPoint, virtualIndex );
-      Mutex::scoped_lock lock(mutex);
+    //  Mutex::scoped_lock lock(mutex);
       this->ProcessVirtualPoint( virtualIndex, virtualPoint, threadId );
-      lock.release();
+    //  lock.release();
       }
-    });
+    }, ap);
 
   //Finalize per thread actions
   this->m_Associate->FinalizeThread( threadId );
