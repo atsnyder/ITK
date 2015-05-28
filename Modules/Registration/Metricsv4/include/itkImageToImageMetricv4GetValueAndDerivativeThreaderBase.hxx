@@ -27,6 +27,7 @@ namespace itk
 template< typename TDomainPartitioner, typename TImageToImageMetricv4 >
 ImageToImageMetricv4GetValueAndDerivativeThreaderBase< TDomainPartitioner, TImageToImageMetricv4 >
 ::ImageToImageMetricv4GetValueAndDerivativeThreaderBase():
+  m_GetValueAndDerivativeSingleVariables( ITK_NULLPTR ),
   m_GetValueAndDerivativePerThreadVariables( ITK_NULLPTR ),
   m_CachedNumberOfParameters( 0 ),
   m_CachedNumberOfLocalParameters( 0 )
@@ -37,6 +38,7 @@ template< typename TDomainPartitioner, typename TImageToImageMetricv4 >
 ImageToImageMetricv4GetValueAndDerivativeThreaderBase< TDomainPartitioner, TImageToImageMetricv4 >
 ::~ImageToImageMetricv4GetValueAndDerivativeThreaderBase()
 {
+  delete m_GetValueAndDerivativeSingleVariables;
   delete[] m_GetValueAndDerivativePerThreadVariables;
 }
 
@@ -113,6 +115,14 @@ ImageToImageMetricv4GetValueAndDerivativeThreaderBase< TDomainPartitioner, TImag
         }
       }
     }
+}
+
+template< typename TDomainPartitioner, typename TImageToImageMetricv4 >
+void
+ImageToImageMetricv4GetValueAndDerivativeThreaderBase< TDomainPartitioner, TImageToImageMetricv4 >
+::AfterSingleExecution()
+{
+
 }
 
 template< typename TDomainPartitioner, typename TImageToImageMetricv4 >
@@ -273,6 +283,184 @@ ImageToImageMetricv4GetValueAndDerivativeThreaderBase< TDomainPartitioner, TImag
   return pointIsValid;
 }
 
+template< typename TDomainPartitioner, typename TImageToImageMetricv4 >
+void
+ImageToImageMetricv4GetValueAndDerivativeThreaderBase< TDomainPartitioner, TImageToImageMetricv4 >
+::BeforeSingleExecution()
+{
+  //---------------------------------------------------------------
+  // Resize the memory objects.
+  //-----------------------------------------------------------------
+  // Cache some values
+  this->m_CachedNumberOfParameters      = this->m_Associate->GetNumberOfParameters();
+  this->m_CachedNumberOfLocalParameters = this->m_Associate->GetNumberOfLocalParameters();
+
+  /* Results */
+  delete m_GetValueAndDerivativeSingleVariables;
+  this->m_GetValueAndDerivativeSingleVariables = new AlignedGetValueAndDerivativeSingleStruct;
+
+  if( this->m_Associate->GetComputeDerivative() )
+    {
+    /* Allocate intermediary storage used to get results from
+     * derived classes */
+    this->m_GetValueAndDerivativeSingleVariables->LocalDerivatives.SetSize( this->m_CachedNumberOfLocalParameters );
+    this->m_GetValueAndDerivativeSingleVariables->MovingTransformJacobian.SetSize(
+      this->m_Associate->VirtualImageDimension, this->m_CachedNumberOfLocalParameters );
+    this->m_GetValueAndDerivativeSingleVariables->MovingTransformJacobianPositional.SetSize(
+      this->m_Associate->VirtualImageDimension, this->m_Associate->VirtualImageDimension );
+    if ( this->m_Associate->m_MovingTransform->GetTransformCategory() == MovingTransformType::DisplacementField )
+      {
+      /* For transforms with local support, e.g. displacement field,
+       * use a single derivative container that's updated by region
+       * in multiple threads.
+       * Initialization to zero is done in main class. */
+      itkDebugMacro( "ImageToImageMetricv4::Initialize: transform HAS local support\n" );
+      /* Set each per-thread object to point to m_DerivativeResult for efficiency. */
+      this->m_GetValueAndDerivativeSingleVariables->Derivatives.SetData( this->m_Associate->m_DerivativeResult->data_block(),
+        this->m_Associate->m_DerivativeResult->Size(), false );
+      }
+    else
+      {
+      itkDebugMacro("ImageToImageMetricv4::Initialize: transform does NOT have local support\n");
+      /* This size always comes from the moving image */
+      const NumberOfParametersType globalDerivativeSize = this->m_CachedNumberOfParameters;
+      /* Global transforms get a separate derivatives container for each thread
+       * that holds the result over a particular image region.
+       * Use a CompensatedSummation value to provide for better consistency between
+       * different number of threads. */
+      this->m_GetValueAndDerivativeSingleVariables->CompensatedDerivatives.resize( globalDerivativeSize );
+      }
+    }
+
+  //---------------------------------------------------------------
+  // Set initial values.
+  this->m_GetValueAndDerivativeSingleVariables->NumberOfValidPoints = NumericTraits< SizeValueType >::ZeroValue();
+  this->m_GetValueAndDerivativeSingleVariables->Measure = NumericTraits< InternalComputationValueType >::ZeroValue();
+  if( this->m_Associate->GetComputeDerivative() )
+    {
+    if ( this->m_Associate->m_MovingTransform->GetTransformCategory() != MovingTransformType::DisplacementField )
+      {
+      /* Be sure to init to 0 here, because the threader may not use
+       * all the threads if the region is better split into fewer
+       * subregions. */
+      for( NumberOfParametersType p = 0; p < this->m_CachedNumberOfParameters; p++ )
+        {
+        this->m_GetValueAndDerivativeSingleVariables->CompensatedDerivatives[p].ResetToZero();
+        }
+      }
+    }
+}
+
+template< typename TDomainPartitioner, typename TImageToImageMetricv4 >
+bool
+ImageToImageMetricv4GetValueAndDerivativeThreaderBase< TDomainPartitioner, TImageToImageMetricv4 >
+::SingleProcessVirtualPoint( const VirtualIndexType & virtualIndex,
+                       const VirtualPointType & virtualPoint )
+{
+  FixedImagePointType         mappedFixedPoint;
+  FixedImagePixelType         mappedFixedPixelValue;
+  FixedImageGradientType      mappedFixedImageGradient;
+  MovingImagePointType        mappedMovingPoint;
+  MovingImagePixelType        mappedMovingPixelValue;
+  MovingImageGradientType     mappedMovingImageGradient;
+  bool                        pointIsValid = false;
+  MeasureType                 metricValueResult;
+
+  /* Transform the point into fixed and moving spaces, and evaluate.
+   * Do this in a try block to catch exceptions and print more useful info
+   * then we otherwise get when exceptions are caught in MultiThreader. */
+  try
+    {
+    pointIsValid = this->m_Associate->TransformAndEvaluateFixedPoint( virtualPoint, mappedFixedPoint, mappedFixedPixelValue);
+    if( pointIsValid &&
+        this->m_Associate->GetComputeDerivative() &&
+        this->m_Associate->GetGradientSourceIncludesFixed() )
+      {
+      this->m_Associate->ComputeFixedImageGradientAtPoint( mappedFixedPoint, mappedFixedImageGradient );
+      }
+    }
+  catch( ExceptionObject & exc )
+    {
+    //NOTE: there must be a cleaner way to do this:
+    std::string msg("Caught exception: \n");
+    msg += exc.what();
+    ExceptionObject err(__FILE__, __LINE__, msg);
+    throw err;
+    }
+  if( !pointIsValid )
+    {
+    return pointIsValid;
+    }
+
+  try
+    {
+    pointIsValid = this->m_Associate->TransformAndEvaluateMovingPoint( virtualPoint, mappedMovingPoint, mappedMovingPixelValue );
+    if( pointIsValid &&
+        this->m_Associate->GetComputeDerivative() &&
+        this->m_Associate->GetGradientSourceIncludesMoving() )
+      {
+      this->m_Associate->ComputeMovingImageGradientAtPoint( mappedMovingPoint, mappedMovingImageGradient );
+      }
+    }
+  catch( ExceptionObject & exc )
+    {
+    std::string msg("Caught exception: \n");
+    msg += exc.what();
+    ExceptionObject err(__FILE__, __LINE__, msg);
+    throw err;
+    }
+  if( !pointIsValid )
+    {
+    return pointIsValid;
+    }
+
+  /* Call the user method in derived classes to do the specific
+   * calculations for value and derivative. */
+  try
+    {
+  /*  pointIsValid = this->ProcessPoint(
+                                   virtualIndex,
+                                   virtualPoint,
+                                   mappedFixedPoint, mappedFixedPixelValue,
+                                   mappedFixedImageGradient,
+                                   mappedMovingPoint, mappedMovingPixelValue,
+                                   mappedMovingImageGradient,
+                                   metricValueResult,
+                                   this->m_GetValueAndDerivativePerThreadVariables[threadId].LocalDerivatives,
+                                   threadId );*/
+    pointIsValid = this->SingleProcessPoint(
+        virtualIndex,
+        virtualPoint,
+        mappedFixedPoint, mappedFixedPixelValue,
+        mappedFixedImageGradient,
+        mappedMovingPoint, mappedMovingPixelValue,
+        mappedMovingImageGradient,
+        metricValueResult,
+        this->m_GetValueAndDerivativeSingleVariables->LocalDerivatives );
+    }
+  catch( ExceptionObject & exc )
+    {
+    //NOTE: there must be a cleaner way to do this:
+    std::string msg("Exception in GetValueAndDerivativeProcessPoint:\n");
+    msg += exc.what();
+    ExceptionObject err(__FILE__, __LINE__, msg);
+    throw err;
+    }
+  if( pointIsValid )
+    {
+    this->m_GetValueAndDerivativeSingleVariables->NumberOfValidPoints++;
+    this->m_GetValueAndDerivativeSingleVariables->Measure += metricValueResult;
+   // this->m_GetValueAndDerivativePerThreadVariables[threadId].NumberOfValidPoints++;
+   // this->m_GetValueAndDerivativePerThreadVariables[threadId].Measure += metricValueResult;
+    if( this->m_Associate->GetComputeDerivative() )
+      {
+     // this->StorePointDerivativeResult( virtualIndex, threadId );
+      //this->SingleStorePointDerivativeResult( virtualIndex );
+      }
+    }
+
+  return pointIsValid;
+}
 template< typename TDomainPartitioner, typename TImageToImageMetricv4 >
 void
 ImageToImageMetricv4GetValueAndDerivativeThreaderBase< TDomainPartitioner, TImageToImageMetricv4 >

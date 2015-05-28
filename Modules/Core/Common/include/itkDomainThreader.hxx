@@ -70,6 +70,21 @@ DomainThreader< TDomainPartitioner, TAssociate >
 template< typename TDomainPartitioner, typename TAssociate >
 void
 DomainThreader< TDomainPartitioner, TAssociate >
+::SingleThreadExecute( TAssociate * enclosingClass, const DomainType & completeDomain )
+{
+  this->m_Associate = enclosingClass;
+  this->m_CompleteDomain = completeDomain;
+
+  this->BeforeSingleExecution();
+
+  this->SingleExecution( completeDomain );
+
+  this->AfterSingleExecution();
+}
+
+template< typename TDomainPartitioner, typename TAssociate >
+void
+DomainThreader< TDomainPartitioner, TAssociate >
 ::Execute( TAssociate * enclosingClass, const DomainType & completeDomain )
 {
   this->m_Associate = enclosingClass;

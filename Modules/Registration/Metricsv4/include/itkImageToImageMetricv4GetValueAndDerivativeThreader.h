@@ -101,6 +101,8 @@ protected:
   virtual void ThreadedExecution( const DomainType & subdomain,
                                   const ThreadIdType threadId ) ITK_OVERRIDE;
 
+  virtual void SingleExecution( const DomainType & completeDomain ) ITK_OVERRIDE;
+
   /** Get cached values for efficiency. Only valid once threading has started.
    *  These methods should be used in tight loops (inlining helps measurably).
    *  Put these methods here so derived threaders can access them directly. */
@@ -173,6 +175,8 @@ protected:
    * point. */
   virtual void ThreadedExecution( const DomainType & subdomain,
                                   const ThreadIdType threadId ) ITK_OVERRIDE;
+
+  virtual void SingleExecution( const DomainType & completeDomain ) ITK_OVERRIDE;
 
   /** Get cached values for efficiency. Only valid once threading has started.
    *  These methods should be used in tight loops (inlining helps measurably).

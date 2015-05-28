@@ -97,6 +97,8 @@ protected:
   /** Resize and initialize per thread objects. */
   virtual void BeforeThreadedExecution() ITK_OVERRIDE;
 
+  virtual void BeforeSingleExecution() ITK_OVERRIDE;
+
   /** Collects the results from each thread and sums them.  Results are stored
    * in the enclosing class \c m_Value and \c m_DerivativeResult.  Behavior
    * depends on m_AverageValueAndDerivativeByNumberOfValuePoints,
@@ -104,6 +106,8 @@ protected:
    * derivative sums for global transforms only (i.e. transforms without local
    * support).  */
   virtual void AfterThreadedExecution() ITK_OVERRIDE;
+
+  virtual void AfterSingleExecution() ITK_OVERRIDE;
 
   /** Method called by the threaders to process the given virtual point.  This
    * in turn calls \c TransformAndEvaluateFixedPoint, \c
@@ -113,6 +117,9 @@ protected:
   virtual bool ProcessVirtualPoint( const VirtualIndexType & virtualIndex,
                                     const VirtualPointType & virtualPoint,
                                     const ThreadIdType threadId );
+
+  virtual bool SingleProcessVirtualPoint( const VirtualIndexType & virtualIndex,
+                                          const VirtualPointType & virtualPoint );
 
   /** Method to calculate the metric value and derivative
    * given a point, value and image derivative for both fixed and moving
@@ -155,12 +162,59 @@ protected:
         DerivativeType &                  localDerivativeReturn,
         const ThreadIdType                threadId ) const = 0;
 
+  virtual bool SingleProcessPoint(
+        const VirtualIndexType &          virtualIndex,
+        const VirtualPointType &          virtualPoint,
+        const FixedImagePointType &       mappedFixedPoint,
+        const FixedImagePixelType &       mappedFixedPixelValue,
+        const FixedImageGradientType &    mappedFixedImageGradient,
+        const MovingImagePointType &      mappedMovingPoint,
+        const MovingImagePixelType &      mappedMovingPixelValue,
+        const MovingImageGradientType &   mappedMovingImageGradient,
+        MeasureType &                     metricValueReturn,
+        DerivativeType &                  localDerivativeReturn ) const
+          {
+            (void)virtualIndex;
+            (void)virtualPoint;
+            (void)mappedFixedPoint;
+            (void)mappedFixedPixelValue;
+            (void)mappedFixedImageGradient;
+            (void)mappedMovingPoint;
+            (void)mappedMovingPixelValue;
+            (void)mappedMovingImageGradient;
+            (void)metricValueReturn;
+            (void)localDerivativeReturn;
+            return 0;
+          }
 
   /** Store derivative result from a single point calculation.
    * \warning If this method is overridden or otherwise not used
    * in a derived class, be sure to *accumulate* results. */
   virtual void StorePointDerivativeResult( const VirtualIndexType & virtualIndex,
                                            const ThreadIdType threadId );
+
+  struct GetValueAndDerivativeSingleStruct
+    {
+    /** Intermediary threaded metric value storage. */
+    InternalComputationValueType Measure;
+    /** Intermediary threaded metric value storage. */
+    DerivativeType               Derivatives;
+    /** Intermediary threaded metric value storage. This is used only with global transforms. */
+    CompensatedDerivativeType    CompensatedDerivatives;
+    /** Intermediary threaded metric value storage. */
+    DerivativeType               LocalDerivatives;
+    /** Intermediary threaded metric value storage. */
+    SizeValueType                NumberOfValidPoints;
+    /** Pre-allocated transform jacobian objects, for use as needed by dervied
+     * classes for efficiency. */
+    JacobianType                 MovingTransformJacobian;
+    JacobianType                 MovingTransformJacobianPositional;
+    };
+  itkPadStruct( ITK_CACHE_LINE_ALIGNMENT, GetValueAndDerivativeSingleStruct,
+                                            PaddedGetValueAndDerivativeSingleStruct);
+  itkAlignedTypedef( ITK_CACHE_LINE_ALIGNMENT, PaddedGetValueAndDerivativeSingleStruct,
+                                               AlignedGetValueAndDerivativeSingleStruct );
+  mutable AlignedGetValueAndDerivativeSingleStruct * m_GetValueAndDerivativeSingleVariables;
 
   struct GetValueAndDerivativePerThreadStruct
     {

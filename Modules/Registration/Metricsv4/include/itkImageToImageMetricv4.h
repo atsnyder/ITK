@@ -478,6 +478,7 @@ public:
     */
   virtual void FinalizeThread( const ThreadIdType /*threadId*/ ) { /*Do nothing by default */ }
 
+ // virtual void SingleThreadExecute( const DomainType & completeDomain ) { }
   /** Get Fixed Gradient Image. */
   itkGetModifiableObjectMacro(FixedImageGradientImage, FixedImageGradientImageType);
 
@@ -696,6 +697,7 @@ protected:
 
   /** Flag to use FixedSampledPointSet, i.e. Sparse sampling. */
   bool                                    m_UseFixedSampledPointSet;
+  bool                                    m_SingleThread;
 
   ImageToImageMetricv4();
   virtual ~ImageToImageMetricv4();

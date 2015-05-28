@@ -228,6 +228,8 @@ protected:
    * and GetValueAndDerivative. */
   virtual void GetValueCommonAfterThreadedExecution();
 
+  virtual void GetValueCommonAfterSingleExecution();
+
   OffsetValueType ComputeSingleFixedImageParzenWindowIndex( const FixedImagePixelType & value ) const;
 
   /** Variables to define the marginal and joint histograms. */
@@ -258,6 +260,7 @@ protected:
   /** The moving image marginal PDF. */
   mutable std::vector<PDFValueType>               m_MovingImageMarginalPDF;
   mutable std::vector<std::vector<PDFValueType> > m_ThreaderFixedImageMarginalPDF;
+  mutable std::vector<PDFValueType>               m_SingleFixedImageMarginalPDF;
 
   /** The joint PDF and PDF derivatives. */
   typename std::vector<typename JointPDFType::Pointer>            m_ThreaderJointPDF;
@@ -277,6 +280,8 @@ private:
 
   /** Perform the final step in computing results */
   virtual void ComputeResults() const;
+
+  virtual void SingleComputeResults() const;
 
   std::vector< MutexLock::Pointer >  m_JointPDFSubsectionLocks;
   std::vector< MutexLock::Pointer >  m_JointPDFDerivativeSubsectionLocks;

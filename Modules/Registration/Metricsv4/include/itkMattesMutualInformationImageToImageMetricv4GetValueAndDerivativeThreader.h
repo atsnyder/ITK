@@ -83,12 +83,20 @@ public:
 
   typedef typename TMattesMutualInformationMetric::JacobianType             JacobianType;
 
+  typedef AssociateType TAssociate;
+
+  void Execute( AssociateType * enclosingClass, const DomainType & domain ) ITK_OVERRIDE;
+
 protected:
   MattesMutualInformationImageToImageMetricv4GetValueAndDerivativeThreader() :
     m_MattesAssociate(ITK_NULLPTR)
   {}
 
+  virtual void BeforeSingleExecution() ITK_OVERRIDE;
+
   virtual void BeforeThreadedExecution() ITK_OVERRIDE;
+
+  virtual void AfterSingleExecution() ITK_OVERRIDE;
 
   virtual void AfterThreadedExecution() ITK_OVERRIDE;
 
@@ -108,9 +116,27 @@ protected:
         DerivativeType &                  localDerivativeReturn,
         const ThreadIdType                threadId ) const ITK_OVERRIDE;
 
+  virtual bool SingleProcessPoint(
+        const VirtualIndexType &          virtualIndex,
+        const VirtualPointType &          virtualPoint,
+        const FixedImagePointType &       mappedFixedPoint,
+        const FixedImagePixelType &       mappedFixedPixelValue,
+        const FixedImageGradientType &    mappedFixedImageGradient,
+        const MovingImagePointType &      mappedMovingPoint,
+        const MovingImagePixelType &      mappedMovingPixelValue,
+        const MovingImageGradientType &   mappedMovingImageGradient,
+        MeasureType &                     metricValueReturn,
+        DerivativeType &                  localDerivativeReturn ) const ITK_OVERRIDE;
+
   /** Compute PDF derivative contribution for each parameter of a global support transform type. */
   virtual void ComputePDFDerivativesGlobalSupportTransform(const ThreadIdType &    threadId,
                              const OffsetValueType &         fixedImageParzenWindowIndex,
+                             const JacobianType &            jacobian,
+                             const OffsetValueType &         pdfMovingIndex,
+                             const MovingImageGradientType & movingGradient,
+                             const PDFValueType &            cubicBSplineDerivativeValue) const;
+
+  virtual void SingleComputePDFDerivativesGlobalSupportTransform(const OffsetValueType &         fixedImageParzenWindowIndex,
                              const JacobianType &            jacobian,
                              const OffsetValueType &         pdfMovingIndex,
                              const MovingImageGradientType & movingGradient,

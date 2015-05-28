@@ -32,6 +32,8 @@ template<typename TFixedImage,typename TMovingImage,typename TVirtualImage, type
 ImageToImageMetricv4<TFixedImage, TMovingImage, TVirtualImage, TInternalComputationValueType, TMetricTraits>
 ::ImageToImageMetricv4()
 {
+  this->m_SingleThread = false;
+
   /* Interpolators. Default to linear. */
   typedef LinearInterpolateImageFunction< FixedImageType,
                                           CoordinateRepresentationType >
@@ -256,11 +258,25 @@ ImageToImageMetricv4<TFixedImage, TMovingImage, TVirtualImage, TInternalComputat
     typename ImageToImageMetricv4GetValueAndDerivativeThreader< ThreadedIndexedContainerPartitioner, Self >::DomainType range;
     range[0] = 0;
     range[1] = numberOfPoints - 1;
-    this->m_SparseGetValueAndDerivativeThreader->Execute( const_cast< Self* >(this), range );
+    if( this->m_SingleThread )
+      {
+      this->m_SparseGetValueAndDerivativeThreader->SingleThreadExecute( const_cast< Self* >(this), range );
+      }
+    else
+      {
+      this->m_SparseGetValueAndDerivativeThreader->Execute( const_cast< Self* >(this), range );
+      }
     }
   else // dense sampling
     {
-    this->m_DenseGetValueAndDerivativeThreader->Execute( const_cast< Self* >(this), this->GetVirtualRegion() );
+    if( this->m_SingleThread )
+      {
+      this->m_DenseGetValueAndDerivativeThreader->SingleThreadExecute( const_cast< Self* >(this), this->GetVirtualRegion() );
+      }
+    else
+      {
+      this->m_DenseGetValueAndDerivativeThreader->Execute( const_cast< Self* >(this), this->GetVirtualRegion() );
+      }
     }
 }
 

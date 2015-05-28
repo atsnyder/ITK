@@ -71,6 +71,41 @@ ImageToImageMetricv4GetValueAndDerivativeThreader< ThreadedIndexedContainerParti
   this->m_Associate->FinalizeThread( threadId );
 }
 
+template< typename TImageToImageMetricv4 >
+void
+ImageToImageMetricv4GetValueAndDerivativeThreader< ThreadedImageRegionPartitioner< TImageToImageMetricv4::VirtualImageDimension >, TImageToImageMetricv4 >
+::SingleExecution( const DomainType & completeDomain )
+{
+  typename VirtualImageType::ConstPointer virtualImage = this->m_Associate->GetVirtualImage();
+  typedef ImageRegionConstIteratorWithIndex< VirtualImageType > IteratorType;
+  VirtualPointType virtualPoint;
+  for( IteratorType it( virtualImage, completeDomain ); !it.IsAtEnd(); ++it )
+    {
+    const VirtualIndexType & virtualIndex = it.GetIndex();
+    virtualImage->TransformIndexToPhysicalPoint( virtualIndex, virtualPoint );
+    this->SingleProcessVirtualPoint( virtualIndex, virtualPoint );
+    }
+}
+
+template< typename TImageToImageMetricv4 >
+void
+ImageToImageMetricv4GetValueAndDerivativeThreader< ThreadedIndexedContainerPartitioner, TImageToImageMetricv4 >
+::SingleExecution( const DomainType & completeDomain )
+{
+  typename TImageToImageMetricv4::VirtualPointSetType::ConstPointer virtualSampledPointSet = this->m_Associate->GetVirtualSampledPointSet();
+  typedef typename TImageToImageMetricv4::VirtualPointSetType::MeshTraits::PointIdentifier ElementIdentifierType;
+  const ElementIdentifierType begin = completeDomain[0];
+  const ElementIdentifierType end   = completeDomain[1];
+  VirtualIndexType virtualIndex;
+  typename VirtualImageType::ConstPointer virtualImage = this->m_Associate->GetVirtualImage();
+  for( ElementIdentifierType i = begin; i <= end; ++i )
+    {
+    const VirtualPointType & virtualPoint = virtualSampledPointSet->GetPoint( i );
+    virtualImage->TransformPhysicalPointToIndex( virtualPoint, virtualIndex );
+    this->SingleProcessVirtualPoint( virtualIndex, virtualPoint );
+    }
+}
+
 } // end namespace itk
 
 #endif

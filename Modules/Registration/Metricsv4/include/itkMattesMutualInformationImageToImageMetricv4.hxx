@@ -39,6 +39,7 @@ MattesMutualInformationImageToImageMetricv4<TFixedImage, TMovingImage, TVirtualI
   m_FixedImageBinSize(0.0),
   m_MovingImageBinSize(0.0),
 
+
   m_CubicBSplineKernel(ITK_NULLPTR),
   m_CubicBSplineDerivativeKernel(ITK_NULLPTR),
 
@@ -47,6 +48,7 @@ MattesMutualInformationImageToImageMetricv4<TFixedImage, TMovingImage, TVirtualI
   // Initialize memory
   m_MovingImageMarginalPDF(0),
   m_ThreaderFixedImageMarginalPDF(0),
+  m_SingleFixedImageMarginalPDF(0),
 
   // For multi-threading the metric
   m_ThreaderJointPDF(0),
@@ -55,6 +57,7 @@ MattesMutualInformationImageToImageMetricv4<TFixedImage, TMovingImage, TVirtualI
   m_AccumulatorJointPDFDerivatives(ITK_NULLPTR),
   m_JointPDFSum(0.0)
 {
+  this->m_SingleThread = true;
   // We have our own GetValueAndDerivativeThreader's that we want
   // ImageToImageMetricv4 to use.
   this->m_DenseGetValueAndDerivativeThreader  = MattesMutualInformationDenseGetValueAndDerivativeThreaderType::New();
@@ -386,6 +389,145 @@ MattesMutualInformationImageToImageMetricv4<TFixedImage, TMovingImage, TVirtualI
   } while ( someWorkDelayed );
 }
 
+template <typename TFixedImage, typename TMovingImage, typename TVirtualImage, typename TInternalComputationValueType, typename TMetricTraits>
+void
+MattesMutualInformationImageToImageMetricv4<TFixedImage, TMovingImage, TVirtualImage, TInternalComputationValueType, TMetricTraits>
+::SingleComputeResults() const
+{
+  if( this->m_JointPDFSum < itk::NumericTraits< PDFValueType >::epsilon() )
+    {
+    itkExceptionMacro("Joint PDF summed to zero");
+    }
+
+  std::fill(this->m_MovingImageMarginalPDF.begin(), this->m_MovingImageMarginalPDF.end(), 0.0F);
+
+  // Collect some results
+  PDFValueType       totalMassOfPDF = 0.0;
+  for( unsigned int i = 0; i < this->m_NumberOfHistogramBins; ++i )
+    {
+    totalMassOfPDF += this->m_SingleFixedImageMarginalPDF[i];
+    }
+
+  const PDFValueType normalizationFactor = 1.0 / this->m_JointPDFSum;
+  JointPDFValueType *pdfPtr = this->m_AccumulatorJointPDF->GetBufferPointer();
+  for( unsigned int i = 0; i < this->m_NumberOfHistogramBins; ++i )
+    {
+    PDFValueType * movingMarginalPtr = &(m_MovingImageMarginalPDF[0]);
+    for( unsigned int j = 0; j < this->m_NumberOfHistogramBins; j++ )
+      {
+      *( pdfPtr ) *= normalizationFactor;
+      *( movingMarginalPtr++ ) += *( pdfPtr++ );
+      }
+    }
+
+  const SizeValueType numberOfPoints = this->GetNumberOfDomainPoints();
+
+  if( this->GetNumberOfValidPoints() < numberOfPoints / 16 )
+    {
+    itkExceptionMacro("Too many samples map outside moving image buffer. There are only "
+                      << this->m_NumberOfValidPoints << " valid points out of "
+                      << numberOfPoints << " total points. The images do not sufficiently "
+                      "overlap. They need to be initialized to have more overlap before this "
+                      "metric will work. For instance, you can align the image centers by translation."
+                      << std::endl);
+    }
+
+  // Normalize the fixed image marginal PDF
+  if( totalMassOfPDF == 0.0 )
+    {
+    itkExceptionMacro("Fixed image marginal PDF summed to zero");
+    }
+  for( unsigned int bin = 0; bin < this->m_NumberOfHistogramBins; ++bin )
+    {
+    this->m_SingleFixedImageMarginalPDF[bin] /= totalMassOfPDF;
+    }
+
+  /**
+   * Compute the metric by double summation over histogram.
+   */
+
+  // Setup pointer to point to the first bin
+  JointPDFValueType *jointPDFPtr = this->m_AccumulatorJointPDF->GetBufferPointer();
+
+  // Initialize sum to zero
+  PDFValueType sum = 0.0;
+
+  const PDFValueType nFactor = 1.0 / ( this->m_MovingImageBinSize * this->GetNumberOfValidPoints() );
+
+  static const PDFValueType closeToZero = std::numeric_limits<PDFValueType>::epsilon();
+  for( unsigned int fixedIndex = 0; fixedIndex < this->m_NumberOfHistogramBins; ++fixedIndex )
+    {
+    const PDFValueType fixedImagePDFValue = this->m_SingleFixedImageMarginalPDF[fixedIndex];
+    for( unsigned int movingIndex = 0; movingIndex < this->m_NumberOfHistogramBins; ++movingIndex, jointPDFPtr++ )
+      {
+      const PDFValueType movingImagePDFValue = this->m_MovingImageMarginalPDF[movingIndex];
+      const PDFValueType jointPDFValue = *( jointPDFPtr );
+
+      // check for non-zero bin contribution
+      if( ! (jointPDFValue > closeToZero &&  movingImagePDFValue > closeToZero) )
+        {
+        continue;
+        }
+      const PDFValueType pRatio = std::log(jointPDFValue / movingImagePDFValue);
+
+      if( fixedImagePDFValue > closeToZero )
+        {
+        sum += jointPDFValue * ( pRatio - std::log(fixedImagePDFValue) );
+        }
+
+      if( this->GetComputeDerivative() )
+        {
+        if( ! this->HasLocalSupport() )
+          {
+          // Collect global derivative contributions
+
+          // move joint pdf derivative pointer to the right position
+          JointPDFValueType const * derivPtr = this->m_AccumulatorJointPDFDerivatives->GetBufferPointer()
+            + ( fixedIndex  * this->m_AccumulatorJointPDFDerivatives->GetOffsetTable()[2] )
+            + ( movingIndex * this->m_AccumulatorJointPDFDerivatives->GetOffsetTable()[1] );
+          for( unsigned int parameter = 0, lastParameter = this->GetNumberOfLocalParameters();
+               parameter < lastParameter;
+               ++parameter, derivPtr++ )
+            {
+            // Ref: eqn 23 of Thevenaz & Unser paper [3]
+            (*(this->m_DerivativeResult))[parameter] += ( *derivPtr ) * pRatio;
+            }  // end for-loop over parameters
+          }
+        else
+          {
+          // Collect the pRatio per pdf indecies.
+          // Will be applied subsequently to local-support derivative
+          const OffsetValueType index = movingIndex + (fixedIndex * this->m_NumberOfHistogramBins);
+          this->m_PRatioArray[index] = pRatio * nFactor;
+          }
+        }
+      }   // end for-loop over moving index
+    }     // end for-loop over fixed index
+
+  // Apply the pRatio and sum the per-window derivative
+  // contributions, in the local-support case.
+  if( this->GetComputeDerivative() )
+    {
+    if( this->HasLocalSupport() )
+      {
+      for( SizeValueType i = 0, derivativeSize = this->m_DerivativeResult->Size(); i < derivativeSize; ++i )
+        {
+        for( SizeValueType bin = 0; bin < 4; ++bin )
+          {
+          // Increment the m_JointPdfIndex1DArray index by bin in order to recover
+          // the pRatio at the moving indecies used for each portion of the derivative.
+          // Note: in old v3 metric ComputeDerivatives, derivativeContribution is subtracted in global case,
+          // but added in "local" (implicit) case. These operations have been switched to minimize the metric.
+          const SizeValueType pRatioIndex = this->m_JointPdfIndex1DArray[i] + bin;
+          (*(this->m_DerivativeResult))[i] -= m_LocalDerivativeByParzenBin[bin][i] * this->m_PRatioArray[pRatioIndex];
+          }
+        }
+      }
+    }
+
+  // in ITKv4, metrics always minimize
+  this->m_Value = static_cast<MeasureType>( -1.0 * sum );
+}
 
 template <typename TFixedImage, typename TMovingImage, typename TVirtualImage, typename TInternalComputationValueType, typename TMetricTraits>
 void
@@ -527,6 +669,39 @@ MattesMutualInformationImageToImageMetricv4<TFixedImage, TMovingImage, TVirtualI
   this->m_Value = static_cast<MeasureType>( -1.0 * sum );
 }
 
+template <typename TFixedImage, typename TMovingImage, typename TVirtualImage, typename TInternalComputationValueType, typename TMetricTraits>
+void
+MattesMutualInformationImageToImageMetricv4<TFixedImage, TMovingImage, TVirtualImage, TInternalComputationValueType, TMetricTraits>
+::GetValueCommonAfterSingleExecution()
+{
+  if( this->GetComputeDerivative() && ( ! this->HasLocalSupport() ) )
+    {
+    // This entire block of code is used to accumulate the per-thread buffers into 1 thread.
+    // For this thread, how many histogram elements are there?
+    const SizeValueType rowSize = this->GetNumberOfLocalParameters() * this->m_NumberOfHistogramBins;
+    const SizeValueType histogramTotalElementsSize = rowSize * this->m_NumberOfHistogramBins;
+    // This can not be threaded.
+    const PDFValueType nFactor = 1.0 / ( this->m_MovingImageBinSize * this->GetNumberOfValidPoints() );
+    JointPDFDerivativesValueType *const accumulatorPdfDPtrStart = this->m_AccumulatorJointPDFDerivatives->GetBufferPointer();
+    JointPDFDerivativesValueType *             accumulatorPdfDPtr = accumulatorPdfDPtrStart;
+    JointPDFDerivativesValueType const * const threadPdfDPtrEnd = accumulatorPdfDPtrStart + histogramTotalElementsSize;
+    while( accumulatorPdfDPtr < threadPdfDPtrEnd )
+      {
+      *( accumulatorPdfDPtr++ ) *= nFactor;
+      }
+    }
+
+  const SizeValueType numberOfVoxels = this->m_NumberOfHistogramBins* this->m_NumberOfHistogramBins;
+  JointPDFValueType * const pdfPtrStart = this->m_AccumulatorJointPDF->GetBufferPointer();
+  // Sum of this threads domain into the this->m_JointPDFSum that covers that part of the domain.
+  JointPDFValueType const * pdfPtr = pdfPtrStart;
+  CompensatedSummation< PDFValueType > jointPDFSum;
+  for( SizeValueType i = 0; i < numberOfVoxels; ++i )
+    {
+    jointPDFSum += *( pdfPtr++ );
+    }
+  this->m_JointPDFSum = jointPDFSum.GetSum();
+}
 
 template <typename TFixedImage, typename TMovingImage, typename TVirtualImage, typename TInternalComputationValueType, typename TMetricTraits>
 void
