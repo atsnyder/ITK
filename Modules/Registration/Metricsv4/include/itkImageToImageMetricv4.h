@@ -468,7 +468,7 @@ public:
     * some threads require initialzation of temporary buffers
     * per thread before processing each thread.
     */
-  virtual void InitializeThread( const ThreadIdType /*threadId*/ ) { /*Do nothing by default */ }
+  //virtual void InitializeThread( const ThreadIdType /*threadId*/ ) { /*Do nothing by default */ }
   /**
     * Finalize the per-thread components for computing
     * metric.  Some threads can accumulate their data
@@ -476,9 +476,8 @@ public:
     * for all threads to finish before the accumulation
     * occurs.
     */
-  virtual void FinalizeThread( const ThreadIdType /*threadId*/ ) { /*Do nothing by default */ }
+  //virtual void FinalizeThread( const ThreadIdType /*threadId*/ ) { /*Do nothing by default */ }
 
- // virtual void SingleThreadExecute( const DomainType & completeDomain ) { }
   /** Get Fixed Gradient Image. */
   itkGetModifiableObjectMacro(FixedImageGradientImage, FixedImageGradientImageType);
 

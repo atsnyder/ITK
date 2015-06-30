@@ -22,6 +22,7 @@
 #include "itkNumericTraits.h"
 #include "itkThreadedImageRegionPartitioner.h"
 #include "itkThreadedIndexedContainerPartitioner.h"
+#include "tbb/tbb.h"
 
 namespace itk
 {
@@ -101,7 +102,7 @@ protected:
   virtual void ThreadedExecution( const DomainType & subdomain,
                                   const ThreadIdType threadId ) ITK_OVERRIDE;
 
-  virtual void SingleExecution( const DomainType & completeDomain ) ITK_OVERRIDE;
+  virtual void TBBExecution( const DomainType & subdomain ) ITK_OVERRIDE;
 
   /** Get cached values for efficiency. Only valid once threading has started.
    *  These methods should be used in tight loops (inlining helps measurably).
@@ -114,6 +115,16 @@ protected:
   {
     return this->m_CachedNumberOfLocalParameters;
   }
+
+  typedef typename tbb::enumerable_thread_specific<ThreadIdType,tbb::cache_aligned_allocator<ThreadIdType>,tbb::ets_key_usage_type::ets_key_per_instance> PerThreadIdType;
+
+  typedef typename PerThreadIdType::reference          ThreadIdRef;
+  typedef typename PerThreadIdType::iterator           ThreadIdIter;
+  typedef typename PerThreadIdType::range_type         ThreadIdRange;
+  typedef typename PerThreadIdType::const_range_type   ThreadIdConstRange;
+  typedef typename PerThreadIdType::size_type          ThreadIdSizeType;
+
+  PerThreadIdType m_GetThreadId;
 
 private:
   ImageToImageMetricv4GetValueAndDerivativeThreader( const Self & ); // purposely not implemented
@@ -176,7 +187,7 @@ protected:
   virtual void ThreadedExecution( const DomainType & subdomain,
                                   const ThreadIdType threadId ) ITK_OVERRIDE;
 
-  virtual void SingleExecution( const DomainType & completeDomain ) ITK_OVERRIDE;
+  virtual void TBBExecution( const DomainType & subdomain ) ITK_OVERRIDE;
 
   /** Get cached values for efficiency. Only valid once threading has started.
    *  These methods should be used in tight loops (inlining helps measurably).
@@ -189,6 +200,16 @@ protected:
   {
     return this->m_CachedNumberOfLocalParameters;
   }
+
+  typedef typename tbb::enumerable_thread_specific<ThreadIdType,tbb::cache_aligned_allocator<ThreadIdType>,tbb::ets_key_usage_type::ets_key_per_instance> PerThreadIdType;
+
+  typedef typename PerThreadIdType::reference          ThreadIdRef;
+  typedef typename PerThreadIdType::iterator           ThreadIdIter;
+  typedef typename PerThreadIdType::range_type         ThreadIdRange;
+  typedef typename PerThreadIdType::const_range_type   ThreadIdConstRange;
+  typedef typename PerThreadIdType::size_type          ThreadIdSizeType;
+
+  PerThreadIdType m_GetThreadId;
 
 private:
   ImageToImageMetricv4GetValueAndDerivativeThreader( const Self & ); // purposely not implemented

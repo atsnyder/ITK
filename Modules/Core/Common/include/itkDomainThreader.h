@@ -120,8 +120,6 @@ protected:
    * creating instance variables needed per thread may be performed. */
   virtual void BeforeThreadedExecution(){}
 
-  virtual void BeforeSingleExecution(){}
-
   /** Do the threaded operation, somewhat like \c ThreadedGenerateData in an
    * ImageSource.
    * \param subdomain The subdomain to operate on.
@@ -133,14 +131,12 @@ protected:
   virtual void ThreadedExecution( const DomainType& subdomain,
                                   const ThreadIdType threadId ) = 0;
 
-  virtual void SingleExecution( const DomainType& completeDomain ){(void)completeDomain;}
+  virtual void TBBExecution( const DomainType& subdomain ){(void) subdomain;};
 
   /** When \c Execute in run, this method is run single-threaded after \c
    * ThreadedExecution.  Optionally collect results, etc. E.g. calculate the
    * global minimum from the minimums calculated per thread. */
   virtual void AfterThreadedExecution(){}
-
-  virtual void AfterSingleExecution(){}
 
   itkSetObjectMacro( MultiThreader, MultiThreader );
 

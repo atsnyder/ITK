@@ -97,8 +97,6 @@ protected:
   /** Resize and initialize per thread objects. */
   virtual void BeforeThreadedExecution() ITK_OVERRIDE;
 
-  virtual void BeforeSingleExecution() ITK_OVERRIDE;
-
   /** Collects the results from each thread and sums them.  Results are stored
    * in the enclosing class \c m_Value and \c m_DerivativeResult.  Behavior
    * depends on m_AverageValueAndDerivativeByNumberOfValuePoints,
@@ -106,8 +104,6 @@ protected:
    * derivative sums for global transforms only (i.e. transforms without local
    * support).  */
   virtual void AfterThreadedExecution() ITK_OVERRIDE;
-
-  virtual void AfterSingleExecution() ITK_OVERRIDE;
 
   /** Method called by the threaders to process the given virtual point.  This
    * in turn calls \c TransformAndEvaluateFixedPoint, \c
@@ -117,9 +113,6 @@ protected:
   virtual bool ProcessVirtualPoint( const VirtualIndexType & virtualIndex,
                                     const VirtualPointType & virtualPoint,
                                     const ThreadIdType threadId );
-
-  virtual bool SingleProcessVirtualPoint( const VirtualIndexType & virtualIndex,
-                                          const VirtualPointType & virtualPoint );
 
   /** Method to calculate the metric value and derivative
    * given a point, value and image derivative for both fixed and moving
@@ -161,31 +154,6 @@ protected:
         MeasureType &                     metricValueReturn,
         DerivativeType &                  localDerivativeReturn,
         const ThreadIdType                threadId ) const = 0;
-
-  virtual bool SingleProcessPoint(
-        const VirtualIndexType &          virtualIndex,
-        const VirtualPointType &          virtualPoint,
-        const FixedImagePointType &       mappedFixedPoint,
-        const FixedImagePixelType &       mappedFixedPixelValue,
-        const FixedImageGradientType &    mappedFixedImageGradient,
-        const MovingImagePointType &      mappedMovingPoint,
-        const MovingImagePixelType &      mappedMovingPixelValue,
-        const MovingImageGradientType &   mappedMovingImageGradient,
-        MeasureType &                     metricValueReturn,
-        DerivativeType &                  localDerivativeReturn ) const
-          {
-            (void)virtualIndex;
-            (void)virtualPoint;
-            (void)mappedFixedPoint;
-            (void)mappedFixedPixelValue;
-            (void)mappedFixedImageGradient;
-            (void)mappedMovingPoint;
-            (void)mappedMovingPixelValue;
-            (void)mappedMovingImageGradient;
-            (void)metricValueReturn;
-            (void)localDerivativeReturn;
-            return 0;
-          }
 
   /** Store derivative result from a single point calculation.
    * \warning If this method is overridden or otherwise not used

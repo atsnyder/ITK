@@ -31,7 +31,7 @@ ImageToImageMetricv4GetValueAndDerivativeThreader< ThreadedImageRegionPartitione
                       const ThreadIdType threadId )
 {
   //Initialize per thread buffers and variables.
-  this->m_Associate->InitializeThread( threadId );
+  //this->m_Associate->InitializeThread( threadId );
 
   typename VirtualImageType::ConstPointer virtualImage = this->m_Associate->GetVirtualImage();
   typedef ImageRegionConstIteratorWithIndex< VirtualImageType > IteratorType;
@@ -43,7 +43,7 @@ ImageToImageMetricv4GetValueAndDerivativeThreader< ThreadedImageRegionPartitione
     this->ProcessVirtualPoint( virtualIndex, virtualPoint, threadId );
     }
   //Finalize per thread actions
-  this->m_Associate->FinalizeThread( threadId );
+  //this->m_Associate->FinalizeThread( threadId );
 }
 
 template< typename TImageToImageMetricv4 >
@@ -53,7 +53,7 @@ ImageToImageMetricv4GetValueAndDerivativeThreader< ThreadedIndexedContainerParti
                       const ThreadIdType threadId )
 {
   //Initialize per thread buffers and variables.
-  this->m_Associate->InitializeThread( threadId );
+  //this->m_Associate->InitializeThread( threadId );
 
   typename TImageToImageMetricv4::VirtualPointSetType::ConstPointer virtualSampledPointSet = this->m_Associate->GetVirtualSampledPointSet();
   typedef typename TImageToImageMetricv4::VirtualPointSetType::MeshTraits::PointIdentifier ElementIdentifierType;
@@ -68,42 +68,63 @@ ImageToImageMetricv4GetValueAndDerivativeThreader< ThreadedIndexedContainerParti
     this->ProcessVirtualPoint( virtualIndex, virtualPoint, threadId );
     }
   //Finalize per thread actions
-  this->m_Associate->FinalizeThread( threadId );
+  //this->m_Associate->FinalizeThread( threadId );
 }
 
 template< typename TImageToImageMetricv4 >
 void
 ImageToImageMetricv4GetValueAndDerivativeThreader< ThreadedImageRegionPartitioner< TImageToImageMetricv4::VirtualImageDimension >, TImageToImageMetricv4 >
-::SingleExecution( const DomainType & completeDomain )
+::TBBExecution ( const DomainType & imageSubRegion )
 {
   typename VirtualImageType::ConstPointer virtualImage = this->m_Associate->GetVirtualImage();
   typedef ImageRegionConstIteratorWithIndex< VirtualImageType > IteratorType;
   VirtualPointType virtualPoint;
-  for( IteratorType it( virtualImage, completeDomain ); !it.IsAtEnd(); ++it )
+  ThreadIdType threadId = 0;
+  for( IteratorType it( virtualImage, imageSubRegion ); !it.IsAtEnd(); ++it )
     {
     const VirtualIndexType & virtualIndex = it.GetIndex();
     virtualImage->TransformIndexToPhysicalPoint( virtualIndex, virtualPoint );
-    this->SingleProcessVirtualPoint( virtualIndex, virtualPoint );
+    this->ProcessVirtualPoint( virtualIndex, virtualPoint, threadId );
     }
 }
 
 template< typename TImageToImageMetricv4 >
 void
 ImageToImageMetricv4GetValueAndDerivativeThreader< ThreadedIndexedContainerPartitioner, TImageToImageMetricv4 >
-::SingleExecution( const DomainType & completeDomain )
+::TBBExecution ( const DomainType & indexSubRange )
 {
   typename TImageToImageMetricv4::VirtualPointSetType::ConstPointer virtualSampledPointSet = this->m_Associate->GetVirtualSampledPointSet();
   typedef typename TImageToImageMetricv4::VirtualPointSetType::MeshTraits::PointIdentifier ElementIdentifierType;
-  const ElementIdentifierType begin = completeDomain[0];
-  const ElementIdentifierType end   = completeDomain[1];
-  VirtualIndexType virtualIndex;
+  const ElementIdentifierType begin = indexSubRange[0];
+  const ElementIdentifierType end   = indexSubRange[1];
   typename VirtualImageType::ConstPointer virtualImage = this->m_Associate->GetVirtualImage();
-  for( ElementIdentifierType i = begin; i <= end; ++i )
+
+  tbb::atomic<ThreadIdType> idCount = 0;
+  m_GetThreadId = PerThreadIdType((ThreadIdType)(-1));
+
+  tbb::parallel_for(tbb::blocked_range<ElementIdentifierType>(begin,end+1),
+    [this, &virtualImage, &virtualSampledPointSet, &idCount](const tbb::blocked_range<ElementIdentifierType>& r)
     {
-    const VirtualPointType & virtualPoint = virtualSampledPointSet->GetPoint( i );
-    virtualImage->TransformPhysicalPointToIndex( virtualPoint, virtualIndex );
-    this->SingleProcessVirtualPoint( virtualIndex, virtualPoint );
-    }
+    bool exists;
+    ThreadIdRef threadIdRef = m_GetThreadId.local(exists);
+    ThreadIdType threadId = threadIdRef;
+
+    if(!exists)
+      {
+      threadIdRef = idCount++;
+      threadId = threadIdRef;
+      }
+
+    VirtualIndexType virtualIndex;
+
+    for( ElementIdentifierType i = r.begin(); i != r.end(); ++i )
+      {
+      const VirtualPointType & virtualPoint = virtualSampledPointSet->GetPoint( i );
+      virtualImage->TransformPhysicalPointToIndex( virtualPoint, virtualIndex );
+      this->ProcessVirtualPoint( virtualIndex, virtualPoint, threadId );
+      }
+    },
+  tbb::auto_partitioner());
 }
 
 } // end namespace itk

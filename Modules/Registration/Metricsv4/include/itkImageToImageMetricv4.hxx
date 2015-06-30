@@ -269,14 +269,16 @@ ImageToImageMetricv4<TFixedImage, TMovingImage, TVirtualImage, TInternalComputat
     }
   else // dense sampling
     {
+      /*
     if( this->m_SingleThread )
       {
       this->m_DenseGetValueAndDerivativeThreader->SingleThreadExecute( const_cast< Self* >(this), this->GetVirtualRegion() );
       }
     else
       {
+      */
       this->m_DenseGetValueAndDerivativeThreader->Execute( const_cast< Self* >(this), this->GetVirtualRegion() );
-      }
+      //}
     }
 }
 

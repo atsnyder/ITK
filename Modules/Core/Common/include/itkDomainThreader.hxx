@@ -75,11 +75,11 @@ DomainThreader< TDomainPartitioner, TAssociate >
   this->m_Associate = enclosingClass;
   this->m_CompleteDomain = completeDomain;
 
-  this->BeforeSingleExecution();
+  this->BeforeThreadedExecution();
 
-  this->SingleExecution( completeDomain );
+  this->TBBExecution( completeDomain );
 
-  this->AfterSingleExecution();
+  this->AfterThreadedExecution();
 }
 
 template< typename TDomainPartitioner, typename TAssociate >
