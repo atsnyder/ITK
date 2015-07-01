@@ -85,8 +85,6 @@ public:
 
   typedef AssociateType TAssociate;
 
-  void Execute( AssociateType * enclosingClass, const DomainType & domain ) ITK_OVERRIDE;
-
 protected:
   MattesMutualInformationImageToImageMetricv4GetValueAndDerivativeThreader() :
     m_MattesAssociate(ITK_NULLPTR)

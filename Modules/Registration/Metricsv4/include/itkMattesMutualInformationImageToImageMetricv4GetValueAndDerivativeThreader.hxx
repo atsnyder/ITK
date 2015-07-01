@@ -27,24 +27,6 @@ template< typename TDomainPartitioner, typename TImageToImageMetric, typename TM
 void
 MattesMutualInformationImageToImageMetricv4GetValueAndDerivativeThreader< TDomainPartitioner, TImageToImageMetric,
                                                                           TMattesMutualInformationMetric >
-::Execute( TAssociate * enclosingClass, const DomainType & completeDomain )
-{
-  this->m_Associate = enclosingClass;
-  this->m_CompleteDomain = completeDomain;
-
-  //this->DetermineNumberOfThreadsUsed();
-
-  this->BeforeSingleExecution();
-
-  this->SingleExecution( completeDomain );
-
-  this->AfterSingleExecution();
-}
-
-template< typename TDomainPartitioner, typename TImageToImageMetric, typename TMattesMutualInformationMetric >
-void
-MattesMutualInformationImageToImageMetricv4GetValueAndDerivativeThreader< TDomainPartitioner, TImageToImageMetric,
-                                                                          TMattesMutualInformationMetric >
 ::BeforeSingleExecution()
 {
   Superclass::BeforeSingleExecution();
