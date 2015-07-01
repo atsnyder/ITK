@@ -54,7 +54,7 @@ MattesMutualInformationImageToImageMetricv4<TFixedImage, TMovingImage, TVirtualI
   m_JointPDFDerivatives(ITK_NULLPTR),
   m_JointPDFSum(0.0)
 {
-  this->m_SingleThread = false;
+  this->m_SingleThread = true;
   // We have our own GetValueAndDerivativeThreader's that we want
   // ImageToImageMetricv4 to use.
   this->m_DenseGetValueAndDerivativeThreader  = MattesMutualInformationDenseGetValueAndDerivativeThreaderType::New();

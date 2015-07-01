@@ -99,6 +99,7 @@ ImageToImageMetricv4GetValueAndDerivativeThreader< ThreadedIndexedContainerParti
   const ElementIdentifierType end   = indexSubRange[1];
   typename VirtualImageType::ConstPointer virtualImage = this->m_Associate->GetVirtualImage();
 
+//  tbb::task_scheduler_init init(1);
   tbb::atomic<ThreadIdType> idCount = 0;
   m_GetThreadId = PerThreadIdType((ThreadIdType)(-1));
 

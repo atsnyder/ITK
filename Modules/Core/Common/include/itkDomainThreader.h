@@ -20,6 +20,7 @@
 
 #include "itkObject.h"
 #include "itkMultiThreader.h"
+#include "tbb/tbb.h"
 
 namespace itk
 {
