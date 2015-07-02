@@ -77,7 +77,8 @@ DomainThreader< TDomainPartitioner, TAssociate >
 
   const ThreadIdType threaderNumberOfThreads = this->GetMultiThreader()->GetNumberOfThreads();
 
-  this->m_NumberOfThreadsUsed = tbb::task_scheduler_init::default_num_threads();
+  tbb::task_scheduler_init init(threaderNumberOfThreads);
+  this->m_NumberOfThreadsUsed = threaderNumberOfThreads;
 
   if( this->m_NumberOfThreadsUsed < threaderNumberOfThreads )
     {
