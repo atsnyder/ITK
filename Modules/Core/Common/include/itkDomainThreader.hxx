@@ -31,6 +31,7 @@ DomainThreader< TDomainPartitioner, TAssociate >
   this->m_MultiThreader       = MultiThreader::New();
   this->m_NumberOfThreadsUsed = 0;
   this->m_Associate           = ITK_NULLPTR;
+  this->m_TBBInit             = new tbb::task_scheduler_init(tbb::task_scheduler_init::deferred);
 }
 
 template< typename TDomainPartitioner, typename TAssociate >
@@ -77,22 +78,11 @@ DomainThreader< TDomainPartitioner, TAssociate >
 
   const ThreadIdType threaderNumberOfThreads = this->GetMultiThreader()->GetNumberOfThreads();
 
-  tbb::task_scheduler_init init(threaderNumberOfThreads);
+  if(!this->m_TBBInit->is_active())
+    {
+    this->m_TBBInit->initialize(threaderNumberOfThreads);
+    }
   this->m_NumberOfThreadsUsed = threaderNumberOfThreads;
-
-  if( this->m_NumberOfThreadsUsed < threaderNumberOfThreads )
-    {
-    // If PartitionDomain is only able to create a lesser number of subdomains,
-    // ensure that superfluous threads aren't created
-    // DomainThreader::SetMaximumNumberOfThreads *should* already have been called by this point,
-    // but it's not fatal if it somehow gets called later
-    this->GetMultiThreader()->SetNumberOfThreads(this->m_NumberOfThreadsUsed);
-    }
-  else if( this->m_NumberOfThreadsUsed > threaderNumberOfThreads )
-    {
-    itkExceptionMacro( "A subclass of ThreadedDomainPartitioner::PartitionDomain"
-                      << "returned more subdomains than were requested" );
-    }
 
   this->BeforeThreadedExecution();
 

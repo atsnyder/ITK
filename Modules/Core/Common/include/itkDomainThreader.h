@@ -148,6 +148,8 @@ protected:
 
   AssociateType * m_Associate;
 
+  tbb::task_scheduler_init * m_TBBInit;
+
 private:
   DomainThreader( const Self & ); // purposely not implemented
   void operator=( const Self & ); // purposely not implemented
