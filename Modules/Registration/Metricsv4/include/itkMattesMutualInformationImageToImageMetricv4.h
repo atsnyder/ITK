@@ -27,6 +27,7 @@
 #include "itkThreadedIndexedContainerPartitioner.h"
 #include "itkSimpleFastMutexLock.h"
 #include "itkMutexLockHolder.h"
+#include "itkTimeProbe.h"
 
 namespace itk
 {
@@ -289,10 +290,13 @@ protected:
 public:
     void Initialize( const size_t MaxBufferLength, const size_t CachedNumberOfLocalParameters,
                      itk::SimpleFastMutexLock * parentDerivativeLockPtr,
-                     typename JointPDFDerivativesType::Pointer parentJointPDFDerivatives, const size_t whichThreadID)
+                     typename JointPDFDerivativesType::Pointer parentJointPDFDerivatives, const size_t whichThreadID,
+                     const ThreadIdType thisNumberOfThreads)
     {
       m_ThisThreadID = whichThreadID;
       m_CurrentFillSize = 0;
+      m_MinTrySize = m_MaxBufferSize/thisNumberOfThreads;
+      m_CurTrySize = m_MinTrySize;
       m_MemoryBlockSize = CachedNumberOfLocalParameters * MaxBufferLength;
       m_BufferPDFValuesContainer.resize(MaxBufferLength, ITK_NULLPTR);
       m_BufferOffsetContainer.resize(MaxBufferLength, 0);
@@ -315,7 +319,7 @@ public:
       m_MemoryBlock(0)
     {
     }
-                                                                                    //
+
     ~DerivativeBufferManager()
     {
     }
@@ -329,10 +333,14 @@ public:
     {
       if( m_CurrentFillSize ==  m_MaxBufferSize )
         {
-        this->WriteBufferToPDFDerivative(); // NOTE: resets m_CurrentFillSize to
+        this->WriteBufferToPDFDerivative(true); // NOTE: resets m_CurrentFillSize to
                                             // zero.
         }
-
+      else if(m_CurrentFillSize > m_CurTrySize)
+        {
+        this->WriteBufferToPDFDerivative(false); // NOTE: resets m_CurrentFillSize to
+                                            // zero.
+        }
     }
 
     // If offset is same as previous offset, then accumulate with previous
@@ -345,7 +353,7 @@ public:
     }
 
     // Simply reset the entire cache to all zeros
-    void WriteBufferToPDFDerivative()
+    void WriteBufferToPDFDerivative(bool block)
     {
       typename std::vector<OffsetValueType>::iterator BufferOffsetContainerIter(this->m_BufferOffsetContainer.begin() );
       typename std::vector<PDFValueType *>::iterator  BufferPDFValuesContainerIter(
@@ -355,37 +363,107 @@ public:
       size_t bufferIndex = 0;
       // thread safe lazy initialization, prevent race condition on
       // setting, with an atomic set if null.
-      MutexLockHolder< SimpleFastMutexLock > LockHolder(*this->m_ParentJointPDFDerivativesLockPtr);
-      while( bufferIndex < m_CurrentFillSize )
+   //   fillClock.Stop();
+      if( block )
         {
-        const OffsetValueType         ThisIndexOffset = *BufferOffsetContainerIter;
-        JointPDFDerivativesValueType *derivPtr = this->m_ParentJointPDFDerivatives->GetBufferPointer()
-          + ThisIndexOffset;
-
-        PDFValueType *             derivativeContribution = *BufferPDFValuesContainerIter;
-        const PDFValueType * const endContribution = derivativeContribution + m_CachedNumberOfLocalParameters;
-        while( derivativeContribution < endContribution )
+        MutexLockHolder< SimpleFastMutexLock > LockHolder(*this->m_ParentJointPDFDerivativesLockPtr);
+        /*
+        if( m_CurrentFillSize ==  m_MaxBufferSize )
           {
-          *( derivPtr ) += *( derivativeContribution );
-          // NOTE: Preliminary inconclusive tests indicates that setting to zero
-          // while it's local in cache is faster than bulk memset after the loop
-          // for small data sets
-          *( derivativeContribution ) = 0.0; // Reset to zero after getting
-                                             // value
-          ++derivativeContribution;
-          ++derivPtr;
+          dumpClock.Start();
           }
+          */
+        while( bufferIndex < m_CurrentFillSize )
+          {
+          const OffsetValueType         ThisIndexOffset = *BufferOffsetContainerIter;
+          JointPDFDerivativesValueType *derivPtr = this->m_ParentJointPDFDerivatives->GetBufferPointer()
+            + ThisIndexOffset;
 
-        ++BufferOffsetContainerIter;
-        ++BufferPDFValuesContainerIter;
-        ++bufferIndex;
+          PDFValueType *             derivativeContribution = *BufferPDFValuesContainerIter;
+          const PDFValueType * const endContribution = derivativeContribution + m_CachedNumberOfLocalParameters;
+          while( derivativeContribution < endContribution )
+            {
+            *( derivPtr ) += *( derivativeContribution );
+            // NOTE: Preliminary inconclusive tests indicates that setting to zero
+            // while it's local in cache is faster than bulk memset after the loop
+            // for small data sets
+            *( derivativeContribution ) = 0.0; // Reset to zero after getting
+                                               // value
+            ++derivativeContribution;
+            ++derivPtr;
+            }
+
+          ++BufferOffsetContainerIter;
+          ++BufferPDFValuesContainerIter;
+          ++bufferIndex;
+          }
+        m_CurrentFillSize = 0; // Reset fill size back to zero.
         }
-      m_CurrentFillSize = 0; // Reset fill size back to zero.
+      else
+        {
+        MutexLockHolder< SimpleFastMutexLock > LockHolder(*this->m_ParentJointPDFDerivativesLockPtr, true);
+        /*
+        if( m_CurrentFillSize ==  m_MaxBufferSize )
+          {
+          dumpClock.Start();
+          }
+          */
+        if(LockHolder.GetLockCaptured())
+          {
+          while( bufferIndex < m_CurrentFillSize )
+            {
+            const OffsetValueType         ThisIndexOffset = *BufferOffsetContainerIter;
+            JointPDFDerivativesValueType *derivPtr = this->m_ParentJointPDFDerivatives->GetBufferPointer()
+              + ThisIndexOffset;
+
+            PDFValueType *             derivativeContribution = *BufferPDFValuesContainerIter;
+            const PDFValueType * const endContribution = derivativeContribution + m_CachedNumberOfLocalParameters;
+            while( derivativeContribution < endContribution )
+              {
+              *( derivPtr ) += *( derivativeContribution );
+              // NOTE: Preliminary inconclusive tests indicates that setting to zero
+              // while it's local in cache is faster than bulk memset after the loop
+              // for small data sets
+              *( derivativeContribution ) = 0.0; // Reset to zero after getting
+                                                 // value
+              ++derivativeContribution;
+              ++derivPtr;
+              }
+
+            ++BufferOffsetContainerIter;
+            ++BufferPDFValuesContainerIter;
+            ++bufferIndex;
+            }
+          m_CurrentFillSize = 0; // Reset fill size back to zero.
+          m_CurTrySize = m_MinTrySize;
+          }
+        else
+          {
+          m_CurTrySize += m_MinTrySize;
+          }
+        }
+    //  dumpClock.Stop();
+    //  fillClock.Start();
+    }
+
+    void PrintTimer()
+    {
+      std::cout << "Thread Id:       " << m_ThisThreadID << std::endl;
+      std::cout << "Number of Elem:  " << m_MemoryBlockSize << std::endl;
+      std::cout << "Dump Time Mean:  " << dumpClock.GetMean() << std::endl;
+      std::cout << "Dump Time Total: " << dumpClock.GetTotal() << std::endl;
+      std::cout << "Dump Time P/Elm: " << (dumpClock.GetMean()/m_MemoryBlockSize) << std::endl;
+      std::cout << "Fill Time Mean:  " << fillClock.GetMean() << std::endl;
+      std::cout << "Fill Time Total: " << fillClock.GetTotal() << std::endl;
+      std::cout << "Fill Time P/Elm: " << (fillClock.GetMean()/m_MemoryBlockSize) << std::endl;
+      fillClock.Stop();
     }
 
 private:
     // DerivativeBufferManager(const Self &); //purposely not implemented
     // void operator = (const Self &); //purposely not implemented
+    itk::TimeProbe               dumpClock;
+    itk::TimeProbe               fillClock;
 
     // For debugging.  Which thread is this?
     size_t                       m_ThisThreadID;
@@ -395,6 +473,8 @@ private:
     std::vector<PDFValueType>    m_MemoryBlock;
     // The (number of lines in the buffer) * (cells per line)
     size_t                       m_MemoryBlockSize;
+    size_t                       m_MinTrySize;
+    size_t                       m_CurTrySize;
     std::vector<PDFValueType *>  m_BufferPDFValuesContainer;
     std::vector<OffsetValueType> m_BufferOffsetContainer;
     size_t                       m_CachedNumberOfLocalParameters;
