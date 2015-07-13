@@ -231,8 +231,7 @@ MattesMutualInformationImageToImageMetricv4GetValueAndDerivativeThreader< TDomai
         this->GetCachedNumberOfLocalParameters(),
         // Need address of the lock
         &this->m_MattesAssociate->m_JointPDFDerivativesLock,
-        this->m_MattesAssociate->m_JointPDFDerivatives, threadId,
-        localNumberOfThreadsUsed
+        this->m_MattesAssociate->m_JointPDFDerivatives, threadId
         );
       }
     }
@@ -466,7 +465,7 @@ MattesMutualInformationImageToImageMetricv4GetValueAndDerivativeThreader< TDomai
     for( ThreadIdType threadId = 0; threadId < localNumberOfThreadsUsed; ++threadId )
       {
       //this->m_MattesAssociate->m_ThreaderDerivativeManager[threadId].PrintTimer();
-      this->m_MattesAssociate->m_ThreaderDerivativeManager[threadId].WriteBufferToPDFDerivative(true);
+      this->m_MattesAssociate->m_ThreaderDerivativeManager[threadId].DumpBuffer();
       }
     }
 
