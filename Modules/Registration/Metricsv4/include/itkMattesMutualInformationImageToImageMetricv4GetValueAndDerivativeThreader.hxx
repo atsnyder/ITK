@@ -454,11 +454,23 @@ MattesMutualInformationImageToImageMetricv4GetValueAndDerivativeThreader< TDomai
 template< typename TDomainPartitioner, typename TImageToImageMetric, typename TMattesMutualInformationMetric >
 void
 MattesMutualInformationImageToImageMetricv4GetValueAndDerivativeThreader< TDomainPartitioner, TImageToImageMetric, TMattesMutualInformationMetric >
+::EndThread(const ThreadIdType threadId)
+{
+  if( this->m_MattesAssociate->GetComputeDerivative() && ( !this->m_MattesAssociate->HasLocalSupport() ) )
+    {
+    this->m_MattesAssociate->m_ThreaderDerivativeManager[threadId].BlockAndDump();
+    }
+}
+
+template< typename TDomainPartitioner, typename TImageToImageMetric, typename TMattesMutualInformationMetric >
+void
+MattesMutualInformationImageToImageMetricv4GetValueAndDerivativeThreader< TDomainPartitioner, TImageToImageMetric, TMattesMutualInformationMetric >
 ::AfterThreadedExecution()
 {
   const ThreadIdType localNumberOfThreadsUsed = this->GetNumberOfThreadsUsed();
 
   // First clear the cache buffers if necessary!
+  /*
   if( this->m_MattesAssociate->GetComputeDerivative() && ( !this->m_MattesAssociate->HasLocalSupport() ) )
     {
     // Dump all of the remaining per thread derivative buffers
@@ -468,6 +480,7 @@ MattesMutualInformationImageToImageMetricv4GetValueAndDerivativeThreader< TDomai
       this->m_MattesAssociate->m_ThreaderDerivativeManager[threadId].DumpBuffer();
       }
     }
+    */
 
   /* NOTE: It is not worth threading this method. Profiling shows that post-processing
    * time of images with real-world sizes is too insignificant to register in

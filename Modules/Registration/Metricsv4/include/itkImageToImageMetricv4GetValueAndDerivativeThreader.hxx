@@ -43,7 +43,7 @@ ImageToImageMetricv4GetValueAndDerivativeThreader< ThreadedImageRegionPartitione
     this->ProcessVirtualPoint( virtualIndex, virtualPoint, threadId );
     }
   //Finalize per thread actions
-  //this->m_Associate->FinalizeThread( threadId );
+  this->EndThread(threadId);
 }
 
 template< typename TImageToImageMetricv4 >
@@ -68,7 +68,7 @@ ImageToImageMetricv4GetValueAndDerivativeThreader< ThreadedIndexedContainerParti
     this->ProcessVirtualPoint( virtualIndex, virtualPoint, threadId );
     }
   //Finalize per thread actions
-  //this->m_Associate->FinalizeThread( threadId );
+  this->EndThread(threadId);
 }
 
 template< typename TImageToImageMetricv4 >

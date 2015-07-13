@@ -294,12 +294,6 @@ public:
     {
       m_ThisThreadID = whichThreadID;
       m_CurrentFillSize = 0;
-//      m_MinTrySize = m_MaxBufferSize/thisNumberOfThreads;
- //     m_CurTrySize = m_MinTrySize;
-      if(m_MaxBufferSize > MaxBufferLength)
-        {
-        MaxBufferLength = m_MaxBufferSize;
-        }
       m_MemoryBlockSize = CachedNumberOfLocalParameters * MaxBufferLength;
       m_BufferPDFValuesContainer.resize(MaxBufferLength, ITK_NULLPTR);
       m_BufferOffsetContainer.resize(MaxBufferLength, 0);
@@ -352,13 +346,13 @@ public:
         this->WriteBufferToPDFDerivative(); // NOTE: resets m_CurrentFillSize to
                                             // zero.
         }
-      /*
-      else if(m_CurrentFillSize > m_CurTrySize)
-        {
-        this->WriteBufferToPDFDerivative(false); // NOTE: resets m_CurrentFillSize to
-                                            // zero.
-        }
-        */
+    }
+
+    void BlockAndDump()
+    {
+      MutexLockHolder< SimpleFastMutexLock > LockHolder(*this->m_ParentJointPDFDerivativesLockPtr);
+      std::cout << "Dump Thread " << m_ThisThreadID << std::endl;
+      DumpBuffer();
     }
 
     // If offset is same as previous offset, then accumulate with previous
@@ -373,35 +367,20 @@ public:
     // Simply reset the entire cache to all zeros
     void WriteBufferToPDFDerivative()
     {
-      // thread safe lazy initialization, prevent race condition on
-      // setting, with an atomic set if null.
-   //   fillClock.Stop();
-      /*
-      if( block )
+      MutexLockHolder< SimpleFastMutexLock > LockHolder(*this->m_ParentJointPDFDerivativesLockPtr, true);
+      if(LockHolder.GetLockCaptured())
         {
-        MutexLockHolder< SimpleFastMutexLock > LockHolder(*this->m_ParentJointPDFDerivativesLockPtr);
         DumpBuffer();
         }
       else
         {
-        */
+        DoubleVect();
         MutexLockHolder< SimpleFastMutexLock > LockHolder(*this->m_ParentJointPDFDerivativesLockPtr, true);
         if(LockHolder.GetLockCaptured())
           {
           DumpBuffer();
           }
-        else
-          {
-          DoubleVect();
-          MutexLockHolder< SimpleFastMutexLock > LockHolder(*this->m_ParentJointPDFDerivativesLockPtr, true);
-          if(LockHolder.GetLockCaptured())
-            {
-            DumpBuffer();
-            }
-          }
-       // }
-    //  dumpClock.Stop();
-    //  fillClock.Start();
+        }
     }
 
     void DumpBuffer()

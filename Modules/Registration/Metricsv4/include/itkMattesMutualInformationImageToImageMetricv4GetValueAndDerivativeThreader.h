@@ -94,6 +94,8 @@ protected:
 
   virtual void AfterThreadedExecution() ITK_OVERRIDE;
 
+  virtual void EndThread(const ThreadIdType threadId) ITK_OVERRIDE;
+
   /** This function computes the local voxel-wise contribution of
    *  the metric to the global integral of the metric/derivative.
    */

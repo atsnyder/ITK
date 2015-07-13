@@ -105,6 +105,8 @@ protected:
    * support).  */
   virtual void AfterThreadedExecution() ITK_OVERRIDE;
 
+  virtual void EndThread(const ThreadIdType threadId) {(void)threadId;}
+
   /** Method called by the threaders to process the given virtual point.  This
    * in turn calls \c TransformAndEvaluateFixedPoint, \c
    * TransformAndEvaluateMovingPoint, and \c ProcessPoint.
