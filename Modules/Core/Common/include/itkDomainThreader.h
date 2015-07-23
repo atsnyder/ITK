@@ -20,6 +20,7 @@
 
 #include "itkObject.h"
 #include "itkMultiThreader.h"
+#include "tbb/tbb.h"
 
 namespace itk
 {
@@ -87,6 +88,8 @@ public:
    * \c AfterThreadedExecution. are run, in order. */
   void Execute( AssociateType * enclosingClass, const DomainType & domain );
 
+  void TBBExecute( AssociateType * enclosingClass, const DomainType & domain );
+
   /** Set/Get the DomainPartitioner. */
   itkSetObjectMacro(       DomainPartitioner, DomainPartitionerType );
   itkGetModifiableObjectMacro(DomainPartitioner, DomainPartitionerType );
@@ -129,10 +132,15 @@ protected:
   virtual void ThreadedExecution( const DomainType& subdomain,
                                   const ThreadIdType threadId ) = 0;
 
+  virtual void TBBExecution( const DomainType& ,
+                             ThreadIdType& ){};
+
   /** When \c Execute in run, this method is run single-threaded after \c
    * ThreadedExecution.  Optionally collect results, etc. E.g. calculate the
    * global minimum from the minimums calculated per thread. */
   virtual void AfterThreadedExecution(){}
+
+  virtual void AfterTBBExecution(const ThreadIdType){};
 
   itkSetObjectMacro( MultiThreader, MultiThreader );
 
@@ -142,6 +150,8 @@ protected:
   static ITK_THREAD_RETURN_TYPE ThreaderCallback( void *arg );
 
   AssociateType * m_Associate;
+
+  tbb::task_scheduler_init * m_TBBInit;
 
 private:
   DomainThreader( const Self & ); // purposely not implemented

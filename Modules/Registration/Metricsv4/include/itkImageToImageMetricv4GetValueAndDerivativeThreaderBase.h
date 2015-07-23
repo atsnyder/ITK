@@ -62,6 +62,7 @@ public:
   typedef typename ImageToImageMetricv4Type::VirtualImageType        VirtualImageType;
   typedef typename ImageToImageMetricv4Type::VirtualIndexType        VirtualIndexType;
   typedef typename ImageToImageMetricv4Type::VirtualPointType        VirtualPointType;
+  typedef typename ImageToImageMetricv4Type::VirtualSizeType         VirtualSizeType;
   typedef typename ImageToImageMetricv4Type::FixedImagePointType     FixedImagePointType;
   typedef typename ImageToImageMetricv4Type::FixedImagePixelType     FixedImagePixelType;
   typedef typename ImageToImageMetricv4Type::FixedImageIndexType     FixedImageIndexType;
@@ -104,6 +105,8 @@ protected:
    * derivative sums for global transforms only (i.e. transforms without local
    * support).  */
   virtual void AfterThreadedExecution() ITK_OVERRIDE;
+
+  virtual void AfterTBBExecution(const ThreadIdType threadsUsed) ITK_OVERRIDE;
 
   /** Method called by the threaders to process the given virtual point.  This
    * in turn calls \c TransformAndEvaluateFixedPoint, \c

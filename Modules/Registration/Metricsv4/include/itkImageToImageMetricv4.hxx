@@ -32,6 +32,8 @@ template<typename TFixedImage,typename TMovingImage,typename TVirtualImage, type
 ImageToImageMetricv4<TFixedImage, TMovingImage, TVirtualImage, TInternalComputationValueType, TMetricTraits>
 ::ImageToImageMetricv4()
 {
+  this->m_ITKThreading = true;
+
   /* Interpolators. Default to linear. */
   typedef LinearInterpolateImageFunction< FixedImageType,
                                           CoordinateRepresentationType >
@@ -260,7 +262,14 @@ ImageToImageMetricv4<TFixedImage, TMovingImage, TVirtualImage, TInternalComputat
     }
   else // dense sampling
     {
-    this->m_DenseGetValueAndDerivativeThreader->Execute( const_cast< Self* >(this), this->GetVirtualRegion() );
+    if(this->m_ITKThreading)
+      {
+      this->m_DenseGetValueAndDerivativeThreader->Execute( const_cast< Self* >(this), this->GetVirtualRegion() );
+      }
+    else
+      {
+      this->m_DenseGetValueAndDerivativeThreader->TBBExecute( const_cast< Self* >(this), this->GetVirtualRegion() );
+      }
     }
 }
 

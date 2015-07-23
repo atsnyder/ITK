@@ -22,6 +22,7 @@
 #include "itkThreadedImageRegionPartitioner.h"
 #include "itkThreadedIndexedContainerPartitioner.h"
 #include "itkConstNeighborhoodIterator.h"
+#include "tbb/tbb.h"
 
 #include <deque>
 
@@ -75,6 +76,7 @@ public:
   typedef typename Superclass::VirtualImageType        VirtualImageType;
   typedef typename Superclass::VirtualPointType        VirtualPointType;
   typedef typename Superclass::VirtualIndexType        VirtualIndexType;
+  typedef typename Superclass::VirtualSizeType         VirtualSizeType;
   typedef typename Superclass::FixedImagePointType     FixedImagePointType;
   typedef typename Superclass::FixedImagePixelType     FixedImagePixelType;
   typedef typename Superclass::FixedImageGradientType  FixedImageGradientType;
@@ -242,6 +244,23 @@ protected:
                              const DomainType& domain,
                              const ThreadIdType threadId );
 
+  virtual void TBBExecution( const DomainType& domain,
+                             ThreadIdType& threadsUsed ) ITK_OVERRIDE
+    {
+    TBBExecution_impl(IdentityHelper<TDomainPartitioner>(), domain, threadsUsed );
+    }
+
+  void TBBExecution_impl(
+                             IdentityHelper<ThreadedImageRegionPartitioner<TImageToImageMetric::VirtualImageDimension> > itkNotUsed(self),
+                             const DomainType& ,
+                             ThreadIdType& );
+
+  template<typename T>
+  void TBBExecution_impl(
+                             IdentityHelper<T> itkNotUsed(self),
+                             const DomainType& ,
+                             ThreadIdType& ){};
+
   /** Common functions for computing correlation over scanning windows **/
 
   /** Create an iterator over the virtual sub region */
@@ -279,6 +298,16 @@ protected:
     const ScanIteratorType &scanIt, ScanMemType &scanMem,
     const ScanParametersType &scanParameters, DerivativeType &deriv,
     MeasureType &local_cc, const ThreadIdType threadId) const;
+
+  typedef typename tbb::enumerable_thread_specific<ThreadIdType,tbb::cache_aligned_allocator<ThreadIdType>,tbb::ets_key_usage_type::ets_key_per_instance> PerThreadIdType;
+
+  typedef typename PerThreadIdType::reference          ThreadIdRef;
+  typedef typename PerThreadIdType::iterator           ThreadIdIter;
+  typedef typename PerThreadIdType::range_type         ThreadIdRange;
+  typedef typename PerThreadIdType::const_range_type   ThreadIdConstRange;
+  typedef typename PerThreadIdType::size_type          ThreadIdSizeType;
+
+  PerThreadIdType m_GetThreadId;
 
 private:
   ANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader( const Self & ); // purposely not implemented

@@ -31,6 +31,7 @@ DomainThreader< TDomainPartitioner, TAssociate >
   this->m_MultiThreader       = MultiThreader::New();
   this->m_NumberOfThreadsUsed = 0;
   this->m_Associate           = ITK_NULLPTR;
+  this->m_TBBInit             = new tbb::task_scheduler_init(tbb::task_scheduler_init::deferred);
 }
 
 template< typename TDomainPartitioner, typename TAssociate >
@@ -65,6 +66,32 @@ DomainThreader< TDomainPartitioner, TAssociate >
     this->m_MultiThreader->SetNumberOfThreads( threads );
     this->Modified();
     }
+}
+
+template< typename TDomainPartitioner, typename TAssociate >
+void
+DomainThreader< TDomainPartitioner, TAssociate >
+::TBBExecute( TAssociate * enclosingClass, const DomainType & completeDomain )
+{
+  this->m_Associate = enclosingClass;
+  this->m_CompleteDomain = completeDomain;
+
+  const ThreadIdType threaderNumberOfThreads = this->GetMultiThreader()->GetNumberOfThreads();
+
+  if(!this->m_TBBInit->is_active())
+    {
+    this->m_TBBInit->initialize(threaderNumberOfThreads);
+    }
+  this->m_NumberOfThreadsUsed = threaderNumberOfThreads;
+
+  this->BeforeThreadedExecution();
+
+  ThreadIdType numThreadsUsed = 0;
+
+  // This calls ThreadedExecution in each thread.
+  this->TBBExecution(completeDomain, numThreadsUsed);
+
+  this->AfterTBBExecution(numThreadsUsed);
 }
 
 template< typename TDomainPartitioner, typename TAssociate >

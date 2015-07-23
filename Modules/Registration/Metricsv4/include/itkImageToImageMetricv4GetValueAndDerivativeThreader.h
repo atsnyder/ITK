@@ -71,6 +71,7 @@ public:
   typedef typename Superclass::VirtualImageType        VirtualImageType;
   typedef typename Superclass::VirtualIndexType        VirtualIndexType;
   typedef typename Superclass::VirtualPointType        VirtualPointType;
+  typedef typename Superclass::VirtualSizeType         VirtualSizeType;
   typedef typename Superclass::FixedImagePointType     FixedImagePointType;
   typedef typename Superclass::FixedImagePixelType     FixedImagePixelType;
   typedef typename Superclass::FixedImageGradientType  FixedImageGradientType;
@@ -100,6 +101,9 @@ protected:
    * point. */
   virtual void ThreadedExecution( const DomainType & subdomain,
                                   const ThreadIdType threadId ) ITK_OVERRIDE;
+
+  virtual void TBBExecution( const DomainType & ,
+                             ThreadIdType& ) ITK_OVERRIDE {};
 
   /** Get cached values for efficiency. Only valid once threading has started.
    *  These methods should be used in tight loops (inlining helps measurably).

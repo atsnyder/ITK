@@ -54,6 +54,7 @@ ImageToImageMetricv4GetValueAndDerivativeThreaderBase< TDomainPartitioner, TImag
 
   /* Per-thread results */
   const ThreadIdType numThreadsUsed = this->GetNumberOfThreadsUsed();
+//  std::cout << "Before Threads: " << numThreadsUsed << std::endl;
   delete[] m_GetValueAndDerivativePerThreadVariables;
   this->m_GetValueAndDerivativePerThreadVariables = new AlignedGetValueAndDerivativePerThreadStruct[ numThreadsUsed ];
 
@@ -110,6 +111,64 @@ ImageToImageMetricv4GetValueAndDerivativeThreaderBase< TDomainPartitioner, TImag
           {
           this->m_GetValueAndDerivativePerThreadVariables[thread].CompensatedDerivatives[p].ResetToZero();
           }
+        }
+      }
+    }
+}
+
+template< typename TDomainPartitioner, typename TImageToImageMetricv4 >
+void
+ImageToImageMetricv4GetValueAndDerivativeThreaderBase< TDomainPartitioner, TImageToImageMetricv4 >
+::AfterTBBExecution(const ThreadIdType threadsUsed)
+{
+  const ThreadIdType numThreadsUsed = threadsUsed;
+  /* Store the number of valid points the enclosing class \c
+   * m_NumberOfValidPoints by collecting the valid points per thread. */
+  this->m_Associate->m_NumberOfValidPoints = NumericTraits< SizeValueType >::ZeroValue();
+  for (ThreadIdType i = 0; i < numThreadsUsed; ++i)
+    {
+    this->m_Associate->m_NumberOfValidPoints += this->m_GetValueAndDerivativePerThreadVariables[i].NumberOfValidPoints;
+    }
+  itkDebugMacro( "ImageToImageMetricv4: NumberOfValidPoints: " << this->m_Associate->m_NumberOfValidPoints );
+
+  /* For global transforms, sum the derivatives from each region. */
+  if( this->m_Associate->GetComputeDerivative() )
+    {
+    if ( this->m_Associate->m_MovingTransform->GetTransformCategory() != MovingTransformType::DisplacementField )
+      {
+      for (NumberOfParametersType p = 0; p < this->m_Associate->GetNumberOfParameters(); p++ )
+        {
+        /* Use a compensated sum to be ready for when there is a very large number of threads */
+        CompensatedDerivativeValueType sum;
+        sum.ResetToZero();
+        for (ThreadIdType i=0; i<numThreadsUsed; i++)
+          {
+          sum += this->m_GetValueAndDerivativePerThreadVariables[i].CompensatedDerivatives[p].GetSum();
+          }
+        (*(this->m_Associate->m_DerivativeResult))[p] += sum.GetSum();
+        }
+      }
+    }
+
+  /* Check the number of valid points. If there aren't enough,
+   * m_Value and m_DerivativeResult will get appropriate values assigned,
+   * and a warning will be output. */
+  if( this->m_Associate->VerifyNumberOfValidPoints( this->m_Associate->m_Value, *(this->m_Associate->m_DerivativeResult) ) )
+    {
+    this->m_Associate->m_Value = NumericTraits<MeasureType>::ZeroValue();
+    /* Accumulate the metric value from threads and store the average. */
+    for(ThreadIdType threadId = 0; threadId < numThreadsUsed; ++threadId )
+      {
+      this->m_Associate->m_Value += this->m_GetValueAndDerivativePerThreadVariables[threadId].Measure;
+      }
+    this->m_Associate->m_Value /= this->m_Associate->m_NumberOfValidPoints;
+
+    /* For global transforms, calculate the average values */
+    if( this->m_Associate->GetComputeDerivative() )
+      {
+      if ( this->m_Associate->m_MovingTransform->GetTransformCategory() != MovingTransformType::DisplacementField )
+        {
+        *(this->m_Associate->m_DerivativeResult) /= this->m_Associate->m_NumberOfValidPoints;
         }
       }
     }

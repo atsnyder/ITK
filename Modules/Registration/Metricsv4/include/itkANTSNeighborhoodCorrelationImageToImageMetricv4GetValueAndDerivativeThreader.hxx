@@ -26,10 +26,10 @@ namespace itk
 template < typename TDomainPartitioner, typename TImageToImageMetric, typename TNeighborhoodCorrelationMetric >
 void
 ANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader< TDomainPartitioner, TImageToImageMetric, TNeighborhoodCorrelationMetric >
-::ThreadedExecution_impl(
+::TBBExecution_impl(
     IdentityHelper<ThreadedImageRegionPartitioner<TImageToImageMetric::VirtualImageDimension> > itkNotUsed(self),
     const DomainType& virtualImageSubRegion,
-    const ThreadIdType threadId )
+    ThreadIdType& threadsUsed )
 {
   /* Store the casted pointer to avoid dynamic casting in tight loops. */
   this->m_ANTSAssociate = dynamic_cast< TNeighborhoodCorrelationMetric * >( this->m_Associate );
@@ -37,6 +37,249 @@ ANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader< TD
     {
     itkExceptionMacro("Dynamic casting of associate pointer failed.");
     }
+
+  VirtualIndexType begin = virtualImageSubRegion.GetIndex();
+  VirtualSizeType size = virtualImageSubRegion.GetSize();
+
+  /*
+  std::ostringstream buf;
+  buf << "===ITK===" << std::endl;
+  virtualImageSubRegion.Print(buf);
+  buf << "=========" << std::endl;
+  std::cout << buf.str();
+  */
+
+  tbb::atomic<int> taskCount = 0;
+  tbb::atomic<ThreadIdType> idCount = 0;
+  m_GetThreadId = PerThreadIdType((ThreadIdType)(-1));
+
+  if(virtualImageSubRegion.GetImageDimension() == 3)
+    {
+    tbb::parallel_for(tbb::blocked_range3d<IndexValueType>(begin[0], begin[0]+size[0], begin[1], begin[1]+size[1], begin[2], begin[2]+size[2]),
+      [this, &idCount, &taskCount](const tbb::blocked_range3d<IndexValueType>& r)
+      {
+      taskCount++;
+      bool exists;
+      ThreadIdRef threadIdRef = m_GetThreadId.local(exists);
+      ThreadIdType threadId = threadIdRef;
+
+      if(!exists)
+        {
+        threadIdRef = idCount++;
+        threadId = threadIdRef;
+        }
+
+      VirtualIndexType start;
+      start[0] = r.pages().begin();
+      start[1] = r.rows().begin();
+      start[2] = r.cols().begin();
+
+      VirtualSizeType size;
+      size[0] = r.pages().end() - r.pages().begin();
+      size[1] = r.rows().end() - r.rows().begin();
+      size[2] = r.cols().end() - r.cols().begin();
+
+      ImageRegionType region;
+      region.SetIndex(start);
+      region.SetSize(size);
+
+      VirtualPointType     virtualPoint;
+      MeasureType          metricValueResult = NumericTraits< MeasureType >::ZeroValue();
+      MeasureType          metricValueSum = NumericTraits< MeasureType >::ZeroValue();
+      bool                 pointIsValid;
+      ScanIteratorType     scanIt;
+      ScanParametersType   scanParameters;
+      ScanMemType          scanMem;
+
+      DerivativeType & localDerivativeResult = this->m_GetValueAndDerivativePerThreadVariables[threadId].LocalDerivatives;
+
+      /* Create an iterator over the virtual sub region */
+      // this->m_ANTSAssociate->InitializeScanning( virtualImageSubRegion, scanIt, scanMem, scanParameters );
+      this->InitializeScanning( region, scanIt, scanMem, scanParameters );
+
+      //typedef typename VirtualImageType::PixelType PixelType;
+
+      /* Iterate over the sub region */
+      scanIt.GoToBegin();
+
+      while (!scanIt.IsAtEnd())
+        {
+        /* Get the virtual point */
+        this->m_ANTSAssociate->TransformVirtualIndexToPhysicalPoint( scanIt.GetIndex(), virtualPoint );
+
+        /* Call the user method in derived classes to do the specific
+         * calculations for value and derivative. */
+        try
+          {
+          this->UpdateQueues(scanIt, scanMem, scanParameters, threadId);
+          pointIsValid = this->ComputeInformationFromQueues(scanIt, scanMem, scanParameters, threadId);
+          if( pointIsValid )
+            {
+            this->ComputeMovingTransformDerivative(scanIt, scanMem, scanParameters, localDerivativeResult, metricValueResult, threadId );
+            }
+          }
+        catch (ExceptionObject & exc)
+          {
+          //NOTE: there must be a cleaner way to do this:
+          std::string msg("Caught exception: \n");
+          msg += exc.what();
+          ExceptionObject err(__FILE__, __LINE__, msg);
+          throw err;
+          }
+
+        /* Assign the results */
+        if ( pointIsValid )
+          {
+          this->m_GetValueAndDerivativePerThreadVariables[threadId].NumberOfValidPoints++;
+          metricValueSum -= metricValueResult;
+          /* Store the result. This depends on what type of
+           * transform is being used. */
+          if( this->GetComputeDerivative() )
+            {
+            this->StorePointDerivativeResult( scanIt.GetIndex(), threadId );
+            }
+          }
+
+        //next index
+        ++scanIt;
+        }
+
+      /* Store metric value result for this thread. */
+      this->m_GetValueAndDerivativePerThreadVariables[threadId].Measure = metricValueSum;
+      }, tbb::auto_partitioner());
+    }
+  else
+    {
+    tbb::parallel_for(tbb::blocked_range2d<IndexValueType>(begin[0], begin[0]+size[0], 25, begin[1], begin[1]+size[1], 25),
+      [this, &idCount, &taskCount](const tbb::blocked_range2d<IndexValueType>& r)
+      {
+      taskCount++;
+      bool exists;
+      ThreadIdRef threadIdRef = m_GetThreadId.local(exists);
+      ThreadIdType threadId = threadIdRef;
+
+      if(!exists)
+        {
+        threadIdRef = idCount++;
+        threadId = threadIdRef;
+        }
+
+      VirtualIndexType start;
+      start[0] = r.rows().begin();
+      start[1] = r.cols().begin();
+
+      VirtualSizeType size;
+      size[0] = r.rows().end() - r.rows().begin();
+      size[1] = r.cols().end() - r.cols().begin();
+
+      ImageRegionType region;
+      region.SetIndex(start);
+      region.SetSize(size);
+
+      /*
+      std::ostringstream buf;
+      buf << "===TBB===" << std::endl;
+      region.Print(buf);
+      buf << "=========" << std::endl;
+      std::cout << buf.str();
+      */
+
+      VirtualPointType     virtualPoint;
+      MeasureType          metricValueResult = NumericTraits< MeasureType >::ZeroValue();
+      MeasureType          metricValueSum = NumericTraits< MeasureType >::ZeroValue();
+      bool                 pointIsValid;
+      ScanIteratorType     scanIt;
+      ScanParametersType   scanParameters;
+      ScanMemType          scanMem;
+
+      DerivativeType & localDerivativeResult = this->m_GetValueAndDerivativePerThreadVariables[threadId].LocalDerivatives;
+
+      /* Create an iterator over the virtual sub region */
+      // this->m_ANTSAssociate->InitializeScanning( virtualImageSubRegion, scanIt, scanMem, scanParameters );
+      this->InitializeScanning( region, scanIt, scanMem, scanParameters );
+
+      //typedef typename VirtualImageType::PixelType PixelType;
+
+      /* Iterate over the sub region */
+      scanIt.GoToBegin();
+
+      while (!scanIt.IsAtEnd())
+        {
+        /* Get the virtual point */
+        this->m_ANTSAssociate->TransformVirtualIndexToPhysicalPoint( scanIt.GetIndex(), virtualPoint );
+
+        /* Call the user method in derived classes to do the specific
+         * calculations for value and derivative. */
+        try
+          {
+          this->UpdateQueues(scanIt, scanMem, scanParameters, threadId);
+          pointIsValid = this->ComputeInformationFromQueues(scanIt, scanMem, scanParameters, threadId);
+          if( pointIsValid )
+            {
+            this->ComputeMovingTransformDerivative(scanIt, scanMem, scanParameters, localDerivativeResult, metricValueResult, threadId );
+            }
+          }
+        catch (ExceptionObject & exc)
+          {
+          //NOTE: there must be a cleaner way to do this:
+          std::string msg("Caught exception: \n");
+          msg += exc.what();
+          ExceptionObject err(__FILE__, __LINE__, msg);
+          throw err;
+          }
+
+        /* Assign the results */
+        if ( pointIsValid )
+          {
+          this->m_GetValueAndDerivativePerThreadVariables[threadId].NumberOfValidPoints++;
+          metricValueSum -= metricValueResult;
+          /* Store the result. This depends on what type of
+           * transform is being used. */
+          if( this->GetComputeDerivative() )
+            {
+            this->StorePointDerivativeResult( scanIt.GetIndex(), threadId );
+            }
+          }
+
+        //next index
+        ++scanIt;
+        }
+
+      /* Store metric value result for this thread. */
+      this->m_GetValueAndDerivativePerThreadVariables[threadId].Measure += metricValueSum;
+      }, tbb::auto_partitioner());
+    }
+
+  /*
+  std::cout << "Thread Count: " << idCount << std::endl;
+  std::cout << "Task Count: " << taskCount << std::endl;
+  */
+
+  threadsUsed = idCount;
+}
+
+template < typename TDomainPartitioner, typename TImageToImageMetric, typename TNeighborhoodCorrelationMetric >
+void
+ANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader< TDomainPartitioner, TImageToImageMetric, TNeighborhoodCorrelationMetric >
+::ThreadedExecution_impl(
+    IdentityHelper<ThreadedImageRegionPartitioner<TImageToImageMetric::VirtualImageDimension> > itkNotUsed(self),
+    const DomainType& virtualImageSubRegion,
+    const ThreadIdType threadId)
+{
+  /* Store the casted pointer to avoid dynamic casting in tight loops. */
+  this->m_ANTSAssociate = dynamic_cast< TNeighborhoodCorrelationMetric * >( this->m_Associate );
+  if( this->m_ANTSAssociate == ITK_NULLPTR )
+    {
+    itkExceptionMacro("Dynamic casting of associate pointer failed.");
+    }
+
+  /*
+  std::ostringstream buf;
+  buf << "===ITK===" << std::endl;
+  virtualImageSubRegion.Print(buf);
+  buf << "=========" << std::endl;
+  std::cout << buf.str();
+  */
 
   VirtualPointType     virtualPoint;
   MeasureType          metricValueResult = NumericTraits< MeasureType >::ZeroValue();
@@ -54,6 +297,7 @@ ANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader< TD
 
   /* Iterate over the sub region */
   scanIt.GoToBegin();
+
   while (!scanIt.IsAtEnd())
     {
     /* Get the virtual point */

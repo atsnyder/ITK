@@ -696,6 +696,7 @@ protected:
 
   /** Flag to use FixedSampledPointSet, i.e. Sparse sampling. */
   bool                                    m_UseFixedSampledPointSet;
+  bool                                    m_ITKThreading;
 
   ImageToImageMetricv4();
   virtual ~ImageToImageMetricv4();
