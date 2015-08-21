@@ -28,7 +28,7 @@ template<typename TFixedImage, typename TMovingImage, typename TVirtualImage, ty
 ANTSNeighborhoodCorrelationImageToImageMetricv4<TFixedImage, TMovingImage, TVirtualImage, TInternalComputationValueType, TMetricTraits>
 ::ANTSNeighborhoodCorrelationImageToImageMetricv4()
 {
-  this->m_ITKThreading = true;
+  this->m_ITKThreading = false;
   // initialize radius. note that a radius of 1 can be unstable
   typedef typename RadiusType::SizeValueType RadiusValueType;
   this->m_Radius.Fill( static_cast<RadiusValueType>(2) );

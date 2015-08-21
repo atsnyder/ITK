@@ -77,18 +77,20 @@ DomainThreader< TDomainPartitioner, TAssociate >
   this->m_CompleteDomain = completeDomain;
 
   const ThreadIdType threaderNumberOfThreads = this->GetMultiThreader()->GetNumberOfThreads();
+  //To set number of tbb threads, comment out line above this one and uncomment line below changing 12 to number of desired threads
+  //const ThreadIdType threaderNumberOfThreads = 12;
 
   if(!this->m_TBBInit->is_active())
     {
     this->m_TBBInit->initialize(threaderNumberOfThreads);
     }
   this->m_NumberOfThreadsUsed = threaderNumberOfThreads;
+  this->GetMultiThreader()->SetNumberOfThreads(threaderNumberOfThreads);
 
   this->BeforeThreadedExecution();
 
   ThreadIdType numThreadsUsed = 0;
 
-  // This calls ThreadedExecution in each thread.
   this->TBBExecution(completeDomain, numThreadsUsed);
 
   this->AfterTBBExecution(numThreadsUsed);

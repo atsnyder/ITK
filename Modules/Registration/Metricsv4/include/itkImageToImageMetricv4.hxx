@@ -268,6 +268,7 @@ ImageToImageMetricv4<TFixedImage, TMovingImage, TVirtualImage, TInternalComputat
       }
     else
       {
+      std::cout << "===TBB===" << std::endl;
       this->m_DenseGetValueAndDerivativeThreader->TBBExecute( const_cast< Self* >(this), this->GetVirtualRegion() );
       }
     }

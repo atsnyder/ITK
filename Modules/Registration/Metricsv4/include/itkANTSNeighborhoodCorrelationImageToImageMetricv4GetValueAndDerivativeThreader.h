@@ -87,6 +87,8 @@ public:
   typedef typename Superclass::DerivativeType          DerivativeType;
   typedef typename Superclass::DerivativeValueType     DerivativeValueType;
 
+  typedef typename VirtualImageType::PixelType         VirtualImageValueType;
+
   typedef TNeighborhoodCorrelationMetric                                 NeighborhoodCorrelationMetricType;
 
   typedef typename NeighborhoodCorrelationMetricType::ImageRegionType               ImageRegionType;
@@ -136,6 +138,7 @@ public:
     SizeValueType   numberOfFillZero; // for each queue
     SizeValueType   windowLength; // number of voxels in the scanning window
     IndexValueType  scanRegionBeginIndexDim0;
+    OffsetValueType scanBeginNextLine;
 
     typename FixedImageType::ConstPointer   fixedImage;
     typename MovingImageType::ConstPointer  movingImage;
